@@ -88,6 +88,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Globals\AppGlobals.vb" />
+    <Compile Include="Helpers\LogsHelper.vb" />
+    <Compile Include="Models\Logs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Logs.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -146,6 +152,17 @@
     <None Include="Fonts\quicksand.zip" />
     <None Include="Fonts\ubuntu-font-family-0.83.zip" />
     <None Include="Media\ScreenScraper Logo.pdn" />
+    <None Include="Models\Logs.xsc">
+      <DependentUpon>Logs.xsd</DependentUpon>
+    </None>
+    <None Include="Models\Logs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Logs.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Models\Logs.xss">
+      <DependentUpon>Logs.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -160,7 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Libs\retro-scraper-libs.dll" />

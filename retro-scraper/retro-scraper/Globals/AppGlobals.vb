@@ -18,4 +18,18 @@ Public Class AppGlobals
     ''' </summary>
     Public Shared licenceFilePath As String = Application.StartupPath & "\Config\licence.cfg"
 
+#Region "Logs"
+
+    ''' <summary>
+    ''' Logs file path
+    ''' </summary>
+    Public Shared logsFilePath As String = Application.StartupPath & "\logs.xml"
+
+    ''' <summary>
+    ''' Log content
+    ''' </summary>
+    Public Shared logs As New Logs.ErrorsDataTable
+
+#End Region
+
 End Class

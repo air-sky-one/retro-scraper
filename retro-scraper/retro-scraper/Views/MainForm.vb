@@ -12,6 +12,10 @@
             'If the application title is missing, use the application name, without the extension
             Me.Text = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
         End If
+
+        Dim authForm As New ScreenScraperLoginForm
+        authForm.ShowDialog()
+
     End Sub
 
 End Class

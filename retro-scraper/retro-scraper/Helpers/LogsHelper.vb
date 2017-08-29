@@ -35,6 +35,8 @@ Module LogsHelper
     ''' </summary>
     ''' <param name="e"></param>
     Public Sub ShowErrorMessage(e As Exception)
+        AddLogs(e)
+
         MessageBox.Show(e.Message, "Error !!!",
                            MessageBoxButtons.OK,
                            MessageBoxIcon.Error)

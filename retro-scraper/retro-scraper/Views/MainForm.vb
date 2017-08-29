@@ -19,15 +19,13 @@ Public Class MainForm
 
 
         Try
-            If Not IsLicenceFileOK() Then
-                Throw New Exception("Licence file is missing or invalid")
-            End If
+            If Not IsLicenceFileOK() Then Throw New Exception("Licence file is missing or invalid")
+
 
             ''
             Dim authForm As New ScreenScraperLoginForm : authForm.ShowDialog()
             If Not AppGlobals.isScreenScraperAuthOK Then Me.Close()
         Catch ex As Exception
-            LogsHelper.AddLogs(ex)
             LogsHelper.ShowErrorMessage(ex)
             Me.Close()
         End Try

@@ -13,4 +13,9 @@ Public Class AppGlobals
     ''' </summary>
     Public Shared isScreenScraperAuthOK As Boolean = False
 
+    ''' <summary>
+    ''' Licence File Path
+    ''' </summary>
+    Public Shared licenceFilePath As String = Application.StartupPath & "\Config\licence.cfg"
+
 End Class

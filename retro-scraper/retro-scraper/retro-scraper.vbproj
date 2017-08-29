@@ -117,6 +117,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Fonts\quicksand.zip" />
+    <None Include="Fonts\ubuntu-font-family-0.83.zip" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -131,8 +133,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Fonts\" />
-    <Folder Include="Media\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Media\453x453 retro-scraper_logo.png" />
+    <Content Include="Media\retro-scraper_logo.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

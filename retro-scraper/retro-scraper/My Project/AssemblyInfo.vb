@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("urukai's retro-scraper")>
+<Assembly: AssemblyTitle("Urukai's Retro Scraper")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("urukai's")>
 <Assembly: AssemblyProduct("retro-scraper")>

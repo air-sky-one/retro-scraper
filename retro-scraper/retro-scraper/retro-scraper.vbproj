@@ -53,6 +53,14 @@
     <ApplicationIcon>Media\64x64_retro-scraper_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="retro-scraper-libs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\retro-scraper-libs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -79,21 +87,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Config.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Config.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Licence.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Licence.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>User.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Globals\AppGlobals.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -146,42 +140,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Config\licence.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Fonts\quicksand.zip" />
     <None Include="Fonts\ubuntu-font-family-0.83.zip" />
     <None Include="Media\ScreenScraper Logo.pdn" />
-    <None Include="Models\Config.xsc">
-      <DependentUpon>Config.xsd</DependentUpon>
-    </None>
-    <None Include="Models\Config.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Config.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Models\Config.xss">
-      <DependentUpon>Config.xsd</DependentUpon>
-    </None>
-    <None Include="Models\Licence.xsc">
-      <DependentUpon>Licence.xsd</DependentUpon>
-    </None>
-    <None Include="Models\Licence.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Licence.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Models\Licence.xss">
-      <DependentUpon>Licence.xsd</DependentUpon>
-    </None>
-    <None Include="Models\User.xsc">
-      <DependentUpon>User.xsd</DependentUpon>
-    </None>
-    <None Include="Models\User.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>User.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Models\User.xss">
-      <DependentUpon>User.xsd</DependentUpon>
-    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -192,12 +156,14 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Config\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Libs\retro-scraper-libs.dll" />
     <Content Include="Media\16x16 retro-scraper_icon.png" />
     <Content Include="Media\16x16_retro-scraper_icon.ico" />
     <Content Include="Media\16x16_ScreenScraper_Icon.ico" />

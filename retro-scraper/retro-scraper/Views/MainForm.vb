@@ -1,21 +1,17 @@
 ﻿Public Class MainForm
-    Public Sub New()
 
-        ' This call is required by the designer.
-        InitializeComponent()
+    ''' <summary>
+    ''' Main application form loading
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Application title : If the application title is missing, use the application name, without the extension
+        If My.Application.Info.Title <> "" Then Me.Text = My.Application.Info.Title Else Me.Text = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
 
-        ' Add any initialization after the InitializeComponent() call.
-        'Application title
-        If My.Application.Info.Title <> "" Then
-            Me.Text = My.Application.Info.Title
-        Else
-            'If the application title is missing, use the application name, without the extension
-            Me.Text = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
-        End If
-
-        Dim authForm As New ScreenScraperLoginForm
-        authForm.ShowDialog()
-
+        ''
+        Dim authForm As New ScreenScraperLoginForm : authForm.ShowDialog()
+        If Not AppGlobals.isScreenScraperAuthOK Then Me.Close()
     End Sub
 
 End Class

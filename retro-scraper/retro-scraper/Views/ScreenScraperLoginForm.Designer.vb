@@ -20,7 +20,6 @@ Partial Class ScreenScraperLoginForm
     Friend WithEvents UsernameTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
     Friend WithEvents OK As System.Windows.Forms.Button
-    Friend WithEvents Cancel As System.Windows.Forms.Button
 
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
@@ -37,8 +36,8 @@ Partial Class ScreenScraperLoginForm
         Me.UsernameTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
         Me.OK = New System.Windows.Forms.Button()
-        Me.Cancel = New System.Windows.Forms.Button()
         Me.ScreenScraperLogoPictureBox = New System.Windows.Forms.PictureBox()
+        Me.Cancel = New System.Windows.Forms.Button()
         CType(Me.RetroScraperLogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ScreenScraperLogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -99,16 +98,6 @@ Partial Class ScreenScraperLoginForm
         Me.OK.TabIndex = 4
         Me.OK.Text = "&OK"
         '
-        'Cancel
-        '
-        Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Font = New System.Drawing.Font("Ubuntu", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cancel.Location = New System.Drawing.Point(300, 161)
-        Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(94, 23)
-        Me.Cancel.TabIndex = 5
-        Me.Cancel.Text = "&Cancel"
-        '
         'ScreenScraperLogoPictureBox
         '
         Me.ScreenScraperLogoPictureBox.Image = CType(resources.GetObject("ScreenScraperLogoPictureBox.Image"), System.Drawing.Image)
@@ -118,6 +107,16 @@ Partial Class ScreenScraperLoginForm
         Me.ScreenScraperLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ScreenScraperLogoPictureBox.TabIndex = 6
         Me.ScreenScraperLogoPictureBox.TabStop = False
+        '
+        'Cancel
+        '
+        Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Cancel.Font = New System.Drawing.Font("Ubuntu", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cancel.Location = New System.Drawing.Point(300, 161)
+        Me.Cancel.Name = "Cancel"
+        Me.Cancel.Size = New System.Drawing.Size(94, 23)
+        Me.Cancel.TabIndex = 5
+        Me.Cancel.Text = "&Cancel"
         '
         'ScreenScraperLoginForm
         '
@@ -151,4 +150,5 @@ Partial Class ScreenScraperLoginForm
     End Sub
 
     Friend WithEvents ScreenScraperLogoPictureBox As PictureBox
+    Friend WithEvents Cancel As Button
 End Class

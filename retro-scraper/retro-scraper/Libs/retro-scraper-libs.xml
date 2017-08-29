@@ -83,5 +83,20 @@ Row event argument class
 Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
+<member name="T:retro_scraper_libs.User.SSUSerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:retro_scraper_libs.User.SSUSerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:retro_scraper_libs.User.SSUSerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 </members>
 </doc>

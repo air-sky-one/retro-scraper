@@ -19,15 +19,32 @@ Public Class MainForm
 
 
         Try
-            If Not IsLicenceFileOK() Then Throw New Exception("Licence file is missing or invalid")
+            MainInit()
 
+            'Licence Check
+            If Not IsLicenceFileOK() Then Throw New Exception("Licence file is missing or invalid.")
 
-            ''
-            Dim authForm As New ScreenScraperLoginForm : authForm.ShowDialog()
-            If Not AppGlobals.isScreenScraperAuthOK Then Me.Close()
+            'ScreenScraper USer Check
+            If Not isScreenScraperUserFileOK() Then
+                Dim authForm As New ScreenScraperLoginForm : authForm.ShowDialog()
+                If Not AppGlobals.isScreenScraperAuthOK Then Me.Close()
+            End If
+
         Catch ex As Exception
             LogsHelper.ShowErrorMessage(ex)
             Me.Close()
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Main initialization
+    ''' </summary>
+    Private Sub MainInit()
+        Try
+            'Generate Application encryption/decryption password
+            InternalEncryption.GenerateApplicationPassword()
+        Catch ex As Exception
+            Throw ex
         End Try
     End Sub
 
@@ -38,26 +55,59 @@ Public Class MainForm
     Private Function IsLicenceFileOK() As Boolean
         Dim result As Boolean = False
 
-        Dim l As New Licence.DevDataTable
+        Try
+            result = ReadAndLoadEncryptedFile(AppGlobals.licenceFilePath, AppGlobals.licence)
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return result
+    End Function
+
+    ''' <summary>
+    ''' Check and import ScreenScraper Data and credentials
+    ''' </summary>
+    ''' <returns></returns>
+    Private Function isScreenScraperUserFileOK() As Boolean
+        Dim result As Boolean = False
+
+        Try
+            result = ReadAndLoadEncryptedFile(AppGlobals.userFilePath, AppGlobals.user)
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return result
+    End Function
+
+    ''' <summary>
+    ''' Use to read and load an encrypted XML file (ex: Licence and User) into the associated DataTable
+    ''' </summary>
+    ''' <param name="path"></param>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Private Function ReadAndLoadEncryptedFile(path As String, data As DataTable)
+        Dim result As Boolean = False
+
         Dim tmp As String = String.Empty
 
         Try
-            InternalEncryption.GenerateApplicationPassword()
 
-            If File.Exists(AppGlobals.licenceFilePath) Then
-                tmp = InternalEncryption.Decode(File.ReadAllText(AppGlobals.licenceFilePath), LibGlobals.EncryptionPwd)
+            If File.Exists(path) Then
+                tmp = InternalEncryption.Decode(File.ReadAllText(path), LibGlobals.EncryptionPwd)
 
                 ' convert content to stream to be used with datatable
                 Dim s As New MemoryStream(Encoding.UTF8.GetBytes(tmp))
 
                 ' load decrypted file content
-                l.ReadXml(s)
+                data.ReadXml(s)
 
                 result = True
             Else
                 'the licence file doesn't exist
                 result = False
             End If
+
         Catch ex As Exception
             Throw ex
         End Try

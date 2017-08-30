@@ -24,12 +24,13 @@ Module JSONHelper
             'devid=xxx&devpassword=yyy&softname=zzz&output=xml&ssid=test&sspassword=test"
 
             result = SSURL & methodName & "?" &
-                "devid=" & DevData.DevId & "&" &
-                "devpassword=" & DevData.DevPassword & "&" &
-                "softname=" & DevData.SoftwareName & "&" &
+                "devid=" & DevId & "&" &
+                "devpassword=" & DevPassword & "&" &
+                "softname=" & SoftwareName & "&" &
                 "output=json&" &
-                "ssid=" & ScreenScraperUser.Login & "&" &
-                "sspassword=" & ScreenScraperUser.Password
+                "ssid=" & Login & "&" &
+                "sspassword=" & Password
+
         Catch ex As Exception
             Throw ex
         End Try

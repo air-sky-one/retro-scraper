@@ -1,4 +1,8 @@
-﻿Public Module ScreenScraperUser
+﻿Imports System.IO
+Imports Newtonsoft.Json.Linq
+Imports retro_scraper_libs
+
+Public Module ScreenScraperUserHelper
 
     ''' <summary>
     ''' ScreenScraper user's login
@@ -181,5 +185,100 @@
             CType(AppGlobals.user(0), retro_scraper_libs.User.SSUSerRow).favregion = value
         End Set
     End Property
+
+    ''' <summary>
+    ''' Check and import ScreenScraper Data and credentials
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function isScreenScraperUserFileOK() As Boolean
+        Dim result As Boolean = False
+
+        Try
+            result = ReadAndLoadEncryptedFile(AppGlobals.userFilePath, AppGlobals.user)
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return result
+    End Function
+
+    ''' <summary>
+    ''' Test and retrieve ScreenScraper user's data
+    ''' </summary>
+    ''' <param name="login"></param>
+    ''' <param name="password"></param>
+    ''' <returns></returns>
+    Public Function GetScreenScraperUser(login As String,
+                                         password As String,
+                                         Optional isRegistered As Boolean = True) As Boolean
+        Dim result As Boolean = False
+        Dim webClient As New System.Net.WebClient()
+        Dim query As String = String.Empty
+        Dim json As String = String.Empty
+        Dim u As User.SSUSerRow = Nothing
+
+        Try
+            If isRegistered Then
+                query = BuildGenericURL("ssuserInfos.php")
+
+                u = AppGlobals.user(0)
+            Else
+                query = "https://www.screenscraper.fr/api/ssuserInfos.php?" &
+                "devid=" & DevId & "&" &
+                "devpassword=" & DevPassword & "&" &
+                "softname=" & SoftwareName & "&" &
+                "output=json&" &
+                "ssid=" & login & "&" &
+                "sspassword=" & password
+
+                AppGlobals.user.Rows.Clear()
+
+                u = AppGlobals.user.NewSSUSerRow
+                AppGlobals.user.AddSSUSerRow(u)
+            End If
+
+            ' getting result
+            json = webClient.DownloadString(query)
+
+            If Not String.IsNullOrEmpty(json) Then
+                Dim o As JObject = JObject.Parse(json)
+
+                If o.SelectToken("response.ssuser.niveau") IsNot Nothing Then
+
+                    Dim tmp As Integer
+                    Integer.TryParse(o.SelectToken("response.ssuser.niveau"), tmp)
+
+                    If tmp > 0 Then
+                        Niveau = o.SelectToken("response.ssuser.niveau")
+                        Contribution = o.SelectToken("response.ssuser.contribution")
+                        Uploadsysteme = o.SelectToken("response.ssuser.uploadsysteme")
+                        Uploadinfos = o.SelectToken("response.ssuser.uploadinfos")
+                        Romasso = o.SelectToken("response.ssuser.romasso")
+                        Uploadmedia = o.SelectToken("response.ssuser.uploadmedia")
+                        Maxthreads = o.SelectToken("response.ssuser.maxthreads")
+                        Maxdownloadspeed = o.SelectToken("response.ssuser.maxdownloadspeed")
+                        visites = o.SelectToken("response.ssuser.visites")
+                        Datedernierevisite = o.SelectToken("response.ssuser.datedernierevisite")
+                        Favregion = o.SelectToken("response.ssuser.favregion")
+
+                        AppGlobals.user.WriteXml(AppGlobals.userFilePath)
+
+                        Dim encode As String = InternalEncryption.Encode(File.ReadAllText(AppGlobals.userFilePath), LibGlobals.EncryptionPwd)
+
+                        File.Delete(AppGlobals.userFilePath)
+
+                        File.WriteAllText(AppGlobals.userFilePath, encode)
+
+                        result = True
+                    End If
+                End If
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return result
+    End Function
 
 End Module

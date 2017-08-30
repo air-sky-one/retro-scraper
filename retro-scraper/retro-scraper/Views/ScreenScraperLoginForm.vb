@@ -9,7 +9,22 @@
     ' such as the username, display name, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        ' AppGlobals.isScreenScraperAuthOK = True
+
+        Try
+            ' 1- test the authentification on screenscraper.fr
+            GetScreenScraperUser(Me.UsernameTextBox.Text, Me.PasswordTextBox.Text, False)
+
+
+            ' 2- if the authentification is not ok then retry
+
+
+            AppGlobals.isScreenScraperAuthOK = True
+
+        Catch ex As Exception
+            AddLogs(ex)
+        End Try
+
+
         Me.Close()
     End Sub
 

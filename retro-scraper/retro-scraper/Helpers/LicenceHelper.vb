@@ -1,4 +1,7 @@
-﻿Module DevData
+﻿Imports System.IO
+Imports System.Text
+
+Module LicenceHelper
 
     ''' <summary>
     ''' ScreenScraper DevId
@@ -51,5 +54,24 @@
             CType(AppGlobals.licence(0), retro_scraper_libs.Licence.DevRow).SoftwareVersion = value
         End Set
     End Property
+
+    ''' <summary>
+    ''' Check if the licence file is present and can be imported
+    ''' </summary>
+    ''' <returns>true : OK / false : KO</returns>
+    Public Function IsLicenceFileOK() As Boolean
+        Dim result As Boolean = False
+
+        Try
+            result = ReadAndLoadEncryptedFile(AppGlobals.licenceFilePath, AppGlobals.licence)
+
+            LicenceHelper.SoftwareName = GetApplicationName()
+            LicenceHelper.SoftwareVersion = GetApplicationVersion()
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return result
+    End Function
 
 End Module

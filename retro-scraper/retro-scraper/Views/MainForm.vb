@@ -25,9 +25,8 @@ Public Class MainForm
                 Dim authForm As New ScreenScraperLoginForm : authForm.ShowDialog()
                 If Not AppGlobals.isScreenScraperAuthOK Then Me.Close()
             End If
-
         Catch ex As Exception
-            LogsHelper.ShowErrorMessage(ex)
+            ShowErrorMessage(ex)
             Me.Close()
         End Try
     End Sub
@@ -43,75 +42,5 @@ Public Class MainForm
             Throw ex
         End Try
     End Sub
-
-    ''' <summary>
-    ''' Check if the licence file is present and can be imported
-    ''' </summary>
-    ''' <returns>true : OK / false : KO</returns>
-    Private Function IsLicenceFileOK() As Boolean
-        Dim result As Boolean = False
-
-        Try
-            result = ReadAndLoadEncryptedFile(AppGlobals.licenceFilePath, AppGlobals.licence)
-
-            DevData.SoftwareName = GetApplicationName()
-            DevData.SoftwareVersion = GetApplicationVersion()
-        Catch ex As Exception
-            Throw ex
-        End Try
-
-        Return result
-    End Function
-
-    ''' <summary>
-    ''' Check and import ScreenScraper Data and credentials
-    ''' </summary>
-    ''' <returns></returns>
-    Private Function isScreenScraperUserFileOK() As Boolean
-        Dim result As Boolean = False
-
-        Try
-            result = ReadAndLoadEncryptedFile(AppGlobals.userFilePath, AppGlobals.user)
-        Catch ex As Exception
-            Throw ex
-        End Try
-
-        Return result
-    End Function
-
-    ''' <summary>
-    ''' Use to read and load an encrypted XML file (ex: Licence and User) into the associated DataTable
-    ''' </summary>
-    ''' <param name="path"></param>
-    ''' <param name="data"></param>
-    ''' <returns></returns>
-    Private Function ReadAndLoadEncryptedFile(path As String, data As DataTable)
-        Dim result As Boolean = False
-
-        Dim tmp As String = String.Empty
-
-        Try
-
-            If File.Exists(path) Then
-                tmp = InternalEncryption.Decode(File.ReadAllText(path), LibGlobals.EncryptionPwd)
-
-                ' convert content to stream to be used with datatable
-                Dim s As New MemoryStream(Encoding.UTF8.GetBytes(tmp))
-
-                ' load decrypted file content
-                data.ReadXml(s)
-
-                result = True
-            Else
-                'the licence file doesn't exist
-                result = False
-            End If
-
-        Catch ex As Exception
-            Throw ex
-        End Try
-
-        Return result
-    End Function
 
 End Class

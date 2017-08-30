@@ -11,12 +11,8 @@ Public Class MainForm
     ''' <param name="e"></param>
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        '' ----------------
-        '' TODO : VISUEL
         'Application title : If the application title is missing, use the application name, without the extension
-        If My.Application.Info.Title <> "" Then Me.Text = My.Application.Info.Title Else Me.Text = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
-        '' ----------------
-
+        Me.Text = GetApplicationName()
 
         Try
             MainInit()
@@ -58,8 +54,8 @@ Public Class MainForm
         Try
             result = ReadAndLoadEncryptedFile(AppGlobals.licenceFilePath, AppGlobals.licence)
 
-            DevData.SoftwareName = ""
-            DevData.SoftwareVersion = ""
+            DevData.SoftwareName = GetApplicationName()
+            DevData.SoftwareVersion = GetApplicationVersion()
         Catch ex As Exception
             Throw ex
         End Try

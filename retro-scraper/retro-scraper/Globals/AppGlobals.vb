@@ -43,12 +43,6 @@ Public Class AppGlobals
 
 #End Region
 
-
-
-
-
-
-
 #Region "Logs"
 
     ''' <summary>

@@ -57,6 +57,9 @@ Public Class MainForm
 
         Try
             result = ReadAndLoadEncryptedFile(AppGlobals.licenceFilePath, AppGlobals.licence)
+
+            DevData.SoftwareName = ""
+            DevData.SoftwareVersion = ""
         Catch ex As Exception
             Throw ex
         End Try

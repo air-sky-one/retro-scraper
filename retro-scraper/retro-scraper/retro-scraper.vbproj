@@ -88,12 +88,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Globals\AppGlobals.vb" />
+    <Compile Include="Helpers\JSONHelper.vb" />
     <Compile Include="Helpers\LogsHelper.vb" />
+    <Compile Include="Models\DevData.vb" />
     <Compile Include="Models\Logs.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Logs.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Models\ScreenScraperUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

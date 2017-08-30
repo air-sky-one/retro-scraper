@@ -9,7 +9,7 @@
     ' such as the username, display name, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        AppGlobals.isScreenScraperAuthOK = True
+        ' AppGlobals.isScreenScraperAuthOK = True
         Me.Close()
     End Sub
 

@@ -146,6 +146,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Views\Custom Controls\RomsScraping.Designer.vb">
+      <DependentUpon>RomsScraping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\RomsScraping.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
@@ -171,6 +177,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\RomsScraping.resx">
+      <DependentUpon>RomsScraping.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>

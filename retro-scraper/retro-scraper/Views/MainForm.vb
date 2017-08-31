@@ -5,6 +5,11 @@ Imports System.Text
 Public Class MainForm
 
     ''' <summary>
+    ''' Collection of Main Buttons
+    ''' </summary>
+    Private _mainButtons As New List(Of Button)
+
+    ''' <summary>
     ''' Main application form loading
     ''' </summary>
     ''' <param name="sender"></param>
@@ -26,7 +31,6 @@ Public Class MainForm
                 If Not AppGlobals.isScreenScraperAuthOK Then Me.Close()
             End If
 
-
         Catch ex As Exception
             ShowErrorMessage(ex)
             Me.Close()
@@ -40,9 +44,35 @@ Public Class MainForm
         Try
             'Generate Application encryption/decryption password
             InternalEncryption.GenerateApplicationPassword()
+
+            'Add all MainButtons to the collection + Add them Click Event Handler
+            For Each ctrl As Control In MainMenuPanel.Controls
+                If ctrl.Name.Contains("MainButton") Then
+                    Dim mainBtn As Button = DirectCast(ctrl, Button)
+                    Me._mainButtons.Add(mainBtn)
+
+                    AddHandler mainBtn.Click, AddressOf Me.MainButton_MouseClick
+                End If
+            Next
+
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
 
+    Private Sub MainButton_MouseClick(sender As Object, e As MouseEventArgs)
+        Dim selectedBtn As Button = sender
+
+        Try
+            For Each mainBtn In Me._mainButtons
+                If mainBtn.Name <> selectedBtn.Name Then
+                    mainBtn.BackColor = Color.DimGray
+                Else
+                    mainBtn.BackColor = Color.White
+                End If
+            Next
+        Catch ex As Exception
+            ShowErrorMessage(ex)
+        End Try
+    End Sub
 End Class

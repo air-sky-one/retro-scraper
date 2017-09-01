@@ -62,8 +62,8 @@ Partial Class HomeControl
         Me.Label2.Padding = New System.Windows.Forms.Padding(50, 20, 50, 20)
         Me.Label2.Size = New System.Drawing.Size(878, 128)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "retro-scraper is dedicated tool for scraping systems and games data and media for" &
-    " attract-mode front end from screenscraper.fr amazing database."
+        Me.Label2.Text = "retro-scraper is a dedicated tool for scraping systems and games data and media f" &
+    "or attract-mode front end from screenscraper.fr amazing database."
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox1

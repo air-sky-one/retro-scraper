@@ -25,16 +25,18 @@ Partial Class MainForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.HeaderPanel = New System.Windows.Forms.Panel()
         Me.HeaderPictureBox = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.MainMenuPanel = New System.Windows.Forms.Panel()
+        Me.MainFormTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.MainMenuFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.MainButtonSettings = New System.Windows.Forms.Button()
         Me.MainButtonGameLists = New System.Windows.Forms.Button()
         Me.MainButtonSystems = New System.Windows.Forms.Button()
         Me.MainButtonRoms = New System.Windows.Forms.Button()
+        Me.MainButtonHome = New System.Windows.Forms.Button()
+        Me.HomeControl1 = New retro_scraper.HomeControl()
         Me.HeaderPanel.SuspendLayout()
         CType(Me.HeaderPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.MainMenuPanel.SuspendLayout()
+        Me.MainFormTableLayoutPanel.SuspendLayout()
+        Me.MainMenuFlowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'HeaderPanel
@@ -59,33 +61,35 @@ Partial Class MainForm
         Me.HeaderPictureBox.TabIndex = 0
         Me.HeaderPictureBox.TabStop = False
         '
-        'TableLayoutPanel1
+        'MainFormTableLayoutPanel
         '
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.MainMenuPanel, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 144)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1008, 753)
-        Me.TableLayoutPanel1.TabIndex = 2
+        Me.MainFormTableLayoutPanel.ColumnCount = 2
+        Me.MainFormTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130.0!))
+        Me.MainFormTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.MainFormTableLayoutPanel.Controls.Add(Me.MainMenuFlowLayoutPanel, 0, 0)
+        Me.MainFormTableLayoutPanel.Controls.Add(Me.HomeControl1, 1, 0)
+        Me.MainFormTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainFormTableLayoutPanel.Location = New System.Drawing.Point(0, 144)
+        Me.MainFormTableLayoutPanel.Name = "MainFormTableLayoutPanel"
+        Me.MainFormTableLayoutPanel.RowCount = 1
+        Me.MainFormTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.MainFormTableLayoutPanel.Size = New System.Drawing.Size(1008, 753)
+        Me.MainFormTableLayoutPanel.TabIndex = 2
         '
-        'MainMenuPanel
+        'MainMenuFlowLayoutPanel
         '
-        Me.MainMenuPanel.BackColor = System.Drawing.Color.DimGray
-        Me.MainMenuPanel.Controls.Add(Me.MainButtonSettings)
-        Me.MainMenuPanel.Controls.Add(Me.MainButtonGameLists)
-        Me.MainMenuPanel.Controls.Add(Me.MainButtonSystems)
-        Me.MainMenuPanel.Controls.Add(Me.MainButtonRoms)
-        Me.MainMenuPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainMenuPanel.Location = New System.Drawing.Point(0, 0)
-        Me.MainMenuPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainMenuPanel.Name = "MainMenuPanel"
-        Me.MainMenuPanel.Size = New System.Drawing.Size(130, 753)
-        Me.MainMenuPanel.TabIndex = 0
+        Me.MainMenuFlowLayoutPanel.BackColor = System.Drawing.Color.DimGray
+        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonHome)
+        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonRoms)
+        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonSystems)
+        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonGameLists)
+        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonSettings)
+        Me.MainMenuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainMenuFlowLayoutPanel.Location = New System.Drawing.Point(0, 0)
+        Me.MainMenuFlowLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainMenuFlowLayoutPanel.Name = "MainMenuFlowLayoutPanel"
+        Me.MainMenuFlowLayoutPanel.Size = New System.Drawing.Size(130, 828)
+        Me.MainMenuFlowLayoutPanel.TabIndex = 1
         '
         'MainButtonSettings
         '
@@ -95,10 +99,11 @@ Partial Class MainForm
         Me.MainButtonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonSettings.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonSettings.Location = New System.Drawing.Point(0, 120)
+        Me.MainButtonSettings.Location = New System.Drawing.Point(0, 144)
+        Me.MainButtonSettings.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonSettings.Name = "MainButtonSettings"
         Me.MainButtonSettings.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonSettings.TabIndex = 3
+        Me.MainButtonSettings.TabIndex = 4
         Me.MainButtonSettings.Text = "   &Settings"
         Me.MainButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonSettings.UseVisualStyleBackColor = False
@@ -111,10 +116,11 @@ Partial Class MainForm
         Me.MainButtonGameLists.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonGameLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonGameLists.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonGameLists.Location = New System.Drawing.Point(0, 87)
+        Me.MainButtonGameLists.Location = New System.Drawing.Point(0, 108)
+        Me.MainButtonGameLists.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonGameLists.Name = "MainButtonGameLists"
         Me.MainButtonGameLists.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonGameLists.TabIndex = 2
+        Me.MainButtonGameLists.TabIndex = 3
         Me.MainButtonGameLists.Text = "   &GameLists"
         Me.MainButtonGameLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonGameLists.UseVisualStyleBackColor = False
@@ -127,10 +133,11 @@ Partial Class MainForm
         Me.MainButtonSystems.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonSystems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonSystems.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonSystems.Location = New System.Drawing.Point(0, 54)
+        Me.MainButtonSystems.Location = New System.Drawing.Point(0, 72)
+        Me.MainButtonSystems.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonSystems.Name = "MainButtonSystems"
         Me.MainButtonSystems.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonSystems.TabIndex = 1
+        Me.MainButtonSystems.TabIndex = 2
         Me.MainButtonSystems.Text = "   &Systems"
         Me.MainButtonSystems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonSystems.UseVisualStyleBackColor = False
@@ -143,13 +150,41 @@ Partial Class MainForm
         Me.MainButtonRoms.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonRoms.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonRoms.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonRoms.Location = New System.Drawing.Point(0, 22)
+        Me.MainButtonRoms.Location = New System.Drawing.Point(0, 36)
+        Me.MainButtonRoms.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonRoms.Name = "MainButtonRoms"
         Me.MainButtonRoms.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonRoms.TabIndex = 0
+        Me.MainButtonRoms.TabIndex = 1
         Me.MainButtonRoms.Text = "   &Roms"
         Me.MainButtonRoms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonRoms.UseVisualStyleBackColor = False
+        '
+        'MainButtonHome
+        '
+        Me.MainButtonHome.BackColor = System.Drawing.Color.White
+        Me.MainButtonHome.FlatAppearance.BorderSize = 0
+        Me.MainButtonHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonHome.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonHome.Location = New System.Drawing.Point(0, 0)
+        Me.MainButtonHome.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonHome.Name = "MainButtonHome"
+        Me.MainButtonHome.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonHome.TabIndex = 0
+        Me.MainButtonHome.Text = "   &Home"
+        Me.MainButtonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonHome.UseVisualStyleBackColor = False
+        '
+        'HomeControl1
+        '
+        Me.HomeControl1.BackColor = System.Drawing.Color.White
+        Me.HomeControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.HomeControl1.Location = New System.Drawing.Point(130, 0)
+        Me.HomeControl1.Margin = New System.Windows.Forms.Padding(0)
+        Me.HomeControl1.Name = "HomeControl1"
+        Me.HomeControl1.Size = New System.Drawing.Size(878, 828)
+        Me.HomeControl1.TabIndex = 2
         '
         'MainForm
         '
@@ -157,7 +192,7 @@ Partial Class MainForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1008, 897)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.MainFormTableLayoutPanel)
         Me.Controls.Add(Me.HeaderPanel)
         Me.Font = New System.Drawing.Font("Ubuntu", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -168,18 +203,20 @@ Partial Class MainForm
         Me.Text = "Urukai's Retro Scraper"
         Me.HeaderPanel.ResumeLayout(False)
         CType(Me.HeaderPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.MainMenuPanel.ResumeLayout(False)
+        Me.MainFormTableLayoutPanel.ResumeLayout(False)
+        Me.MainMenuFlowLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents HeaderPanel As Panel
     Friend WithEvents HeaderPictureBox As PictureBox
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents MainMenuPanel As Panel
+    Friend WithEvents MainFormTableLayoutPanel As TableLayoutPanel
+    Friend WithEvents MainMenuFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents MainButtonRoms As Button
-    Friend WithEvents MainButtonGameLists As Button
     Friend WithEvents MainButtonSystems As Button
+    Friend WithEvents MainButtonGameLists As Button
     Friend WithEvents MainButtonSettings As Button
+    Friend WithEvents MainButtonHome As Button
+    Friend WithEvents HomeControl1 As HomeControl
 End Class

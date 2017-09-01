@@ -46,7 +46,7 @@ Public Class MainForm
             InternalEncryption.GenerateApplicationPassword()
 
             'Add all MainButtons to the collection + Add them Click Event Handler
-            For Each ctrl As Control In MainMenuPanel.Controls
+            For Each ctrl As Control In MainMenuFlowLayoutPanel.Controls
                 If ctrl.Name.Contains("MainButton") Then
                     Dim mainBtn As Button = DirectCast(ctrl, Button)
                     Me._mainButtons.Add(mainBtn)
@@ -71,6 +71,12 @@ Public Class MainForm
                     mainBtn.BackColor = Color.White
                 End If
             Next
+
+            If selectedBtn.Name <> "MainButtonHome" Then
+                Me.HeaderPanel.Height = 69
+            Else
+                Me.HeaderPanel.Height = 144
+            End If
         Catch ex As Exception
             ShowErrorMessage(ex)
         End Try

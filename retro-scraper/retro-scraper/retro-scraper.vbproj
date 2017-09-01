@@ -146,10 +146,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Views\Custom Controls\RomsScraping.Designer.vb">
-      <DependentUpon>RomsScraping.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\HomeControl.Designer.vb">
+      <DependentUpon>HomeControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\RomsScraping.vb">
+    <Compile Include="Views\Custom Controls\HomeControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\MainForm.Designer.vb">
@@ -178,8 +178,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\RomsScraping.resx">
-      <DependentUpon>RomsScraping.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
+      <DependentUpon>HomeControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
@@ -197,6 +197,7 @@
     </None>
     <None Include="Fonts\quicksand.zip" />
     <None Include="Fonts\ubuntu-font-family-0.83.zip" />
+    <None Include="Media\Flat-Remix-master.zip" />
     <None Include="Media\ScreenScraper Logo.pdn" />
     <None Include="Models\Logs.xsc">
       <DependentUpon>Logs.xsd</DependentUpon>
@@ -227,6 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Libs\retro-scraper-libs.dll" />
+    <Content Include="Media\1008x1250 retro-scraper_banner.png" />
     <Content Include="Media\16x16 retro-scraper_icon.png" />
     <Content Include="Media\16x16_retro-scraper_icon.ico" />
     <Content Include="Media\16x16_ScreenScraper_Icon.ico" />
@@ -240,10 +242,13 @@
     <Content Include="Media\64x64 retro-scraper_icon.png" />
     <Content Include="Media\64x64_retro-scraper_icon.ico" />
     <Content Include="Media\64x64_ScreenScraper_Icon.ico" />
+    <Content Include="Media\835x550 retro-scraper_logo.png" />
+    <Content Include="Media\retro-scraper_banner.svg" />
     <Content Include="Media\retro-scraper_icon.svg" />
     <Content Include="Media\retro-scraper_logo.svg" />
     <Content Include="Media\ScreenScraper Icon.png" />
     <Content Include="Media\ScreenScraper Logo.png" />
+    <Content Include="Media\ScreenScraper_Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

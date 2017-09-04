@@ -26,8 +26,12 @@ Partial Class HomeControl
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RetroScraperPictureBox = New System.Windows.Forms.PictureBox()
+        Me.ScreenScraperPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AttractModePictureBox = New System.Windows.Forms.PictureBox()
+        CType(Me.RetroScraperPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ScreenScraperPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AttractModePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -66,30 +70,56 @@ Partial Class HomeControl
     "or attract-mode front end from screenscraper.fr amazing database."
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox1
+        'RetroScraperPictureBox
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 283)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(878, 200)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
+        Me.RetroScraperPictureBox.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.RetroScraperPictureBox.Image = CType(resources.GetObject("RetroScraperPictureBox.Image"), System.Drawing.Image)
+        Me.RetroScraperPictureBox.Location = New System.Drawing.Point(0, 283)
+        Me.RetroScraperPictureBox.Name = "RetroScraperPictureBox"
+        Me.RetroScraperPictureBox.Size = New System.Drawing.Size(439, 168)
+        Me.RetroScraperPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.RetroScraperPictureBox.TabIndex = 6
+        Me.RetroScraperPictureBox.TabStop = False
+        '
+        'ScreenScraperPictureBox
+        '
+        Me.ScreenScraperPictureBox.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ScreenScraperPictureBox.Image = CType(resources.GetObject("ScreenScraperPictureBox.Image"), System.Drawing.Image)
+        Me.ScreenScraperPictureBox.Location = New System.Drawing.Point(445, 260)
+        Me.ScreenScraperPictureBox.Name = "ScreenScraperPictureBox"
+        Me.ScreenScraperPictureBox.Size = New System.Drawing.Size(433, 100)
+        Me.ScreenScraperPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.ScreenScraperPictureBox.TabIndex = 7
+        Me.ScreenScraperPictureBox.TabStop = False
+        '
+        'AttractModePictureBox
+        '
+        Me.AttractModePictureBox.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.AttractModePictureBox.Image = CType(resources.GetObject("AttractModePictureBox.Image"), System.Drawing.Image)
+        Me.AttractModePictureBox.Location = New System.Drawing.Point(445, 366)
+        Me.AttractModePictureBox.Name = "AttractModePictureBox"
+        Me.AttractModePictureBox.Size = New System.Drawing.Size(433, 62)
+        Me.AttractModePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.AttractModePictureBox.TabIndex = 10
+        Me.AttractModePictureBox.TabStop = False
         '
         'HomeControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.AttractModePictureBox)
+        Me.Controls.Add(Me.ScreenScraperPictureBox)
+        Me.Controls.Add(Me.RetroScraperPictureBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "HomeControl"
-        Me.Size = New System.Drawing.Size(878, 828)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Size = New System.Drawing.Size(878, 753)
+        CType(Me.RetroScraperPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ScreenScraperPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AttractModePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -97,5 +127,7 @@ Partial Class HomeControl
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents RetroScraperPictureBox As PictureBox
+    Friend WithEvents ScreenScraperPictureBox As PictureBox
+    Friend WithEvents AttractModePictureBox As PictureBox
 End Class

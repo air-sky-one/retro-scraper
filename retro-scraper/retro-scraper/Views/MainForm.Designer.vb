@@ -27,11 +27,11 @@ Partial Class MainForm
         Me.HeaderPictureBox = New System.Windows.Forms.PictureBox()
         Me.MainFormTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.MainMenuFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.MainButtonSettings = New System.Windows.Forms.Button()
-        Me.MainButtonGameLists = New System.Windows.Forms.Button()
-        Me.MainButtonSystems = New System.Windows.Forms.Button()
-        Me.MainButtonRoms = New System.Windows.Forms.Button()
         Me.MainButtonHome = New System.Windows.Forms.Button()
+        Me.MainButtonRoms = New System.Windows.Forms.Button()
+        Me.MainButtonSystems = New System.Windows.Forms.Button()
+        Me.MainButtonGameLists = New System.Windows.Forms.Button()
+        Me.MainButtonSettings = New System.Windows.Forms.Button()
         Me.HomeControl1 = New retro_scraper.HomeControl()
         Me.HeaderPanel.SuspendLayout()
         CType(Me.HeaderPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,56 +91,22 @@ Partial Class MainForm
         Me.MainMenuFlowLayoutPanel.Size = New System.Drawing.Size(130, 828)
         Me.MainMenuFlowLayoutPanel.TabIndex = 1
         '
-        'MainButtonSettings
+        'MainButtonHome
         '
-        Me.MainButtonSettings.BackColor = System.Drawing.Color.DimGray
-        Me.MainButtonSettings.FlatAppearance.BorderSize = 0
-        Me.MainButtonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
-        Me.MainButtonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.MainButtonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.MainButtonSettings.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonSettings.Location = New System.Drawing.Point(0, 144)
-        Me.MainButtonSettings.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainButtonSettings.Name = "MainButtonSettings"
-        Me.MainButtonSettings.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonSettings.TabIndex = 4
-        Me.MainButtonSettings.Text = "   &Settings"
-        Me.MainButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MainButtonSettings.UseVisualStyleBackColor = False
-        '
-        'MainButtonGameLists
-        '
-        Me.MainButtonGameLists.BackColor = System.Drawing.Color.DimGray
-        Me.MainButtonGameLists.FlatAppearance.BorderSize = 0
-        Me.MainButtonGameLists.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
-        Me.MainButtonGameLists.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.MainButtonGameLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.MainButtonGameLists.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonGameLists.Location = New System.Drawing.Point(0, 108)
-        Me.MainButtonGameLists.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainButtonGameLists.Name = "MainButtonGameLists"
-        Me.MainButtonGameLists.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonGameLists.TabIndex = 3
-        Me.MainButtonGameLists.Text = "   &GameLists"
-        Me.MainButtonGameLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MainButtonGameLists.UseVisualStyleBackColor = False
-        '
-        'MainButtonSystems
-        '
-        Me.MainButtonSystems.BackColor = System.Drawing.Color.DimGray
-        Me.MainButtonSystems.FlatAppearance.BorderSize = 0
-        Me.MainButtonSystems.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
-        Me.MainButtonSystems.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.MainButtonSystems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.MainButtonSystems.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonSystems.Location = New System.Drawing.Point(0, 72)
-        Me.MainButtonSystems.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainButtonSystems.Name = "MainButtonSystems"
-        Me.MainButtonSystems.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonSystems.TabIndex = 2
-        Me.MainButtonSystems.Text = "   &Systems"
-        Me.MainButtonSystems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MainButtonSystems.UseVisualStyleBackColor = False
+        Me.MainButtonHome.BackColor = System.Drawing.Color.White
+        Me.MainButtonHome.FlatAppearance.BorderSize = 0
+        Me.MainButtonHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonHome.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonHome.Location = New System.Drawing.Point(0, 0)
+        Me.MainButtonHome.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonHome.Name = "MainButtonHome"
+        Me.MainButtonHome.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonHome.TabIndex = 0
+        Me.MainButtonHome.Text = "   &Home"
+        Me.MainButtonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonHome.UseVisualStyleBackColor = False
         '
         'MainButtonRoms
         '
@@ -159,22 +125,56 @@ Partial Class MainForm
         Me.MainButtonRoms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonRoms.UseVisualStyleBackColor = False
         '
-        'MainButtonHome
+        'MainButtonSystems
         '
-        Me.MainButtonHome.BackColor = System.Drawing.Color.White
-        Me.MainButtonHome.FlatAppearance.BorderSize = 0
-        Me.MainButtonHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
-        Me.MainButtonHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.MainButtonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.MainButtonHome.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonHome.Location = New System.Drawing.Point(0, 0)
-        Me.MainButtonHome.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainButtonHome.Name = "MainButtonHome"
-        Me.MainButtonHome.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonHome.TabIndex = 0
-        Me.MainButtonHome.Text = "   &Home"
-        Me.MainButtonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MainButtonHome.UseVisualStyleBackColor = False
+        Me.MainButtonSystems.BackColor = System.Drawing.Color.DimGray
+        Me.MainButtonSystems.FlatAppearance.BorderSize = 0
+        Me.MainButtonSystems.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonSystems.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonSystems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonSystems.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonSystems.Location = New System.Drawing.Point(0, 72)
+        Me.MainButtonSystems.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonSystems.Name = "MainButtonSystems"
+        Me.MainButtonSystems.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonSystems.TabIndex = 2
+        Me.MainButtonSystems.Text = "   &Systems"
+        Me.MainButtonSystems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonSystems.UseVisualStyleBackColor = False
+        '
+        'MainButtonGameLists
+        '
+        Me.MainButtonGameLists.BackColor = System.Drawing.Color.DimGray
+        Me.MainButtonGameLists.FlatAppearance.BorderSize = 0
+        Me.MainButtonGameLists.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonGameLists.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonGameLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonGameLists.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonGameLists.Location = New System.Drawing.Point(0, 108)
+        Me.MainButtonGameLists.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonGameLists.Name = "MainButtonGameLists"
+        Me.MainButtonGameLists.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonGameLists.TabIndex = 3
+        Me.MainButtonGameLists.Text = "   &GameLists"
+        Me.MainButtonGameLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonGameLists.UseVisualStyleBackColor = False
+        '
+        'MainButtonSettings
+        '
+        Me.MainButtonSettings.BackColor = System.Drawing.Color.DimGray
+        Me.MainButtonSettings.FlatAppearance.BorderSize = 0
+        Me.MainButtonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonSettings.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonSettings.Location = New System.Drawing.Point(0, 144)
+        Me.MainButtonSettings.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonSettings.Name = "MainButtonSettings"
+        Me.MainButtonSettings.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonSettings.TabIndex = 4
+        Me.MainButtonSettings.Text = "   &Settings"
+        Me.MainButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonSettings.UseVisualStyleBackColor = False
         '
         'HomeControl1
         '

@@ -38,6 +38,7 @@ Partial Class ScreenScraperLoginForm
         Me.OK = New System.Windows.Forms.Button()
         Me.ScreenScraperLogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.Cancel = New System.Windows.Forms.Button()
+        Me.RegistrationLinkLabel = New System.Windows.Forms.LinkLabel()
         CType(Me.RetroScraperLogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ScreenScraperLogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -118,6 +119,16 @@ Partial Class ScreenScraperLoginForm
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Cancel"
         '
+        'RegistrationLinkLabel
+        '
+        Me.RegistrationLinkLabel.AutoSize = True
+        Me.RegistrationLinkLabel.Location = New System.Drawing.Point(199, 134)
+        Me.RegistrationLinkLabel.Name = "RegistrationLinkLabel"
+        Me.RegistrationLinkLabel.Size = New System.Drawing.Size(189, 13)
+        Me.RegistrationLinkLabel.TabIndex = 7
+        Me.RegistrationLinkLabel.TabStop = True
+        Me.RegistrationLinkLabel.Text = "Create an account on screenscraper.fr"
+        '
         'ScreenScraperLoginForm
         '
         Me.AcceptButton = Me.OK
@@ -126,6 +137,7 @@ Partial Class ScreenScraperLoginForm
         Me.BackColor = System.Drawing.Color.White
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 192)
+        Me.Controls.Add(Me.RegistrationLinkLabel)
         Me.Controls.Add(Me.ScreenScraperLogoPictureBox)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
@@ -151,4 +163,5 @@ Partial Class ScreenScraperLoginForm
 
     Friend WithEvents ScreenScraperLogoPictureBox As PictureBox
     Friend WithEvents Cancel As Button
+    Friend WithEvents RegistrationLinkLabel As LinkLabel
 End Class

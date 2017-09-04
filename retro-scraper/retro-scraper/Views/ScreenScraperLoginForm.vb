@@ -29,4 +29,8 @@
         Me.Close()
     End Sub
 
+    Private Sub RegistrationLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RegistrationLinkLabel.LinkClicked
+        Dim sInfo As ProcessStartInfo = New ProcessStartInfo("https://screenscraper.fr/membreinscription.php")
+        Process.Start(sInfo)
+    End Sub
 End Class

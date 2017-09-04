@@ -3026,4 +3026,11 @@
         AAAAAAAAAAAAD//Z
 </value>
   </data>
+  <data name="DisclaimerLabel.Text" xml:space="preserve">
+    <value>Disclaimer
+
+This software is open source under GNU Licence. It's not affiliate to screenscraper.fr and attract-mode. This software is distrubuted for free and is in beta version. Use it at your own risks.
+
+All Rights Reserved - Copyright 2017</value>
+  </data>
 </root>

@@ -32,7 +32,7 @@ Partial Class MainForm
         Me.MainButtonSystems = New System.Windows.Forms.Button()
         Me.MainButtonGameLists = New System.Windows.Forms.Button()
         Me.MainButtonSettings = New System.Windows.Forms.Button()
-        Me.HomeControl1 = New retro_scraper.HomeControl()
+        Me.MainHomeControl = New retro_scraper.HomeControl()
         Me.HeaderPanel.SuspendLayout()
         CType(Me.HeaderPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainFormTableLayoutPanel.SuspendLayout()
@@ -67,7 +67,7 @@ Partial Class MainForm
         Me.MainFormTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130.0!))
         Me.MainFormTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.MainFormTableLayoutPanel.Controls.Add(Me.MainMenuFlowLayoutPanel, 0, 0)
-        Me.MainFormTableLayoutPanel.Controls.Add(Me.HomeControl1, 1, 0)
+        Me.MainFormTableLayoutPanel.Controls.Add(Me.MainHomeControl, 1, 0)
         Me.MainFormTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainFormTableLayoutPanel.Location = New System.Drawing.Point(0, 144)
         Me.MainFormTableLayoutPanel.Name = "MainFormTableLayoutPanel"
@@ -88,7 +88,7 @@ Partial Class MainForm
         Me.MainMenuFlowLayoutPanel.Location = New System.Drawing.Point(0, 0)
         Me.MainMenuFlowLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.MainMenuFlowLayoutPanel.Name = "MainMenuFlowLayoutPanel"
-        Me.MainMenuFlowLayoutPanel.Size = New System.Drawing.Size(130, 828)
+        Me.MainMenuFlowLayoutPanel.Size = New System.Drawing.Size(130, 753)
         Me.MainMenuFlowLayoutPanel.TabIndex = 1
         '
         'MainButtonHome
@@ -176,15 +176,15 @@ Partial Class MainForm
         Me.MainButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonSettings.UseVisualStyleBackColor = False
         '
-        'HomeControl1
+        'MainHomeControl
         '
-        Me.HomeControl1.BackColor = System.Drawing.Color.White
-        Me.HomeControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.HomeControl1.Location = New System.Drawing.Point(130, 0)
-        Me.HomeControl1.Margin = New System.Windows.Forms.Padding(0)
-        Me.HomeControl1.Name = "HomeControl1"
-        Me.HomeControl1.Size = New System.Drawing.Size(878, 828)
-        Me.HomeControl1.TabIndex = 2
+        Me.MainHomeControl.BackColor = System.Drawing.Color.White
+        Me.MainHomeControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainHomeControl.Location = New System.Drawing.Point(130, 0)
+        Me.MainHomeControl.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainHomeControl.Name = "MainHomeControl"
+        Me.MainHomeControl.Size = New System.Drawing.Size(878, 753)
+        Me.MainHomeControl.TabIndex = 2
         '
         'MainForm
         '
@@ -218,5 +218,5 @@ Partial Class MainForm
     Friend WithEvents MainButtonGameLists As Button
     Friend WithEvents MainButtonSettings As Button
     Friend WithEvents MainButtonHome As Button
-    Friend WithEvents HomeControl1 As HomeControl
+    Friend WithEvents MainHomeControl As HomeControl
 End Class

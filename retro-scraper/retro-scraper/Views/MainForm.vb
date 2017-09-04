@@ -10,6 +10,11 @@ Public Class MainForm
     Private _mainButtons As New List(Of Button)
 
     ''' <summary>
+    ''' Home Control Back Up
+    ''' </summary>
+    Private _homeControl As HomeControl
+
+    ''' <summary>
     ''' Main application form loading
     ''' </summary>
     ''' <param name="sender"></param>
@@ -55,15 +60,24 @@ Public Class MainForm
                 End If
             Next
 
+            '  Me._homeControl = MainHomeControl
+
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Main Button click : Change application content
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub MainButton_MouseClick(sender As Object, e As MouseEventArgs)
         Dim selectedBtn As Button = sender
+        Dim actualContent As UserControl
 
         Try
+            ' Main Menu buttons colors
             For Each mainBtn In Me._mainButtons
                 If mainBtn.Name <> selectedBtn.Name Then
                     mainBtn.BackColor = Color.DimGray
@@ -72,11 +86,35 @@ Public Class MainForm
                 End If
             Next
 
+            ' Header layout update
             If selectedBtn.Name <> "MainButtonHome" Then
                 Me.HeaderPanel.Height = 69
             Else
                 Me.HeaderPanel.Height = 144
             End If
+
+            ' Remove actual application content
+            If Me.MainFormTableLayoutPanel.Controls().Count > 1 Then
+                actualContent = Me.MainFormTableLayoutPanel.Controls(1)
+
+                Me.MainFormTableLayoutPanel.Controls().RemoveAt(1)
+
+                ' destruct object if its not the Home Control
+                If selectedBtn.Name <> "MainButtonHome" Then actualContent.Dispose()
+            End If
+
+            ' Update application content
+            Select Case selectedBtn.Name
+                Case "MainButtonHome"
+                    Me.MainFormTableLayoutPanel.Controls().Add(Me.MainHomeControl, 1, 0)
+                Case "MainButtonRoms"
+                Case "MainButtonSystems"
+                Case "MainButtonGameLists"
+                Case "MainButtonSettings"
+                Case Else
+                    ' nothing
+            End Select
+
         Catch ex As Exception
             ShowErrorMessage(ex)
         End Try

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class HomeControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,31 +20,32 @@ Partial Class HomeControl
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HomeControl))
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.HeaderLabel = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.IntroLabel = New System.Windows.Forms.Label()
         Me.RetroScraperPictureBox = New System.Windows.Forms.PictureBox()
         Me.ScreenScraperPictureBox = New System.Windows.Forms.PictureBox()
         Me.AttractModePictureBox = New System.Windows.Forms.PictureBox()
+        Me.DisclaimerLabel = New System.Windows.Forms.Label()
         CType(Me.RetroScraperPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ScreenScraperPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AttractModePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'HeaderLabel
         '
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Ubuntu", 45.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(878, 150)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Welcome to retro-scraper !"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.HeaderLabel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.HeaderLabel.Font = New System.Drawing.Font("Ubuntu", 45.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HeaderLabel.Location = New System.Drawing.Point(0, 0)
+        Me.HeaderLabel.Margin = New System.Windows.Forms.Padding(0)
+        Me.HeaderLabel.Name = "HeaderLabel"
+        Me.HeaderLabel.Size = New System.Drawing.Size(878, 150)
+        Me.HeaderLabel.TabIndex = 3
+        Me.HeaderLabel.Text = "Welcome to retro-scraper !"
+        Me.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel1
         '
@@ -56,19 +57,19 @@ Partial Class HomeControl
         Me.Panel1.Size = New System.Drawing.Size(878, 5)
         Me.Panel1.TabIndex = 4
         '
-        'Label2
+        'IntroLabel
         '
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label2.Font = New System.Drawing.Font("Ubuntu", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(0, 155)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Padding = New System.Windows.Forms.Padding(50, 20, 50, 20)
-        Me.Label2.Size = New System.Drawing.Size(878, 128)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "retro-scraper is a dedicated tool for scraping systems and games data and media f" &
+        Me.IntroLabel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.IntroLabel.Font = New System.Drawing.Font("Ubuntu", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IntroLabel.Location = New System.Drawing.Point(0, 155)
+        Me.IntroLabel.Margin = New System.Windows.Forms.Padding(0)
+        Me.IntroLabel.Name = "IntroLabel"
+        Me.IntroLabel.Padding = New System.Windows.Forms.Padding(50, 20, 50, 20)
+        Me.IntroLabel.Size = New System.Drawing.Size(878, 128)
+        Me.IntroLabel.TabIndex = 5
+        Me.IntroLabel.Text = "retro-scraper is a dedicated tool for scraping systems and games data and media f" &
     "or attract-mode front end from screenscraper.fr amazing database."
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IntroLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'RetroScraperPictureBox
         '
@@ -103,20 +104,34 @@ Partial Class HomeControl
         Me.AttractModePictureBox.TabIndex = 10
         Me.AttractModePictureBox.TabStop = False
         '
+        'DisclaimerLabel
+        '
+        Me.DisclaimerLabel.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DisclaimerLabel.Font = New System.Drawing.Font("Ubuntu", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DisclaimerLabel.Location = New System.Drawing.Point(0, 530)
+        Me.DisclaimerLabel.Margin = New System.Windows.Forms.Padding(0)
+        Me.DisclaimerLabel.Name = "DisclaimerLabel"
+        Me.DisclaimerLabel.Padding = New System.Windows.Forms.Padding(50, 0, 50, 20)
+        Me.DisclaimerLabel.Size = New System.Drawing.Size(878, 120)
+        Me.DisclaimerLabel.TabIndex = 11
+        Me.DisclaimerLabel.Text = resources.GetString("DisclaimerLabel.Text")
+        Me.DisclaimerLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
         'HomeControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.DisclaimerLabel)
         Me.Controls.Add(Me.AttractModePictureBox)
         Me.Controls.Add(Me.ScreenScraperPictureBox)
         Me.Controls.Add(Me.RetroScraperPictureBox)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.IntroLabel)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.HeaderLabel)
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "HomeControl"
-        Me.Size = New System.Drawing.Size(878, 753)
+        Me.Size = New System.Drawing.Size(878, 650)
         CType(Me.RetroScraperPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ScreenScraperPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AttractModePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
@@ -124,10 +139,11 @@ Partial Class HomeControl
 
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents HeaderLabel As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label2 As Label
+    Friend WithEvents IntroLabel As Label
     Friend WithEvents RetroScraperPictureBox As PictureBox
     Friend WithEvents ScreenScraperPictureBox As PictureBox
     Friend WithEvents AttractModePictureBox As PictureBox
+    Friend WithEvents DisclaimerLabel As Label
 End Class

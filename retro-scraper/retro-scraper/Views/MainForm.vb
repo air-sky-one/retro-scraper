@@ -15,6 +15,11 @@ Public Class MainForm
     Private _homeControl As HomeControl
 
     ''' <summary>
+    ''' Actual displayed content
+    ''' </summary>
+    Private _actualContent As UserControl
+
+    ''' <summary>
     ''' Main application form loading
     ''' </summary>
     ''' <param name="sender"></param>
@@ -60,7 +65,7 @@ Public Class MainForm
                 End If
             Next
 
-            '  Me._homeControl = MainHomeControl
+            Me._actualContent = Me.MainHomeControl
 
         Catch ex As Exception
             Throw ex
@@ -74,7 +79,6 @@ Public Class MainForm
     ''' <param name="e"></param>
     Private Sub MainButton_MouseClick(sender As Object, e As MouseEventArgs)
         Dim selectedBtn As Button = sender
-        Dim actualContent As UserControl
 
         Try
             ' Main Menu buttons colors
@@ -96,12 +100,12 @@ Public Class MainForm
 
             ' Remove actual application content
             If Me.MainFormTableLayoutPanel.Controls().Count > 1 Then
-                actualContent = Me.MainFormTableLayoutPanel.Controls(1)
+                Me._actualContent = Me.MainFormTableLayoutPanel.Controls(1)
 
                 Me.MainFormTableLayoutPanel.Controls().RemoveAt(1)
 
                 ' destruct object if its not the Home Control
-                If actualContent.Name <> "MainHomeControl" Then actualContent.Dispose()
+                If Me._actualContent.Name <> "MainHomeControl" Then Me._actualContent.Dispose()
 
             End If
 
@@ -110,12 +114,17 @@ Public Class MainForm
                 Case "MainButtonHome"
                     Me.MainFormTableLayoutPanel.Controls().Add(Me.MainHomeControl, 1, 0)
                     Me.MainHomeControl.Height = Me.MainHomeControl.Height - 75
+
+                    Me._actualContent = Me.MainHomeControl
                 Case "MainButtonRoms"
-                    Dim c As New RomsControl
+                    Dim c As New RomsContainerControl
 
                     Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
 
                     c.Dock = DockStyle.Fill
+                    c.Height = 787
+
+                    Me._actualContent = c
                 Case "MainButtonSystems"
                 Case "MainButtonGameLists"
                 Case "MainButtonSettings"
@@ -126,5 +135,16 @@ Public Class MainForm
         Catch ex As Exception
             ShowErrorMessage(ex)
         End Try
+    End Sub
+
+    ''' <summary>
+    ''' Managed HomeControl Resize strange behavior
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub MainForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If Me._actualContent IsNot Nothing Then
+            If Me._actualContent.Name = "MainHomeControl" Then Me._actualContent.Height = Me._actualContent.Height - 110
+        End If
     End Sub
 End Class

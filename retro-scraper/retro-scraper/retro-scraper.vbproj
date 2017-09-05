@@ -157,10 +157,10 @@
     <Compile Include="Views\Custom Controls\HomeControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\RomsControl.Designer.vb">
-      <DependentUpon>RomsControl.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.Designer.vb">
+      <DependentUpon>RomsContainerControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\RomsControl.vb">
+    <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\MainForm.Designer.vb">
@@ -192,8 +192,8 @@
     <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
       <DependentUpon>HomeControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\RomsControl.resx">
-      <DependentUpon>RomsControl.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\RomsContainerControl.resx">
+      <DependentUpon>RomsContainerControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>

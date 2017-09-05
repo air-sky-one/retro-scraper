@@ -90,6 +90,7 @@ Public Class MainForm
             If selectedBtn.Name <> "MainButtonHome" Then
                 Me.HeaderPanel.Height = 69
             Else
+                ' Me.HeaderPanel.Height = 69
                 Me.HeaderPanel.Height = 144
             End If
 
@@ -100,14 +101,21 @@ Public Class MainForm
                 Me.MainFormTableLayoutPanel.Controls().RemoveAt(1)
 
                 ' destruct object if its not the Home Control
-                If selectedBtn.Name <> "MainButtonHome" Then actualContent.Dispose()
+                If actualContent.Name <> "MainHomeControl" Then actualContent.Dispose()
+
             End If
 
             ' Update application content
             Select Case selectedBtn.Name
                 Case "MainButtonHome"
                     Me.MainFormTableLayoutPanel.Controls().Add(Me.MainHomeControl, 1, 0)
+                    Me.MainHomeControl.Height = Me.MainHomeControl.Height - 75
                 Case "MainButtonRoms"
+                    Dim c As New RomsControl
+
+                    Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
+
+                    c.Dock = DockStyle.Fill
                 Case "MainButtonSystems"
                 Case "MainButtonGameLists"
                 Case "MainButtonSettings"

@@ -131,6 +131,11 @@
       <DependentUpon>Logs.xsd</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ScreenScraperUserHelper.vb" />
+    <Compile Include="Models\RomsDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RomsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -150,6 +155,12 @@
       <DependentUpon>HomeControl.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Custom Controls\HomeControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\RomsControl.Designer.vb">
+      <DependentUpon>RomsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\RomsControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\MainForm.Designer.vb">
@@ -181,6 +192,9 @@
     <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
       <DependentUpon>HomeControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\RomsControl.resx">
+      <DependentUpon>RomsControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +223,17 @@
     </None>
     <None Include="Models\Logs.xss">
       <DependentUpon>Logs.xsd</DependentUpon>
+    </None>
+    <None Include="Models\RomsDataSet.xsc">
+      <DependentUpon>RomsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Models\RomsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RomsDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Models\RomsDataSet.xss">
+      <DependentUpon>RomsDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

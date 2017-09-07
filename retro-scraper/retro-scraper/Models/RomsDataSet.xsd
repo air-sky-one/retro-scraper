@@ -1,16 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<xs:schema id="RomsDataSet" 
-                  targetNamespace="http://tempuri.org/RomsDataSet.xsd"
-                  elementFormDefault="qualified"
-                  attributeFormDefault="qualified"
-                  xmlns="http://tempuri.org/RomsDataSet.xsd"
-                  xmlns:mstns="http://tempuri.org/RomsDataSet.xsd"
-                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
-                  xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
-    <xs:element name="RomsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true">
-        <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded"></xs:choice>
-        </xs:complexType>
-    </xs:element>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RomsDataSet" targetNamespace="http://tempuri.org/RomsDataSet.xsd" xmlns:mstns="http://tempuri.org/RomsDataSet.xsd" xmlns="http://tempuri.org/RomsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RomsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RomsDataSet" msprop:Generator_UserDSName="RomsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ScreenScraperSystems" msprop:Generator_TableClassName="ScreenScraperSystemsDataTable" msprop:Generator_TableVarName="tableScreenScraperSystems" msprop:Generator_TablePropName="ScreenScraperSystems" msprop:Generator_RowDeletingName="ScreenScraperSystemsRowDeleting" msprop:Generator_RowChangingName="ScreenScraperSystemsRowChanging" msprop:Generator_RowEvHandlerName="ScreenScraperSystemsRowChangeEventHandler" msprop:Generator_RowDeletedName="ScreenScraperSystemsRowDeleted" msprop:Generator_UserTableName="ScreenScraperSystems" msprop:Generator_RowChangedName="ScreenScraperSystemsRowChanged" msprop:Generator_RowEvArgName="ScreenScraperSystemsRowChangeEvent" msprop:Generator_RowClassName="ScreenScraperSystemsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Name_EU" msprop:Generator_ColumnVarNameInTable="columnName_EU" msprop:Generator_ColumnPropNameInRow="Name_EU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Name_EUColumn" msprop:Generator_UserColumnName="Name_EU" type="xs:string" minOccurs="0" />
+              <xs:element name="Name_US" msprop:Generator_ColumnVarNameInTable="columnName_US" msprop:Generator_ColumnPropNameInRow="Name_US" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Name_USColumn" msprop:Generator_UserColumnName="Name_US" type="xs:string" minOccurs="0" />
+              <xs:element name="Name_JP" msprop:Generator_ColumnVarNameInTable="columnName_JP" msprop:Generator_ColumnPropNameInRow="Name_JP" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Name_JPColumn" msprop:Generator_UserColumnName="Name_JP" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

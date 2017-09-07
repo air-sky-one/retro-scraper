@@ -12,9 +12,10 @@
   <xs:element name="Logs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Logs" msprop:Generator_UserDSName="Logs">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Errors" msprop:Generator_TableClassName="ErrorsDataTable" msprop:Generator_TableVarName="tableErrors" msprop:Generator_TablePropName="Errors" msprop:Generator_RowDeletingName="ErrorsRowDeleting" msprop:Generator_RowChangingName="ErrorsRowChanging" msprop:Generator_RowEvHandlerName="ErrorsRowChangeEventHandler" msprop:Generator_RowDeletedName="ErrorsRowDeleted" msprop:Generator_UserTableName="Errors" msprop:Generator_RowChangedName="ErrorsRowChanged" msprop:Generator_RowEvArgName="ErrorsRowChangeEvent" msprop:Generator_RowClassName="ErrorsRow">
+        <xs:element name="Errors" msprop:Generator_TableClassName="ErrorsDataTable" msprop:Generator_TableVarName="tableErrors" msprop:Generator_RowChangedName="ErrorsRowChanged" msprop:Generator_TablePropName="Errors" msprop:Generator_RowDeletingName="ErrorsRowDeleting" msprop:Generator_RowChangingName="ErrorsRowChanging" msprop:Generator_RowEvHandlerName="ErrorsRowChangeEventHandler" msprop:Generator_RowDeletedName="ErrorsRowDeleted" msprop:Generator_RowClassName="ErrorsRow" msprop:Generator_UserTableName="Errors" msprop:Generator_RowEvArgName="ErrorsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="Level" msprop:Generator_ColumnVarNameInTable="columnLevel" msprop:Generator_ColumnPropNameInRow="Level" msprop:Generator_ColumnPropNameInTable="LevelColumn" msprop:Generator_UserColumnName="Level" type="xs:int" minOccurs="0" />
               <xs:element name="Message" msprop:Generator_ColumnVarNameInTable="columnMessage" msprop:Generator_ColumnPropNameInRow="Message" msprop:Generator_ColumnPropNameInTable="MessageColumn" msprop:Generator_UserColumnName="Message" type="xs:string" minOccurs="0" />
               <xs:element name="StackTrace" msprop:Generator_ColumnVarNameInTable="columnStackTrace" msprop:Generator_ColumnPropNameInRow="StackTrace" msprop:Generator_ColumnPropNameInTable="StackTraceColumn" msprop:Generator_UserColumnName="StackTrace" type="xs:string" minOccurs="0" />
             </xs:sequence>

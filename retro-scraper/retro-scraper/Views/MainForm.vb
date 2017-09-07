@@ -126,8 +126,32 @@ Public Class MainForm
 
                     Me._actualContent = c
                 Case "MainButtonSystems"
+                    Dim c As New RomsContainerControl
+
+                    Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
+
+                    c.Dock = DockStyle.Fill
+                    c.Height = 787
+
+                    Me._actualContent = c
                 Case "MainButtonGameLists"
+                    Dim c As New RomsContainerControl
+
+                    Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
+
+                    c.Dock = DockStyle.Fill
+                    c.Height = 787
+
+                    Me._actualContent = c
                 Case "MainButtonSettings"
+                    Dim c As New RomsContainerControl
+
+                    Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
+
+                    c.Dock = DockStyle.Fill
+                    c.Height = 787
+
+                    Me._actualContent = c
                 Case Else
                     ' nothing
             End Select

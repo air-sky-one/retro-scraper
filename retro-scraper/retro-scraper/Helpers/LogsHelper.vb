@@ -3,10 +3,17 @@ Imports System.Text
 
 Module LogsHelper
 
+    Public Enum LogsLevel
+        _Info_ = 1
+        _Warning_ = 2
+        _Alert_ = 3
+        _Error_ = 4
+    End Enum
+
     ''' <summary>
     ''' Add and write logs to file
     ''' </summary>
-    Public Sub AddLogs(Optional e As Exception = Nothing)
+    Public Sub AddLogs(level As LogsLevel, message As String, stackTrace As String)
         Dim l As New StringBuilder
 
         'if there is already a log file
@@ -19,7 +26,7 @@ Module LogsHelper
                 l.Append(File.ReadAllText(AppGlobals.logsFilePath))
             End If
 
-            If e IsNot Nothing Then AppGlobals.logs.AddErrorsRow(e.Message, e.StackTrace)
+            AppGlobals.logs.AddErrorsRow(level, message, stackTrace)
 
         End If
 
@@ -28,6 +35,13 @@ Module LogsHelper
         Next
 
         File.WriteAllText(AppGlobals.logsFilePath, l.ToString)
+    End Sub
+
+    ''' <summary>
+    ''' Add and write logs to file
+    ''' </summary>
+    Public Sub AddLogs(e As Exception)
+        AddLogs(LogsLevel._Error_, e.Message, e.StackTrace)
     End Sub
 
     ''' <summary>

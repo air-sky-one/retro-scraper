@@ -234,6 +234,8 @@ Public Module ScreenScraperUserHelper
                 AppGlobals.user.Rows.Clear()
 
                 u = AppGlobals.user.NewSSUSerRow
+                u.login = login
+                u.password = password
                 AppGlobals.user.AddSSUSerRow(u)
             End If
 

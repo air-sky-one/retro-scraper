@@ -283,6 +283,8 @@ Partial Public Class Logs
     Partial Public Class ErrorsDataTable
         Inherits Global.System.Data.TypedTableBase(Of ErrorsRow)
         
+        Private columnLevel As Global.System.Data.DataColumn
+        
         Private columnMessage As Global.System.Data.DataColumn
         
         Private columnStackTrace As Global.System.Data.DataColumn
@@ -321,6 +323,14 @@ Partial Public Class Logs
             MyBase.New(info, context)
             Me.InitVars
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property LevelColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLevel
+            End Get
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -375,9 +385,9 @@ Partial Public Class Logs
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddErrorsRow(ByVal Message As String, ByVal StackTrace As String) As ErrorsRow
+        Public Overloads Function AddErrorsRow(ByVal Level As Integer, ByVal Message As String, ByVal StackTrace As String) As ErrorsRow
             Dim rowErrorsRow As ErrorsRow = CType(Me.NewRow,ErrorsRow)
-            Dim columnValuesArray() As Object = New Object() {Message, StackTrace}
+            Dim columnValuesArray() As Object = New Object() {Level, Message, StackTrace}
             rowErrorsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowErrorsRow)
             Return rowErrorsRow
@@ -400,6 +410,7 @@ Partial Public Class Logs
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnLevel = MyBase.Columns("Level")
             Me.columnMessage = MyBase.Columns("Message")
             Me.columnStackTrace = MyBase.Columns("StackTrace")
         End Sub
@@ -407,6 +418,8 @@ Partial Public Class Logs
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnLevel = New Global.System.Data.DataColumn("Level", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLevel)
             Me.columnMessage = New Global.System.Data.DataColumn("Message", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMessage)
             Me.columnStackTrace = New Global.System.Data.DataColumn("StackTrace", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -557,6 +570,21 @@ Partial Public Class Logs
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Level() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableErrors.LevelColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Level' in table 'Errors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableErrors.LevelColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Message() As String
             Get
                 Try 
@@ -584,6 +612,18 @@ Partial Public Class Logs
                 Me(Me.tableErrors.StackTraceColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsLevelNull() As Boolean
+            Return Me.IsNull(Me.tableErrors.LevelColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetLevelNull()
+            Me(Me.tableErrors.LevelColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _

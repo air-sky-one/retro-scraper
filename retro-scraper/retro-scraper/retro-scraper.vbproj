@@ -136,6 +136,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RomsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Models\RomsDataSet.vb">
+      <DependentUpon>RomsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -157,10 +160,22 @@
     <Compile Include="Views\Custom Controls\HomeControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Custom Controls\Roms\2-ScreenScraperSystemSelectControl.Designer.vb">
+      <DependentUpon>2-ScreenScraperSystemSelectControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\2-ScreenScraperSystemSelectControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.Designer.vb">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\1-RomsHomeControl.Designer.vb">
+      <DependentUpon>1-RomsHomeControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\1-RomsHomeControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\MainForm.Designer.vb">
@@ -192,8 +207,14 @@
     <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
       <DependentUpon>HomeControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\2-ScreenScraperSystemSelectControl.resx">
+      <DependentUpon>2-ScreenScraperSystemSelectControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\RomsContainerControl.resx">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\1-RomsHomeControl.resx">
+      <DependentUpon>1-RomsHomeControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>

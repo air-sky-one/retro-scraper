@@ -7,6 +7,11 @@ Public Class _2_ScreenScraperSystemSelectControl
     ''' </summary>
     Private _parent As RomsContainerControl
 
+    ''' <summary>
+    ''' Component initialization
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub _2_ScreenScraperSystemSelectControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Me._parent = TryCast(Me.Parent.Parent, RomsContainerControl)
@@ -25,6 +30,9 @@ Public Class _2_ScreenScraperSystemSelectControl
 
     End Sub
 
+    ''' <summary>
+    ''' Retrieve Screen Scraper systems list
+    ''' </summary>
     Private Sub GetScreenScraperSystems()
         Dim webClient As New System.Net.WebClient()
         Dim query As String = String.Empty
@@ -67,5 +75,14 @@ Public Class _2_ScreenScraperSystemSelectControl
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    ''' <summary>
+    ''' Set the selected system's id
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub SystemsListComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SystemsListComboBox.SelectedIndexChanged
+        Me._parent.ScreenScraperSelectedSystem = Me.SystemsListComboBox.SelectedValue
     End Sub
 End Class

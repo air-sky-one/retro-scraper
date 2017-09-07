@@ -30,6 +30,19 @@
         End Set
     End Property
 
+    ''' <summary>
+    ''' ScreenScraper Selected System
+    ''' </summary>
+    Private _screenScraperSelectedSystem As String
+    Public Property ScreenScraperSelectedSystem() As String
+        Get
+            Return _screenScraperSelectedSystem
+        End Get
+        Set(ByVal value As String)
+            _screenScraperSelectedSystem = value
+        End Set
+    End Property
+
 #End Region
 
     ''' <summary>

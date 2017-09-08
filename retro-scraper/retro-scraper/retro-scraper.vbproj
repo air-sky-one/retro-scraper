@@ -178,6 +178,12 @@
     <Compile Include="Views\Custom Controls\Roms\1-RomsHomeControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Custom Controls\WaitingControl.Designer.vb">
+      <DependentUpon>WaitingControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\WaitingControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\1-RomsHomeControl.resx">
       <DependentUpon>1-RomsHomeControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\WaitingControl.resx">
+      <DependentUpon>WaitingControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>

@@ -9,6 +9,11 @@ Public Class _2_ScreenScraperSystemSelectControl
     Private _parent As RomsContainerControl
 
     ''' <summary>
+    ''' Last line of waiting details to display
+    ''' </summary>
+    Private _workerDetailsLastLine As String = String.Empty
+
+    ''' <summary>
     ''' Component initialization
     ''' </summary>
     ''' <param name="sender"></param>
@@ -72,12 +77,12 @@ Public Class _2_ScreenScraperSystemSelectControl
                         End Select
 
                         Me._parent.ScreenScraperSystemsList.AddScreenScraperSystemsRow(r)
-                        AddLogs(LogsLevel._Info_, "Add ScreenScraper system to list", "")
+                        Me._workerDetailsLastLine = cpt.ToString & " : " & Me._parent.ScreenScraperSystemsList.Last.Name & vbCrLf
                     Else
-                        AddLogs(LogsLevel._Warning_, "ScreenScraper system with no identifier", "no details")
+                        Me._workerDetailsLastLine = cpt.ToString & " : screenscraper.fr returned a system with no identifier. Not added to list." & vbCrLf
                     End If
 
-                    worker.ReportProgress(cpt)
+                    ' worker.ReportProgress(cpt)
                 Next
 
                 result = True
@@ -97,6 +102,15 @@ Public Class _2_ScreenScraperSystemSelectControl
     Private Sub ScreenScraperSystemsLoadBackgroundWorker_DoWork(sender As Object, e As DoWorkEventArgs) Handles ScreenScraperSystemsLoadBackgroundWorker.DoWork
         Dim worker As BackgroundWorker = CType(sender, BackgroundWorker)
         e.Result = GetScreenScraperSystems(worker, e)
+    End Sub
+
+    ''' <summary>
+    ''' Update waiting progress update
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ScreenScraperSystemsLoadBackgroundWorker_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles ScreenScraperSystemsLoadBackgroundWorker.ProgressChanged
+        Me.ActionWaitingControl.DetailsText.AppendText(Me._workerDetailsLastLine)
     End Sub
 
     ''' <summary>
@@ -131,7 +145,4 @@ Public Class _2_ScreenScraperSystemSelectControl
 
     End Sub
 
-    Private Sub ScreenScraperSystemsLoadBackgroundWorker_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles ScreenScraperSystemsLoadBackgroundWorker.ProgressChanged
-        Me.ActionWaitingControl.DetailsText.AppendText(e.ProgressPercentage & " : " & Me._parent.ScreenScraperSystemsList.Last.Name & vbCrLf)
-    End Sub
 End Class

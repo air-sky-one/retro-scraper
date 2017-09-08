@@ -56,6 +56,7 @@ Partial Class WaitingControl
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._detailsTextBox.BackColor = System.Drawing.Color.White
         Me._detailsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me._detailsTextBox.Enabled = False
         Me._detailsTextBox.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._detailsTextBox.Location = New System.Drawing.Point(3, 54)
         Me._detailsTextBox.Multiline = True

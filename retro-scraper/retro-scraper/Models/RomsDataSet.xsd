@@ -16,10 +16,18 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
-              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
-              <xs:element name="Name_EU" msprop:Generator_ColumnVarNameInTable="columnName_EU" msprop:Generator_ColumnPropNameInRow="Name_EU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Name_EUColumn" msprop:Generator_UserColumnName="Name_EU" type="xs:string" minOccurs="0" />
-              <xs:element name="Name_US" msprop:Generator_ColumnVarNameInTable="columnName_US" msprop:Generator_ColumnPropNameInRow="Name_US" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Name_USColumn" msprop:Generator_UserColumnName="Name_US" type="xs:string" minOccurs="0" />
-              <xs:element name="Name_JP" msprop:Generator_ColumnVarNameInTable="columnName_JP" msprop:Generator_ColumnPropNameInRow="Name_JP" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Name_JPColumn" msprop:Generator_UserColumnName="Name_JP" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Name_EU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Name_EU" msprop:Generator_ColumnVarNameInTable="columnName_EU" msprop:Generator_ColumnPropNameInTable="Name_EUColumn" msprop:Generator_UserColumnName="Name_EU" type="xs:string" minOccurs="0" />
+              <xs:element name="Name_US" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Name_US" msprop:Generator_ColumnVarNameInTable="columnName_US" msprop:Generator_ColumnPropNameInTable="Name_USColumn" msprop:Generator_UserColumnName="Name_US" type="xs:string" minOccurs="0" />
+              <xs:element name="Name_JP" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Name_JP" msprop:Generator_ColumnVarNameInTable="columnName_JP" msprop:Generator_ColumnPropNameInTable="Name_JPColumn" msprop:Generator_UserColumnName="Name_JP" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Emulators" msprop:Generator_TableClassName="EmulatorsDataTable" msprop:Generator_TableVarName="tableEmulators" msprop:Generator_TablePropName="Emulators" msprop:Generator_RowDeletingName="EmulatorsRowDeleting" msprop:Generator_RowChangingName="EmulatorsRowChanging" msprop:Generator_RowEvHandlerName="EmulatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="EmulatorsRowDeleted" msprop:Generator_UserTableName="Emulators" msprop:Generator_RowChangedName="EmulatorsRowChanged" msprop:Generator_RowEvArgName="EmulatorsRowChangeEvent" msprop:Generator_RowClassName="EmulatorsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Path" msprop:Generator_ColumnVarNameInTable="columnPath" msprop:Generator_ColumnPropNameInRow="Path" msprop:Generator_ColumnPropNameInTable="PathColumn" msprop:Generator_UserColumnName="Path" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

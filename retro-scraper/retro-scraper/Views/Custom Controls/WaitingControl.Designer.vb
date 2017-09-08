@@ -43,6 +43,7 @@ Partial Class WaitingControl
         '
         '_waitingProgressBar
         '
+        Me._waitingProgressBar.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me._waitingProgressBar.Location = New System.Drawing.Point(265, 38)
         Me._waitingProgressBar.Name = "_waitingProgressBar"
         Me._waitingProgressBar.Size = New System.Drawing.Size(346, 10)

@@ -45,7 +45,7 @@ Partial Class _2_ScreenScraperSystemSelectControl
         '
         Me.ListLabel.AutoSize = True
         Me.ListLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListLabel.Location = New System.Drawing.Point(17, 40)
+        Me.ListLabel.Location = New System.Drawing.Point(17, 42)
         Me.ListLabel.Name = "ListLabel"
         Me.ListLabel.Size = New System.Drawing.Size(81, 16)
         Me.ListLabel.TabIndex = 3
@@ -53,10 +53,13 @@ Partial Class _2_ScreenScraperSystemSelectControl
         '
         'SystemsListComboBox
         '
+        Me.SystemsListComboBox.BackColor = System.Drawing.Color.White
+        Me.SystemsListComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.SystemsListComboBox.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SystemsListComboBox.FormattingEnabled = True
         Me.SystemsListComboBox.Location = New System.Drawing.Point(104, 39)
         Me.SystemsListComboBox.Name = "SystemsListComboBox"
-        Me.SystemsListComboBox.Size = New System.Drawing.Size(288, 21)
+        Me.SystemsListComboBox.Size = New System.Drawing.Size(288, 24)
         Me.SystemsListComboBox.TabIndex = 4
         '
         'ScreenScraperSystemsLoadBackgroundWorker

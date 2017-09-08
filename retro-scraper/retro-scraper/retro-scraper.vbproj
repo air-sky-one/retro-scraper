@@ -166,6 +166,12 @@
     <Compile Include="Views\Custom Controls\Roms\2-ScreenScraperSystemSelectControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Custom Controls\Roms\3-EmulatorSelectControl.Designer.vb">
+      <DependentUpon>3-EmulatorSelectControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\3-EmulatorSelectControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.Designer.vb">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>
     </Compile>
@@ -216,6 +222,9 @@
     <EmbeddedResource Include="Views\Custom Controls\Roms\2-ScreenScraperSystemSelectControl.resx">
       <DependentUpon>2-ScreenScraperSystemSelectControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\3-EmulatorSelectControl.resx">
+      <DependentUpon>3-EmulatorSelectControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\RomsContainerControl.resx">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +247,195 @@
   <ItemGroup>
     <None Include="Config\licence.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Amstrad CPC.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Arcade.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Atari 2600.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Atari 5200.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Atari 7800.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Atari Lynx.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Attract Mode Setup.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Bandai WonderSwan Color.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Bandai WonderSwan.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\ColecoVision.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Commodore 64.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Commodore Amiga.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Daphne.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Final Burn Alpha.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Frotz.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\GCE Vectrex.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Kodi.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Magnavox Odyssey 2.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Magnavox Odyssey.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\MAME %28Advance%29.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\MAME %28Libretro%29.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\MAME %28Mame4all%29.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Mattel Intellivision.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Microsoft MSX.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Microsoft MSX2.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\NEC PC Engine-CD.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\NEC PC Engine.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\NEC SuperGrafx.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\NEC TurboGrafx-16.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\NEC TurboGrafx-CD.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo 64.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo DS.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo Entertainment System.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo Famicom Disk System.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo Game and Watch.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo Game Boy Advance.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo Game Boy Color.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo Game Boy.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo Super Famicom.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Nintendo Virtual Boy.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\PC.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Ports.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\RetroPie.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\scripts.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\ScummVM.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega 32X.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega CD.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega Dreamcast.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega Game Gear.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega Genesis.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega Master System.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega Mega Drive.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega Mega-CD.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sega SG-1000.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sinclair ZX Spectrum.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\SNK Neo Geo AES.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\SNK Neo Geo Pocket Color.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\SNK Neo Geo Pocket.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sony PlayStation.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sony PSP Minis.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Sony PSP.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\Super Nintendo Entertainment System.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="emulators\video.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Fonts\quicksand.zip" />
     <None Include="Fonts\ubuntu-font-family-0.83.zip" />

@@ -1,6 +1,6 @@
 ﻿Public Class RomsContainerControl
 
-#Region "attributes"
+#Region "Main Attributes"
 
     ''' <summary>
     ''' Actual step of the process
@@ -11,6 +11,10 @@
     ''' 1- Home screen
     ''' </summary>
     Private _homeControl As New _1_RomsHomeControl
+
+#End Region
+
+#Region "Step 2 : ScreenScraper System Selection Attributes"
 
     ''' <summary>
     ''' 2- ScreenScraper system Selection screen
@@ -40,6 +44,41 @@
         End Get
         Set(ByVal value As String)
             _screenScraperSelectedSystem = value
+        End Set
+    End Property
+
+#End Region
+
+#Region "Step 3 : Attract Mode Emulator Selection Attributes"
+
+    ''' <summary>
+    ''' 3- Attract Mode Emulator Selection screen
+    ''' </summary>
+    Private _attractModeEmulatorSelect As New _3_EmulatorSelectControl
+
+    ''' <summary>
+    ''' Attract Mode Emulators List
+    ''' </summary>
+    Private _attractModeEmulatorsList As New RomsDataSet.EmulatorsDataTable
+    Public Property AttractModeEmulatorsList() As RomsDataSet.EmulatorsDataTable
+        Get
+            Return _attractModeEmulatorsList
+        End Get
+        Set(ByVal value As RomsDataSet.EmulatorsDataTable)
+            _attractModeEmulatorsList = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' attract Mode Selected System
+    ''' </summary>
+    Private _attractModeSelectedSystem As String
+    Public Property AttractModeSelectedSystem() As String
+        Get
+            Return _attractModeSelectedSystem
+        End Get
+        Set(ByVal value As String)
+            _attractModeSelectedSystem = value
         End Set
     End Property
 
@@ -141,33 +180,37 @@
 
                 Me.MainTableLayoutPanel.Controls.Add(Me._screenScraperSystemSelect, 0, 2)
 
+                Me._screenScraperSystemSelect.Dock = DockStyle.Fill
+
             Case Steps.Emulator
-                Me.HeaderLabel.Text = "Step 3 : Emulator Selection"
+                Me.HeaderLabel.Text = "Step 2 : Emulator Selection"
 
                 Me.StepsProgressBar.Value = 2
 
+                Me.MainTableLayoutPanel.Controls.Add(Me._attractModeEmulatorSelect, 0, 2)
+
             Case Steps.RomsPath
-                Me.HeaderLabel.Text = "Step 4 : Roms Path Selection"
+                Me.HeaderLabel.Text = "Step 3 : Roms Path Selection"
 
                 Me.StepsProgressBar.Value = 3
 
             Case Steps.RomListFile
-                Me.HeaderLabel.Text = "Step 5 : RomList file Generation"
+                Me.HeaderLabel.Text = "Step 4 : RomList file Generation"
 
                 Me.StepsProgressBar.Value = 4
 
             Case Steps.LoadingProcess
-                Me.HeaderLabel.Text = "Step 6 : Loading Data"
+                Me.HeaderLabel.Text = "Step 5 : Loading Data"
 
                 Me.StepsProgressBar.Value = 5
 
             Case Steps.PreScraping
-                Me.HeaderLabel.Text = "Step 7 : PreScrap"
+                Me.HeaderLabel.Text = "Step 6 : PreScrap"
 
                 Me.StepsProgressBar.Value = 6
 
             Case Steps.Download
-                Me.HeaderLabel.Text = "Step 8 : Download"
+                Me.HeaderLabel.Text = "Step 7 : Download"
 
                 Me.StepsProgressBar.Value = 7
 

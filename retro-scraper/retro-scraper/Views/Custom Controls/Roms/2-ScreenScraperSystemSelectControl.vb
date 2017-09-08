@@ -29,6 +29,9 @@ Public Class _2_ScreenScraperSystemSelectControl
             Me.ActionWaitingControl.WaitingTitle.Text = "Please wait for screenscraper.fr"
             Me.ActionWaitingControl.DetailsText.Visible = True
 
+            Me._parent.ButtonNext.Enabled = False
+            Me._parent.ButtonPrevious.Enabled = False
+
             ' start asynchrone screenscraper system list loading
             ScreenScraperSystemsLoadBackgroundWorker.RunWorkerAsync()
         Catch ex As Exception
@@ -77,7 +80,7 @@ Public Class _2_ScreenScraperSystemSelectControl
                         End Select
 
                         Me._parent.ScreenScraperSystemsList.AddScreenScraperSystemsRow(r)
-                        Me._workerDetailsLastLine = cpt.ToString & " : " & Me._parent.ScreenScraperSystemsList.Last.Name & vbCrLf
+                        Me._workerDetailsLastLine = cpt.ToString & " : " & r.Name & vbCrLf
                     Else
                         Me._workerDetailsLastLine = cpt.ToString & " : screenscraper.fr returned a system with no identifier. Not added to list." & vbCrLf
                     End If
@@ -126,6 +129,9 @@ Public Class _2_ScreenScraperSystemSelectControl
 
             Me.ActionPanel.Visible = True
             Me.ActionWaitingControl.Visible = False
+
+            Me._parent.ButtonNext.Enabled = True
+            Me._parent.ButtonPrevious.Enabled = True
         End If
     End Sub
 
@@ -142,7 +148,5 @@ Public Class _2_ScreenScraperSystemSelectControl
         Catch ex As Exception
             ShowErrorMessage(ex)
         End Try
-
     End Sub
-
 End Class

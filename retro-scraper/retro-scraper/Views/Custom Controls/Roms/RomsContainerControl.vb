@@ -47,6 +47,19 @@
         End Set
     End Property
 
+    ''' <summary>
+    ''' Accepted eumator's roms extension
+    ''' </summary>
+    Private _romsExtensions As String()
+    Public Property RomsExtensions() As String()
+        Get
+            Return _romsExtensions
+        End Get
+        Set(ByVal value As String())
+            _romsExtensions = value
+        End Set
+    End Property
+
 #End Region
 
 #Region "Step 3 : Attract Mode Emulator Selection Attributes"
@@ -188,6 +201,8 @@
                 Me.StepsProgressBar.Value = 2
 
                 Me.MainTableLayoutPanel.Controls.Add(Me._attractModeEmulatorSelect, 0, 2)
+
+                Me._attractModeEmulatorSelect.Dock = DockStyle.Fill
 
             Case Steps.RomsPath
                 Me.HeaderLabel.Text = "Step 3 : Roms Path Selection"

@@ -14,6 +14,11 @@ Public Class _3_EmulatorSelectControl
     Private _workerDetailsLastLine As String = String.Empty
 
     ''' <summary>
+    ''' Indicates if the background worker's job is done
+    ''' </summary>
+    Private _isJobDone As Boolean = False
+
+    ''' <summary>
     ''' Component initialization
     ''' </summary>
     ''' <param name="sender"></param>
@@ -26,14 +31,16 @@ Public Class _3_EmulatorSelectControl
 
             Me.ActionPanel.Visible = False
             Me.ActionWaitingControl.Visible = True
-            Me.ActionWaitingControl.WaitingTitle.Text = "Please wait while emulators config files are loading"
-            Me.ActionWaitingControl.DetailsText.Visible = True
+            Me.ActionWaitingControl.HeaderLabel.Text = "Please wait while emulators config files are loading"
+            Me.ActionWaitingControl.DetailsTextBox.Visible = True
+            Me.ActionWaitingControl.DetailsProgressBar.Visible = False
+            Me.ActionWaitingControl.MainProgressLabel.Visible = False
 
             Me._parent.ButtonNext.Enabled = False
             Me._parent.ButtonPrevious.Enabled = False
 
             ' start asynchrone screenscraper system list loading
-            EmulatorsLoadBackgroundWorker.RunWorkerAsync()
+            LoadBackgroundWorker.RunWorkerAsync()
         Catch ex As Exception
             ShowErrorMessage(ex)
         End Try
@@ -87,7 +94,7 @@ Public Class _3_EmulatorSelectControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub EmulatorsLoadBackgroundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles EmulatorsLoadBackgroundWorker.DoWork
+    Private Sub EmulatorsLoadBackgroundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles LoadBackgroundWorker.DoWork
         Dim worker As BackgroundWorker = CType(sender, BackgroundWorker)
         e.Result = GetEmulatorsList(worker, e)
     End Sub
@@ -97,8 +104,8 @@ Public Class _3_EmulatorSelectControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub EmulatorsLoadBackgroundWorker_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles EmulatorsLoadBackgroundWorker.ProgressChanged
-        Me.ActionWaitingControl.DetailsText.AppendText(Me._workerDetailsLastLine)
+    Private Sub EmulatorsLoadBackgroundWorker_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles LoadBackgroundWorker.ProgressChanged
+        Me.ActionWaitingControl.DetailsTextBox.AppendText(Me._workerDetailsLastLine)
     End Sub
 
     ''' <summary>
@@ -106,7 +113,7 @@ Public Class _3_EmulatorSelectControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub EmulatorsLoadBackgroundWorker_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles EmulatorsLoadBackgroundWorker.RunWorkerCompleted
+    Private Sub EmulatorsLoadBackgroundWorker_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles LoadBackgroundWorker.RunWorkerCompleted
         If (e.Error Is Nothing) Or Not e.Cancelled Then
             Me.EmulatorsListComboBox.DataSource = Me._parent.AttractModeEmulatorsList.Select("", "Name ASC")
             Me.EmulatorsListComboBox.DisplayMember = Me._parent.AttractModeEmulatorsList.Columns("Name").ToString
@@ -117,15 +124,66 @@ Public Class _3_EmulatorSelectControl
 
             Me._parent.ButtonNext.Enabled = True
             Me._parent.ButtonPrevious.Enabled = True
+
+            Me._isJobDone = True
         End If
     End Sub
 
     ''' <summary>
-    ''' 
+    ''' Load the accepted roms extensions files by the emulator
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub EmulatorsListComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EmulatorsListComboBox.SelectedIndexChanged
+        Dim path As String = String.Empty
+        Dim sr As StreamReader
+        Dim content As String = String.Empty
+        Dim cpt As Integer = 0
 
+        Try
+            If Me._isJobDone Then
+
+                Me.SuspendLayout()
+
+                path = Me.EmulatorsListComboBox.SelectedValue.ToString
+
+                sr = New StreamReader(path)
+
+                Do While sr.Peek() >= 0
+                    Dim line As String = sr.ReadLine
+                    If line.Contains("romext") Then
+                        line = line.Substring(6, line.Length - 6)
+                        line = line.Trim()
+
+                        Erase Me._parent.RomsExtensions
+                        Me._parent.RomsExtensions = line.Split(";")
+
+                        Exit Do
+                    End If
+                Loop
+
+                sr.Close()
+
+                cpt = Me._parent.RomsExtensions.Count
+
+                If cpt > 0 Then
+                    Me.RomsExtensionsLabel.Text = "Accepted roms extension files : "
+                    Me.RomsExtensionsLabel.Visible = True
+
+                    For Each ext As String In Me._parent.RomsExtensions
+                        Me.RomsExtensionsLabel.Text = Me.RomsExtensionsLabel.Text & ext & ", "
+                    Next
+                Else
+                    Dim err As New Exception("The selected emulator file accept no specific roms files extensions. Please select another emulator in the list or update the emulator file.")
+
+                    ShowErrorMessage(err)
+                End If
+
+                Me.ResumeLayout()
+
+            End If
+        Catch ex As Exception
+            ShowErrorMessage(ex)
+        End Try
     End Sub
 End Class

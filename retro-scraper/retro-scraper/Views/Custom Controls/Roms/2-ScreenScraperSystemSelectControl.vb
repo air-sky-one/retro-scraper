@@ -26,14 +26,16 @@ Public Class _2_ScreenScraperSystemSelectControl
 
             Me.ActionPanel.Visible = False
             Me.ActionWaitingControl.Visible = True
-            Me.ActionWaitingControl.WaitingTitle.Text = "Please wait for screenscraper.fr"
-            Me.ActionWaitingControl.DetailsText.Visible = True
+            Me.ActionWaitingControl.HeaderLabel.Text = "Please wait for screenscraper.fr"
+            Me.ActionWaitingControl.DetailsTextBox.Visible = True
+            Me.ActionWaitingControl.DetailsProgressBar.Visible = False
+            Me.ActionWaitingControl.MainProgressLabel.Visible = False
 
             Me._parent.ButtonNext.Enabled = False
             Me._parent.ButtonPrevious.Enabled = False
 
             ' start asynchrone screenscraper system list loading
-            ScreenScraperSystemsLoadBackgroundWorker.RunWorkerAsync()
+            LoadBackgroundWorker.RunWorkerAsync()
         Catch ex As Exception
             ShowErrorMessage(ex)
         End Try
@@ -53,6 +55,7 @@ Public Class _2_ScreenScraperSystemSelectControl
             Me._parent.ScreenScraperSystemsList.Clear()
 
             query = BuildGenericURL("systemesListe.php")
+            Me._workerDetailsLastLine = "fecthing screeenscraper.fr" & vbCrLf
             json = webClient.DownloadString(query)
 
             If Not String.IsNullOrEmpty(json) Then
@@ -102,7 +105,7 @@ Public Class _2_ScreenScraperSystemSelectControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub ScreenScraperSystemsLoadBackgroundWorker_DoWork(sender As Object, e As DoWorkEventArgs) Handles ScreenScraperSystemsLoadBackgroundWorker.DoWork
+    Private Sub ScreenScraperSystemsLoadBackgroundWorker_DoWork(sender As Object, e As DoWorkEventArgs) Handles LoadBackgroundWorker.DoWork
         Dim worker As BackgroundWorker = CType(sender, BackgroundWorker)
         e.Result = GetScreenScraperSystems(worker, e)
     End Sub
@@ -112,8 +115,8 @@ Public Class _2_ScreenScraperSystemSelectControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub ScreenScraperSystemsLoadBackgroundWorker_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles ScreenScraperSystemsLoadBackgroundWorker.ProgressChanged
-        Me.ActionWaitingControl.DetailsText.AppendText(Me._workerDetailsLastLine)
+    Private Sub ScreenScraperSystemsLoadBackgroundWorker_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles LoadBackgroundWorker.ProgressChanged
+        Me.ActionWaitingControl.DetailsTextBox.AppendText(Me._workerDetailsLastLine)
     End Sub
 
     ''' <summary>
@@ -121,7 +124,7 @@ Public Class _2_ScreenScraperSystemSelectControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub ScreenScraperSystemsLoadBackgroundWorker_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles ScreenScraperSystemsLoadBackgroundWorker.RunWorkerCompleted
+    Private Sub ScreenScraperSystemsLoadBackgroundWorker_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles LoadBackgroundWorker.RunWorkerCompleted
         If (e.Error Is Nothing) Or Not e.Cancelled Then
             Me.SystemsListComboBox.DataSource = Me._parent.ScreenScraperSystemsList.Select("", "Name ASC")
             Me.SystemsListComboBox.DisplayMember = Me._parent.ScreenScraperSystemsList.Columns("Name").ToString

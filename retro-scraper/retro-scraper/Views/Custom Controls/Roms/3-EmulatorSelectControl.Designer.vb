@@ -24,17 +24,19 @@ Partial Class _3_EmulatorSelectControl
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(_3_EmulatorSelectControl))
         Me.ActionPanel = New System.Windows.Forms.Panel()
+        Me.EmulatorConfigLabel = New System.Windows.Forms.Label()
         Me.EmulatorsListComboBox = New System.Windows.Forms.ComboBox()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.ListLabel = New System.Windows.Forms.Label()
         Me.ActionWaitingControl = New retro_scraper.WaitingControl()
-        Me.EmulatorsLoadBackgroundWorker = New System.ComponentModel.BackgroundWorker()
-        Me.EmulatorConfigLabel = New System.Windows.Forms.Label()
+        Me.LoadBackgroundWorker = New System.ComponentModel.BackgroundWorker()
+        Me.RomsExtensionsLabel = New System.Windows.Forms.Label()
         Me.ActionPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'ActionPanel
         '
+        Me.ActionPanel.Controls.Add(Me.RomsExtensionsLabel)
         Me.ActionPanel.Controls.Add(Me.EmulatorConfigLabel)
         Me.ActionPanel.Controls.Add(Me.EmulatorsListComboBox)
         Me.ActionPanel.Controls.Add(Me.DescriptionLabel)
@@ -45,6 +47,15 @@ Partial Class _3_EmulatorSelectControl
         Me.ActionPanel.Name = "ActionPanel"
         Me.ActionPanel.Size = New System.Drawing.Size(878, 173)
         Me.ActionPanel.TabIndex = 6
+        '
+        'EmulatorConfigLabel
+        '
+        Me.EmulatorConfigLabel.AutoSize = True
+        Me.EmulatorConfigLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmulatorConfigLabel.Location = New System.Drawing.Point(17, 120)
+        Me.EmulatorConfigLabel.Name = "EmulatorConfigLabel"
+        Me.EmulatorConfigLabel.Size = New System.Drawing.Size(0, 16)
+        Me.EmulatorConfigLabel.TabIndex = 5
         '
         'EmulatorsListComboBox
         '
@@ -84,19 +95,22 @@ Partial Class _3_EmulatorSelectControl
         Me.ActionWaitingControl.Size = New System.Drawing.Size(878, 554)
         Me.ActionWaitingControl.TabIndex = 7
         '
-        'EmulatorsLoadBackgroundWorker
+        'LoadBackgroundWorker
         '
-        Me.EmulatorsLoadBackgroundWorker.WorkerReportsProgress = True
-        Me.EmulatorsLoadBackgroundWorker.WorkerSupportsCancellation = True
+        Me.LoadBackgroundWorker.WorkerReportsProgress = True
+        Me.LoadBackgroundWorker.WorkerSupportsCancellation = True
         '
-        'EmulatorConfigLabel
+        'RomsExtensionsLabel
         '
-        Me.EmulatorConfigLabel.AutoSize = True
-        Me.EmulatorConfigLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmulatorConfigLabel.Location = New System.Drawing.Point(17, 120)
-        Me.EmulatorConfigLabel.Name = "EmulatorConfigLabel"
-        Me.EmulatorConfigLabel.Size = New System.Drawing.Size(0, 16)
-        Me.EmulatorConfigLabel.TabIndex = 5
+        Me.RomsExtensionsLabel.AutoSize = True
+        Me.RomsExtensionsLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RomsExtensionsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.RomsExtensionsLabel.Location = New System.Drawing.Point(17, 120)
+        Me.RomsExtensionsLabel.Name = "RomsExtensionsLabel"
+        Me.RomsExtensionsLabel.Size = New System.Drawing.Size(151, 16)
+        Me.RomsExtensionsLabel.TabIndex = 6
+        Me.RomsExtensionsLabel.Text = "Accepted roms extension files :"
+        Me.RomsExtensionsLabel.Visible = False
         '
         '_3_EmulatorSelectControl
         '
@@ -118,6 +132,7 @@ Partial Class _3_EmulatorSelectControl
     Friend WithEvents DescriptionLabel As Label
     Friend WithEvents ListLabel As Label
     Friend WithEvents ActionWaitingControl As WaitingControl
-    Friend WithEvents EmulatorsLoadBackgroundWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents LoadBackgroundWorker As System.ComponentModel.BackgroundWorker
     Friend WithEvents EmulatorConfigLabel As Label
+    Friend WithEvents RomsExtensionsLabel As Label
 End Class

@@ -25,8 +25,9 @@ Partial Class _2_ScreenScraperSystemSelectControl
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.ListLabel = New System.Windows.Forms.Label()
         Me.SystemsListComboBox = New System.Windows.Forms.ComboBox()
-        Me.ScreenScraperSystemsLoadBackgroundWorker = New System.ComponentModel.BackgroundWorker()
+        Me.LoadBackgroundWorker = New System.ComponentModel.BackgroundWorker()
         Me.ActionPanel = New System.Windows.Forms.Panel()
+        Me.LogsButton = New System.Windows.Forms.Button()
         Me.ActionWaitingControl = New retro_scraper.WaitingControl()
         Me.ActionPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -62,10 +63,10 @@ Partial Class _2_ScreenScraperSystemSelectControl
         Me.SystemsListComboBox.Size = New System.Drawing.Size(288, 24)
         Me.SystemsListComboBox.TabIndex = 4
         '
-        'ScreenScraperSystemsLoadBackgroundWorker
+        'LoadBackgroundWorker
         '
-        Me.ScreenScraperSystemsLoadBackgroundWorker.WorkerReportsProgress = True
-        Me.ScreenScraperSystemsLoadBackgroundWorker.WorkerSupportsCancellation = True
+        Me.LoadBackgroundWorker.WorkerReportsProgress = True
+        Me.LoadBackgroundWorker.WorkerSupportsCancellation = True
         '
         'ActionPanel
         '
@@ -78,6 +79,16 @@ Partial Class _2_ScreenScraperSystemSelectControl
         Me.ActionPanel.Name = "ActionPanel"
         Me.ActionPanel.Size = New System.Drawing.Size(878, 82)
         Me.ActionPanel.TabIndex = 5
+        '
+        'LogsButton
+        '
+        Me.LogsButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LogsButton.Location = New System.Drawing.Point(855, 3)
+        Me.LogsButton.Name = "LogsButton"
+        Me.LogsButton.Size = New System.Drawing.Size(20, 20)
+        Me.LogsButton.TabIndex = 5
+        Me.LogsButton.UseVisualStyleBackColor = True
+        Me.LogsButton.Visible = False
         '
         'ActionWaitingControl
         '
@@ -93,6 +104,7 @@ Partial Class _2_ScreenScraperSystemSelectControl
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.LogsButton)
         Me.Controls.Add(Me.ActionWaitingControl)
         Me.Controls.Add(Me.ActionPanel)
         Me.Name = "_2_ScreenScraperSystemSelectControl"
@@ -106,7 +118,8 @@ Partial Class _2_ScreenScraperSystemSelectControl
     Friend WithEvents DescriptionLabel As Label
     Friend WithEvents ListLabel As Label
     Friend WithEvents SystemsListComboBox As ComboBox
-    Friend WithEvents ScreenScraperSystemsLoadBackgroundWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents LoadBackgroundWorker As System.ComponentModel.BackgroundWorker
     Friend WithEvents ActionPanel As Panel
     Friend WithEvents ActionWaitingControl As WaitingControl
+    Friend WithEvents LogsButton As Button
 End Class

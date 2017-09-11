@@ -10,16 +10,16 @@
     ''' <summary>
     ''' 1- Home screen
     ''' </summary>
-    Private _homeControl As New _1_RomsHomeControl
+    Private _homeControl As New _0_RomsHomeControl
 
 #End Region
 
-#Region "Step 2 : ScreenScraper System Selection Attributes"
+#Region "Step 1 : ScreenScraper System Selection Attributes"
 
     ''' <summary>
-    ''' 2- ScreenScraper system Selection screen
+    ''' 1- ScreenScraper system Selection screen
     ''' </summary>
-    Private _screenScraperSystemSelect As New _2_ScreenScraperSystemSelectControl
+    Private _screenScraperSystemSelect As New _1_ScreenScraperSystemSelectControl
 
     ''' <summary>
     ''' Screen Scraper Systems List
@@ -62,12 +62,12 @@
 
 #End Region
 
-#Region "Step 3 : Attract Mode Emulator Selection Attributes"
+#Region "Step 2 : Attract Mode Emulator Selection Attributes"
 
     ''' <summary>
-    ''' 3- Attract Mode Emulator Selection screen
+    ''' 2- Attract Mode Emulator Selection screen
     ''' </summary>
-    Private _attractModeEmulatorSelect As New _3_EmulatorSelectControl
+    Private _attractModeEmulatorSelect As New _2_EmulatorSelectControl
 
     ''' <summary>
     ''' Attract Mode Emulators List
@@ -92,6 +92,28 @@
         End Get
         Set(ByVal value As String)
             _attractModeSelectedSystem = value
+        End Set
+    End Property
+
+#End Region
+
+#Region "Step 3 : Roms Path selection"
+
+    ''' <summary>
+    ''' 3- Roms Path Selection screen
+    ''' </summary>
+    Private _romsPathSelect As New _3_RomsPathControl
+
+    ''' <summary>
+    ''' Selected Roms Path
+    ''' </summary>
+    Private _romsPath As String
+    Public Property RomsPath() As String
+        Get
+            Return _romsPath
+        End Get
+        Set(ByVal value As String)
+            _romsPath = value
         End Set
     End Property
 
@@ -208,6 +230,10 @@
                 Me.HeaderLabel.Text = "Step 3 : Roms Path Selection"
 
                 Me.StepsProgressBar.Value = 3
+
+                Me.MainTableLayoutPanel.Controls.Add(Me._romsPathSelect, 0, 2)
+
+                Me._romsPathSelect.Dock = DockStyle.Fill
 
             Case Steps.RomListFile
                 Me.HeaderLabel.Text = "Step 4 : RomList file Generation"

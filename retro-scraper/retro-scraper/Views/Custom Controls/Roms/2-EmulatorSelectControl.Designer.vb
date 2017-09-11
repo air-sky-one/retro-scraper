@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class _3_EmulatorSelectControl
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class _2_EmulatorSelectControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,9 @@ Partial Class _3_EmulatorSelectControl
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(_3_EmulatorSelectControl))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(_2_EmulatorSelectControl))
         Me.ActionPanel = New System.Windows.Forms.Panel()
         Me.EmulatorConfigLabel = New System.Windows.Forms.Label()
         Me.EmulatorsListComboBox = New System.Windows.Forms.ComboBox()
@@ -112,14 +112,14 @@ Partial Class _3_EmulatorSelectControl
         Me.RomsExtensionsLabel.Text = "Accepted roms extension files :"
         Me.RomsExtensionsLabel.Visible = False
         '
-        '_3_EmulatorSelectControl
+        '_2_EmulatorSelectControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.ActionWaitingControl)
         Me.Controls.Add(Me.ActionPanel)
-        Me.Name = "_3_EmulatorSelectControl"
+        Me.Name = "_2_EmulatorSelectControl"
         Me.Size = New System.Drawing.Size(878, 727)
         Me.ActionPanel.ResumeLayout(False)
         Me.ActionPanel.PerformLayout()

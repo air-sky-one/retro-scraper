@@ -160,16 +160,22 @@
     <Compile Include="Views\Custom Controls\HomeControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\2-ScreenScraperSystemSelectControl.Designer.vb">
-      <DependentUpon>2-ScreenScraperSystemSelectControl.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\1-ScreenScraperSystemSelectControl.Designer.vb">
+      <DependentUpon>1-ScreenScraperSystemSelectControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\2-ScreenScraperSystemSelectControl.vb">
+    <Compile Include="Views\Custom Controls\Roms\1-ScreenScraperSystemSelectControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\3-EmulatorSelectControl.Designer.vb">
-      <DependentUpon>3-EmulatorSelectControl.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\2-EmulatorSelectControl.Designer.vb">
+      <DependentUpon>2-EmulatorSelectControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\3-EmulatorSelectControl.vb">
+    <Compile Include="Views\Custom Controls\Roms\2-EmulatorSelectControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\3-RomsPathControl.Designer.vb">
+      <DependentUpon>3-RomsPathControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\3-RomsPathControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.Designer.vb">
@@ -178,10 +184,10 @@
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\1-RomsHomeControl.Designer.vb">
-      <DependentUpon>1-RomsHomeControl.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\0-RomsHomeControl.Designer.vb">
+      <DependentUpon>0-RomsHomeControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\1-RomsHomeControl.vb">
+    <Compile Include="Views\Custom Controls\Roms\0-RomsHomeControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Custom Controls\WaitingControl.Designer.vb">
@@ -219,17 +225,20 @@
     <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
       <DependentUpon>HomeControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\2-ScreenScraperSystemSelectControl.resx">
-      <DependentUpon>2-ScreenScraperSystemSelectControl.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\1-ScreenScraperSystemSelectControl.resx">
+      <DependentUpon>1-ScreenScraperSystemSelectControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\3-EmulatorSelectControl.resx">
-      <DependentUpon>3-EmulatorSelectControl.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\2-EmulatorSelectControl.resx">
+      <DependentUpon>2-EmulatorSelectControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\3-RomsPathControl.resx">
+      <DependentUpon>3-RomsPathControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\RomsContainerControl.resx">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\1-RomsHomeControl.resx">
-      <DependentUpon>1-RomsHomeControl.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\0-RomsHomeControl.resx">
+      <DependentUpon>0-RomsHomeControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\WaitingControl.resx">
       <DependentUpon>WaitingControl.vb</DependentUpon>

@@ -31,7 +31,15 @@ Module LogsHelper
         End If
 
         For Each r As Logs.ErrorsRow In AppGlobals.logs.Rows
-            l.AppendLine(r.Message & ";" & r.StackTrace)
+            Dim mess As String = String.Empty
+            Dim stack As String = String.Empty
+
+            If r IsNot Nothing Then
+                If Not r.IsMessageNull Then mess = r.Message
+                If Not r.IsStackTraceNull Then stack = r.StackTrace
+            End If
+
+            l.AppendLine(mess & ";" & Stack)
         Next
 
         File.WriteAllText(AppGlobals.logsFilePath, l.ToString)

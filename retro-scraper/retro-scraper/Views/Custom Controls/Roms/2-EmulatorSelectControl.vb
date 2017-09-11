@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
 
-Public Class _3_EmulatorSelectControl
+Public Class _2_EmulatorSelectControl
 
     ''' <summary>
     ''' Parent con tainer control
@@ -23,7 +23,7 @@ Public Class _3_EmulatorSelectControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub _3_EmulatorSelectControl_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub _2_EmulatorSelectControl_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
             Me._parent = TryCast(Me.Parent.Parent, RomsContainerControl)
 
@@ -124,7 +124,6 @@ Public Class _3_EmulatorSelectControl
             Me.ActionPanel.Visible = True
             Me.ActionWaitingControl.Visible = False
 
-            Me._parent.ButtonNext.Enabled = True
             Me._parent.ButtonPrevious.Enabled = True
 
             Me._isJobDone = True
@@ -141,6 +140,7 @@ Public Class _3_EmulatorSelectControl
         Dim sr As StreamReader
         Dim content As String = String.Empty
         Dim cpt As Integer = 0
+        Dim isErr As Boolean = False
 
         Try
             If Me._isJobDone Then
@@ -160,29 +160,40 @@ Public Class _3_EmulatorSelectControl
                         Erase Me._parent.RomsExtensions
                         Me._parent.RomsExtensions = line.Split(";")
 
+                        cpt = 1
+
                         Exit Do
                     End If
                 Loop
 
                 sr.Close()
 
-                cpt = Me._parent.RomsExtensions.Count
+                If cpt = 0 Then
+                    Dim err As New Exception("The selected emulator file doesn't contain roms extensions definition. Please choose a valid emulator config file.")
 
-                If cpt > 0 Then
-                    Me.RomsExtensionsLabel.Text = "Accepted roms extension files : "
-                    Me.RomsExtensionsLabel.Visible = True
-
-                    For Each ext As String In Me._parent.RomsExtensions
-                        Me.RomsExtensionsLabel.Text = Me.RomsExtensionsLabel.Text & ext & ", "
-                    Next
-                Else
-                    Dim err As New Exception("The selected emulator file accept no specific roms files extensions. Please select another emulator in the list or update the emulator file.")
-
+                    isErr = True
                     ShowErrorMessage(err)
+                Else
+                    cpt = Me._parent.RomsExtensions.Count
+
+                    If cpt > 0 Then
+                        Me.RomsExtensionsLabel.Text = "Accepted roms extension files : "
+                        Me.RomsExtensionsLabel.Visible = True
+
+                        For Each ext As String In Me._parent.RomsExtensions
+                            Me.RomsExtensionsLabel.Text = Me.RomsExtensionsLabel.Text & ext & ", "
+                        Next
+                    Else
+                        Dim err As New Exception("The selected emulator file accept no specific roms files extensions. Please select another emulator in the list or update the emulator file.")
+
+                        isErr = True
+                        ShowErrorMessage(err)
+                    End If
                 End If
 
-                Me.ResumeLayout()
-
+                If Not isErr Then
+                    Me._parent.ButtonNext.Enabled = True
+                End If
             End If
         Catch ex As Exception
             ShowErrorMessage(ex)

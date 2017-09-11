@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class _1_RomsHomeControl
+Partial Class _0_RomsHomeControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class _1_RomsHomeControl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(_1_RomsHomeControl))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(_0_RomsHomeControl))
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '

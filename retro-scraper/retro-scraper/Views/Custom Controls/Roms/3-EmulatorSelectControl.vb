@@ -119,6 +119,8 @@ Public Class _3_EmulatorSelectControl
             Me.EmulatorsListComboBox.DisplayMember = Me._parent.AttractModeEmulatorsList.Columns("Name").ToString
             Me.EmulatorsListComboBox.ValueMember = Me._parent.AttractModeEmulatorsList.Columns("path").ToString
 
+            Me.EmulatorsListComboBox.SelectedIndex = -1
+
             Me.ActionPanel.Visible = True
             Me.ActionWaitingControl.Visible = False
 

@@ -24,18 +24,20 @@ Partial Class _2_EmulatorSelectControl
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(_2_EmulatorSelectControl))
         Me.ActionPanel = New System.Windows.Forms.Panel()
+        Me.RomsExtensionsLabel = New System.Windows.Forms.Label()
         Me.EmulatorConfigLabel = New System.Windows.Forms.Label()
         Me.EmulatorsListComboBox = New System.Windows.Forms.ComboBox()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.ListLabel = New System.Windows.Forms.Label()
         Me.ActionWaitingControl = New retro_scraper.WaitingControl()
         Me.LoadBackgroundWorker = New System.ComponentModel.BackgroundWorker()
-        Me.RomsExtensionsLabel = New System.Windows.Forms.Label()
+        Me.ArtworksLabel = New System.Windows.Forms.Label()
         Me.ActionPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'ActionPanel
         '
+        Me.ActionPanel.Controls.Add(Me.ArtworksLabel)
         Me.ActionPanel.Controls.Add(Me.RomsExtensionsLabel)
         Me.ActionPanel.Controls.Add(Me.EmulatorConfigLabel)
         Me.ActionPanel.Controls.Add(Me.EmulatorsListComboBox)
@@ -45,8 +47,20 @@ Partial Class _2_EmulatorSelectControl
         Me.ActionPanel.Location = New System.Drawing.Point(0, 0)
         Me.ActionPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.ActionPanel.Name = "ActionPanel"
-        Me.ActionPanel.Size = New System.Drawing.Size(878, 173)
+        Me.ActionPanel.Size = New System.Drawing.Size(878, 426)
         Me.ActionPanel.TabIndex = 6
+        '
+        'RomsExtensionsLabel
+        '
+        Me.RomsExtensionsLabel.AutoSize = True
+        Me.RomsExtensionsLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RomsExtensionsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.RomsExtensionsLabel.Location = New System.Drawing.Point(17, 120)
+        Me.RomsExtensionsLabel.Name = "RomsExtensionsLabel"
+        Me.RomsExtensionsLabel.Size = New System.Drawing.Size(151, 16)
+        Me.RomsExtensionsLabel.TabIndex = 6
+        Me.RomsExtensionsLabel.Text = "Accepted roms extension files :"
+        Me.RomsExtensionsLabel.Visible = False
         '
         'EmulatorConfigLabel
         '
@@ -90,9 +104,9 @@ Partial Class _2_EmulatorSelectControl
         '
         Me.ActionWaitingControl.BackColor = System.Drawing.Color.White
         Me.ActionWaitingControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ActionWaitingControl.Location = New System.Drawing.Point(0, 173)
+        Me.ActionWaitingControl.Location = New System.Drawing.Point(0, 426)
         Me.ActionWaitingControl.Name = "ActionWaitingControl"
-        Me.ActionWaitingControl.Size = New System.Drawing.Size(878, 554)
+        Me.ActionWaitingControl.Size = New System.Drawing.Size(878, 301)
         Me.ActionWaitingControl.TabIndex = 7
         '
         'LoadBackgroundWorker
@@ -100,17 +114,17 @@ Partial Class _2_EmulatorSelectControl
         Me.LoadBackgroundWorker.WorkerReportsProgress = True
         Me.LoadBackgroundWorker.WorkerSupportsCancellation = True
         '
-        'RomsExtensionsLabel
+        'ArtworksLabel
         '
-        Me.RomsExtensionsLabel.AutoSize = True
-        Me.RomsExtensionsLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RomsExtensionsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.RomsExtensionsLabel.Location = New System.Drawing.Point(17, 120)
-        Me.RomsExtensionsLabel.Name = "RomsExtensionsLabel"
-        Me.RomsExtensionsLabel.Size = New System.Drawing.Size(151, 16)
-        Me.RomsExtensionsLabel.TabIndex = 6
-        Me.RomsExtensionsLabel.Text = "Accepted roms extension files :"
-        Me.RomsExtensionsLabel.Visible = False
+        Me.ArtworksLabel.AutoSize = True
+        Me.ArtworksLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ArtworksLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.ArtworksLabel.Location = New System.Drawing.Point(17, 136)
+        Me.ArtworksLabel.Name = "ArtworksLabel"
+        Me.ArtworksLabel.Size = New System.Drawing.Size(56, 16)
+        Me.ArtworksLabel.TabIndex = 7
+        Me.ArtworksLabel.Text = "Artworks :"
+        Me.ArtworksLabel.Visible = False
         '
         '_2_EmulatorSelectControl
         '
@@ -135,4 +149,5 @@ Partial Class _2_EmulatorSelectControl
     Friend WithEvents LoadBackgroundWorker As System.ComponentModel.BackgroundWorker
     Friend WithEvents EmulatorConfigLabel As Label
     Friend WithEvents RomsExtensionsLabel As Label
+    Friend WithEvents ArtworksLabel As Label
 End Class

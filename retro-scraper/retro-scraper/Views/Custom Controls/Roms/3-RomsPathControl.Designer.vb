@@ -26,7 +26,6 @@ Partial Class _3_RomsPathControl
         Me.FolderPathButton = New System.Windows.Forms.Button()
         Me.FolderPathTextBox = New System.Windows.Forms.TextBox()
         Me.ResultsLabel = New System.Windows.Forms.Label()
-        Me.EmulatorConfigLabel = New System.Windows.Forms.Label()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.RomsFolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.ActionPanel.SuspendLayout()
@@ -37,7 +36,6 @@ Partial Class _3_RomsPathControl
         Me.ActionPanel.Controls.Add(Me.FolderPathButton)
         Me.ActionPanel.Controls.Add(Me.FolderPathTextBox)
         Me.ActionPanel.Controls.Add(Me.ResultsLabel)
-        Me.ActionPanel.Controls.Add(Me.EmulatorConfigLabel)
         Me.ActionPanel.Controls.Add(Me.DescriptionLabel)
         Me.ActionPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.ActionPanel.Location = New System.Drawing.Point(0, 0)
@@ -77,15 +75,6 @@ Partial Class _3_RomsPathControl
         Me.ResultsLabel.Text = "X roms where detected in Y"
         Me.ResultsLabel.Visible = False
         '
-        'EmulatorConfigLabel
-        '
-        Me.EmulatorConfigLabel.AutoSize = True
-        Me.EmulatorConfigLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmulatorConfigLabel.Location = New System.Drawing.Point(17, 120)
-        Me.EmulatorConfigLabel.Name = "EmulatorConfigLabel"
-        Me.EmulatorConfigLabel.Size = New System.Drawing.Size(0, 16)
-        Me.EmulatorConfigLabel.TabIndex = 5
-        '
         'DescriptionLabel
         '
         Me.DescriptionLabel.AutoSize = True
@@ -116,7 +105,6 @@ Partial Class _3_RomsPathControl
 
     Friend WithEvents ActionPanel As Panel
     Friend WithEvents ResultsLabel As Label
-    Friend WithEvents EmulatorConfigLabel As Label
     Friend WithEvents DescriptionLabel As Label
     Friend WithEvents FolderPathButton As Button
     Friend WithEvents FolderPathTextBox As TextBox

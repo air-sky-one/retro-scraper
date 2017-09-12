@@ -1,8 +1,2 @@
-﻿
-
-Partial Public Class RomsDataSet
-End Class
-
-
-Partial Public Class RomsDataSet
+﻿Partial Class RomsDataSet
 End Class

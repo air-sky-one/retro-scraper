@@ -178,6 +178,12 @@
     <Compile Include="Views\Custom Controls\Roms\3-RomsPathControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Custom Controls\Roms\4-RomListChoiceControl.Designer.vb">
+      <DependentUpon>4-RomListChoiceControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\4-RomListChoiceControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.Designer.vb">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\3-RomsPathControl.resx">
       <DependentUpon>3-RomsPathControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\4-RomListChoiceControl.resx">
+      <DependentUpon>4-RomListChoiceControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\RomsContainerControl.resx">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>

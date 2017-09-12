@@ -47,19 +47,6 @@
         End Set
     End Property
 
-    ''' <summary>
-    ''' Accepted eumator's roms extension
-    ''' </summary>
-    Private _romsExtensions As String()
-    Public Property RomsExtensions() As String()
-        Get
-            Return _romsExtensions
-        End Get
-        Set(ByVal value As String())
-            _romsExtensions = value
-        End Set
-    End Property
-
 #End Region
 
 #Region "Step 2 : Attract Mode Emulator Selection Attributes"
@@ -95,6 +82,32 @@
         End Set
     End Property
 
+    ''' <summary>
+    ''' Accepted eumator's roms extension
+    ''' </summary>
+    Private _romsExtensions As String()
+    Public Property RomsExtensions() As String()
+        Get
+            Return _romsExtensions
+        End Get
+        Set(ByVal value As String())
+            _romsExtensions = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Roms artworks (name and path)
+    ''' </summary>
+    Private _romsArtworks As New RomsDataSet.ArtworksDataTable
+    Public Property RomsArtworks() As RomsDataSet.ArtworksDataTable
+        Get
+            Return _romsArtworks
+        End Get
+        Set(ByVal value As RomsDataSet.ArtworksDataTable)
+            _romsArtworks = value
+        End Set
+    End Property
+
 #End Region
 
 #Region "Step 3 : Roms Path selection"
@@ -119,6 +132,41 @@
 
 #End Region
 
+#Region "Step 4 : RomList file new/update choice"
+
+    ''' <summary>
+    ''' 4- Choice between generate a new romlist file or update an existing one
+    ''' </summary>
+    Private _romListChoice As New _4_RomListChoiceControl
+
+    ''' <summary>
+    ''' Indicates if the romlist file has to be a new one or if the user wants to update an already existing one
+    ''' </summary>
+    Private _isRomlistNewfile As Boolean = True
+    Public Property IsRomListNewFile() As Boolean
+        Get
+            Return _isRomlistNewfile
+        End Get
+        Set(ByVal value As Boolean)
+            _isRomlistNewfile = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Romlist file to update
+    ''' </summary>
+    Private _romlistFilePath As String
+    Public Property RomlistFilePath() As String
+        Get
+            Return _romlistFilePath
+        End Get
+        Set(ByVal value As String)
+            _romlistFilePath = value
+        End Set
+    End Property
+
+#End Region
+
     ''' <summary>
     ''' Define the steps for roms scraping completion
     ''' </summary>
@@ -126,39 +174,39 @@
         ''' <summary>
         ''' Home screen
         ''' </summary>
-        Home = 1
+        Home = 0
         ''' <summary>
         ''' Load available systems on screenscraper.fr and define user's selection
         ''' </summary>
-        ScreenScraperSystem = 2
+        ScreenScraperSystem = 1
         ''' <summary>
         ''' Emulator selection
         ''' </summary>
-        Emulator = 3
+        Emulator = 2
         ''' <summary>
         ''' Path where roms are stored
         ''' </summary>
-        RomsPath = 4
+        RomsPath = 3
         ''' <summary>
         ''' Allows the user to generate an associated romlist file
         ''' </summary>
-        RomListFile = 5
+        RomListFile = 4
         ''' <summary>
         ''' display loading progress
         ''' </summary>
-        LoadingProcess = 6
+        LoadingProcess = 5
         ''' <summary>
         ''' allows user to define what to scrap
         ''' </summary>
-        PreScraping = 7
+        PreScraping = 6
         ''' <summary>
         ''' display download progress
         ''' </summary>
-        Download = 8
+        Download = 7
         ''' <summary>
         ''' display results and logs
         ''' </summary>
-        Result = 9
+        Result = 8
     End Enum
 
     ''' <summary>
@@ -239,6 +287,10 @@
                 Me.HeaderLabel.Text = "Step 4 : RomList file Generation"
 
                 Me.StepsProgressBar.Value = 4
+
+                Me.MainTableLayoutPanel.Controls.Add(Me._romListChoice, 0, 2)
+
+                Me._romListChoice.Dock = DockStyle.Fill
 
             Case Steps.LoadingProcess
                 Me.HeaderLabel.Text = "Step 5 : Loading Data"

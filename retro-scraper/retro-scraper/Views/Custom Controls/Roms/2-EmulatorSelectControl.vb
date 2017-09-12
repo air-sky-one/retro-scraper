@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
+Imports System.Text
 
 Public Class _2_EmulatorSelectControl
 
@@ -150,8 +151,9 @@ Public Class _2_EmulatorSelectControl
 
                 path = Me.EmulatorsListComboBox.SelectedValue.ToString
 
+                ' **********************************
+                ' Get accepted roms files extension
                 sr = New StreamReader(path)
-
                 Do While sr.Peek() >= 0
                     Dim line As String = sr.ReadLine
                     If line.Contains("romext") Then
@@ -166,8 +168,37 @@ Public Class _2_EmulatorSelectControl
                         Exit Do
                     End If
                 Loop
-
                 sr.Close()
+                ' **********************************
+
+                ' ******************************************************
+                ' Get type of artworks and their associated folder path
+                sr = New StreamReader(path)
+                Do While sr.Peek() >= 0
+                    Dim line As String = sr.ReadLine
+                    If line.Contains("artwork") Then
+                        Dim artName As String = String.Empty
+                        Dim artPath As String = String.Empty
+
+                        Try
+                            artName = line.Substring(7, line.IndexOf("/") - 7).Trim
+                            artPath = line.Substring(line.LastIndexOf("/") + 1)
+                        Catch ex As Exception
+                            Throw New Exception("Oups !, It seems that the emulator file content is incorrect." & vbCrLf & ex.Message, ex)
+                        End Try
+
+                        Dim a As RomsDataSet.ArtworksRow = Me._parent.RomsArtworks.NewArtworksRow()
+                        a.Name = artName
+                        a.Path = artPath
+                        Me._parent.RomsArtworks.AddArtworksRow(a)
+                    End If
+                Loop
+                sr.Close()
+
+                If Me._parent.RomsArtworks.Count = 0 Then
+                    Throw New Exception("Oups !, It seems that the emulator file content is incorrect." & vbCrLf & "No artwork types and folder defined.")
+                End If
+                ' ******************************************************
 
                 If cpt = 0 Then
                     Dim err As New Exception("The selected emulator file doesn't contain roms extensions definition. Please choose a valid emulator config file.")
@@ -184,6 +215,14 @@ Public Class _2_EmulatorSelectControl
                         For Each ext As String In Me._parent.RomsExtensions
                             Me.RomsExtensionsLabel.Text = Me.RomsExtensionsLabel.Text & ext & ", "
                         Next
+
+                        Dim artworksBuilder As New StringBuilder
+                        artworksBuilder.Append(Me.ArtworksLabel.Text & vbCrLf)
+                        For Each a As RomsDataSet.ArtworksRow In Me._parent.RomsArtworks
+                            artworksBuilder.Append("- Name : '" & a.Name & "'    Folder Name : '" & a.Path & "'" & vbCrLf)
+                        Next
+                        Me.ArtworksLabel.Text = artworksBuilder.ToString
+                        Me.ArtworksLabel.Visible = True
                     Else
                         Dim err As New Exception("The selected emulator file accept no specific roms files extensions. Please select another emulator in the list or update the emulator file.")
 

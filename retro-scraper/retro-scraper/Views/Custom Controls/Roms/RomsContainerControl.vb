@@ -167,6 +167,28 @@
 
 #End Region
 
+#Region "step 5 : Loading data and url from ScreenScraper"
+
+    ''' <summary>
+    ''' Roms data retrieve from screenscraper
+    ''' </summary>
+    Private _romsData As New RomsDataSet.RomDataTable
+    Public Property RomsData() As RomsDataSet.RomDataTable
+        Get
+            Return _romsData
+        End Get
+        Set(ByVal value As RomsDataSet.RomDataTable)
+            _romsData = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Loading process screeen (retrieve data and media's url for games from screenscraper.fr
+    ''' </summary>
+    Private _loadingProcessScreen As New _5_RomLoadingProcessControl
+
+#End Region
+
     ''' <summary>
     ''' Define the steps for roms scraping completion
     ''' </summary>
@@ -296,6 +318,10 @@
                 Me.HeaderLabel.Text = "Step 5 : Loading Data"
 
                 Me.StepsProgressBar.Value = 5
+
+                Me.MainTableLayoutPanel.Controls.Add(Me._loadingProcessScreen, 0, 2)
+
+                Me._loadingProcessScreen.Dock = DockStyle.Fill
 
             Case Steps.PreScraping
                 Me.HeaderLabel.Text = "Step 6 : PreScrap"

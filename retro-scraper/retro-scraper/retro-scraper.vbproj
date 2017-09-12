@@ -125,6 +125,7 @@
     <Compile Include="Helpers\JSONHelper.vb" />
     <Compile Include="Helpers\LogsHelper.vb" />
     <Compile Include="Helpers\LicenceHelper.vb" />
+    <Compile Include="Helpers\Md5Helper.vb" />
     <Compile Include="Models\Logs.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -182,6 +183,12 @@
       <DependentUpon>4-RomListChoiceControl.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Custom Controls\Roms\4-RomListChoiceControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\5-RomLoadingProcessControl.Designer.vb">
+      <DependentUpon>5-RomLoadingProcessControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\5-RomLoadingProcessControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.Designer.vb">
@@ -242,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\4-RomListChoiceControl.resx">
       <DependentUpon>4-RomListChoiceControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\5-RomLoadingProcessControl.resx">
+      <DependentUpon>5-RomLoadingProcessControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\RomsContainerControl.resx">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>

@@ -174,6 +174,9 @@ Public Class _2_EmulatorSelectControl
                 ' ******************************************************
                 ' Get type of artworks and their associated folder path
                 sr = New StreamReader(path)
+
+                Me._parent.RomsArtworks.Clear()
+
                 Do While sr.Peek() >= 0
                     Dim line As String = sr.ReadLine
                     If line.Contains("artwork") Then
@@ -215,8 +218,10 @@ Public Class _2_EmulatorSelectControl
                         For Each ext As String In Me._parent.RomsExtensions
                             Me.RomsExtensionsLabel.Text = Me.RomsExtensionsLabel.Text & ext & ", "
                         Next
+                        Me.RomsExtensionsLabel.Text = Me.RomsExtensionsLabel.Text.Substring(0, Me.RomsExtensionsLabel.Text.Length - 2)
 
                         Dim artworksBuilder As New StringBuilder
+                        Me.ArtworksLabel.Text = "Artworks :"
                         artworksBuilder.Append(Me.ArtworksLabel.Text & vbCrLf)
                         For Each a As RomsDataSet.ArtworksRow In Me._parent.RomsArtworks
                             artworksBuilder.Append("- Name : '" & a.Name & "'    Folder Name : '" & a.Path & "'" & vbCrLf)

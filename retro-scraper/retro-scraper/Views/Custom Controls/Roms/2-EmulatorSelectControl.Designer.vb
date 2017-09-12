@@ -24,14 +24,13 @@ Partial Class _2_EmulatorSelectControl
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(_2_EmulatorSelectControl))
         Me.ActionPanel = New System.Windows.Forms.Panel()
+        Me.ArtworksLabel = New System.Windows.Forms.Label()
         Me.RomsExtensionsLabel = New System.Windows.Forms.Label()
-        Me.EmulatorConfigLabel = New System.Windows.Forms.Label()
         Me.EmulatorsListComboBox = New System.Windows.Forms.ComboBox()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.ListLabel = New System.Windows.Forms.Label()
         Me.ActionWaitingControl = New retro_scraper.WaitingControl()
         Me.LoadBackgroundWorker = New System.ComponentModel.BackgroundWorker()
-        Me.ArtworksLabel = New System.Windows.Forms.Label()
         Me.ActionPanel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -39,7 +38,6 @@ Partial Class _2_EmulatorSelectControl
         '
         Me.ActionPanel.Controls.Add(Me.ArtworksLabel)
         Me.ActionPanel.Controls.Add(Me.RomsExtensionsLabel)
-        Me.ActionPanel.Controls.Add(Me.EmulatorConfigLabel)
         Me.ActionPanel.Controls.Add(Me.EmulatorsListComboBox)
         Me.ActionPanel.Controls.Add(Me.DescriptionLabel)
         Me.ActionPanel.Controls.Add(Me.ListLabel)
@@ -49,6 +47,18 @@ Partial Class _2_EmulatorSelectControl
         Me.ActionPanel.Name = "ActionPanel"
         Me.ActionPanel.Size = New System.Drawing.Size(878, 426)
         Me.ActionPanel.TabIndex = 6
+        '
+        'ArtworksLabel
+        '
+        Me.ArtworksLabel.AutoSize = True
+        Me.ArtworksLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ArtworksLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.ArtworksLabel.Location = New System.Drawing.Point(17, 136)
+        Me.ArtworksLabel.Name = "ArtworksLabel"
+        Me.ArtworksLabel.Size = New System.Drawing.Size(56, 16)
+        Me.ArtworksLabel.TabIndex = 7
+        Me.ArtworksLabel.Text = "Artworks :"
+        Me.ArtworksLabel.Visible = False
         '
         'RomsExtensionsLabel
         '
@@ -61,15 +71,6 @@ Partial Class _2_EmulatorSelectControl
         Me.RomsExtensionsLabel.TabIndex = 6
         Me.RomsExtensionsLabel.Text = "Accepted roms extension files :"
         Me.RomsExtensionsLabel.Visible = False
-        '
-        'EmulatorConfigLabel
-        '
-        Me.EmulatorConfigLabel.AutoSize = True
-        Me.EmulatorConfigLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmulatorConfigLabel.Location = New System.Drawing.Point(17, 120)
-        Me.EmulatorConfigLabel.Name = "EmulatorConfigLabel"
-        Me.EmulatorConfigLabel.Size = New System.Drawing.Size(0, 16)
-        Me.EmulatorConfigLabel.TabIndex = 5
         '
         'EmulatorsListComboBox
         '
@@ -114,18 +115,6 @@ Partial Class _2_EmulatorSelectControl
         Me.LoadBackgroundWorker.WorkerReportsProgress = True
         Me.LoadBackgroundWorker.WorkerSupportsCancellation = True
         '
-        'ArtworksLabel
-        '
-        Me.ArtworksLabel.AutoSize = True
-        Me.ArtworksLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ArtworksLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ArtworksLabel.Location = New System.Drawing.Point(17, 136)
-        Me.ArtworksLabel.Name = "ArtworksLabel"
-        Me.ArtworksLabel.Size = New System.Drawing.Size(56, 16)
-        Me.ArtworksLabel.TabIndex = 7
-        Me.ArtworksLabel.Text = "Artworks :"
-        Me.ArtworksLabel.Visible = False
-        '
         '_2_EmulatorSelectControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -147,7 +136,6 @@ Partial Class _2_EmulatorSelectControl
     Friend WithEvents ListLabel As Label
     Friend WithEvents ActionWaitingControl As WaitingControl
     Friend WithEvents LoadBackgroundWorker As System.ComponentModel.BackgroundWorker
-    Friend WithEvents EmulatorConfigLabel As Label
     Friend WithEvents RomsExtensionsLabel As Label
     Friend WithEvents ArtworksLabel As Label
 End Class

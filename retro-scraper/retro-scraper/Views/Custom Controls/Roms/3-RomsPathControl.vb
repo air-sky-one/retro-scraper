@@ -40,6 +40,7 @@ Public Class _3_RomsPathControl
         Dim path As String = String.Empty
         Dim searchPattern As New StringBuilder
         Dim isErr As Boolean = False
+        Dim cpt As Integer = 0
 
         Try
             Me.RomsFolderBrowserDialog.ShowDialog()
@@ -50,13 +51,12 @@ Public Class _3_RomsPathControl
                     searchPattern.Append("*" & ext & ",")
                 Next
 
-                Dim cpt As Integer = 0
-
                 Dim collection = From fi In New DirectoryInfo(path).GetFiles()
                                  Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
 
                 If collection.Count > 0 Then
                     Me.FolderPathTextBox.Text = path
+                    Me._parent.RomsPath = path
                     Me.ResultsLabel.Text = collection.Count.ToString & " roms where detected in " & path
                     Me.ResultsLabel.Visible = True
 

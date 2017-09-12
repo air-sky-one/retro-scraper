@@ -146,6 +146,7 @@ Public Class _2_EmulatorSelectControl
             If Me._isJobDone Then
 
                 Me.SuspendLayout()
+                Cursor.Current = Cursors.WaitCursor
 
                 path = Me.EmulatorsListComboBox.SelectedValue.ToString
 
@@ -194,8 +195,11 @@ Public Class _2_EmulatorSelectControl
                 If Not isErr Then
                     Me._parent.ButtonNext.Enabled = True
                 End If
+
+                Cursor.Current = Cursors.Default
             End If
         Catch ex As Exception
+            Cursor.Current = Cursors.Default
             ShowErrorMessage(ex)
         End Try
     End Sub

@@ -45,33 +45,30 @@ Public Class _3_RomsPathControl
             Me.RomsFolderBrowserDialog.ShowDialog()
             path = Me.RomsFolderBrowserDialog.SelectedPath
 
-            For Each ext As String In Me._parent.RomsExtensions
-                searchPattern.Append("*" & ext & ",")
-            Next
+            If Not path = String.Empty Then
+                For Each ext As String In Me._parent.RomsExtensions
+                    searchPattern.Append("*" & ext & ",")
+                Next
 
-            Dim cpt As Integer = 0
+                Dim cpt As Integer = 0
 
-            Dim pute As String = searchPattern.ToString
+                Dim collection = From fi In New DirectoryInfo(path).GetFiles()
+                                 Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
 
-            Dim collection = From fi In New DirectoryInfo(path).GetFiles()
-                             Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
+                If collection.Count > 0 Then
+                    Me.FolderPathTextBox.Text = path
+                    Me.ResultsLabel.Text = collection.Count.ToString & " roms where detected in " & path
+                    Me.ResultsLabel.Visible = True
 
+                    Me._parent.ButtonNext.Enabled = True
+                Else
+                    Dim err As New Exception("The selected folder doesn't contain any roms accepted by the selected emulator. Please select another folder or populate this folder with roms with extensions that are accepted by the selected emulator.")
+                    Me.ResultsLabel.Visible = False
 
-            If collection.Count > 0 Then
-                Me.FolderPathTextBox.Text = path
-                Me.ResultsLabel.Text = collection.Count.ToString & " roms where detected in " & path
-                Me.ResultsLabel.Visible = True
-
-                Me._parent.ButtonNext.Enabled = True
-            Else
-                Dim err As New Exception("The selected folder doesn't contain any roms accepted by the selected emulator. Please select another folder or populate this folder with roms with extensions that are accepted by the selected emulator.")
-                Me.ResultsLabel.Visible = False
-
-                isErr = True
-                ShowErrorMessage(err)
+                    isErr = True
+                    ShowErrorMessage(err)
+                End If
             End If
-
-
         Catch ex As Exception
             ShowErrorMessage(ex)
         End Try

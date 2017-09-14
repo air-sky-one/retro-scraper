@@ -32,6 +32,7 @@ Partial Class MainForm
         Me.MainButtonSystems = New System.Windows.Forms.Button()
         Me.MainButtonGameLists = New System.Windows.Forms.Button()
         Me.MainButtonSettings = New System.Windows.Forms.Button()
+        Me.MainButtonDevTools = New System.Windows.Forms.Button()
         Me.MainHomeControl = New retro_scraper.HomeControl()
         Me.HeaderPanel.SuspendLayout()
         CType(Me.HeaderPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +85,7 @@ Partial Class MainForm
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonSystems)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonGameLists)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonSettings)
+        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonDevTools)
         Me.MainMenuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainMenuFlowLayoutPanel.Location = New System.Drawing.Point(0, 0)
         Me.MainMenuFlowLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
@@ -176,6 +178,24 @@ Partial Class MainForm
         Me.MainButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonSettings.UseVisualStyleBackColor = False
         '
+        'MainButtonDevTools
+        '
+        Me.MainButtonDevTools.BackColor = System.Drawing.Color.DimGray
+        Me.MainButtonDevTools.FlatAppearance.BorderSize = 0
+        Me.MainButtonDevTools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonDevTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonDevTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonDevTools.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonDevTools.Location = New System.Drawing.Point(0, 180)
+        Me.MainButtonDevTools.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonDevTools.Name = "MainButtonDevTools"
+        Me.MainButtonDevTools.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonDevTools.TabIndex = 5
+        Me.MainButtonDevTools.Text = "   &Dev Tools"
+        Me.MainButtonDevTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonDevTools.UseVisualStyleBackColor = False
+        Me.MainButtonDevTools.Visible = False
+        '
         'MainHomeControl
         '
         Me.MainHomeControl.BackColor = System.Drawing.Color.White
@@ -219,4 +239,5 @@ Partial Class MainForm
     Friend WithEvents MainButtonSettings As Button
     Friend WithEvents MainButtonHome As Button
     Friend WithEvents MainHomeControl As HomeControl
+    Friend WithEvents MainButtonDevTools As Button
 End Class

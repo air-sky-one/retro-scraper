@@ -172,13 +172,26 @@
     ''' <summary>
     ''' Roms data retrieve from screenscraper
     ''' </summary>
-    Private _romsData As New RomsDataSet.RomDataTable
-    Public Property RomsData() As RomsDataSet.RomDataTable
+    Private _romsData As New RomsDataSet.SSRomsDataTable
+    Public Property RomsData() As RomsDataSet.SSRomsDataTable
         Get
             Return _romsData
         End Get
-        Set(ByVal value As RomsDataSet.RomDataTable)
+        Set(ByVal value As RomsDataSet.SSRomsDataTable)
             _romsData = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Roms in error during loading
+    ''' </summary>
+    Private _romsDataErrors As New RomsDataSet.ErrorsSSRomsLoadingDataTable
+    Public Property RomsDataErrors() As RomsDataSet.ErrorsSSRomsLoadingDataTable
+        Get
+            Return _romsDataErrors
+        End Get
+        Set(ByVal value As RomsDataSet.ErrorsSSRomsLoadingDataTable)
+            _romsDataErrors = value
         End Set
     End Property
 

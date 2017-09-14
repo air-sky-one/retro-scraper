@@ -65,6 +65,10 @@ Public Class MainForm
                 End If
             Next
 
+#If DEBUG Then
+            Me.MainButtonDevTools.Visible = True
+#End If
+
             Me._actualContent = Me.MainHomeControl
 
         Catch ex As Exception
@@ -145,6 +149,15 @@ Public Class MainForm
                     Me._actualContent = c
                 Case "MainButtonSettings"
                     Dim c As New RomsContainerControl
+
+                    Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
+
+                    c.Dock = DockStyle.Fill
+                    c.Height = 787
+
+                    Me._actualContent = c
+                Case "MainButtonDevTools"
+                    Dim c As New DevToolsContainerControl
 
                     Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
 

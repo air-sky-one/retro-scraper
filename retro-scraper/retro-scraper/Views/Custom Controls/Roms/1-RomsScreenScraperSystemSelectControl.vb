@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports Newtonsoft.Json.Linq
 
-Public Class _1_ScreenScraperSystemSelectControl
+Public Class _1_RomsScreenScraperSystemSelectControl
 
     ''' <summary>
     ''' Parent con tainer control
@@ -23,7 +23,7 @@ Public Class _1_ScreenScraperSystemSelectControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub _1_ScreenScraperSystemSelectControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub _1_RomsScreenScraperSystemSelectControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Me._parent = TryCast(Me.Parent.Parent, RomsContainerControl)
 

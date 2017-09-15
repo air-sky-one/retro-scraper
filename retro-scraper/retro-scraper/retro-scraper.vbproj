@@ -173,16 +173,16 @@
     <Compile Include="Views\Custom Controls\HomeControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\1-ScreenScraperSystemSelectControl.Designer.vb">
-      <DependentUpon>1-ScreenScraperSystemSelectControl.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\1-RomsScreenScraperSystemSelectControl.Designer.vb">
+      <DependentUpon>1-RomsScreenScraperSystemSelectControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\1-ScreenScraperSystemSelectControl.vb">
+    <Compile Include="Views\Custom Controls\Roms\1-RomsScreenScraperSystemSelectControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\2-EmulatorSelectControl.Designer.vb">
-      <DependentUpon>2-EmulatorSelectControl.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.Designer.vb">
+      <DependentUpon>2-RomsEmulatorSelectControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\2-EmulatorSelectControl.vb">
+    <Compile Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Custom Controls\Roms\3-RomsPathControl.Designer.vb">
@@ -191,16 +191,16 @@
     <Compile Include="Views\Custom Controls\Roms\3-RomsPathControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\4-RomListChoiceControl.Designer.vb">
-      <DependentUpon>4-RomListChoiceControl.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\4-RomsGameListChoiceControl.Designer.vb">
+      <DependentUpon>4-RomsGameListChoiceControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\4-RomListChoiceControl.vb">
+    <Compile Include="Views\Custom Controls\Roms\4-RomsGameListChoiceControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\5-RomLoadingProcessControl.Designer.vb">
-      <DependentUpon>5-RomLoadingProcessControl.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\5-RomsLoadingProcessControl.Designer.vb">
+      <DependentUpon>5-RomsLoadingProcessControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\5-RomLoadingProcessControl.vb">
+    <Compile Include="Views\Custom Controls\Roms\5-RomsLoadingProcessControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.Designer.vb">
@@ -256,20 +256,20 @@
     <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
       <DependentUpon>HomeControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\1-ScreenScraperSystemSelectControl.resx">
-      <DependentUpon>1-ScreenScraperSystemSelectControl.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\1-RomsScreenScraperSystemSelectControl.resx">
+      <DependentUpon>1-RomsScreenScraperSystemSelectControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\2-EmulatorSelectControl.resx">
-      <DependentUpon>2-EmulatorSelectControl.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.resx">
+      <DependentUpon>2-RomsEmulatorSelectControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\3-RomsPathControl.resx">
       <DependentUpon>3-RomsPathControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\4-RomListChoiceControl.resx">
-      <DependentUpon>4-RomListChoiceControl.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\4-RomsGameListChoiceControl.resx">
+      <DependentUpon>4-RomsGameListChoiceControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\5-RomLoadingProcessControl.resx">
-      <DependentUpon>5-RomLoadingProcessControl.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\5-RomsLoadingProcessControl.resx">
+      <DependentUpon>5-RomsLoadingProcessControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\RomsContainerControl.resx">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>

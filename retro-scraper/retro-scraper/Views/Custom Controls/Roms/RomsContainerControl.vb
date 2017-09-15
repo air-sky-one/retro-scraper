@@ -19,7 +19,7 @@
     ''' <summary>
     ''' 1- ScreenScraper system Selection screen
     ''' </summary>
-    Private _screenScraperSystemSelect As New _1_ScreenScraperSystemSelectControl
+    Private _screenScraperSystemSelect As New _1_RomsScreenScraperSystemSelectControl
 
     ''' <summary>
     ''' Screen Scraper Systems List
@@ -198,7 +198,7 @@
     ''' <summary>
     ''' Loading process screeen (retrieve data and media's url for games from screenscraper.fr
     ''' </summary>
-    Private _loadingProcessScreen As New _5_RomLoadingProcessControl
+    Private _loadingProcessScreen As New _5_RomsLoadingProcessControl
 
 #End Region
 

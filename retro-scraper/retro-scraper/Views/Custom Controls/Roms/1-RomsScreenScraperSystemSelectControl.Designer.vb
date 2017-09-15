@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class _1_ScreenScraperSystemSelectControl
+Partial Class _1_RomsScreenScraperSystemSelectControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -99,7 +99,7 @@ Partial Class _1_ScreenScraperSystemSelectControl
         Me.ActionWaitingControl.Size = New System.Drawing.Size(878, 645)
         Me.ActionWaitingControl.TabIndex = 6
         '
-        '_1_ScreenScraperSystemSelectControl
+        '_1_RomsScreenScraperSystemSelectControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -107,7 +107,7 @@ Partial Class _1_ScreenScraperSystemSelectControl
         Me.Controls.Add(Me.LogsButton)
         Me.Controls.Add(Me.ActionWaitingControl)
         Me.Controls.Add(Me.ActionPanel)
-        Me.Name = "_1_ScreenScraperSystemSelectControl"
+        Me.Name = "_1_RomsScreenScraperSystemSelectControl"
         Me.Size = New System.Drawing.Size(878, 727)
         Me.ActionPanel.ResumeLayout(False)
         Me.ActionPanel.PerformLayout()

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class _5_RomLoadingProcessControl
+Partial Class _5_RomsLoadingProcessControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -64,14 +64,14 @@ Partial Class _5_RomLoadingProcessControl
         Me.LoadBackgroundWorker.WorkerReportsProgress = True
         Me.LoadBackgroundWorker.WorkerSupportsCancellation = True
         '
-        '_5_RomLoadingProcessControl
+        '_5_RomsLoadingProcessControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.ActionWaitingControl)
         Me.Controls.Add(Me.ActionPanel)
-        Me.Name = "_5_RomLoadingProcessControl"
+        Me.Name = "_5_RomsLoadingProcessControl"
         Me.Size = New System.Drawing.Size(878, 727)
         Me.ActionPanel.ResumeLayout(False)
         Me.ActionPanel.PerformLayout()

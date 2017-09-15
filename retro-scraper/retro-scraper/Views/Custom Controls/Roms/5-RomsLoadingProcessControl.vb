@@ -1,9 +1,10 @@
-﻿Imports System.ComponentModel
+﻿
+Imports System.ComponentModel
 Imports System.IO
 Imports System.Text
 Imports Newtonsoft.Json.Linq
 
-Public Class _5_RomLoadingProcessControl
+Public Class _5_RomsLoadingProcessControl
 
     ''' <summary>
     ''' Parent con tainer control
@@ -30,7 +31,7 @@ Public Class _5_RomLoadingProcessControl
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub _5_RomLoadingProcessControl_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub _5_RomsLoadingProcessControl_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
             Me._parent = TryCast(Me.Parent.Parent, RomsContainerControl)
 

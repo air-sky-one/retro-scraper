@@ -203,6 +203,30 @@
     <Compile Include="Views\Custom Controls\Roms\5-RomsLoadingProcessControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Custom Controls\Roms\6-RomsBuildScrapGamesSelectionControl.Designer.vb">
+      <DependentUpon>6-RomsBuildScrapGamesSelectionControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\6-RomsBuildScrapGamesSelectionControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\7-RomsBuildScrapTitleControl.Designer.vb">
+      <DependentUpon>7-RomsBuildScrapTitleControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\7-RomsBuildScrapTitleControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\8-RomsBuildScrapDateControl.Designer.vb">
+      <DependentUpon>8-RomsBuildScrapDateControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\8-RomsBuildScrapDateControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\9-RomsBuildScrapCategoryControl.Designer.vb">
+      <DependentUpon>9-RomsBuildScrapCategoryControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\9-RomsBuildScrapCategoryControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\Roms\RomsContainerControl.Designer.vb">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>
     </Compile>
@@ -270,6 +294,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\5-RomsLoadingProcessControl.resx">
       <DependentUpon>5-RomsLoadingProcessControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\6-RomsBuildScrapGamesSelectionControl.resx">
+      <DependentUpon>6-RomsBuildScrapGamesSelectionControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\7-RomsBuildScrapTitleControl.resx">
+      <DependentUpon>7-RomsBuildScrapTitleControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\8-RomsBuildScrapDateControl.resx">
+      <DependentUpon>8-RomsBuildScrapDateControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\9-RomsBuildScrapCategoryControl.resx">
+      <DependentUpon>9-RomsBuildScrapCategoryControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\RomsContainerControl.resx">
       <DependentUpon>RomsContainerControl.vb</DependentUpon>

@@ -202,6 +202,42 @@
 
 #End Region
 
+#Region "step 6 : Build Scrap : Games selection"
+
+    ''' <summary>
+    ''' Build Scrap : Games selection
+    ''' </summary>
+    Private _gamesSelectionProcessScreen As New _6_RomsBuildScrapGamesSelectionControl
+
+#End Region
+
+#Region "step 7 : Build Scrap : Games title selection"
+
+    ''' <summary>
+    ''' Build Scrap : Games selection
+    ''' </summary>
+    Private _gamesTitleScreen As New _7_RomsBuildScrapTitleControl
+
+#End Region
+
+#Region "step 8 : Build Scrap : Games date selection"
+
+    ''' <summary>
+    ''' Build Scrap : Games selection
+    ''' </summary>
+    Private _gamesDateScreen As New _8_RomsBuildScrapDateControl
+
+#End Region
+
+#Region "step 9 : Build Scrap : Games category selection"
+
+    ''' <summary>
+    ''' Build Scrap : Games selection
+    ''' </summary>
+    Private _gamesCategoryScreen As New _9_RomsBuildScrapCategoryControl
+
+#End Region
+
     ''' <summary>
     ''' Define the steps for roms scraping completion
     ''' </summary>
@@ -231,17 +267,33 @@
         ''' </summary>
         LoadingProcess = 5
         ''' <summary>
-        ''' allows user to define what to scrap
+        ''' allows user to select the games he wants to scrap
         ''' </summary>
-        PreScraping = 6
+        BuildScrapingGamesSelection = 6
+        ''' <summary>
+        ''' allows user to define what to scrap for games title
+        ''' </summary>
+        BuildScrapingTitle = 7
+        ''' <summary>
+        ''' allows user to define what to scrap for games date
+        ''' </summary>
+        BuildScrapingDate = 8
+        ''' <summary>
+        ''' allows user to define what to scrap for games category
+        ''' </summary>
+        BuildScrapingCategory = 9
+        ''' <summary>
+        ''' allows user to define what to scrap for games artwork
+        ''' </summary>
+        BuildScrapingArtwork = 10
         ''' <summary>
         ''' display download progress
         ''' </summary>
-        Download = 7
+        Download = 11
         ''' <summary>
         ''' display results and logs
         ''' </summary>
-        Result = 8
+        Result = 12
     End Enum
 
     ''' <summary>
@@ -323,6 +375,11 @@
 
                 Me.StepsProgressBar.Value = 4
 
+                Me._loadingProcessScreen = Nothing
+                Me._gamesSelectionProcessScreen.Datagrid.DataSource = Nothing
+                Me._gamesTitleScreen.Datagrid.DataSource = Nothing
+                Me._gamesDateScreen.Datagrid.DataSource = Nothing
+
                 Me.MainTableLayoutPanel.Controls.Add(Me._romListChoice, 0, 2)
 
                 Me._romListChoice.Dock = DockStyle.Fill
@@ -332,24 +389,65 @@
 
                 Me.StepsProgressBar.Value = 5
 
+                Me._loadingProcessScreen = New _5_RomsLoadingProcessControl
                 Me.MainTableLayoutPanel.Controls.Add(Me._loadingProcessScreen, 0, 2)
 
                 Me._loadingProcessScreen.Dock = DockStyle.Fill
 
-            Case Steps.PreScraping
-                Me.HeaderLabel.Text = "Step 6 : PreScrap"
+            Case Steps.BuildScrapingGamesSelection
+                Me.HeaderLabel.Text = "Step 6 : Build your scrap : Select the games you want to scrap"
 
                 Me.StepsProgressBar.Value = 6
 
-            Case Steps.Download
-                Me.HeaderLabel.Text = "Step 7 : Download"
+                Me._gamesSelectionProcessScreen = New _6_RomsBuildScrapGamesSelectionControl
+                Me.MainTableLayoutPanel.Controls.Add(Me._gamesSelectionProcessScreen, 0, 2)
+
+                Me._gamesSelectionProcessScreen.Dock = DockStyle.Fill
+
+            Case Steps.BuildScrapingTitle
+                Me.HeaderLabel.Text = "Step 7 : Build your scrap : Names"
 
                 Me.StepsProgressBar.Value = 7
+
+                Me._gamesTitleScreen = New _7_RomsBuildScrapTitleControl
+                Me.MainTableLayoutPanel.Controls.Add(Me._gamesTitleScreen, 0, 2)
+
+                Me._gamesTitleScreen.Dock = DockStyle.Fill
+
+            Case Steps.BuildScrapingDate
+                Me.HeaderLabel.Text = "Step 8 : Build your scrap : Dates"
+
+                Me.StepsProgressBar.Value = 8
+
+                Me._gamesDateScreen = New _8_RomsBuildScrapDateControl
+                Me.MainTableLayoutPanel.Controls.Add(Me._gamesDateScreen, 0, 2)
+
+                Me._gamesTitleScreen.Dock = DockStyle.Fill
+
+            Case Steps.BuildScrapingCategory
+                Me.HeaderLabel.Text = "Step 9 : Build your scrap : Categories"
+
+                Me.StepsProgressBar.Value = 9
+
+                Me._gamesCategoryScreen = New _9_RomsBuildScrapCategoryControl
+                Me.MainTableLayoutPanel.Controls.Add(Me._gamesCategoryScreen, 0, 2)
+
+                Me._gamesCategoryScreen.Dock = DockStyle.Fill
+
+            Case Steps.BuildScrapingArtwork
+                Me.HeaderLabel.Text = "Step 10 : Build your scrap : Artworks"
+
+                Me.StepsProgressBar.Value = 10
+
+            Case Steps.Download
+                Me.HeaderLabel.Text = "Step 11 : Download"
+
+                Me.StepsProgressBar.Value = 11
 
             Case Steps.Result
                 Me.HeaderLabel.Text = "Results"
 
-                Me.StepsProgressBar.Value = 8
+                Me.StepsProgressBar.Value = 12
 
             Case Else
         End Select
@@ -390,8 +488,8 @@
         ' Upgrade actual step
         Me._actualStep = Me._actualStep - 1
 
-        If Me._actualStep = Steps.LoadingProcess Then Me._actualStep = Steps.RomListFile
-        If Me._actualStep = Steps.Download Then Me._actualStep = Steps.PreScraping
+        If Me._actualStep >= Steps.Download Then Me._actualStep = Steps.BuildScrapingGamesSelection
+        If Me._actualStep >= Steps.LoadingProcess Then Me._actualStep = Steps.RomListFile
 
         ' Prev/Next buttons
         Me.DisplayStepsButtons()
@@ -399,4 +497,5 @@
         ' Update content
         UpdateContent()
     End Sub
+
 End Class

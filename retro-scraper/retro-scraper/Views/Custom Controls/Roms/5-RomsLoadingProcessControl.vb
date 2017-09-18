@@ -1,5 +1,4 @@
-﻿
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 Imports System.IO
 Imports System.Text
 Imports Newtonsoft.Json.Linq
@@ -54,6 +53,9 @@ Public Class _5_RomsLoadingProcessControl
                     .MainWaitingProgressBar.Maximum = collection.Count
                 End With
 
+                Me._parent.RomsData.Clear()
+                Me._parent.RomsDataErrors.Clear()
+
                 Me._parent.ButtonNext.Enabled = False
                 Me._parent.ButtonPrevious.Enabled = False
 
@@ -87,9 +89,6 @@ Public Class _5_RomsLoadingProcessControl
                              Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
 
             If collection.Count > 0 Then
-
-                Me._parent.RomsData.Clear()
-                Me._parent.RomsDataErrors.Clear()
 
                 For Each file As FileInfo In collection
                     Dim rom As RomsDataSet.SSRomsRow = Me._parent.RomsData.NewSSRomsRow
@@ -469,6 +468,10 @@ Public Class _5_RomsLoadingProcessControl
             Else
                 Me.ActionWaitingControl.DetailsTextBox.Visible = False
             End If
+
+            Me._parent.ButtonPrevious.Enabled = True
+            Me._parent.ButtonNext.Enabled = True
         End If
     End Sub
+
 End Class

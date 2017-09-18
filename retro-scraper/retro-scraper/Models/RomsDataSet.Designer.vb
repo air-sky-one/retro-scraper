@@ -1265,33 +1265,59 @@ Partial Public Class RomsDataSet
         
         Private columnsize As Global.System.Data.DataColumn
         
+        Private columnis_nom_us As Global.System.Data.DataColumn
+        
         Private columnnom_us As Global.System.Data.DataColumn
+        
+        Private columnis_nom_jp As Global.System.Data.DataColumn
         
         Private columnnom_jp As Global.System.Data.DataColumn
         
+        Private columnis_nom_wor As Global.System.Data.DataColumn
+        
         Private columnnom_wor As Global.System.Data.DataColumn
+        
+        Private columnis_nom_eu As Global.System.Data.DataColumn
         
         Private columnnom_eu As Global.System.Data.DataColumn
         
         Private columncloneof As Global.System.Data.DataColumn
         
+        Private columnis_date_us As Global.System.Data.DataColumn
+        
         Private columndate_us As Global.System.Data.DataColumn
+        
+        Private columnis_date_jp As Global.System.Data.DataColumn
         
         Private columndate_jp As Global.System.Data.DataColumn
         
+        Private columnis_date_wor As Global.System.Data.DataColumn
+        
         Private columndate_wor As Global.System.Data.DataColumn
+        
+        Private columnis_date_eu As Global.System.Data.DataColumn
         
         Private columndate_eu As Global.System.Data.DataColumn
         
         Private columnediteur As Global.System.Data.DataColumn
         
+        Private columnis_genres_en As Global.System.Data.DataColumn
+        
         Private columngenres_en As Global.System.Data.DataColumn
+        
+        Private columnis_genres_fr As Global.System.Data.DataColumn
         
         Private columngenres_fr As Global.System.Data.DataColumn
         
+        Private columnis_genres_de As Global.System.Data.DataColumn
+        
         Private columngenres_de As Global.System.Data.DataColumn
         
+        Private columnis_genres_es As Global.System.Data.DataColumn
+        
         Private columngenres_es As Global.System.Data.DataColumn
+        
+        Private columnis_genres_pt As Global.System.Data.DataColumn
         
         Private columngenres_pt As Global.System.Data.DataColumn
         
@@ -1444,9 +1470,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_nom_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_nom_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property nom_usColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnnom_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_nom_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_nom_jp
             End Get
         End Property
         
@@ -1460,9 +1502,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_nom_worColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_nom_wor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property nom_worColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnnom_wor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_nom_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_nom_eu
             End Get
         End Property
         
@@ -1484,9 +1542,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_date_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_date_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property date_usColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columndate_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_date_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_date_jp
             End Get
         End Property
         
@@ -1500,9 +1574,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_date_worColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_date_wor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property date_worColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columndate_wor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_date_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_date_eu
             End Get
         End Property
         
@@ -1524,9 +1614,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_genres_enColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_genres_en
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property genres_enColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columngenres_en
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_genres_frColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_genres_fr
             End Get
         End Property
         
@@ -1540,6 +1646,14 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_genres_deColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_genres_de
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property genres_deColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columngenres_de
@@ -1548,9 +1662,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_genres_esColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_genres_es
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property genres_esColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columngenres_es
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_genres_ptColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_genres_pt
             End Get
         End Property
         
@@ -1924,20 +2054,33 @@ Partial Public Class RomsDataSet
                     ByVal filename As String,  _
                     ByVal extension As String,  _
                     ByVal size As Integer,  _
+                    ByVal is_nom_us As Boolean,  _
                     ByVal nom_us As String,  _
+                    ByVal is_nom_jp As Boolean,  _
                     ByVal nom_jp As String,  _
+                    ByVal is_nom_wor As Boolean,  _
                     ByVal nom_wor As String,  _
+                    ByVal is_nom_eu As Boolean,  _
                     ByVal nom_eu As String,  _
                     ByVal cloneof As String,  _
+                    ByVal is_date_us As Boolean,  _
                     ByVal date_us As String,  _
+                    ByVal is_date_jp As Boolean,  _
                     ByVal date_jp As String,  _
+                    ByVal is_date_wor As Boolean,  _
                     ByVal date_wor As String,  _
+                    ByVal is_date_eu As Boolean,  _
                     ByVal date_eu As String,  _
                     ByVal editeur As String,  _
+                    ByVal is_genres_en As Boolean,  _
                     ByVal genres_en As String,  _
+                    ByVal is_genres_fr As Boolean,  _
                     ByVal genres_fr As String,  _
+                    ByVal is_genres_de As Boolean,  _
                     ByVal genres_de As String,  _
+                    ByVal is_genres_es As Boolean,  _
                     ByVal genres_es As String,  _
+                    ByVal is_genres_pt As Boolean,  _
                     ByVal genres_pt As String,  _
                     ByVal joueurs As String,  _
                     ByVal rotation As String,  _
@@ -1980,7 +2123,7 @@ Partial Public Class RomsDataSet
                     ByVal local_romcrc As String,  _
                     ByVal local_rommd5 As String) As SSRomsRow
             Dim rowSSRomsRow As SSRomsRow = CType(Me.NewRow,SSRomsRow)
-            Dim columnValuesArray() As Object = New Object() {IsChecked, filename, extension, size, nom_us, nom_jp, nom_wor, nom_eu, cloneof, date_us, date_jp, date_wor, date_eu, editeur, genres_en, genres_fr, genres_de, genres_es, genres_pt, joueurs, rotation, controles, media_screenshot, media_screenshottitle, media_fanart, media_video, media_wheel_us, media_wheel_jp, media_wheel_wor, media_wheelcarbon_us, media_wheelcarbon_jp, media_wheelcarbon_wor, media_wheelsteel_us, media_wheelsteel_jp, media_wheelsteel_wor, media_boxtexture_us, media_boxtexture_jp, media_boxtexture_eu, media_box2d_us, media_box2d_jp, media_box2d_eu, media_box2d_side_us, media_box2d_side_jp, media_box2d_side_eu, media_box2d_back_us, media_box2d_back_jp, media_box2d_back_eu, media_box3d_us, media_box3d_jp, media_box3d_eu, media_supporttexture_us, media_supporttexture_jp, media_supporttexture_eu, media_support2d_us, media_support2d_jp, media_support2d_eu, local_romsize, local_romcrc, local_rommd5}
+            Dim columnValuesArray() As Object = New Object() {IsChecked, filename, extension, size, is_nom_us, nom_us, is_nom_jp, nom_jp, is_nom_wor, nom_wor, is_nom_eu, nom_eu, cloneof, is_date_us, date_us, is_date_jp, date_jp, is_date_wor, date_wor, is_date_eu, date_eu, editeur, is_genres_en, genres_en, is_genres_fr, genres_fr, is_genres_de, genres_de, is_genres_es, genres_es, is_genres_pt, genres_pt, joueurs, rotation, controles, media_screenshot, media_screenshottitle, media_fanart, media_video, media_wheel_us, media_wheel_jp, media_wheel_wor, media_wheelcarbon_us, media_wheelcarbon_jp, media_wheelcarbon_wor, media_wheelsteel_us, media_wheelsteel_jp, media_wheelsteel_wor, media_boxtexture_us, media_boxtexture_jp, media_boxtexture_eu, media_box2d_us, media_box2d_jp, media_box2d_eu, media_box2d_side_us, media_box2d_side_jp, media_box2d_side_eu, media_box2d_back_us, media_box2d_back_jp, media_box2d_back_eu, media_box3d_us, media_box3d_jp, media_box3d_eu, media_supporttexture_us, media_supporttexture_jp, media_supporttexture_eu, media_support2d_us, media_support2d_jp, media_support2d_eu, local_romsize, local_romcrc, local_rommd5}
             rowSSRomsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSSRomsRow)
             Return rowSSRomsRow
@@ -2007,20 +2150,33 @@ Partial Public Class RomsDataSet
             Me.columnfilename = MyBase.Columns("filename")
             Me.columnextension = MyBase.Columns("extension")
             Me.columnsize = MyBase.Columns("size")
+            Me.columnis_nom_us = MyBase.Columns("is_nom_us")
             Me.columnnom_us = MyBase.Columns("nom_us")
+            Me.columnis_nom_jp = MyBase.Columns("is_nom_jp")
             Me.columnnom_jp = MyBase.Columns("nom_jp")
+            Me.columnis_nom_wor = MyBase.Columns("is_nom_wor")
             Me.columnnom_wor = MyBase.Columns("nom_wor")
+            Me.columnis_nom_eu = MyBase.Columns("is_nom_eu")
             Me.columnnom_eu = MyBase.Columns("nom_eu")
             Me.columncloneof = MyBase.Columns("cloneof")
+            Me.columnis_date_us = MyBase.Columns("is_date_us")
             Me.columndate_us = MyBase.Columns("date_us")
+            Me.columnis_date_jp = MyBase.Columns("is_date_jp")
             Me.columndate_jp = MyBase.Columns("date_jp")
+            Me.columnis_date_wor = MyBase.Columns("is_date_wor")
             Me.columndate_wor = MyBase.Columns("date_wor")
+            Me.columnis_date_eu = MyBase.Columns("is_date_eu")
             Me.columndate_eu = MyBase.Columns("date_eu")
             Me.columnediteur = MyBase.Columns("editeur")
+            Me.columnis_genres_en = MyBase.Columns("is_genres_en")
             Me.columngenres_en = MyBase.Columns("genres_en")
+            Me.columnis_genres_fr = MyBase.Columns("is_genres_fr")
             Me.columngenres_fr = MyBase.Columns("genres_fr")
+            Me.columnis_genres_de = MyBase.Columns("is_genres_de")
             Me.columngenres_de = MyBase.Columns("genres_de")
+            Me.columnis_genres_es = MyBase.Columns("is_genres_es")
             Me.columngenres_es = MyBase.Columns("genres_es")
+            Me.columnis_genres_pt = MyBase.Columns("is_genres_pt")
             Me.columngenres_pt = MyBase.Columns("genres_pt")
             Me.columnjoueurs = MyBase.Columns("joueurs")
             Me.columnrotation = MyBase.Columns("rotation")
@@ -2075,34 +2231,60 @@ Partial Public Class RomsDataSet
             MyBase.Columns.Add(Me.columnextension)
             Me.columnsize = New Global.System.Data.DataColumn("size", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsize)
+            Me.columnis_nom_us = New Global.System.Data.DataColumn("is_nom_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_nom_us)
             Me.columnnom_us = New Global.System.Data.DataColumn("nom_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnom_us)
+            Me.columnis_nom_jp = New Global.System.Data.DataColumn("is_nom_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_nom_jp)
             Me.columnnom_jp = New Global.System.Data.DataColumn("nom_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnom_jp)
+            Me.columnis_nom_wor = New Global.System.Data.DataColumn("is_nom_wor", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_nom_wor)
             Me.columnnom_wor = New Global.System.Data.DataColumn("nom_wor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnom_wor)
+            Me.columnis_nom_eu = New Global.System.Data.DataColumn("is_nom_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_nom_eu)
             Me.columnnom_eu = New Global.System.Data.DataColumn("nom_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnom_eu)
             Me.columncloneof = New Global.System.Data.DataColumn("cloneof", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncloneof)
+            Me.columnis_date_us = New Global.System.Data.DataColumn("is_date_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_date_us)
             Me.columndate_us = New Global.System.Data.DataColumn("date_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndate_us)
+            Me.columnis_date_jp = New Global.System.Data.DataColumn("is_date_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_date_jp)
             Me.columndate_jp = New Global.System.Data.DataColumn("date_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndate_jp)
+            Me.columnis_date_wor = New Global.System.Data.DataColumn("is_date_wor", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_date_wor)
             Me.columndate_wor = New Global.System.Data.DataColumn("date_wor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndate_wor)
+            Me.columnis_date_eu = New Global.System.Data.DataColumn("is_date_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_date_eu)
             Me.columndate_eu = New Global.System.Data.DataColumn("date_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndate_eu)
             Me.columnediteur = New Global.System.Data.DataColumn("editeur", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnediteur)
+            Me.columnis_genres_en = New Global.System.Data.DataColumn("is_genres_en", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_genres_en)
             Me.columngenres_en = New Global.System.Data.DataColumn("genres_en", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columngenres_en)
+            Me.columnis_genres_fr = New Global.System.Data.DataColumn("is_genres_fr", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_genres_fr)
             Me.columngenres_fr = New Global.System.Data.DataColumn("genres_fr", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columngenres_fr)
+            Me.columnis_genres_de = New Global.System.Data.DataColumn("is_genres_de", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_genres_de)
             Me.columngenres_de = New Global.System.Data.DataColumn("genres_de", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columngenres_de)
+            Me.columnis_genres_es = New Global.System.Data.DataColumn("is_genres_es", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_genres_es)
             Me.columngenres_es = New Global.System.Data.DataColumn("genres_es", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columngenres_es)
+            Me.columnis_genres_pt = New Global.System.Data.DataColumn("is_genres_pt", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_genres_pt)
             Me.columngenres_pt = New Global.System.Data.DataColumn("genres_pt", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columngenres_pt)
             Me.columnjoueurs = New Global.System.Data.DataColumn("joueurs", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -2187,6 +2369,19 @@ Partial Public Class RomsDataSet
             MyBase.Columns.Add(Me.columnlocal_rommd5)
             Me.columnIsChecked.AllowDBNull = false
             Me.columnIsChecked.DefaultValue = CType(false,Boolean)
+            Me.columnis_nom_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_nom_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_nom_wor.DefaultValue = CType(false,Boolean)
+            Me.columnis_nom_eu.DefaultValue = CType(false,Boolean)
+            Me.columnis_date_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_date_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_date_wor.DefaultValue = CType(false,Boolean)
+            Me.columnis_date_eu.DefaultValue = CType(false,Boolean)
+            Me.columnis_genres_en.DefaultValue = CType(false,Boolean)
+            Me.columnis_genres_fr.DefaultValue = CType(false,Boolean)
+            Me.columnis_genres_de.DefaultValue = CType(false,Boolean)
+            Me.columnis_genres_es.DefaultValue = CType(false,Boolean)
+            Me.columnis_genres_pt.DefaultValue = CType(false,Boolean)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2945,6 +3140,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_nom_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_nom_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_nom_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_nom_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property nom_us() As String
             Get
                 If Me.Isnom_usNull Then
@@ -2955,6 +3165,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.nom_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_nom_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_nom_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_nom_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_nom_jpColumn) = value
             End Set
         End Property
         
@@ -2975,6 +3200,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_nom_wor() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_nom_worColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_nom_wor' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_nom_worColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property nom_wor() As String
             Get
                 If Me.Isnom_worNull Then
@@ -2985,6 +3225,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.nom_worColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_nom_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_nom_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_nom_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_nom_euColumn) = value
             End Set
         End Property
         
@@ -3020,6 +3275,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_date_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_date_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_date_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_date_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property date_us() As String
             Get
                 If Me.Isdate_usNull Then
@@ -3030,6 +3300,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.date_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_date_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_date_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_date_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_date_jpColumn) = value
             End Set
         End Property
         
@@ -3050,6 +3335,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_date_wor() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_date_worColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_date_wor' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_date_worColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property date_wor() As String
             Get
                 If Me.Isdate_worNull Then
@@ -3060,6 +3360,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.date_worColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_date_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_date_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_date_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_date_euColumn) = value
             End Set
         End Property
         
@@ -3095,6 +3410,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_genres_en() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_genres_enColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_genres_en' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_genres_enColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property genres_en() As String
             Get
                 If Me.Isgenres_enNull Then
@@ -3105,6 +3435,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.genres_enColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_genres_fr() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_genres_frColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_genres_fr' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_genres_frColumn) = value
             End Set
         End Property
         
@@ -3125,6 +3470,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_genres_de() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_genres_deColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_genres_de' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_genres_deColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property genres_de() As String
             Get
                 If Me.Isgenres_deNull Then
@@ -3140,6 +3500,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_genres_es() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_genres_esColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_genres_es' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_genres_esColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property genres_es() As String
             Get
                 If Me.Isgenres_esNull Then
@@ -3150,6 +3525,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.genres_esColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_genres_pt() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_genres_ptColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_genres_pt' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_genres_ptColumn) = value
             End Set
         End Property
         
@@ -3806,6 +4196,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_nom_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_nom_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_nom_usNull()
+            Me(Me.tableSSRoms.is_nom_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isnom_usNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.nom_usColumn)
         End Function
@@ -3814,6 +4216,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setnom_usNull()
             Me(Me.tableSSRoms.nom_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_nom_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_nom_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_nom_jpNull()
+            Me(Me.tableSSRoms.is_nom_jpColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3830,6 +4244,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_nom_worNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_nom_worColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_nom_worNull()
+            Me(Me.tableSSRoms.is_nom_worColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isnom_worNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.nom_worColumn)
         End Function
@@ -3838,6 +4264,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setnom_worNull()
             Me(Me.tableSSRoms.nom_worColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_nom_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_nom_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_nom_euNull()
+            Me(Me.tableSSRoms.is_nom_euColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3866,6 +4304,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_date_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_date_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_date_usNull()
+            Me(Me.tableSSRoms.is_date_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isdate_usNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.date_usColumn)
         End Function
@@ -3874,6 +4324,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setdate_usNull()
             Me(Me.tableSSRoms.date_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_date_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_date_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_date_jpNull()
+            Me(Me.tableSSRoms.is_date_jpColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3890,6 +4352,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_date_worNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_date_worColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_date_worNull()
+            Me(Me.tableSSRoms.is_date_worColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isdate_worNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.date_worColumn)
         End Function
@@ -3898,6 +4372,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setdate_worNull()
             Me(Me.tableSSRoms.date_worColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_date_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_date_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_date_euNull()
+            Me(Me.tableSSRoms.is_date_euColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3926,6 +4412,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_genres_enNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_genres_enColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_genres_enNull()
+            Me(Me.tableSSRoms.is_genres_enColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isgenres_enNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.genres_enColumn)
         End Function
@@ -3934,6 +4432,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setgenres_enNull()
             Me(Me.tableSSRoms.genres_enColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_genres_frNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_genres_frColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_genres_frNull()
+            Me(Me.tableSSRoms.is_genres_frColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3950,6 +4460,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_genres_deNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_genres_deColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_genres_deNull()
+            Me(Me.tableSSRoms.is_genres_deColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isgenres_deNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.genres_deColumn)
         End Function
@@ -3962,6 +4484,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_genres_esNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_genres_esColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_genres_esNull()
+            Me(Me.tableSSRoms.is_genres_esColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isgenres_esNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.genres_esColumn)
         End Function
@@ -3970,6 +4504,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setgenres_esNull()
             Me(Me.tableSSRoms.genres_esColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_genres_ptNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_genres_ptColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_genres_ptNull()
+            Me(Me.tableSSRoms.is_genres_ptColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

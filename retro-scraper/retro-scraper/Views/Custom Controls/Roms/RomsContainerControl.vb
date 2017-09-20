@@ -435,7 +435,7 @@
                 Me._gamesDateScreen = New _8_RomsBuildScrapDateControl
                 Me.MainTableLayoutPanel.Controls.Add(Me._gamesDateScreen, 0, 2)
 
-                Me._gamesTitleScreen.Dock = DockStyle.Fill
+                Me._gamesDateScreen.Dock = DockStyle.Fill
 
             Case Steps.BuildScrapingCategory
                 Me.HeaderLabel.Text = "Step 9 : Build your scrap : Categories"

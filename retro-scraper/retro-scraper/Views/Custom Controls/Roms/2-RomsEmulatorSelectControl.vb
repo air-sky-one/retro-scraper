@@ -184,8 +184,14 @@ Public Class _2_EmulatorSelectControl
                         Dim artPath As String = String.Empty
 
                         Try
-                            artName = line.Substring(7, line.IndexOf("/") - 7).Trim
-                            artPath = line.Substring(line.LastIndexOf("/") + 1)
+                            If line.IndexOf("/") > 0 Then
+                                artName = line.Substring(7, line.IndexOf("/") - 7).Trim
+                                artPath = line.Substring(line.LastIndexOf("/") + 1)
+                            Else
+                                artName = line.Substring(7, line.Length - 7).Trim
+                                artPath = String.Empty
+                            End If
+
                         Catch ex As Exception
                             Throw New Exception("Oups !, It seems that the emulator file content is incorrect." & vbCrLf & ex.Message, ex)
                         End Try
@@ -193,7 +199,10 @@ Public Class _2_EmulatorSelectControl
                         Dim a As RomsDataSet.ArtworksRow = Me._parent.RomsArtworks.NewArtworksRow()
                         a.Name = artName
                         a.Path = artPath
-                        Me._parent.RomsArtworks.AddArtworksRow(a)
+
+                        If Not a.Path = String.Empty Then
+                            Me._parent.RomsArtworks.AddArtworksRow(a)
+                        End If
                     End If
                 Loop
                 sr.Close()

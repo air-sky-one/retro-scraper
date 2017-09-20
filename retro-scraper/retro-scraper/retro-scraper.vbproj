@@ -179,6 +179,12 @@
     <Compile Include="Views\Custom Controls\Roms\1-RomsScreenScraperSystemSelectControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Custom Controls\Roms\10-RomsBuildScrapArtworksControl.Designer.vb">
+      <DependentUpon>10-RomsBuildScrapArtworksControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\10-RomsBuildScrapArtworksControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.Designer.vb">
       <DependentUpon>2-RomsEmulatorSelectControl.vb</DependentUpon>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\1-RomsScreenScraperSystemSelectControl.resx">
       <DependentUpon>1-RomsScreenScraperSystemSelectControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\10-RomsBuildScrapArtworksControl.resx">
+      <DependentUpon>10-RomsBuildScrapArtworksControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.resx">
       <DependentUpon>2-RomsEmulatorSelectControl.vb</DependentUpon>

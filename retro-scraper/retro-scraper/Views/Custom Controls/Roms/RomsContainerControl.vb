@@ -238,6 +238,15 @@
 
 #End Region
 
+#Region "step 10 : Build Scrap : Games artworks selection"
+
+    ''' <summary>
+    ''' Build Scrap : Games selection
+    ''' </summary>
+    Private _gamesArtworkyScreen As New _10_RomsBuildScrapArtworksControl
+
+#End Region
+
     ''' <summary>
     ''' Define the steps for roms scraping completion
     ''' </summary>
@@ -380,6 +389,10 @@
                 Me._gamesTitleScreen.Datagrid.DataSource = Nothing
                 Me._gamesDateScreen.Datagrid.DataSource = Nothing
 
+                For Each grid As DataGridView In Me._gamesArtworkyScreen.Datagrids
+                    grid.DataSource = Nothing
+                Next
+
                 Me.MainTableLayoutPanel.Controls.Add(Me._romListChoice, 0, 2)
 
                 Me._romListChoice.Dock = DockStyle.Fill
@@ -438,6 +451,11 @@
                 Me.HeaderLabel.Text = "Step 10 : Build your scrap : Artworks"
 
                 Me.StepsProgressBar.Value = 10
+
+                Me._gamesArtworkyScreen = New _10_RomsBuildScrapArtworksControl
+                Me.MainTableLayoutPanel.Controls.Add(Me._gamesArtworkyScreen, 0, 2)
+
+                Me._gamesArtworkyScreen.Dock = DockStyle.Fill
 
             Case Steps.Download
                 Me.HeaderLabel.Text = "Step 11 : Download"

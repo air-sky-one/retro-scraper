@@ -1327,71 +1327,139 @@ Partial Public Class RomsDataSet
         
         Private columncontroles As Global.System.Data.DataColumn
         
+        Private columnis_screenshot As Global.System.Data.DataColumn
+        
         Private columnmedia_screenshot As Global.System.Data.DataColumn
+        
+        Private columnis_screenshottitle As Global.System.Data.DataColumn
         
         Private columnmedia_screenshottitle As Global.System.Data.DataColumn
         
+        Private columnis_fanart As Global.System.Data.DataColumn
+        
         Private columnmedia_fanart As Global.System.Data.DataColumn
+        
+        Private columnis_video As Global.System.Data.DataColumn
         
         Private columnmedia_video As Global.System.Data.DataColumn
         
+        Private columnis_wheel_us As Global.System.Data.DataColumn
+        
         Private columnmedia_wheel_us As Global.System.Data.DataColumn
+        
+        Private columnis_wheel_jp As Global.System.Data.DataColumn
         
         Private columnmedia_wheel_jp As Global.System.Data.DataColumn
         
+        Private columnis_wheel_wor As Global.System.Data.DataColumn
+        
         Private columnmedia_wheel_wor As Global.System.Data.DataColumn
+        
+        Private columnis_wheelcarbon_us As Global.System.Data.DataColumn
         
         Private columnmedia_wheelcarbon_us As Global.System.Data.DataColumn
         
+        Private columnis_wheelcarbon_jp As Global.System.Data.DataColumn
+        
         Private columnmedia_wheelcarbon_jp As Global.System.Data.DataColumn
+        
+        Private columnis_wheelcarbon_wor As Global.System.Data.DataColumn
         
         Private columnmedia_wheelcarbon_wor As Global.System.Data.DataColumn
         
+        Private columnis_wheelsteel_us As Global.System.Data.DataColumn
+        
         Private columnmedia_wheelsteel_us As Global.System.Data.DataColumn
+        
+        Private columnis_wheelsteel_jp As Global.System.Data.DataColumn
         
         Private columnmedia_wheelsteel_jp As Global.System.Data.DataColumn
         
+        Private columnis_wheelsteel_wor As Global.System.Data.DataColumn
+        
         Private columnmedia_wheelsteel_wor As Global.System.Data.DataColumn
+        
+        Private columnis_boxtexture_us As Global.System.Data.DataColumn
         
         Private columnmedia_boxtexture_us As Global.System.Data.DataColumn
         
+        Private columnis_boxtexture_jp As Global.System.Data.DataColumn
+        
         Private columnmedia_boxtexture_jp As Global.System.Data.DataColumn
+        
+        Private columnis_boxtexture_eu As Global.System.Data.DataColumn
         
         Private columnmedia_boxtexture_eu As Global.System.Data.DataColumn
         
+        Private columnis_box2d_us As Global.System.Data.DataColumn
+        
         Private columnmedia_box2d_us As Global.System.Data.DataColumn
+        
+        Private columnis_box2d_jp As Global.System.Data.DataColumn
         
         Private columnmedia_box2d_jp As Global.System.Data.DataColumn
         
+        Private columnis_box2d_eu As Global.System.Data.DataColumn
+        
         Private columnmedia_box2d_eu As Global.System.Data.DataColumn
+        
+        Private columnis_box2d_side_us As Global.System.Data.DataColumn
         
         Private columnmedia_box2d_side_us As Global.System.Data.DataColumn
         
+        Private columnis_box2d_side_jp As Global.System.Data.DataColumn
+        
         Private columnmedia_box2d_side_jp As Global.System.Data.DataColumn
+        
+        Private columnis_box2d_side_eu As Global.System.Data.DataColumn
         
         Private columnmedia_box2d_side_eu As Global.System.Data.DataColumn
         
+        Private columnis_box2d_back_us As Global.System.Data.DataColumn
+        
         Private columnmedia_box2d_back_us As Global.System.Data.DataColumn
+        
+        Private columnis_box2d_back_jp As Global.System.Data.DataColumn
         
         Private columnmedia_box2d_back_jp As Global.System.Data.DataColumn
         
+        Private columnis_box2d_back_eu As Global.System.Data.DataColumn
+        
         Private columnmedia_box2d_back_eu As Global.System.Data.DataColumn
+        
+        Private columnis_box3d_us As Global.System.Data.DataColumn
         
         Private columnmedia_box3d_us As Global.System.Data.DataColumn
         
+        Private columnis_box3d_jp As Global.System.Data.DataColumn
+        
         Private columnmedia_box3d_jp As Global.System.Data.DataColumn
+        
+        Private columnis_box3d_eu As Global.System.Data.DataColumn
         
         Private columnmedia_box3d_eu As Global.System.Data.DataColumn
         
+        Private columnis_supporttexture_us As Global.System.Data.DataColumn
+        
         Private columnmedia_supporttexture_us As Global.System.Data.DataColumn
+        
+        Private columnis_supporttexture_jp As Global.System.Data.DataColumn
         
         Private columnmedia_supporttexture_jp As Global.System.Data.DataColumn
         
+        Private columnis_supporttexture_eu As Global.System.Data.DataColumn
+        
         Private columnmedia_supporttexture_eu As Global.System.Data.DataColumn
+        
+        Private columnis_support2d_us As Global.System.Data.DataColumn
         
         Private columnmedia_support2d_us As Global.System.Data.DataColumn
         
+        Private columnis_support2d_jp As Global.System.Data.DataColumn
+        
         Private columnmedia_support2d_jp As Global.System.Data.DataColumn
+        
+        Private columnis_support2d_eu As Global.System.Data.DataColumn
         
         Private columnmedia_support2d_eu As Global.System.Data.DataColumn
         
@@ -1718,9 +1786,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_screenshotColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_screenshot
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_screenshotColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_screenshot
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_screenshottitleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_screenshottitle
             End Get
         End Property
         
@@ -1734,9 +1818,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_fanartColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_fanart
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_fanartColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_fanart
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_videoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_video
             End Get
         End Property
         
@@ -1750,9 +1850,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheel_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheel_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_wheel_usColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_wheel_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheel_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheel_jp
             End Get
         End Property
         
@@ -1766,9 +1882,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheel_worColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheel_wor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_wheel_worColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_wheel_wor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheelcarbon_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheelcarbon_us
             End Get
         End Property
         
@@ -1782,9 +1914,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheelcarbon_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheelcarbon_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_wheelcarbon_jpColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_wheelcarbon_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheelcarbon_worColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheelcarbon_wor
             End Get
         End Property
         
@@ -1798,9 +1946,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheelsteel_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheelsteel_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_wheelsteel_usColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_wheelsteel_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheelsteel_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheelsteel_jp
             End Get
         End Property
         
@@ -1814,9 +1978,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_wheelsteel_worColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_wheelsteel_wor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_wheelsteel_worColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_wheelsteel_wor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_boxtexture_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_boxtexture_us
             End Get
         End Property
         
@@ -1830,9 +2010,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_boxtexture_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_boxtexture_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_boxtexture_jpColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_boxtexture_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_boxtexture_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_boxtexture_eu
             End Get
         End Property
         
@@ -1846,9 +2042,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_box2d_usColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_box2d_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_jp
             End Get
         End Property
         
@@ -1862,9 +2074,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_eu
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_box2d_euColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_box2d_eu
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_side_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_side_us
             End Get
         End Property
         
@@ -1878,9 +2106,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_side_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_side_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_box2d_side_jpColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_box2d_side_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_side_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_side_eu
             End Get
         End Property
         
@@ -1894,9 +2138,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_back_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_back_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_box2d_back_usColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_box2d_back_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_back_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_back_jp
             End Get
         End Property
         
@@ -1910,9 +2170,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box2d_back_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box2d_back_eu
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_box2d_back_euColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_box2d_back_eu
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box3d_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box3d_us
             End Get
         End Property
         
@@ -1926,9 +2202,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box3d_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box3d_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_box3d_jpColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_box3d_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_box3d_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_box3d_eu
             End Get
         End Property
         
@@ -1942,9 +2234,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_supporttexture_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_supporttexture_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_supporttexture_usColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_supporttexture_us
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_supporttexture_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_supporttexture_jp
             End Get
         End Property
         
@@ -1958,9 +2266,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_supporttexture_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_supporttexture_eu
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_supporttexture_euColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_supporttexture_eu
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_support2d_usColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_support2d_us
             End Get
         End Property
         
@@ -1974,9 +2298,25 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_support2d_jpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_support2d_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property media_support2d_jpColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmedia_support2d_jp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property is_support2d_euColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnis_support2d_eu
             End Get
         End Property
         
@@ -2085,45 +2425,79 @@ Partial Public Class RomsDataSet
                     ByVal joueurs As String,  _
                     ByVal rotation As String,  _
                     ByVal controles As String,  _
+                    ByVal is_screenshot As Boolean,  _
                     ByVal media_screenshot As String,  _
+                    ByVal is_screenshottitle As Boolean,  _
                     ByVal media_screenshottitle As String,  _
+                    ByVal is_fanart As Boolean,  _
                     ByVal media_fanart As String,  _
+                    ByVal is_video As Boolean,  _
                     ByVal media_video As String,  _
+                    ByVal is_wheel_us As Boolean,  _
                     ByVal media_wheel_us As String,  _
+                    ByVal is_wheel_jp As Boolean,  _
                     ByVal media_wheel_jp As String,  _
+                    ByVal is_wheel_wor As Boolean,  _
                     ByVal media_wheel_wor As String,  _
+                    ByVal is_wheelcarbon_us As Boolean,  _
                     ByVal media_wheelcarbon_us As String,  _
+                    ByVal is_wheelcarbon_jp As Boolean,  _
                     ByVal media_wheelcarbon_jp As String,  _
+                    ByVal is_wheelcarbon_wor As Boolean,  _
                     ByVal media_wheelcarbon_wor As String,  _
+                    ByVal is_wheelsteel_us As Boolean,  _
                     ByVal media_wheelsteel_us As String,  _
+                    ByVal is_wheelsteel_jp As Boolean,  _
                     ByVal media_wheelsteel_jp As String,  _
+                    ByVal is_wheelsteel_wor As Boolean,  _
                     ByVal media_wheelsteel_wor As String,  _
+                    ByVal is_boxtexture_us As Boolean,  _
                     ByVal media_boxtexture_us As String,  _
+                    ByVal is_boxtexture_jp As Boolean,  _
                     ByVal media_boxtexture_jp As String,  _
+                    ByVal is_boxtexture_eu As Boolean,  _
                     ByVal media_boxtexture_eu As String,  _
+                    ByVal is_box2d_us As Boolean,  _
                     ByVal media_box2d_us As String,  _
+                    ByVal is_box2d_jp As Boolean,  _
                     ByVal media_box2d_jp As String,  _
+                    ByVal is_box2d_eu As Boolean,  _
                     ByVal media_box2d_eu As String,  _
+                    ByVal is_box2d_side_us As Boolean,  _
                     ByVal media_box2d_side_us As String,  _
+                    ByVal is_box2d_side_jp As Boolean,  _
                     ByVal media_box2d_side_jp As String,  _
+                    ByVal is_box2d_side_eu As Boolean,  _
                     ByVal media_box2d_side_eu As String,  _
+                    ByVal is_box2d_back_us As Boolean,  _
                     ByVal media_box2d_back_us As String,  _
+                    ByVal is_box2d_back_jp As Boolean,  _
                     ByVal media_box2d_back_jp As String,  _
+                    ByVal is_box2d_back_eu As Boolean,  _
                     ByVal media_box2d_back_eu As String,  _
+                    ByVal is_box3d_us As Boolean,  _
                     ByVal media_box3d_us As String,  _
+                    ByVal is_box3d_jp As Boolean,  _
                     ByVal media_box3d_jp As String,  _
+                    ByVal is_box3d_eu As Boolean,  _
                     ByVal media_box3d_eu As String,  _
+                    ByVal is_supporttexture_us As Boolean,  _
                     ByVal media_supporttexture_us As String,  _
+                    ByVal is_supporttexture_jp As Boolean,  _
                     ByVal media_supporttexture_jp As String,  _
+                    ByVal is_supporttexture_eu As Boolean,  _
                     ByVal media_supporttexture_eu As String,  _
+                    ByVal is_support2d_us As Boolean,  _
                     ByVal media_support2d_us As String,  _
+                    ByVal is_support2d_jp As Boolean,  _
                     ByVal media_support2d_jp As String,  _
+                    ByVal is_support2d_eu As Boolean,  _
                     ByVal media_support2d_eu As String,  _
                     ByVal local_romsize As String,  _
                     ByVal local_romcrc As String,  _
                     ByVal local_rommd5 As String) As SSRomsRow
             Dim rowSSRomsRow As SSRomsRow = CType(Me.NewRow,SSRomsRow)
-            Dim columnValuesArray() As Object = New Object() {IsChecked, filename, extension, size, is_nom_us, nom_us, is_nom_jp, nom_jp, is_nom_wor, nom_wor, is_nom_eu, nom_eu, cloneof, is_date_us, date_us, is_date_jp, date_jp, is_date_wor, date_wor, is_date_eu, date_eu, editeur, is_genres_en, genres_en, is_genres_fr, genres_fr, is_genres_de, genres_de, is_genres_es, genres_es, is_genres_pt, genres_pt, joueurs, rotation, controles, media_screenshot, media_screenshottitle, media_fanart, media_video, media_wheel_us, media_wheel_jp, media_wheel_wor, media_wheelcarbon_us, media_wheelcarbon_jp, media_wheelcarbon_wor, media_wheelsteel_us, media_wheelsteel_jp, media_wheelsteel_wor, media_boxtexture_us, media_boxtexture_jp, media_boxtexture_eu, media_box2d_us, media_box2d_jp, media_box2d_eu, media_box2d_side_us, media_box2d_side_jp, media_box2d_side_eu, media_box2d_back_us, media_box2d_back_jp, media_box2d_back_eu, media_box3d_us, media_box3d_jp, media_box3d_eu, media_supporttexture_us, media_supporttexture_jp, media_supporttexture_eu, media_support2d_us, media_support2d_jp, media_support2d_eu, local_romsize, local_romcrc, local_rommd5}
+            Dim columnValuesArray() As Object = New Object() {IsChecked, filename, extension, size, is_nom_us, nom_us, is_nom_jp, nom_jp, is_nom_wor, nom_wor, is_nom_eu, nom_eu, cloneof, is_date_us, date_us, is_date_jp, date_jp, is_date_wor, date_wor, is_date_eu, date_eu, editeur, is_genres_en, genres_en, is_genres_fr, genres_fr, is_genres_de, genres_de, is_genres_es, genres_es, is_genres_pt, genres_pt, joueurs, rotation, controles, is_screenshot, media_screenshot, is_screenshottitle, media_screenshottitle, is_fanart, media_fanart, is_video, media_video, is_wheel_us, media_wheel_us, is_wheel_jp, media_wheel_jp, is_wheel_wor, media_wheel_wor, is_wheelcarbon_us, media_wheelcarbon_us, is_wheelcarbon_jp, media_wheelcarbon_jp, is_wheelcarbon_wor, media_wheelcarbon_wor, is_wheelsteel_us, media_wheelsteel_us, is_wheelsteel_jp, media_wheelsteel_jp, is_wheelsteel_wor, media_wheelsteel_wor, is_boxtexture_us, media_boxtexture_us, is_boxtexture_jp, media_boxtexture_jp, is_boxtexture_eu, media_boxtexture_eu, is_box2d_us, media_box2d_us, is_box2d_jp, media_box2d_jp, is_box2d_eu, media_box2d_eu, is_box2d_side_us, media_box2d_side_us, is_box2d_side_jp, media_box2d_side_jp, is_box2d_side_eu, media_box2d_side_eu, is_box2d_back_us, media_box2d_back_us, is_box2d_back_jp, media_box2d_back_jp, is_box2d_back_eu, media_box2d_back_eu, is_box3d_us, media_box3d_us, is_box3d_jp, media_box3d_jp, is_box3d_eu, media_box3d_eu, is_supporttexture_us, media_supporttexture_us, is_supporttexture_jp, media_supporttexture_jp, is_supporttexture_eu, media_supporttexture_eu, is_support2d_us, media_support2d_us, is_support2d_jp, media_support2d_jp, is_support2d_eu, media_support2d_eu, local_romsize, local_romcrc, local_rommd5}
             rowSSRomsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSSRomsRow)
             Return rowSSRomsRow
@@ -2181,39 +2555,73 @@ Partial Public Class RomsDataSet
             Me.columnjoueurs = MyBase.Columns("joueurs")
             Me.columnrotation = MyBase.Columns("rotation")
             Me.columncontroles = MyBase.Columns("controles")
+            Me.columnis_screenshot = MyBase.Columns("is_screenshot")
             Me.columnmedia_screenshot = MyBase.Columns("media_screenshot")
+            Me.columnis_screenshottitle = MyBase.Columns("is_screenshottitle")
             Me.columnmedia_screenshottitle = MyBase.Columns("media_screenshottitle")
+            Me.columnis_fanart = MyBase.Columns("is_fanart")
             Me.columnmedia_fanart = MyBase.Columns("media_fanart")
+            Me.columnis_video = MyBase.Columns("is_video")
             Me.columnmedia_video = MyBase.Columns("media_video")
+            Me.columnis_wheel_us = MyBase.Columns("is_wheel_us")
             Me.columnmedia_wheel_us = MyBase.Columns("media_wheel_us")
+            Me.columnis_wheel_jp = MyBase.Columns("is_wheel_jp")
             Me.columnmedia_wheel_jp = MyBase.Columns("media_wheel_jp")
+            Me.columnis_wheel_wor = MyBase.Columns("is_wheel_wor")
             Me.columnmedia_wheel_wor = MyBase.Columns("media_wheel_wor")
+            Me.columnis_wheelcarbon_us = MyBase.Columns("is_wheelcarbon_us")
             Me.columnmedia_wheelcarbon_us = MyBase.Columns("media_wheelcarbon_us")
+            Me.columnis_wheelcarbon_jp = MyBase.Columns("is_wheelcarbon_jp")
             Me.columnmedia_wheelcarbon_jp = MyBase.Columns("media_wheelcarbon_jp")
+            Me.columnis_wheelcarbon_wor = MyBase.Columns("is_wheelcarbon_wor")
             Me.columnmedia_wheelcarbon_wor = MyBase.Columns("media_wheelcarbon_wor")
+            Me.columnis_wheelsteel_us = MyBase.Columns("is_wheelsteel_us")
             Me.columnmedia_wheelsteel_us = MyBase.Columns("media_wheelsteel_us")
+            Me.columnis_wheelsteel_jp = MyBase.Columns("is_wheelsteel_jp")
             Me.columnmedia_wheelsteel_jp = MyBase.Columns("media_wheelsteel_jp")
+            Me.columnis_wheelsteel_wor = MyBase.Columns("is_wheelsteel_wor")
             Me.columnmedia_wheelsteel_wor = MyBase.Columns("media_wheelsteel_wor")
+            Me.columnis_boxtexture_us = MyBase.Columns("is_boxtexture_us")
             Me.columnmedia_boxtexture_us = MyBase.Columns("media_boxtexture_us")
+            Me.columnis_boxtexture_jp = MyBase.Columns("is_boxtexture_jp")
             Me.columnmedia_boxtexture_jp = MyBase.Columns("media_boxtexture_jp")
+            Me.columnis_boxtexture_eu = MyBase.Columns("is_boxtexture_eu")
             Me.columnmedia_boxtexture_eu = MyBase.Columns("media_boxtexture_eu")
+            Me.columnis_box2d_us = MyBase.Columns("is_box2d_us")
             Me.columnmedia_box2d_us = MyBase.Columns("media_box2d_us")
+            Me.columnis_box2d_jp = MyBase.Columns("is_box2d_jp")
             Me.columnmedia_box2d_jp = MyBase.Columns("media_box2d_jp")
+            Me.columnis_box2d_eu = MyBase.Columns("is_box2d_eu")
             Me.columnmedia_box2d_eu = MyBase.Columns("media_box2d_eu")
+            Me.columnis_box2d_side_us = MyBase.Columns("is_box2d_side_us")
             Me.columnmedia_box2d_side_us = MyBase.Columns("media_box2d_side_us")
+            Me.columnis_box2d_side_jp = MyBase.Columns("is_box2d_side_jp")
             Me.columnmedia_box2d_side_jp = MyBase.Columns("media_box2d_side_jp")
+            Me.columnis_box2d_side_eu = MyBase.Columns("is_box2d_side_eu")
             Me.columnmedia_box2d_side_eu = MyBase.Columns("media_box2d_side_eu")
+            Me.columnis_box2d_back_us = MyBase.Columns("is_box2d_back_us")
             Me.columnmedia_box2d_back_us = MyBase.Columns("media_box2d_back_us")
+            Me.columnis_box2d_back_jp = MyBase.Columns("is_box2d_back_jp")
             Me.columnmedia_box2d_back_jp = MyBase.Columns("media_box2d_back_jp")
+            Me.columnis_box2d_back_eu = MyBase.Columns("is_box2d_back_eu")
             Me.columnmedia_box2d_back_eu = MyBase.Columns("media_box2d_back_eu")
+            Me.columnis_box3d_us = MyBase.Columns("is_box3d_us")
             Me.columnmedia_box3d_us = MyBase.Columns("media_box3d_us")
+            Me.columnis_box3d_jp = MyBase.Columns("is_box3d_jp")
             Me.columnmedia_box3d_jp = MyBase.Columns("media_box3d_jp")
+            Me.columnis_box3d_eu = MyBase.Columns("is_box3d_eu")
             Me.columnmedia_box3d_eu = MyBase.Columns("media_box3d_eu")
+            Me.columnis_supporttexture_us = MyBase.Columns("is_supporttexture_us")
             Me.columnmedia_supporttexture_us = MyBase.Columns("media_supporttexture_us")
+            Me.columnis_supporttexture_jp = MyBase.Columns("is_supporttexture_jp")
             Me.columnmedia_supporttexture_jp = MyBase.Columns("media_supporttexture_jp")
+            Me.columnis_supporttexture_eu = MyBase.Columns("is_supporttexture_eu")
             Me.columnmedia_supporttexture_eu = MyBase.Columns("media_supporttexture_eu")
+            Me.columnis_support2d_us = MyBase.Columns("is_support2d_us")
             Me.columnmedia_support2d_us = MyBase.Columns("media_support2d_us")
+            Me.columnis_support2d_jp = MyBase.Columns("is_support2d_jp")
             Me.columnmedia_support2d_jp = MyBase.Columns("media_support2d_jp")
+            Me.columnis_support2d_eu = MyBase.Columns("is_support2d_eu")
             Me.columnmedia_support2d_eu = MyBase.Columns("media_support2d_eu")
             Me.columnlocal_romsize = MyBase.Columns("local_romsize")
             Me.columnlocal_romcrc = MyBase.Columns("local_romcrc")
@@ -2293,72 +2701,140 @@ Partial Public Class RomsDataSet
             MyBase.Columns.Add(Me.columnrotation)
             Me.columncontroles = New Global.System.Data.DataColumn("controles", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncontroles)
+            Me.columnis_screenshot = New Global.System.Data.DataColumn("is_screenshot", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_screenshot)
             Me.columnmedia_screenshot = New Global.System.Data.DataColumn("media_screenshot", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_screenshot)
+            Me.columnis_screenshottitle = New Global.System.Data.DataColumn("is_screenshottitle", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_screenshottitle)
             Me.columnmedia_screenshottitle = New Global.System.Data.DataColumn("media_screenshottitle", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_screenshottitle)
+            Me.columnis_fanart = New Global.System.Data.DataColumn("is_fanart", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_fanart)
             Me.columnmedia_fanart = New Global.System.Data.DataColumn("media_fanart", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_fanart)
+            Me.columnis_video = New Global.System.Data.DataColumn("is_video", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_video)
             Me.columnmedia_video = New Global.System.Data.DataColumn("media_video", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_video)
+            Me.columnis_wheel_us = New Global.System.Data.DataColumn("is_wheel_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheel_us)
             Me.columnmedia_wheel_us = New Global.System.Data.DataColumn("media_wheel_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheel_us)
+            Me.columnis_wheel_jp = New Global.System.Data.DataColumn("is_wheel_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheel_jp)
             Me.columnmedia_wheel_jp = New Global.System.Data.DataColumn("media_wheel_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheel_jp)
+            Me.columnis_wheel_wor = New Global.System.Data.DataColumn("is_wheel_wor", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheel_wor)
             Me.columnmedia_wheel_wor = New Global.System.Data.DataColumn("media_wheel_wor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheel_wor)
+            Me.columnis_wheelcarbon_us = New Global.System.Data.DataColumn("is_wheelcarbon_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheelcarbon_us)
             Me.columnmedia_wheelcarbon_us = New Global.System.Data.DataColumn("media_wheelcarbon_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheelcarbon_us)
+            Me.columnis_wheelcarbon_jp = New Global.System.Data.DataColumn("is_wheelcarbon_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheelcarbon_jp)
             Me.columnmedia_wheelcarbon_jp = New Global.System.Data.DataColumn("media_wheelcarbon_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheelcarbon_jp)
+            Me.columnis_wheelcarbon_wor = New Global.System.Data.DataColumn("is_wheelcarbon_wor", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheelcarbon_wor)
             Me.columnmedia_wheelcarbon_wor = New Global.System.Data.DataColumn("media_wheelcarbon_wor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheelcarbon_wor)
+            Me.columnis_wheelsteel_us = New Global.System.Data.DataColumn("is_wheelsteel_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheelsteel_us)
             Me.columnmedia_wheelsteel_us = New Global.System.Data.DataColumn("media_wheelsteel_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheelsteel_us)
+            Me.columnis_wheelsteel_jp = New Global.System.Data.DataColumn("is_wheelsteel_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheelsteel_jp)
             Me.columnmedia_wheelsteel_jp = New Global.System.Data.DataColumn("media_wheelsteel_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheelsteel_jp)
+            Me.columnis_wheelsteel_wor = New Global.System.Data.DataColumn("is_wheelsteel_wor", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_wheelsteel_wor)
             Me.columnmedia_wheelsteel_wor = New Global.System.Data.DataColumn("media_wheelsteel_wor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_wheelsteel_wor)
+            Me.columnis_boxtexture_us = New Global.System.Data.DataColumn("is_boxtexture_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_boxtexture_us)
             Me.columnmedia_boxtexture_us = New Global.System.Data.DataColumn("media_boxtexture_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_boxtexture_us)
+            Me.columnis_boxtexture_jp = New Global.System.Data.DataColumn("is_boxtexture_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_boxtexture_jp)
             Me.columnmedia_boxtexture_jp = New Global.System.Data.DataColumn("media_boxtexture_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_boxtexture_jp)
+            Me.columnis_boxtexture_eu = New Global.System.Data.DataColumn("is_boxtexture_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_boxtexture_eu)
             Me.columnmedia_boxtexture_eu = New Global.System.Data.DataColumn("media_boxtexture_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_boxtexture_eu)
+            Me.columnis_box2d_us = New Global.System.Data.DataColumn("is_box2d_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_us)
             Me.columnmedia_box2d_us = New Global.System.Data.DataColumn("media_box2d_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_us)
+            Me.columnis_box2d_jp = New Global.System.Data.DataColumn("is_box2d_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_jp)
             Me.columnmedia_box2d_jp = New Global.System.Data.DataColumn("media_box2d_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_jp)
+            Me.columnis_box2d_eu = New Global.System.Data.DataColumn("is_box2d_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_eu)
             Me.columnmedia_box2d_eu = New Global.System.Data.DataColumn("media_box2d_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_eu)
+            Me.columnis_box2d_side_us = New Global.System.Data.DataColumn("is_box2d_side_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_side_us)
             Me.columnmedia_box2d_side_us = New Global.System.Data.DataColumn("media_box2d_side_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_side_us)
+            Me.columnis_box2d_side_jp = New Global.System.Data.DataColumn("is_box2d_side_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_side_jp)
             Me.columnmedia_box2d_side_jp = New Global.System.Data.DataColumn("media_box2d_side_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_side_jp)
+            Me.columnis_box2d_side_eu = New Global.System.Data.DataColumn("is_box2d_side_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_side_eu)
             Me.columnmedia_box2d_side_eu = New Global.System.Data.DataColumn("media_box2d_side_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_side_eu)
+            Me.columnis_box2d_back_us = New Global.System.Data.DataColumn("is_box2d_back_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_back_us)
             Me.columnmedia_box2d_back_us = New Global.System.Data.DataColumn("media_box2d_back_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_back_us)
+            Me.columnis_box2d_back_jp = New Global.System.Data.DataColumn("is_box2d_back_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_back_jp)
             Me.columnmedia_box2d_back_jp = New Global.System.Data.DataColumn("media_box2d_back_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_back_jp)
+            Me.columnis_box2d_back_eu = New Global.System.Data.DataColumn("is_box2d_back_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box2d_back_eu)
             Me.columnmedia_box2d_back_eu = New Global.System.Data.DataColumn("media_box2d_back_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box2d_back_eu)
+            Me.columnis_box3d_us = New Global.System.Data.DataColumn("is_box3d_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box3d_us)
             Me.columnmedia_box3d_us = New Global.System.Data.DataColumn("media_box3d_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box3d_us)
+            Me.columnis_box3d_jp = New Global.System.Data.DataColumn("is_box3d_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box3d_jp)
             Me.columnmedia_box3d_jp = New Global.System.Data.DataColumn("media_box3d_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box3d_jp)
+            Me.columnis_box3d_eu = New Global.System.Data.DataColumn("is_box3d_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_box3d_eu)
             Me.columnmedia_box3d_eu = New Global.System.Data.DataColumn("media_box3d_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_box3d_eu)
+            Me.columnis_supporttexture_us = New Global.System.Data.DataColumn("is_supporttexture_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_supporttexture_us)
             Me.columnmedia_supporttexture_us = New Global.System.Data.DataColumn("media_supporttexture_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_supporttexture_us)
+            Me.columnis_supporttexture_jp = New Global.System.Data.DataColumn("is_supporttexture_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_supporttexture_jp)
             Me.columnmedia_supporttexture_jp = New Global.System.Data.DataColumn("media_supporttexture_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_supporttexture_jp)
+            Me.columnis_supporttexture_eu = New Global.System.Data.DataColumn("is_supporttexture_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_supporttexture_eu)
             Me.columnmedia_supporttexture_eu = New Global.System.Data.DataColumn("media_supporttexture_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_supporttexture_eu)
+            Me.columnis_support2d_us = New Global.System.Data.DataColumn("is_support2d_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_support2d_us)
             Me.columnmedia_support2d_us = New Global.System.Data.DataColumn("media_support2d_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_support2d_us)
+            Me.columnis_support2d_jp = New Global.System.Data.DataColumn("is_support2d_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_support2d_jp)
             Me.columnmedia_support2d_jp = New Global.System.Data.DataColumn("media_support2d_jp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_support2d_jp)
+            Me.columnis_support2d_eu = New Global.System.Data.DataColumn("is_support2d_eu", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_support2d_eu)
             Me.columnmedia_support2d_eu = New Global.System.Data.DataColumn("media_support2d_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_support2d_eu)
             Me.columnlocal_romsize = New Global.System.Data.DataColumn("local_romsize", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -2382,6 +2858,40 @@ Partial Public Class RomsDataSet
             Me.columnis_genres_de.DefaultValue = CType(false,Boolean)
             Me.columnis_genres_es.DefaultValue = CType(false,Boolean)
             Me.columnis_genres_pt.DefaultValue = CType(false,Boolean)
+            Me.columnis_screenshot.DefaultValue = CType(false,Boolean)
+            Me.columnis_screenshottitle.DefaultValue = CType(false,Boolean)
+            Me.columnis_fanart.DefaultValue = CType(false,Boolean)
+            Me.columnis_video.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheel_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheel_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheel_wor.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheelcarbon_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheelcarbon_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheelcarbon_wor.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheelsteel_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheelsteel_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_wheelsteel_wor.DefaultValue = CType(false,Boolean)
+            Me.columnis_boxtexture_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_boxtexture_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_boxtexture_eu.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_eu.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_side_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_side_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_side_eu.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_back_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_back_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_box2d_back_eu.DefaultValue = CType(false,Boolean)
+            Me.columnis_box3d_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_box3d_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_box3d_eu.DefaultValue = CType(false,Boolean)
+            Me.columnis_supporttexture_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_supporttexture_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_supporttexture_eu.DefaultValue = CType(false,Boolean)
+            Me.columnis_support2d_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_support2d_jp.DefaultValue = CType(false,Boolean)
+            Me.columnis_support2d_eu.DefaultValue = CType(false,Boolean)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3605,6 +4115,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_screenshot() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_screenshotColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_screenshot' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_screenshotColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_screenshot() As String
             Get
                 If Me.Ismedia_screenshotNull Then
@@ -3615,6 +4140,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_screenshotColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_screenshottitle() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_screenshottitleColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_screenshottitle' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_screenshottitleColumn) = value
             End Set
         End Property
         
@@ -3635,6 +4175,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_fanart() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_fanartColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_fanart' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_fanartColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_fanart() As String
             Get
                 If Me.Ismedia_fanartNull Then
@@ -3645,6 +4200,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_fanartColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_video() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_videoColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_video' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_videoColumn) = value
             End Set
         End Property
         
@@ -3665,6 +4235,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheel_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheel_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheel_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheel_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_wheel_us() As String
             Get
                 If Me.Ismedia_wheel_usNull Then
@@ -3675,6 +4260,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_wheel_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheel_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheel_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheel_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheel_jpColumn) = value
             End Set
         End Property
         
@@ -3695,6 +4295,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheel_wor() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheel_worColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheel_wor' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheel_worColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_wheel_wor() As String
             Get
                 If Me.Ismedia_wheel_worNull Then
@@ -3705,6 +4320,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_wheel_worColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheelcarbon_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheelcarbon_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheelcarbon_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheelcarbon_usColumn) = value
             End Set
         End Property
         
@@ -3725,6 +4355,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheelcarbon_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheelcarbon_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheelcarbon_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheelcarbon_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_wheelcarbon_jp() As String
             Get
                 If Me.Ismedia_wheelcarbon_jpNull Then
@@ -3735,6 +4380,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_wheelcarbon_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheelcarbon_wor() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheelcarbon_worColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheelcarbon_wor' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheelcarbon_worColumn) = value
             End Set
         End Property
         
@@ -3755,6 +4415,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheelsteel_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheelsteel_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheelsteel_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheelsteel_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_wheelsteel_us() As String
             Get
                 If Me.Ismedia_wheelsteel_usNull Then
@@ -3765,6 +4440,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_wheelsteel_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheelsteel_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheelsteel_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheelsteel_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheelsteel_jpColumn) = value
             End Set
         End Property
         
@@ -3785,6 +4475,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_wheelsteel_wor() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_wheelsteel_worColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_wheelsteel_wor' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_wheelsteel_worColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_wheelsteel_wor() As String
             Get
                 If Me.Ismedia_wheelsteel_worNull Then
@@ -3795,6 +4500,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_wheelsteel_worColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_boxtexture_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_boxtexture_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_boxtexture_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_boxtexture_usColumn) = value
             End Set
         End Property
         
@@ -3815,6 +4535,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_boxtexture_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_boxtexture_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_boxtexture_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_boxtexture_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_boxtexture_jp() As String
             Get
                 If Me.Ismedia_boxtexture_jpNull Then
@@ -3825,6 +4560,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_boxtexture_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_boxtexture_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_boxtexture_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_boxtexture_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_boxtexture_euColumn) = value
             End Set
         End Property
         
@@ -3845,6 +4595,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_box2d_us() As String
             Get
                 If Me.Ismedia_box2d_usNull Then
@@ -3855,6 +4620,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_box2d_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_jpColumn) = value
             End Set
         End Property
         
@@ -3875,6 +4655,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_euColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_box2d_eu() As String
             Get
                 If Me.Ismedia_box2d_euNull Then
@@ -3885,6 +4680,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_box2d_euColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_side_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_side_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_side_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_side_usColumn) = value
             End Set
         End Property
         
@@ -3905,6 +4715,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_side_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_side_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_side_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_side_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_box2d_side_jp() As String
             Get
                 If Me.Ismedia_box2d_side_jpNull Then
@@ -3915,6 +4740,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_box2d_side_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_side_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_side_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_side_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_side_euColumn) = value
             End Set
         End Property
         
@@ -3935,6 +4775,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_back_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_back_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_back_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_back_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_box2d_back_us() As String
             Get
                 If Me.Ismedia_box2d_back_usNull Then
@@ -3945,6 +4800,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_box2d_back_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_back_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_back_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_back_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_back_jpColumn) = value
             End Set
         End Property
         
@@ -3965,6 +4835,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box2d_back_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box2d_back_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box2d_back_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box2d_back_euColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_box2d_back_eu() As String
             Get
                 If Me.Ismedia_box2d_back_euNull Then
@@ -3975,6 +4860,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_box2d_back_euColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box3d_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box3d_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box3d_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box3d_usColumn) = value
             End Set
         End Property
         
@@ -3995,6 +4895,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box3d_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box3d_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box3d_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box3d_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_box3d_jp() As String
             Get
                 If Me.Ismedia_box3d_jpNull Then
@@ -4005,6 +4920,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_box3d_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_box3d_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_box3d_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_box3d_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_box3d_euColumn) = value
             End Set
         End Property
         
@@ -4025,6 +4955,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_supporttexture_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_supporttexture_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_supporttexture_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_supporttexture_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_supporttexture_us() As String
             Get
                 If Me.Ismedia_supporttexture_usNull Then
@@ -4035,6 +4980,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_supporttexture_usColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_supporttexture_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_supporttexture_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_supporttexture_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_supporttexture_jpColumn) = value
             End Set
         End Property
         
@@ -4055,6 +5015,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_supporttexture_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_supporttexture_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_supporttexture_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_supporttexture_euColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_supporttexture_eu() As String
             Get
                 If Me.Ismedia_supporttexture_euNull Then
@@ -4065,6 +5040,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_supporttexture_euColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_support2d_us() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_support2d_usColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_support2d_us' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_support2d_usColumn) = value
             End Set
         End Property
         
@@ -4085,6 +5075,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_support2d_jp() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_support2d_jpColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_support2d_jp' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_support2d_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property media_support2d_jp() As String
             Get
                 If Me.Ismedia_support2d_jpNull Then
@@ -4095,6 +5100,21 @@ Partial Public Class RomsDataSet
             End Get
             Set
                 Me(Me.tableSSRoms.media_support2d_jpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property is_support2d_eu() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.is_support2d_euColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_support2d_eu' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.is_support2d_euColumn) = value
             End Set
         End Property
         
@@ -4568,6 +5588,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_screenshotNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_screenshotColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_screenshotNull()
+            Me(Me.tableSSRoms.is_screenshotColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_screenshotNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_screenshotColumn)
         End Function
@@ -4576,6 +5608,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_screenshotNull()
             Me(Me.tableSSRoms.media_screenshotColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_screenshottitleNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_screenshottitleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_screenshottitleNull()
+            Me(Me.tableSSRoms.is_screenshottitleColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4592,6 +5636,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_fanartNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_fanartColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_fanartNull()
+            Me(Me.tableSSRoms.is_fanartColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_fanartNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_fanartColumn)
         End Function
@@ -4600,6 +5656,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_fanartNull()
             Me(Me.tableSSRoms.media_fanartColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_videoNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_videoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_videoNull()
+            Me(Me.tableSSRoms.is_videoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4616,6 +5684,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheel_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheel_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheel_usNull()
+            Me(Me.tableSSRoms.is_wheel_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_wheel_usNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_wheel_usColumn)
         End Function
@@ -4624,6 +5704,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_wheel_usNull()
             Me(Me.tableSSRoms.media_wheel_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheel_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheel_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheel_jpNull()
+            Me(Me.tableSSRoms.is_wheel_jpColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4640,6 +5732,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheel_worNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheel_worColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheel_worNull()
+            Me(Me.tableSSRoms.is_wheel_worColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_wheel_worNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_wheel_worColumn)
         End Function
@@ -4648,6 +5752,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_wheel_worNull()
             Me(Me.tableSSRoms.media_wheel_worColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheelcarbon_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheelcarbon_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheelcarbon_usNull()
+            Me(Me.tableSSRoms.is_wheelcarbon_usColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4664,6 +5780,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheelcarbon_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheelcarbon_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheelcarbon_jpNull()
+            Me(Me.tableSSRoms.is_wheelcarbon_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_wheelcarbon_jpNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_wheelcarbon_jpColumn)
         End Function
@@ -4672,6 +5800,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_wheelcarbon_jpNull()
             Me(Me.tableSSRoms.media_wheelcarbon_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheelcarbon_worNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheelcarbon_worColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheelcarbon_worNull()
+            Me(Me.tableSSRoms.is_wheelcarbon_worColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4688,6 +5828,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheelsteel_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheelsteel_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheelsteel_usNull()
+            Me(Me.tableSSRoms.is_wheelsteel_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_wheelsteel_usNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_wheelsteel_usColumn)
         End Function
@@ -4696,6 +5848,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_wheelsteel_usNull()
             Me(Me.tableSSRoms.media_wheelsteel_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheelsteel_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheelsteel_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheelsteel_jpNull()
+            Me(Me.tableSSRoms.is_wheelsteel_jpColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4712,6 +5876,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_wheelsteel_worNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_wheelsteel_worColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_wheelsteel_worNull()
+            Me(Me.tableSSRoms.is_wheelsteel_worColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_wheelsteel_worNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_wheelsteel_worColumn)
         End Function
@@ -4720,6 +5896,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_wheelsteel_worNull()
             Me(Me.tableSSRoms.media_wheelsteel_worColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_boxtexture_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_boxtexture_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_boxtexture_usNull()
+            Me(Me.tableSSRoms.is_boxtexture_usColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4736,6 +5924,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_boxtexture_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_boxtexture_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_boxtexture_jpNull()
+            Me(Me.tableSSRoms.is_boxtexture_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_boxtexture_jpNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_boxtexture_jpColumn)
         End Function
@@ -4744,6 +5944,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_boxtexture_jpNull()
             Me(Me.tableSSRoms.media_boxtexture_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_boxtexture_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_boxtexture_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_boxtexture_euNull()
+            Me(Me.tableSSRoms.is_boxtexture_euColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4760,6 +5972,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_usNull()
+            Me(Me.tableSSRoms.is_box2d_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_box2d_usNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_box2d_usColumn)
         End Function
@@ -4768,6 +5992,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_box2d_usNull()
             Me(Me.tableSSRoms.media_box2d_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_jpNull()
+            Me(Me.tableSSRoms.is_box2d_jpColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4784,6 +6020,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_euNull()
+            Me(Me.tableSSRoms.is_box2d_euColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_box2d_euNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_box2d_euColumn)
         End Function
@@ -4792,6 +6040,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_box2d_euNull()
             Me(Me.tableSSRoms.media_box2d_euColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_side_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_side_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_side_usNull()
+            Me(Me.tableSSRoms.is_box2d_side_usColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4808,6 +6068,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_side_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_side_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_side_jpNull()
+            Me(Me.tableSSRoms.is_box2d_side_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_box2d_side_jpNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_box2d_side_jpColumn)
         End Function
@@ -4816,6 +6088,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_box2d_side_jpNull()
             Me(Me.tableSSRoms.media_box2d_side_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_side_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_side_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_side_euNull()
+            Me(Me.tableSSRoms.is_box2d_side_euColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4832,6 +6116,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_back_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_back_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_back_usNull()
+            Me(Me.tableSSRoms.is_box2d_back_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_box2d_back_usNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_box2d_back_usColumn)
         End Function
@@ -4840,6 +6136,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_box2d_back_usNull()
             Me(Me.tableSSRoms.media_box2d_back_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_back_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_back_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_back_jpNull()
+            Me(Me.tableSSRoms.is_box2d_back_jpColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4856,6 +6164,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box2d_back_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box2d_back_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box2d_back_euNull()
+            Me(Me.tableSSRoms.is_box2d_back_euColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_box2d_back_euNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_box2d_back_euColumn)
         End Function
@@ -4864,6 +6184,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_box2d_back_euNull()
             Me(Me.tableSSRoms.media_box2d_back_euColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box3d_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box3d_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box3d_usNull()
+            Me(Me.tableSSRoms.is_box3d_usColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4880,6 +6212,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box3d_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box3d_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box3d_jpNull()
+            Me(Me.tableSSRoms.is_box3d_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_box3d_jpNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_box3d_jpColumn)
         End Function
@@ -4888,6 +6232,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_box3d_jpNull()
             Me(Me.tableSSRoms.media_box3d_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_box3d_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_box3d_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_box3d_euNull()
+            Me(Me.tableSSRoms.is_box3d_euColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4904,6 +6260,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_supporttexture_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_supporttexture_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_supporttexture_usNull()
+            Me(Me.tableSSRoms.is_supporttexture_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_supporttexture_usNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_supporttexture_usColumn)
         End Function
@@ -4912,6 +6280,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_supporttexture_usNull()
             Me(Me.tableSSRoms.media_supporttexture_usColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_supporttexture_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_supporttexture_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_supporttexture_jpNull()
+            Me(Me.tableSSRoms.is_supporttexture_jpColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4928,6 +6308,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_supporttexture_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_supporttexture_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_supporttexture_euNull()
+            Me(Me.tableSSRoms.is_supporttexture_euColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_supporttexture_euNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_supporttexture_euColumn)
         End Function
@@ -4936,6 +6328,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_supporttexture_euNull()
             Me(Me.tableSSRoms.media_supporttexture_euColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_support2d_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_support2d_usColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_support2d_usNull()
+            Me(Me.tableSSRoms.is_support2d_usColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4952,6 +6356,18 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_support2d_jpNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_support2d_jpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_support2d_jpNull()
+            Me(Me.tableSSRoms.is_support2d_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Ismedia_support2d_jpNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.media_support2d_jpColumn)
         End Function
@@ -4960,6 +6376,18 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setmedia_support2d_jpNull()
             Me(Me.tableSSRoms.media_support2d_jpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isis_support2d_euNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_support2d_euColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setis_support2d_euNull()
+            Me(Me.tableSSRoms.is_support2d_euColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

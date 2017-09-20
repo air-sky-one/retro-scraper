@@ -167,6 +167,12 @@
     <Compile Include="Views\Custom Controls\DevTools\JSonToDataTableForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Custom Controls\DevTools\VisualControlsTestsForm.Designer.vb">
+      <DependentUpon>VisualControlsTestsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\DevTools\VisualControlsTestsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\HomeControl.Designer.vb">
       <DependentUpon>HomeControl.vb</DependentUpon>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\DevTools\JSonToDataTableForm.resx">
       <DependentUpon>JSonToDataTableForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\DevTools\VisualControlsTestsForm.resx">
+      <DependentUpon>VisualControlsTestsForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
       <DependentUpon>HomeControl.vb</DependentUpon>
@@ -576,6 +585,8 @@
     <Content Include="Media\16x16 retro-scraper_icon.png" />
     <Content Include="Media\16x16_retro-scraper_icon.ico" />
     <Content Include="Media\16x16_ScreenScraper_Icon.ico" />
+    <Content Include="Media\20x20 collapse-expand.png" />
+    <Content Include="Media\20x20 collapse-reduce.png" />
     <Content Include="Media\24x24 retro-scraper_icon.png" />
     <Content Include="Media\24x24_retro-scraper_icon.ico" />
     <Content Include="Media\24x24_ScreenScraper_Icon.ico" />
@@ -587,6 +598,8 @@
     <Content Include="Media\64x64_retro-scraper_icon.ico" />
     <Content Include="Media\64x64_ScreenScraper_Icon.ico" />
     <Content Include="Media\835x550 retro-scraper_logo.png" />
+    <Content Include="Media\collapse-expand.svg" />
+    <Content Include="Media\collapse-reduce.svg" />
     <Content Include="Media\retro-scraper_banner.svg" />
     <Content Include="Media\retro-scraper_icon.svg" />
     <Content Include="Media\retro-scraper_logo.svg" />

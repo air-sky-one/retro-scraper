@@ -27,6 +27,7 @@ Partial Class DevToolsContainerControl
         Me.HeaderLabel = New System.Windows.Forms.Label()
         Me.ActionFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.JSonToDataTableButton = New System.Windows.Forms.Button()
+        Me.VisualControlsTestButton = New System.Windows.Forms.Button()
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.ActionFlowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -79,6 +80,7 @@ Partial Class DevToolsContainerControl
         '
         Me.ActionFlowLayoutPanel.BackColor = System.Drawing.Color.White
         Me.ActionFlowLayoutPanel.Controls.Add(Me.JSonToDataTableButton)
+        Me.ActionFlowLayoutPanel.Controls.Add(Me.VisualControlsTestButton)
         Me.ActionFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ActionFlowLayoutPanel.Location = New System.Drawing.Point(3, 33)
         Me.ActionFlowLayoutPanel.Name = "ActionFlowLayoutPanel"
@@ -95,6 +97,17 @@ Partial Class DevToolsContainerControl
         Me.JSonToDataTableButton.TabIndex = 0
         Me.JSonToDataTableButton.Text = "Create DataTable from JSon Result "
         Me.JSonToDataTableButton.UseVisualStyleBackColor = True
+        '
+        'VisualControlsTestButton
+        '
+        Me.VisualControlsTestButton.AutoSize = True
+        Me.VisualControlsTestButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VisualControlsTestButton.Location = New System.Drawing.Point(210, 3)
+        Me.VisualControlsTestButton.Name = "VisualControlsTestButton"
+        Me.VisualControlsTestButton.Size = New System.Drawing.Size(201, 26)
+        Me.VisualControlsTestButton.TabIndex = 1
+        Me.VisualControlsTestButton.Text = "Visual Controls Tests"
+        Me.VisualControlsTestButton.UseVisualStyleBackColor = True
         '
         'DevToolsContainerControl
         '
@@ -117,4 +130,5 @@ Partial Class DevToolsContainerControl
     Friend WithEvents HeaderLabel As Label
     Friend WithEvents ActionFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents JSonToDataTableButton As Button
+    Friend WithEvents VisualControlsTestButton As Button
 End Class

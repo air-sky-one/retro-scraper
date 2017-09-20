@@ -117,15 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="CollaspeImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ImageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="CollaspeImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="ImageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAM
-        CQAAAk1TRnQBSQFMAgEBAgEAAQgBAAEIAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBAgEAASABAAEgAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -158,7 +158,7 @@
         AbwBFAMRAUMB7wH/BAAB/wHvAUMBEQHrAfQFAAH/Ae8BQwERAfAiAAH/AfABFAERARQBBwEUAREBFQEH
         BQAB/wGSAhEB7AH0AwAB/wHvAUMBEQFtAfQiAAHyARIBEQFDAQcB/wHzARUCEQG8BQAB9AHrAhEBkgH/
         AQAB/wG8ARUBEQEUAfEB/yEAAfMB6wIRARwB/wIAAfABEwIRAfAB/wQAAfMBEgERAUMB7wH/AfEBEwER
-        ARUB7gH/IQAB/wHsAhEBkgH/AwAB/wHuARQBEQESAfIB/wQAAfMBEgERAUMB7wESAREBFQEHAf8iAAH/
+        ARUBvAH/IQAB/wHsAhEBkgH/AwAB/wG8ARQBEQESAfIB/wQAAfMBEgERAUMB7wESAREBFQEHAf8iAAH/
         AUMBEQHtAf8FAAH/AQcCEQHrAfQFAAHyARIDEQFDAQcB/yQAARwBkgH/BwAB/wH3AhEBvAUAAf8B8AEU
         AhEB9wH/MAAB/wH3AesB8wYAAf8BBwESAe0B9DIAAf8B9AH/BwAB/wHzAf+mAAFCAU0BPgcAAT4DAAEo
         AwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAE/wQABP8EAAH8AX8BjwH/BAAB+AE/AY8B/wQAAfABDwEH

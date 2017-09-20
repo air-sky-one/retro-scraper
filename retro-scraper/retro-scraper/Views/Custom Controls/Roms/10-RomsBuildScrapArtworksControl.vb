@@ -18,9 +18,6 @@
         End Set
     End Property
 
-    ' TODO
-    'Private _mediaTypes As New List(Of String)
-
     ''' <summary>
     ''' Component initialization
     ''' </summary>
@@ -38,6 +35,7 @@
             ' TODO : à mettre sous forme de fonction ?
             For Each artType As RomsDataSet.ArtworksRow In Me._parent.RomsArtworks
                 ' data
+#Region "data"
                 Dim mediaTypes As New List(Of String)
                 mediaTypes.Add("Screenshots")
                 mediaTypes.Add("Fanarts")
@@ -53,15 +51,27 @@
                 mediaTypes.Add("Box 3D")
                 mediaTypes.Add("Support Texture (Cartridge label)")
                 mediaTypes.Add("Support 2D (Cartridge)")
+#End Region
 
                 ' Declarations
+#Region "declarations"
                 Dim components As New ComponentModel.Container()
-                Dim p As New FlowLayoutPanel
-                Dim l As New Label
-                Dim cb As New ComboBox
 
-                Dim ckFlow As New FlowLayoutPanel
+                '*********************
+                Dim mainContent As New FlowLayoutPanel
 
+                Dim headerPanel As New FlowLayoutPanel
+                Dim collapseButton As New Button
+                Dim titleLabel As New Label
+                '*********************
+
+                Dim contentFlowPanel As New FlowLayoutPanel
+                Dim descriptionLabel As New Label
+                Dim mediaTypeSelectComboBox As New ComboBox
+
+                Dim selectAllFlowLayoutPanel As New FlowLayoutPanel
+
+#Region "declarations : checkbox selectAll"
                 Dim ckScreenShotInGame As New CheckBox
                 Dim ckScreenShotTitle As New CheckBox
                 Dim ckFanart As New CheckBox
@@ -96,7 +106,9 @@
                 Dim ckSupport2dUS As New CheckBox
                 Dim ckSupport2dJP As New CheckBox
                 Dim ckSupport2dEU As New CheckBox
+#End Region
 
+#Region "declarations : dataGridViewColumns"
                 Dim filenameDataGridViewTextBoxColumn As New DataGridViewTextBoxColumn
                 Dim isScreenShotInGameDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
                 Dim isScreenShotTitleDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -132,89 +144,135 @@
                 Dim isSupport2dUSDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
                 Dim isSupport2dJPDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
                 Dim isSupport2dEUDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+#End Region
 
                 Dim b As New BindingSource(components)
                 Dim g As New DataGridView
                 Dim data As New RomsDataSet
+#End Region
 
                 Me._contentDatagrids.Add(g)
 
-                p.SuspendLayout()
-                cb.SuspendLayout()
-                ckFlow.SuspendLayout()
+                mainContent.SuspendLayout()
+                headerPanel.SuspendLayout()
+
+                contentFlowPanel.SuspendLayout()
+                mediaTypeSelectComboBox.SuspendLayout()
+                selectAllFlowLayoutPanel.SuspendLayout()
                 CType(g, System.ComponentModel.ISupportInitialize).BeginInit()
                 CType(b, System.ComponentModel.ISupportInitialize).BeginInit()
                 CType(data, System.ComponentModel.ISupportInitialize).BeginInit()
                 Me.SuspendLayout()
 
                 '
+                'MainPanel
+                '
+                mainContent.FlowDirection = FlowDirection.TopDown
+                mainContent.Controls.Add(headerPanel)
+                mainContent.Controls.Add(contentFlowPanel)
+                mainContent.Font = ReturnFont()
+                mainContent.Location = New Point(0, 0)
+                mainContent.Margin = New Padding(0)
+                mainContent.Name = artType.Name & "MainPanel"
+                mainContent.AutoSize = True
+                '
+                'HeaderPanel
+                '
+                headerPanel.FlowDirection = FlowDirection.LeftToRight
+                headerPanel.Controls.Add(collapseButton)
+                headerPanel.Controls.Add(titleLabel)
+                headerPanel.Name = artType.Name & "HeaderPanel"
+                headerPanel.AutoSize = True
+                '  headerPanel.BackColor = Color.DarkGray
+                '
+                'CollapseButton
+                '
+                collapseButton.FlatAppearance.BorderSize = 0
+                collapseButton.FlatStyle = FlatStyle.Flat
+                collapseButton.ImageList = Me.CollaspeImageList
+                collapseButton.Name = artType.Name & "CollapseButton"
+                collapseButton.Size = New Size(25, 25)
+                collapseButton.UseVisualStyleBackColor = True
+                collapseButton.Tag = "expand"
+                collapseButton.Image = Me.CollaspeImageList.Images(0)
+                AddHandler collapseButton.Click, AddressOf CollapseButton_Click
+                '
+                'TitleLabel
+                '
+                titleLabel.AutoSize = True
+                titleLabel.Font = ReturnHeaderFont()
+                titleLabel.Name = artType.Name & "TitleLabel"
+                titleLabel.Text = artType.Name
+                titleLabel.Margin = New Padding(5)
+                '
                 'ActionPanel
                 '
-                p.FlowDirection = FlowDirection.TopDown
-                p.Controls.Add(l)
-                p.Controls.Add(cb)
-                p.Controls.Add(ckFlow)
-                p.Controls.Add(g)
-                p.Font = ReturnFont()
-                p.Location = New Point(0, 0)
-                p.Margin = New Padding(0)
-                p.Name = artType.Name & "ActionPanel"
-                p.AutoSize = True
-                p.Size = New Size(878, 350)
+                contentFlowPanel.FlowDirection = FlowDirection.TopDown
+                contentFlowPanel.Controls.Add(descriptionLabel)
+                contentFlowPanel.Controls.Add(mediaTypeSelectComboBox)
+                contentFlowPanel.Controls.Add(selectAllFlowLayoutPanel)
+                contentFlowPanel.Controls.Add(g)
+                contentFlowPanel.Font = ReturnFont()
+                contentFlowPanel.Location = New Point(0, 0)
+                contentFlowPanel.Margin = New Padding(0)
+                contentFlowPanel.Name = artType.Name & "ActionPanel"
+                contentFlowPanel.AutoSize = True
+                'contentFlowPanel.Size = New Size(878, 350)
                 '
                 'CheckboxFlowLayoutPanel
                 '
-                ckFlow.Controls.Add(ckScreenShotInGame)
-                ckFlow.Controls.Add(ckScreenShotTitle)
-                ckFlow.Controls.Add(ckFanart)
-                ckFlow.Controls.Add(ckVideo)
-                ckFlow.Controls.Add(ckWheelUS)
-                ckFlow.Controls.Add(ckWheelJP)
-                ckFlow.Controls.Add(ckWheelWOR)
-                ckFlow.Controls.Add(ckWheelCarbonUS)
-                ckFlow.Controls.Add(ckWheelCarbonJP)
-                ckFlow.Controls.Add(ckWheelCarbonWOR)
-                ckFlow.Controls.Add(ckWheelSteelUS)
-                ckFlow.Controls.Add(ckWheelSteelJP)
-                ckFlow.Controls.Add(ckWheelSteelWOR)
-                ckFlow.Controls.Add(ckBoxTextureUS)
-                ckFlow.Controls.Add(ckBoxTextureJP)
-                ckFlow.Controls.Add(ckBoxTextureEU)
-                ckFlow.Controls.Add(ckBox2dUS)
-                ckFlow.Controls.Add(ckBox2dJP)
-                ckFlow.Controls.Add(ckBox2dEU)
-                ckFlow.Controls.Add(ckBox2dSideUS)
-                ckFlow.Controls.Add(ckBox2dSideJP)
-                ckFlow.Controls.Add(ckBox2dSideEU)
-                ckFlow.Controls.Add(ckBox2dBackUS)
-                ckFlow.Controls.Add(ckBox2dBackJP)
-                ckFlow.Controls.Add(ckBox2dBackEU)
-                ckFlow.Controls.Add(ckBox3dUS)
-                ckFlow.Controls.Add(ckBox3dJP)
-                ckFlow.Controls.Add(ckBox3dEU)
-                ckFlow.Controls.Add(ckSupportTextureUS)
-                ckFlow.Controls.Add(ckSupportTextureJP)
-                ckFlow.Controls.Add(ckSupportTextureEU)
-                ckFlow.Controls.Add(ckSupport2dUS)
-                ckFlow.Controls.Add(ckSupport2dJP)
-                ckFlow.Controls.Add(ckSupport2dEU)
-                ckFlow.Location = New Point(20, 35)
-                ckFlow.Margin = New Padding(0)
-                ckFlow.Name = artType.Name & "CheckboxFlowLayoutPanel"
-                ckFlow.AutoSize = True
+                selectAllFlowLayoutPanel.Controls.Add(ckScreenShotInGame)
+                selectAllFlowLayoutPanel.Controls.Add(ckScreenShotTitle)
+                selectAllFlowLayoutPanel.Controls.Add(ckFanart)
+                selectAllFlowLayoutPanel.Controls.Add(ckVideo)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelWOR)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelCarbonUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelCarbonJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelCarbonWOR)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelSteelUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelSteelJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckWheelSteelWOR)
+                selectAllFlowLayoutPanel.Controls.Add(ckBoxTextureUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckBoxTextureJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckBoxTextureEU)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dEU)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dSideUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dSideJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dSideEU)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dBackUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dBackJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox2dBackEU)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox3dUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox3dJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckBox3dEU)
+                selectAllFlowLayoutPanel.Controls.Add(ckSupportTextureUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckSupportTextureJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckSupportTextureEU)
+                selectAllFlowLayoutPanel.Controls.Add(ckSupport2dUS)
+                selectAllFlowLayoutPanel.Controls.Add(ckSupport2dJP)
+                selectAllFlowLayoutPanel.Controls.Add(ckSupport2dEU)
+                selectAllFlowLayoutPanel.Location = New Point(20, 35)
+                selectAllFlowLayoutPanel.Margin = New Padding(0)
+                selectAllFlowLayoutPanel.Name = artType.Name & "CheckboxFlowLayoutPanel"
+                selectAllFlowLayoutPanel.AutoSize = True
                 '
                 'SelectArtTypeComboBox
                 '
-                cb.BackColor = Color.White
-                cb.DropDownStyle = ComboBoxStyle.DropDownList
-                cb.Font = ReturnFont()
-                cb.FormattingEnabled = True
-                cb.AutoSize = True
-                cb.Size = New Size(288, 24)
-                cb.Location = New Point(20, 38)
-                cb.Name = artType.Name & "SelectArtTypeComboBox"
-                cb.Text = "Please select the associated type of available Artwork for " & artType.Name
-                cb.DataSource = mediaTypes
+                mediaTypeSelectComboBox.BackColor = Color.White
+                mediaTypeSelectComboBox.DropDownStyle = ComboBoxStyle.DropDownList
+                mediaTypeSelectComboBox.Font = ReturnFont()
+                mediaTypeSelectComboBox.FormattingEnabled = True
+                mediaTypeSelectComboBox.AutoSize = True
+                mediaTypeSelectComboBox.Size = New Size(288, 24)
+                mediaTypeSelectComboBox.Location = New Point(20, 38)
+                mediaTypeSelectComboBox.Name = artType.Name & "SelectArtTypeComboBox"
+                mediaTypeSelectComboBox.Text = "Please select the associated type of available Artwork for " & artType.Name
+                mediaTypeSelectComboBox.DataSource = mediaTypes
+                AddHandler mediaTypeSelectComboBox.SelectedIndexChanged, AddressOf mediaTypeSelectComboBox_SelectedIndexChanged
                 '
                 'SelectAllScreenShotInGameCheckBox
                 '
@@ -232,7 +290,7 @@
                 '
                 ckFanart.AutoSize = True
                 ckFanart.Name = artType.Name & "SelectAllFanartCheckBox"
-                ckFanart.Text = "Select fabarts for all games"
+                ckFanart.Text = "Select fanarts for all games"
                 '
                 'SelectAllVideoCheckBox
                 '
@@ -733,30 +791,36 @@
                 '                '
                 'DescriptionLabel
                 '
-                l.AutoSize = True
-                l.Font = ReturnFont()
-                l.Location = New Point(17, 19)
-                l.Name = artType.Name & "DescriptionLabel"
-                l.Text = "Please select the associated type of available Artwork for " & artType.Name
+                descriptionLabel.AutoSize = True
+                descriptionLabel.Font = ReturnFont()
+                descriptionLabel.Location = New Point(17, 19)
+                descriptionLabel.Name = artType.Name & "DescriptionLabel"
+                descriptionLabel.Text = "Please select the associated type of available Artwork for " & artType.Name
 
                 CType(g, ComponentModel.ISupportInitialize).EndInit()
                 CType(b, ComponentModel.ISupportInitialize).EndInit()
                 CType(data, ComponentModel.ISupportInitialize).EndInit()
 
-                Me.ActionFlowLayoutPanel.Controls.Add(p)
+                Me.ActionFlowLayoutPanel.Controls.Add(mainContent)
 
-                ckFlow.Visible = False
+                contentFlowPanel.Visible = False
+                selectAllFlowLayoutPanel.Visible = False
                 g.Visible = False
             Next
 
             For Each c As Control In Me.ActionFlowLayoutPanel.Controls
-                If c.Name.Contains("ActionPanel") Then
+                If c.Name.Contains("MainPanel") Then
                     c.ResumeLayout(False)
                     c.PerformLayout()
 
                     For Each innerC As Control In c.Controls
-                        If innerC.Name.Contains("SelectArtTypeComboBox") Then
-                            CType(innerC, ComboBox).SelectedIndex = -1
+                        If innerC.Name.Contains("HeaderPanel") Then
+                            innerC.ResumeLayout(False)
+                            innerC.PerformLayout()
+                        ElseIf innerC.Name.Contains("ActionPanel") Then
+                            innerC.ResumeLayout(False)
+                            innerC.PerformLayout()
+                        ElseIf innerC.Name.Contains("SelectArtTypeComboBox") Then
                             innerC.ResumeLayout(False)
                             innerC.PerformLayout()
                         ElseIf innerC.Name.Contains("CheckboxFlowLayoutPanel") Then
@@ -775,12 +839,113 @@
         End Try
     End Sub
 
+    ''' <summary>
+    ''' return Font for controls init
+    ''' </summary>
+    ''' <returns></returns>
     Private Function ReturnFont() As Font
-        Return New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Return New Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     End Function
 
+    ''' <summary>
+    ''' return font for header
+    ''' </summary>
+    ''' <returns></returns>
+    Private Function ReturnHeaderFont() As Font
+        Return New Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    End Function
+
+    ''' <summary>
+    ''' manage resize
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub _10_RomsBuildScrapArtworksControl_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         Me.ActionFlowLayoutPanel.Width = Me.Width
         Me.ActionFlowLayoutPanel.Height = Me.Height
+    End Sub
+
+    ''' <summary>
+    ''' (Un)Collapse ArtType content
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub CollapseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim b As Button = CType(sender, Button)
+
+        If b.Tag.ToString = "expand" Then
+            b.Image = Me.CollaspeImageList.Images(1)
+            b.Tag = "reduce"
+
+            b.Parent.Parent.Controls(1).Visible = True
+            CType(b.Parent.Parent.Controls(1).Controls(1), ComboBox).SelectedIndex = -1
+        Else
+            b.Image = Me.CollaspeImageList.Images(0)
+            b.Tag = "expand"
+
+            b.Parent.Parent.Controls(1).Visible = False
+        End If
+    End Sub
+
+    Private Sub mediaTypeSelectComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
+        Dim cb As ComboBox = CType(sender, ComboBox)
+
+        Stop
+        Select Case cb.SelectedValue
+            Case "Screenshots"
+            Case "Fanarts"
+            Case "Video"
+                Stop
+
+                'make only the associated checkboxes accessibles
+                For Each ck As CheckBox In cb.Parent.Controls(2).Controls
+                    If ck.Name.Contains("SelectAllVideoCheckBox") Then
+                        ck.Visible = True
+                    Else
+                        ck.Visible = False
+                    End If
+                Next
+                'make visible the checkboxes
+                cb.Parent.Controls(2).Visible = True
+
+                'make only the associated datagridcolumns accessibles
+                For Each col As DataGridViewColumn In CType(cb.Parent.Controls(3), DataGridView).Columns
+                    If col.Name = "filenameDataGridViewTextBoxColumn" Or col.Name = "isVideoDataGridViewCheckBoxColumn" Then
+                        col.Visible = True
+                    Else
+                        col.Visible = False
+                    End If
+                Next
+                'make visible the datagridview
+                cb.Parent.Controls(3).Visible = True
+
+                CType(cb.Parent.Controls(3), DataGridView).Width = cb.Parent.Parent.Parent.Width
+
+                cb.Parent.Parent.Controls(0).Width = 800
+                cb.Parent.Parent.Controls(1).Width = 800
+                cb.Parent.Controls(2).Width = 800
+                cb.Parent.Controls(3).Width = 800
+                'cb.Parent.Parent.Width = cb.Parent.Parent.Parent.Width
+                cb.Parent.Parent.Dock = DockStyle.Fill
+
+
+                ' disable the collapsed button to avoid a reset config
+                cb.Parent.Parent.Controls(0).Controls(0).Enabled = False
+
+            Case "Screenshots"
+            Case "Wheels"
+            Case "Carbon Wheels"
+            Case "Steel Wheels"
+            Case "Box Textures (all sides of the jacket"
+            Case "Box 2D (Front side of the jacket)"
+            Case "Box 2D Side"
+            Case "Box 2D Back"
+            Case "Box 3D"
+            Case "Support Texture (Cartridge label)"
+            Case "Support 2D (Cartridge)"
+            Case Else
+
+        End Select
+
     End Sub
 End Class

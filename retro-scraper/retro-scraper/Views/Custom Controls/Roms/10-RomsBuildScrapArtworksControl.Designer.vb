@@ -22,7 +22,10 @@ Partial Class _10_RomsBuildScrapArtworksControl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(_10_RomsBuildScrapArtworksControl))
         Me.ActionFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CollaspeImageList = New System.Windows.Forms.ImageList(Me.components)
         Me.SuspendLayout()
         '
         'ActionFlowLayoutPanel
@@ -35,6 +38,13 @@ Partial Class _10_RomsBuildScrapArtworksControl
         Me.ActionFlowLayoutPanel.Size = New System.Drawing.Size(878, 727)
         Me.ActionFlowLayoutPanel.TabIndex = 0
         Me.ActionFlowLayoutPanel.WrapContents = False
+        '
+        'CollaspeImageList
+        '
+        Me.CollaspeImageList.ImageStream = CType(resources.GetObject("CollaspeImageList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.CollaspeImageList.TransparentColor = System.Drawing.Color.Transparent
+        Me.CollaspeImageList.Images.SetKeyName(0, "20x20 collapse-expand.png")
+        Me.CollaspeImageList.Images.SetKeyName(1, "20x20 collapse-reduce.png")
         '
         '_10_RomsBuildScrapArtworksControl
         '
@@ -49,4 +59,5 @@ Partial Class _10_RomsBuildScrapArtworksControl
     End Sub
 
     Friend WithEvents ActionFlowLayoutPanel As FlowLayoutPanel
+    Friend WithEvents CollaspeImageList As ImageList
 End Class

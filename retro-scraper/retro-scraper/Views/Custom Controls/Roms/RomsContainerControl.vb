@@ -506,8 +506,11 @@
         ' Upgrade actual step
         Me._actualStep = Me._actualStep - 1
 
-        If Me._actualStep >= Steps.Download Then Me._actualStep = Steps.BuildScrapingGamesSelection
-        If Me._actualStep >= Steps.LoadingProcess Then Me._actualStep = Steps.RomListFile
+        If Me._actualStep = Steps.LoadingProcess   or Me._actualStep >= Steps.Download Then Me._actualStep = Steps.RomListFile
+
+        'If Me._actualStep = Steps.LoadingProcess Then Me._actualStep = Steps.RomListFile
+        'If Me._actualStep >= Steps.Download Then Me._actualStep = Steps.BuildScrapingGamesSelection
+        'If Me._actualStep >= Steps.LoadingProcess Then Me._actualStep = Steps.BuildScrapingGamesSelection
 
         ' Prev/Next buttons
         Me.DisplayStepsButtons()

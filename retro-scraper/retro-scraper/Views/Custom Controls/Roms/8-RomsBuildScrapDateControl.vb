@@ -123,7 +123,7 @@
         'chkCell.Value = False
         'chkCell.FlatStyle = FlatStyle.Flat
         'chkCell.Style.ForeColor = Color.DarkGray
-        'cell.[ReadOnly] = True
+        'cell.[ReadOnly] = True 
 
         If e.ColumnIndex = 2 Or e.ColumnIndex = 4 Or e.ColumnIndex = 6 Or e.ColumnIndex = 8 Then
             If Me.ContentDataGridView.Rows(e.RowIndex).Cells(e.ColumnIndex).Value = String.Empty Then

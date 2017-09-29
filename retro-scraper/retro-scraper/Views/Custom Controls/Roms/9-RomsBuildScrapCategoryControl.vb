@@ -1,7 +1,7 @@
 ﻿Public Class _9_RomsBuildScrapCategoryControl
 
     ''' <summary>
-    ''' Parent con tainer control
+    ''' Parent container control
     ''' </summary>
     Private _parent As RomsContainerControl
 

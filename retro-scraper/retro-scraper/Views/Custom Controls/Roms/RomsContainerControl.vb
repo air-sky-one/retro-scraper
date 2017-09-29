@@ -241,6 +241,16 @@
 #Region "step 10 : Build Scrap : Games artworks selection"
 
     ''' <summary>
+    ''' List of media types defined in screenscraper.fr
+    ''' </summary>
+    Private _mediaTypes As New RomsDataSet.MediaTypesDataTable
+    Public ReadOnly Property MediaTypes() As RomsDataSet.MediaTypesDataTable
+        Get
+            Return _mediaTypes
+        End Get
+    End Property
+
+    ''' <summary>
     ''' Build Scrap : Games selection
     ''' </summary>
     Private _gamesArtworkyScreen As New _10_RomsBuildScrapArtworksControl
@@ -313,6 +323,9 @@
         ' This call is required by the designer.
         InitializeComponent()
 
+        ' Init media types list
+        InitMediaTypesList()
+
         ' Add the Home control to the container
         Me.MainTableLayoutPanel.Controls.Add(Me._homeControl, 0, 2)
         Me._homeControl.Dock = DockStyle.Fill
@@ -320,6 +333,37 @@
 
         ' Actual Step Home
         Me._actualStep = Steps.Home
+    End Sub
+
+    ''' <summary>
+    ''' Init list of media Types
+    ''' </summary>
+    Private Sub InitMediaTypesList()
+        Me._mediaTypes.Rows.Clear()
+        InitMediaTypeRow("Screenshots")
+        InitMediaTypeRow("Fanarts")
+        InitMediaTypeRow("Video")
+        InitMediaTypeRow("Wheels")
+        InitMediaTypeRow("Carbon Wheels")
+        InitMediaTypeRow("Steel Wheels")
+        InitMediaTypeRow("Box Textures (all sides of the jacket")
+        InitMediaTypeRow("Box 2D (Front side of the jacket)")
+        InitMediaTypeRow("Box 2D Side")
+        InitMediaTypeRow("Box 2D Back")
+        InitMediaTypeRow("Box 3D")
+        InitMediaTypeRow("Support Texture (Cartridge label)")
+        InitMediaTypeRow("Support 2D (Cartridge)")
+    End Sub
+
+    ''' <summary>
+    ''' Helper : create a media type row
+    ''' </summary>
+    ''' <param name="name"></param>
+    Private Sub InitMediaTypeRow(name As String)
+        Dim m As RomsDataSet.MediaTypesRow
+        m = Me._mediaTypes.NewRow
+        m.Name = name
+        Me._mediaTypes.AddMediaTypesRow(m)
     End Sub
 
     ''' <summary>

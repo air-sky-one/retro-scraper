@@ -342,7 +342,7 @@
 
             indexValue = Me._parent.RomsData.Columns(colName).Ordinal + 1
 
-            If Not String.IsNullOrEmpty(g(indexValue)) Then
+            If Not String.IsNullOrEmpty(g(indexValue).ToString) Then
                 g(colName) = value
             Else
                 g(colName) = False

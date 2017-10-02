@@ -89,7 +89,7 @@ Partial Class RomsContainerControl
         Me.StepsProgressBar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.StepsProgressBar.Location = New System.Drawing.Point(0, 25)
         Me.StepsProgressBar.Margin = New System.Windows.Forms.Padding(0)
-        Me.StepsProgressBar.Maximum = 12
+        Me.StepsProgressBar.Maximum = 13
         Me.StepsProgressBar.Name = "StepsProgressBar"
         Me.StepsProgressBar.Size = New System.Drawing.Size(878, 5)
         Me.StepsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous

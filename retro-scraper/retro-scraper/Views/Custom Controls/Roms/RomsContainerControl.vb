@@ -238,7 +238,7 @@
 
 #End Region
 
-#Region "step 10 : Build Scrap : Games artworks selection"
+#Region "step 10 : Associate Artworks to ScrenScraper's media types"
 
     ''' <summary>
     ''' List of media types defined in screenscraper.fr
@@ -253,7 +253,16 @@
     ''' <summary>
     ''' Build Scrap : Games selection
     ''' </summary>
-    Private _gamesArtworkyScreen As New _10_RomsBuildScrapArtworksControl
+    Private _artworkyMediaTypesScreen As New _10_RomsBuildScrapArtworksControl
+
+#End Region
+
+#Region "step 11 : Build your scrap : Artworks"
+
+    ''' <summary>
+    ''' Build Scrap : Games selection
+    ''' </summary>
+    Private _gamesArtworksScreen As New _11_RomsBuildScrapArtworksControl
 
 #End Region
 
@@ -302,17 +311,21 @@
         ''' </summary>
         BuildScrapingCategory = 9
         ''' <summary>
+        ''' allows user to media type to artworks
+        ''' </summary>
+        AssociateArtworkMediaTypes = 10
+        ''' <summary>
         ''' allows user to define what to scrap for games artwork
         ''' </summary>
-        BuildScrapingArtwork = 10
+        BuildScrapingArtwork = 11
         ''' <summary>
         ''' display download progress
         ''' </summary>
-        Download = 11
+        Download = 12
         ''' <summary>
         ''' display results and logs
         ''' </summary>
-        Result = 12
+        Result = 13
     End Enum
 
     ''' <summary>
@@ -432,10 +445,11 @@
                 Me._gamesSelectionProcessScreen.Datagrid.DataSource = Nothing
                 Me._gamesTitleScreen.Datagrid.DataSource = Nothing
                 Me._gamesDateScreen.Datagrid.DataSource = Nothing
+                Me._artworkyMediaTypesScreen.Datagrid.DataSource = Nothing
 
-                For Each grid As DataGridView In Me._gamesArtworkyScreen.Datagrids
-                    grid.DataSource = Nothing
-                Next
+                'For Each grid As DataGridView In Me._artworkyMediaTypesScreen.Datagrids
+                '    grid.DataSource = Nothing
+                'Next
 
                 Me.MainTableLayoutPanel.Controls.Add(Me._romListChoice, 0, 2)
 
@@ -491,25 +505,36 @@
 
                 Me._gamesCategoryScreen.Dock = DockStyle.Fill
 
-            Case Steps.BuildScrapingArtwork
-                Me.HeaderLabel.Text = "Step 10 : Build your scrap : Artworks"
+            Case Steps.AssociateArtworkMediaTypes
+                Me.HeaderLabel.Text = "Step 10 : Associate Artworks to ScrenScraper's media types"
 
                 Me.StepsProgressBar.Value = 10
 
-                Me._gamesArtworkyScreen = New _10_RomsBuildScrapArtworksControl
-                Me.MainTableLayoutPanel.Controls.Add(Me._gamesArtworkyScreen, 0, 2)
+                Me._artworkyMediaTypesScreen = New _10_RomsBuildScrapArtworksControl
+                Me._artworkyMediaTypesScreen.Datagrid.DataSource = Nothing
+                Me.MainTableLayoutPanel.Controls.Add(Me._artworkyMediaTypesScreen, 0, 2)
 
-                Me._gamesArtworkyScreen.Dock = DockStyle.Fill
+                Me._artworkyMediaTypesScreen.Dock = DockStyle.Fill
 
-            Case Steps.Download
-                Me.HeaderLabel.Text = "Step 11 : Download"
+            Case Steps.BuildScrapingArtwork
+                Me.HeaderLabel.Text = "Step 11 : Build your scrap : Artworks"
 
                 Me.StepsProgressBar.Value = 11
+
+                Me._gamesArtworksScreen = New _11_RomsBuildScrapArtworksControl
+                Me.MainTableLayoutPanel.Controls.Add(Me._gamesArtworksScreen, 0, 2)
+
+                Me._gamesArtworksScreen.Dock = DockStyle.Fill
+
+            Case Steps.Download
+                Me.HeaderLabel.Text = "Step 12 : Download"
+
+                Me.StepsProgressBar.Value = 12
 
             Case Steps.Result
                 Me.HeaderLabel.Text = "Results"
 
-                Me.StepsProgressBar.Value = 12
+                Me.StepsProgressBar.Value = 13
 
             Case Else
         End Select

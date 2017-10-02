@@ -1500,7 +1500,7 @@ Partial Public Class RomsDataSet
         
         Private columnmedia_supporttexture_eu As Global.System.Data.DataColumn
         
-        Private columnis_smedia_upport2d_us As Global.System.Data.DataColumn
+        Private columnis_media_support2d_us As Global.System.Data.DataColumn
         
         Private columnmedia_support2d_us As Global.System.Data.DataColumn
         
@@ -2331,9 +2331,9 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property is_smedia_upport2d_usColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property is_media_support2d_usColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnis_smedia_upport2d_us
+                Return Me.columnis_media_support2d_us
             End Get
         End Property
         
@@ -2536,7 +2536,7 @@ Partial Public Class RomsDataSet
                     ByVal media_supporttexture_jp As String,  _
                     ByVal is_media_supporttexture_eu As Boolean,  _
                     ByVal media_supporttexture_eu As String,  _
-                    ByVal is_smedia_upport2d_us As Boolean,  _
+                    ByVal is_media_support2d_us As Boolean,  _
                     ByVal media_support2d_us As String,  _
                     ByVal is_media_support2d_jp As Boolean,  _
                     ByVal media_support2d_jp As String,  _
@@ -2546,7 +2546,7 @@ Partial Public Class RomsDataSet
                     ByVal local_romcrc As String,  _
                     ByVal local_rommd5 As String) As SSRomsRow
             Dim rowSSRomsRow As SSRomsRow = CType(Me.NewRow,SSRomsRow)
-            Dim columnValuesArray() As Object = New Object() {IsChecked, filename, extension, size, is_nom_us, nom_us, is_nom_jp, nom_jp, is_nom_wor, nom_wor, is_nom_eu, nom_eu, cloneof, is_date_us, date_us, is_date_jp, date_jp, is_date_wor, date_wor, is_date_eu, date_eu, editeur, is_genres_en, genres_en, is_genres_fr, genres_fr, is_genres_de, genres_de, is_genres_es, genres_es, is_genres_pt, genres_pt, joueurs, rotation, controles, is_media_screenshot, media_screenshot, is_media_screenshottitle, media_screenshottitle, is_media_fanart, media_fanart, is_media_video, media_video, is_media_wheel_us, media_wheel_us, is_media_wheel_jp, media_wheel_jp, is_media_wheel_wor, media_wheel_wor, is_media_wheelcarbon_us, media_wheelcarbon_us, is_media_wheelcarbon_jp, media_wheelcarbon_jp, is_media_wheelcarbon_wor, media_wheelcarbon_wor, is_media_wheelsteel_us, media_wheelsteel_us, is_media_wheelsteel_jp, media_wheelsteel_jp, is_media_wheelsteel_wor, media_wheelsteel_wor, is_media_boxtexture_us, media_boxtexture_us, is_media_boxtexture_jp, media_boxtexture_jp, is_media_boxtexture_eu, media_boxtexture_eu, is_media_box2d_us, media_box2d_us, is_media_box2d_jp, media_box2d_jp, is_media_box2d_eu, media_box2d_eu, is_media_box2d_side_us, media_box2d_side_us, is_media_box2d_side_jp, media_box2d_side_jp, is_media_box2d_side_eu, media_box2d_side_eu, is_media_box2d_back_us, media_box2d_back_us, is_media_box2d_back_jp, media_box2d_back_jp, is_media_box2d_back_eu, media_box2d_back_eu, is_media_box3d_us, media_box3d_us, is_media_box3d_jp, media_box3d_jp, is_media_box3d_eu, media_box3d_eu, is_media_supporttexture_us, media_supporttexture_us, is_media_supporttexture_jp, media_supporttexture_jp, is_media_supporttexture_eu, media_supporttexture_eu, is_smedia_upport2d_us, media_support2d_us, is_media_support2d_jp, media_support2d_jp, is_media_support2d_eu, media_support2d_eu, local_romsize, local_romcrc, local_rommd5}
+            Dim columnValuesArray() As Object = New Object() {IsChecked, filename, extension, size, is_nom_us, nom_us, is_nom_jp, nom_jp, is_nom_wor, nom_wor, is_nom_eu, nom_eu, cloneof, is_date_us, date_us, is_date_jp, date_jp, is_date_wor, date_wor, is_date_eu, date_eu, editeur, is_genres_en, genres_en, is_genres_fr, genres_fr, is_genres_de, genres_de, is_genres_es, genres_es, is_genres_pt, genres_pt, joueurs, rotation, controles, is_media_screenshot, media_screenshot, is_media_screenshottitle, media_screenshottitle, is_media_fanart, media_fanart, is_media_video, media_video, is_media_wheel_us, media_wheel_us, is_media_wheel_jp, media_wheel_jp, is_media_wheel_wor, media_wheel_wor, is_media_wheelcarbon_us, media_wheelcarbon_us, is_media_wheelcarbon_jp, media_wheelcarbon_jp, is_media_wheelcarbon_wor, media_wheelcarbon_wor, is_media_wheelsteel_us, media_wheelsteel_us, is_media_wheelsteel_jp, media_wheelsteel_jp, is_media_wheelsteel_wor, media_wheelsteel_wor, is_media_boxtexture_us, media_boxtexture_us, is_media_boxtexture_jp, media_boxtexture_jp, is_media_boxtexture_eu, media_boxtexture_eu, is_media_box2d_us, media_box2d_us, is_media_box2d_jp, media_box2d_jp, is_media_box2d_eu, media_box2d_eu, is_media_box2d_side_us, media_box2d_side_us, is_media_box2d_side_jp, media_box2d_side_jp, is_media_box2d_side_eu, media_box2d_side_eu, is_media_box2d_back_us, media_box2d_back_us, is_media_box2d_back_jp, media_box2d_back_jp, is_media_box2d_back_eu, media_box2d_back_eu, is_media_box3d_us, media_box3d_us, is_media_box3d_jp, media_box3d_jp, is_media_box3d_eu, media_box3d_eu, is_media_supporttexture_us, media_supporttexture_us, is_media_supporttexture_jp, media_supporttexture_jp, is_media_supporttexture_eu, media_supporttexture_eu, is_media_support2d_us, media_support2d_us, is_media_support2d_jp, media_support2d_jp, is_media_support2d_eu, media_support2d_eu, local_romsize, local_romcrc, local_rommd5}
             rowSSRomsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSSRomsRow)
             Return rowSSRomsRow
@@ -2666,7 +2666,7 @@ Partial Public Class RomsDataSet
             Me.columnmedia_supporttexture_jp = MyBase.Columns("media_supporttexture_jp")
             Me.columnis_media_supporttexture_eu = MyBase.Columns("is_media_supporttexture_eu")
             Me.columnmedia_supporttexture_eu = MyBase.Columns("media_supporttexture_eu")
-            Me.columnis_smedia_upport2d_us = MyBase.Columns("is_smedia_upport2d_us")
+            Me.columnis_media_support2d_us = MyBase.Columns("is_media_support2d_us")
             Me.columnmedia_support2d_us = MyBase.Columns("media_support2d_us")
             Me.columnis_media_support2d_jp = MyBase.Columns("is_media_support2d_jp")
             Me.columnmedia_support2d_jp = MyBase.Columns("media_support2d_jp")
@@ -2874,8 +2874,8 @@ Partial Public Class RomsDataSet
             MyBase.Columns.Add(Me.columnis_media_supporttexture_eu)
             Me.columnmedia_supporttexture_eu = New Global.System.Data.DataColumn("media_supporttexture_eu", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_supporttexture_eu)
-            Me.columnis_smedia_upport2d_us = New Global.System.Data.DataColumn("is_smedia_upport2d_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnis_smedia_upport2d_us)
+            Me.columnis_media_support2d_us = New Global.System.Data.DataColumn("is_media_support2d_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnis_media_support2d_us)
             Me.columnmedia_support2d_us = New Global.System.Data.DataColumn("media_support2d_us", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmedia_support2d_us)
             Me.columnis_media_support2d_jp = New Global.System.Data.DataColumn("is_media_support2d_jp", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
@@ -2938,7 +2938,7 @@ Partial Public Class RomsDataSet
             Me.columnis_media_supporttexture_us.DefaultValue = CType(false,Boolean)
             Me.columnis_media_supporttexture_jp.DefaultValue = CType(false,Boolean)
             Me.columnis_media_supporttexture_eu.DefaultValue = CType(false,Boolean)
-            Me.columnis_smedia_upport2d_us.DefaultValue = CType(false,Boolean)
+            Me.columnis_media_support2d_us.DefaultValue = CType(false,Boolean)
             Me.columnis_media_support2d_jp.DefaultValue = CType(false,Boolean)
             Me.columnis_media_support2d_eu.DefaultValue = CType(false,Boolean)
         End Sub
@@ -5373,16 +5373,16 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property is_smedia_upport2d_us() As Boolean
+        Public Property is_media_support2d_us() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tableSSRoms.is_smedia_upport2d_usColumn),Boolean)
+                    Return CType(Me(Me.tableSSRoms.is_media_support2d_usColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_smedia_upport2d_us' in table 'SSRoms' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'is_media_support2d_us' in table 'SSRoms' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableSSRoms.is_smedia_upport2d_usColumn) = value
+                Me(Me.tableSSRoms.is_media_support2d_usColumn) = value
             End Set
         End Property
         
@@ -6660,14 +6660,14 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isis_smedia_upport2d_usNull() As Boolean
-            Return Me.IsNull(Me.tableSSRoms.is_smedia_upport2d_usColumn)
+        Public Function Isis_media_support2d_usNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.is_media_support2d_usColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setis_smedia_upport2d_usNull()
-            Me(Me.tableSSRoms.is_smedia_upport2d_usColumn) = Global.System.Convert.DBNull
+        Public Sub Setis_media_support2d_usNull()
+            Me(Me.tableSSRoms.is_media_support2d_usColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

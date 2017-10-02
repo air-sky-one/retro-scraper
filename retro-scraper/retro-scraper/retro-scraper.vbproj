@@ -191,11 +191,11 @@
     <Compile Include="Views\Custom Controls\Roms\10-RomsBuildScrapArtworksControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\10-RomsBuildScrapArtworksGenericForm.Designer.vb">
-      <DependentUpon>10-RomsBuildScrapArtworksGenericForm.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\Roms\11-RomsBuildScrapArtworksControl.Designer.vb">
+      <DependentUpon>11-RomsBuildScrapArtworksControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\Roms\10-RomsBuildScrapArtworksGenericForm.vb">
-      <SubType>Form</SubType>
+    <Compile Include="Views\Custom Controls\Roms\11-RomsBuildScrapArtworksControl.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.Designer.vb">
       <DependentUpon>2-RomsEmulatorSelectControl.vb</DependentUpon>
@@ -307,8 +307,8 @@
     <EmbeddedResource Include="Views\Custom Controls\Roms\10-RomsBuildScrapArtworksControl.resx">
       <DependentUpon>10-RomsBuildScrapArtworksControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\Roms\10-RomsBuildScrapArtworksGenericForm.resx">
-      <DependentUpon>10-RomsBuildScrapArtworksGenericForm.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\11-RomsBuildScrapArtworksControl.resx">
+      <DependentUpon>11-RomsBuildScrapArtworksControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.resx">
       <DependentUpon>2-RomsEmulatorSelectControl.vb</DependentUpon>

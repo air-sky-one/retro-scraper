@@ -11,6 +11,19 @@
     Private _gridViewColumnsCollection As New List(Of DataGridViewCheckBoxColumn)
 
     ''' <summary>
+    ''' Datagrid
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property Datagrid() As DataGridView
+        Get
+            Return Me.MainDataGridView
+        End Get
+        Set(ByVal value As DataGridView)
+            Me.MainDataGridView = value
+        End Set
+    End Property
+
+    ''' <summary>
     ''' Component initialization
     ''' </summary>
     ''' <param name="sender"></param>
@@ -182,7 +195,7 @@
                 Case "Steel Wheels"
                     SetCheckboxColumnsVisibility(New List(Of DataGridViewCheckBoxColumn) From {Me.IsmediawheelsteelusDataGridViewCheckBoxColumn, Me.IsmediawheelsteeljpDataGridViewCheckBoxColumn, Me.IsmediawheelsteelworDataGridViewCheckBoxColumn})
                     SetSelectAllCheckboxVisibility(New List(Of CheckBox) From {ckWheelSteelUS, ckWheelSteelJP, ckWheelSteelWOR})
-                Case "Box Textures (all sides of the jacket"
+                Case "Box Textures (all sides of the jacket)"
                     SetCheckboxColumnsVisibility(New List(Of DataGridViewCheckBoxColumn) From {Me.IsmediaboxtextureusDataGridViewCheckBoxColumn, Me.IsmediaboxtexturejpDataGridViewCheckBoxColumn, Me.IsmediaboxtextureeuDataGridViewCheckBoxColumn})
                     SetSelectAllCheckboxVisibility(New List(Of CheckBox) From {ckBoxTextureUS, ckBoxTextureJP, ckBoxTextureEU})
                 Case "Box 2D (Front side of the jacket)"
@@ -383,7 +396,7 @@
     End Sub
 
     Private Sub ButtonReset_Click(sender As Object, e As EventArgs) Handles ButtonReset.Click
-        For Each g As RomsDataSet.SSRomsRow In Me._parent.RomsData.Select("")
+        For Each g As RomsDataSet.SSRomsRow In Me._parent.RomsData.Select("IsChecked = 'True'")
             g.is_media_screenshot = False
             g.is_media_screenshottitle = False
             g.is_media_fanart = False

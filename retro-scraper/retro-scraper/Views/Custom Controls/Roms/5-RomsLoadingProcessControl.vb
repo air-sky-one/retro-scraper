@@ -157,6 +157,12 @@ Public Class _5_RomsLoadingProcessControl
                                 GetData(o, rom.date_jp, "response.jeu.dates.date_jp")
                                 GetData(o, rom.date_wor, "response.jeu.dates.date_wor")
                                 GetData(o, rom.date_eu, "response.jeu.dates.date_eu")
+                                ' keep only year
+                                If Not String.IsNullOrEmpty(rom.date_us) And rom.date_us.Length >= 4 Then rom.date_us = rom.date_us.Substring(0, 4)
+                                If Not String.IsNullOrEmpty(rom.date_jp) And rom.date_jp.Length >= 4 Then rom.date_jp = rom.date_jp.Substring(0, 4)
+                                If Not String.IsNullOrEmpty(rom.date_wor) And rom.date_wor.Length >= 4 Then rom.date_wor = rom.date_wor.Substring(0, 4)
+                                If Not String.IsNullOrEmpty(rom.date_eu) And rom.date_eu.Length >= 4 Then rom.date_eu = rom.date_eu.Substring(0, 4)
+
                                 'editeur
                                 GetData(o, rom.editeur, "response.jeu.editeur")
                                 'genre
@@ -224,71 +230,7 @@ Public Class _5_RomsLoadingProcessControl
                             ' TODO : Error
                         End Try
 
-                        With rom
-                            Me._workerDetailsLastLine = "Building index for " & .filename & " Ok" & vbCrLf
-                            'Me._workerDetailsLastLine = "*******************************" &
-                            '                    vbCrLf & "Building index for " & .filename & " Ok" &
-                            '                                           vbCrLf & .filename &
-                            '                                           vbCrLf & .extension &
-                            '                                           vbCrLf & .size &
-                            '                                           vbCrLf & .nom_us &
-                            '                                           vbCrLf & .nom_jp &
-                            '                                           vbCrLf & .nom_wor &
-                            '                                           vbCrLf & .nom_eu &
-                            '                                           vbCrLf & .cloneof &
-                            '                                           vbCrLf & .date_us &
-                            '                                           vbCrLf & .date_jp &
-                            '                                           vbCrLf & .date_wor &
-                            '                                           vbCrLf & .date_eu &
-                            '                                           vbCrLf & .editeur &
-                            '                                           vbCrLf & .genres_en &
-                            '                                           vbCrLf & .genres_fr &
-                            '                                           vbCrLf & .genres_de &
-                            '                                           vbCrLf & .genres_es &
-                            '                                           vbCrLf & .genres_pt &
-                            '                                           vbCrLf & .genres_pt &
-                            '                                           vbCrLf & .joueurs &
-                            '                                           vbCrLf & .rotation &
-                            '                                           vbCrLf & .controles &
-                            '                                           vbCrLf & .media_screenshot &
-                            '                                           vbCrLf & .media_screenshottitle &
-                            '                                           vbCrLf & .media_fanart &
-                            '                                           vbCrLf & .media_video &
-                            '                                           vbCrLf & .media_wheel_us &
-                            '                                           vbCrLf & .media_wheel_jp &
-                            '                                           vbCrLf & .media_wheel_wor &
-                            '                                           vbCrLf & .media_wheelcarbon_us &
-                            '                                           vbCrLf & .media_wheelcarbon_jp &
-                            '                                           vbCrLf & .media_wheelcarbon_wor &
-                            '                                           vbCrLf & .media_wheelsteel_us &
-                            '                                           vbCrLf & .media_wheelsteel_jp &
-                            '                                           vbCrLf & .media_wheelsteel_wor &
-                            '                                           vbCrLf & .media_boxtexture_us &
-                            '                                           vbCrLf & .media_boxtexture_jp &
-                            '                                           vbCrLf & .media_boxtexture_eu &
-                            '                                           vbCrLf & .media_box2d_us &
-                            '                                           vbCrLf & .media_box2d_jp &
-                            '                                           vbCrLf & .media_box2d_eu &
-                            '                                           vbCrLf & .media_box2d_side_us &
-                            '                                           vbCrLf & .media_box2d_side_jp &
-                            '                                           vbCrLf & .media_box2d_side_eu &
-                            '                                           vbCrLf & .media_box2d_back_us &
-                            '                                           vbCrLf & .media_box2d_back_jp &
-                            '                                           vbCrLf & .media_box2d_back_eu &
-                            '                                           vbCrLf & .media_box3d_us &
-                            '                                           vbCrLf & .media_box3d_jp &
-                            '                                           vbCrLf & .media_box3d_eu &
-                            '                                           vbCrLf & .media_supporttexture_us &
-                            '                                           vbCrLf & .media_supporttexture_jp &
-                            '                                           vbCrLf & .media_supporttexture_eu &
-                            '                                           vbCrLf & .media_support2d_us &
-                            '                                           vbCrLf & .media_support2d_jp &
-                            '                                           vbCrLf & .media_support2d_eu &
-                            '                                           vbCrLf & .local_romsize &
-                            '                                           vbCrLf & .local_romcrc &
-                            '                                           vbCrLf & .local_rommd5 &
-                            'vbCrLf & "*******************************" & vbCrLf
-                        End With
+                        Me._workerDetailsLastLine = "Building index for " & rom.filename & " Ok" & vbCrLf
 
 #Region "list of ss roms columns"
                         'filename

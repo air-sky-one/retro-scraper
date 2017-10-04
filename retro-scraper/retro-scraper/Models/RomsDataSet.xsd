@@ -37,6 +37,7 @@
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
               <xs:element name="Path" msprop:Generator_ColumnVarNameInTable="columnPath" msprop:Generator_ColumnPropNameInRow="Path" msprop:Generator_ColumnPropNameInTable="PathColumn" msprop:Generator_UserColumnName="Path" type="xs:string" minOccurs="0" />
               <xs:element name="AssociatedMediaType" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="AssociatedMediaType" msprop:Generator_ColumnVarNameInTable="columnAssociatedMediaType" msprop:Generator_ColumnPropNameInTable="AssociatedMediaTypeColumn" msprop:Generator_UserColumnName="AssociatedMediaType" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="ForceDownload" msprop:Generator_ColumnVarNameInTable="columnForceDownload" msprop:Generator_ColumnPropNameInRow="ForceDownload" msprop:Generator_ColumnPropNameInTable="ForceDownloadColumn" msprop:Generator_UserColumnName="ForceDownload" type="xs:boolean" default="true" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -164,6 +165,29 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Romlist" msprop:Generator_TableClassName="RomlistDataTable" msprop:Generator_TableVarName="tableRomlist" msprop:Generator_TablePropName="Romlist" msprop:Generator_RowDeletingName="RomlistRowDeleting" msprop:Generator_RowChangingName="RomlistRowChanging" msprop:Generator_RowEvHandlerName="RomlistRowChangeEventHandler" msprop:Generator_RowDeletedName="RomlistRowDeleted" msprop:Generator_UserTableName="Romlist" msprop:Generator_RowChangedName="RomlistRowChanged" msprop:Generator_RowEvArgName="RomlistRowChangeEvent" msprop:Generator_RowClassName="RomlistRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" type="xs:string" minOccurs="0" />
+              <xs:element name="Emulator" msprop:Generator_ColumnVarNameInTable="columnEmulator" msprop:Generator_ColumnPropNameInRow="Emulator" msprop:Generator_ColumnPropNameInTable="EmulatorColumn" msprop:Generator_UserColumnName="Emulator" type="xs:string" minOccurs="0" />
+              <xs:element name="CloneOf" msprop:Generator_ColumnVarNameInTable="columnCloneOf" msprop:Generator_ColumnPropNameInRow="CloneOf" msprop:Generator_ColumnPropNameInTable="CloneOfColumn" msprop:Generator_UserColumnName="CloneOf" type="xs:string" minOccurs="0" />
+              <xs:element name="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_UserColumnName="Year" type="xs:string" minOccurs="0" />
+              <xs:element name="Manufacturer" msprop:Generator_ColumnVarNameInTable="columnManufacturer" msprop:Generator_ColumnPropNameInRow="Manufacturer" msprop:Generator_ColumnPropNameInTable="ManufacturerColumn" msprop:Generator_UserColumnName="Manufacturer" type="xs:string" minOccurs="0" />
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" type="xs:string" minOccurs="0" />
+              <xs:element name="Players" msprop:Generator_ColumnVarNameInTable="columnPlayers" msprop:Generator_ColumnPropNameInRow="Players" msprop:Generator_ColumnPropNameInTable="PlayersColumn" msprop:Generator_UserColumnName="Players" type="xs:string" minOccurs="0" />
+              <xs:element name="Rotation" msprop:Generator_ColumnVarNameInTable="columnRotation" msprop:Generator_ColumnPropNameInRow="Rotation" msprop:Generator_ColumnPropNameInTable="RotationColumn" msprop:Generator_UserColumnName="Rotation" type="xs:string" minOccurs="0" />
+              <xs:element name="Control" msprop:Generator_ColumnVarNameInTable="columnControl" msprop:Generator_ColumnPropNameInRow="Control" msprop:Generator_ColumnPropNameInTable="ControlColumn" msprop:Generator_UserColumnName="Control" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="DisplayCount" msprop:Generator_ColumnVarNameInTable="columnDisplayCount" msprop:Generator_ColumnPropNameInRow="DisplayCount" msprop:Generator_ColumnPropNameInTable="DisplayCountColumn" msprop:Generator_UserColumnName="DisplayCount" type="xs:string" minOccurs="0" />
+              <xs:element name="DisplayType" msprop:Generator_ColumnVarNameInTable="columnDisplayType" msprop:Generator_ColumnPropNameInRow="DisplayType" msprop:Generator_ColumnPropNameInTable="DisplayTypeColumn" msprop:Generator_UserColumnName="DisplayType" type="xs:string" minOccurs="0" />
+              <xs:element name="AltRomname" msprop:Generator_ColumnVarNameInTable="columnAltRomname" msprop:Generator_ColumnPropNameInRow="AltRomname" msprop:Generator_ColumnPropNameInTable="AltRomnameColumn" msprop:Generator_UserColumnName="AltRomname" type="xs:string" minOccurs="0" />
+              <xs:element name="AltTitle" msprop:Generator_ColumnVarNameInTable="columnAltTitle" msprop:Generator_ColumnPropNameInRow="AltTitle" msprop:Generator_ColumnPropNameInTable="AltTitleColumn" msprop:Generator_UserColumnName="AltTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="Extra" msprop:Generator_ColumnVarNameInTable="columnExtra" msprop:Generator_ColumnPropNameInRow="Extra" msprop:Generator_ColumnPropNameInTable="ExtraColumn" msprop:Generator_UserColumnName="Extra" type="xs:string" minOccurs="0" />
+              <xs:element name="Buttons" msprop:Generator_ColumnVarNameInTable="columnButtons" msprop:Generator_ColumnPropNameInRow="Buttons" msprop:Generator_ColumnPropNameInTable="ButtonsColumn" msprop:Generator_UserColumnName="Buttons" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

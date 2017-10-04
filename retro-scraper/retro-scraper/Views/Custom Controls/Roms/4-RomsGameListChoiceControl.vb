@@ -54,6 +54,7 @@
 
             If Not path = String.Empty Then
                 Me._parent.RomlistFilePath = path
+                Me.FolderPathTextBox.Text = path
                 Me._parent.ButtonNext.Enabled = True
             Else
                 Me._parent.ButtonNext.Enabled = False

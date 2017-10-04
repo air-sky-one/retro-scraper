@@ -83,7 +83,7 @@
     End Property
 
     ''' <summary>
-    ''' Accepted eumator's roms extension
+    ''' Accepted emulator's roms extension
     ''' </summary>
     Private _romsExtensions As String()
     Public Property RomsExtensions() As String()
@@ -253,7 +253,7 @@
     ''' <summary>
     ''' Build Scrap : Games selection
     ''' </summary>
-    Private _artworkyMediaTypesScreen As New _10_RomsBuildScrapArtworksControl
+    Private _artworksMediaTypesScreen As New _10_RomsBuildScrapArtworksControl
 
 #End Region
 
@@ -263,6 +263,28 @@
     ''' Build Scrap : Games selection
     ''' </summary>
     Private _gamesArtworksScreen As New _11_RomsBuildScrapArtworksControl
+
+#End Region
+
+#Region "step 12 : Download"
+
+    ''' <summary>
+    ''' Roms data build for generate romlist file
+    ''' </summary>
+    Private _romList As New RomsDataSet.RomlistDataTable
+    Public Property RomList() As RomsDataSet.RomlistDataTable
+        Get
+            Return _romList
+        End Get
+        Set(ByVal value As RomsDataSet.RomlistDataTable)
+            _romList = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Download
+    ''' </summary>
+    Private _downloadScreen As New _12_RomsDownloadControl
 
 #End Region
 
@@ -359,7 +381,7 @@
         InitMediaTypeRow("Wheels")
         InitMediaTypeRow("Carbon Wheels")
         InitMediaTypeRow("Steel Wheels")
-        InitMediaTypeRow("Box Textures (all sides of the jacket")
+        InitMediaTypeRow("Box Textures (all sides of the jacket)")
         InitMediaTypeRow("Box 2D (Front side of the jacket)")
         InitMediaTypeRow("Box 2D Side")
         InitMediaTypeRow("Box 2D Back")
@@ -445,11 +467,8 @@
                 Me._gamesSelectionProcessScreen.Datagrid.DataSource = Nothing
                 Me._gamesTitleScreen.Datagrid.DataSource = Nothing
                 Me._gamesDateScreen.Datagrid.DataSource = Nothing
-                Me._artworkyMediaTypesScreen.Datagrid.DataSource = Nothing
-
-                'For Each grid As DataGridView In Me._artworkyMediaTypesScreen.Datagrids
-                '    grid.DataSource = Nothing
-                'Next
+                Me._artworksMediaTypesScreen.Datagrid.DataSource = Nothing
+                Me._gamesArtworksScreen.Datagrid.DataSource = Nothing
 
                 Me.MainTableLayoutPanel.Controls.Add(Me._romListChoice, 0, 2)
 
@@ -510,11 +529,11 @@
 
                 Me.StepsProgressBar.Value = 10
 
-                Me._artworkyMediaTypesScreen = New _10_RomsBuildScrapArtworksControl
-                Me._artworkyMediaTypesScreen.Datagrid.DataSource = Nothing
-                Me.MainTableLayoutPanel.Controls.Add(Me._artworkyMediaTypesScreen, 0, 2)
+                Me._artworksMediaTypesScreen = New _10_RomsBuildScrapArtworksControl
+                Me._artworksMediaTypesScreen.Datagrid.DataSource = Nothing
+                Me.MainTableLayoutPanel.Controls.Add(Me._artworksMediaTypesScreen, 0, 2)
 
-                Me._artworkyMediaTypesScreen.Dock = DockStyle.Fill
+                Me._artworksMediaTypesScreen.Dock = DockStyle.Fill
 
             Case Steps.BuildScrapingArtwork
                 Me.HeaderLabel.Text = "Step 11 : Build your scrap : Artworks"
@@ -530,6 +549,11 @@
                 Me.HeaderLabel.Text = "Step 12 : Download"
 
                 Me.StepsProgressBar.Value = 12
+
+                Me._downloadScreen = New _12_RomsDownloadControl
+                Me.MainTableLayoutPanel.Controls.Add(Me._downloadScreen, 0, 2)
+
+                Me._downloadScreen.Dock = DockStyle.Fill
 
             Case Steps.Result
                 Me.HeaderLabel.Text = "Results"
@@ -575,11 +599,7 @@
         ' Upgrade actual step
         Me._actualStep = Me._actualStep - 1
 
-        If Me._actualStep = Steps.LoadingProcess   or Me._actualStep >= Steps.Download Then Me._actualStep = Steps.RomListFile
-
-        'If Me._actualStep = Steps.LoadingProcess Then Me._actualStep = Steps.RomListFile
-        'If Me._actualStep >= Steps.Download Then Me._actualStep = Steps.BuildScrapingGamesSelection
-        'If Me._actualStep >= Steps.LoadingProcess Then Me._actualStep = Steps.BuildScrapingGamesSelection
+        If Me._actualStep = Steps.LoadingProcess Or Me._actualStep >= Steps.Download Then Me._actualStep = Steps.RomListFile
 
         ' Prev/Next buttons
         Me.DisplayStepsButtons()

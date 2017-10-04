@@ -25,15 +25,16 @@ Partial Class _10_RomsBuildScrapArtworksControl
         Me.components = New System.ComponentModel.Container()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.ContentDataGridView = New System.Windows.Forms.DataGridView()
-        Me.MediaTypesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RomsDataSet = New retro_scraper.RomsDataSet()
-        Me.ArtworksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.NameDataGridViewComboBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.ButtonReset = New System.Windows.Forms.Button()
+        Me.MediaTypesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ArtworksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.ForceDownloadDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.ContentDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MediaTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RomsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MediaTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtworksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,49 +59,17 @@ Partial Class _10_RomsBuildScrapArtworksControl
         Me.ContentDataGridView.BackgroundColor = System.Drawing.Color.White
         Me.ContentDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ContentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ContentDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NameDataGridViewComboBoxColumn, Me.AssociatedMediaTypeDataGridViewComboBoxColumn})
+        Me.ContentDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NameDataGridViewTextBoxColumn, Me.AssociatedMediaTypeDataGridViewComboBoxColumn, Me.ForceDownloadDataGridViewCheckBoxColumn})
         Me.ContentDataGridView.DataSource = Me.ArtworksBindingSource
         Me.ContentDataGridView.Location = New System.Drawing.Point(20, 45)
         Me.ContentDataGridView.Name = "ContentDataGridView"
         Me.ContentDataGridView.Size = New System.Drawing.Size(839, 188)
         Me.ContentDataGridView.TabIndex = 4
         '
-        'MediaTypesBindingSource
-        '
-        Me.MediaTypesBindingSource.DataMember = "MediaTypes"
-        Me.MediaTypesBindingSource.DataSource = Me.RomsDataSet
-        '
         'RomsDataSet
         '
         Me.RomsDataSet.DataSetName = "RomsDataSet"
         Me.RomsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ArtworksBindingSource
-        '
-        Me.ArtworksBindingSource.DataMember = "Artworks"
-        Me.ArtworksBindingSource.DataSource = Me.RomsDataSet
-        '
-        'NameDataGridViewComboBoxColumn
-        '
-        Me.NameDataGridViewComboBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.NameDataGridViewComboBoxColumn.DataPropertyName = "Name"
-        Me.NameDataGridViewComboBoxColumn.HeaderText = "Artwork"
-        Me.NameDataGridViewComboBoxColumn.Name = "NameDataGridViewComboBoxColumn"
-        Me.NameDataGridViewComboBoxColumn.ReadOnly = True
-        Me.NameDataGridViewComboBoxColumn.Width = 76
-        '
-        'AssociatedMediaTypeDataGridViewComboBoxColumn
-        '
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.DataPropertyName = "AssociatedMediaType"
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.DataSource = Me.MediaTypesBindingSource
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.DisplayMember = "Name"
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.HeaderText = "Associated Media Type"
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.Name = "AssociatedMediaTypeDataGridViewComboBoxColumn"
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.ValueMember = "Name"
-        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.Width = 250
         '
         'ButtonReset
         '
@@ -111,6 +80,44 @@ Partial Class _10_RomsBuildScrapArtworksControl
         Me.ButtonReset.TabIndex = 5
         Me.ButtonReset.Text = "Reset"
         Me.ButtonReset.UseVisualStyleBackColor = True
+        '
+        'MediaTypesBindingSource
+        '
+        Me.MediaTypesBindingSource.DataMember = "MediaTypes"
+        Me.MediaTypesBindingSource.DataSource = Me.RomsDataSet
+        '
+        'ArtworksBindingSource
+        '
+        Me.ArtworksBindingSource.DataMember = "Artworks"
+        Me.ArtworksBindingSource.DataSource = Me.RomsDataSet
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.Width = 62
+        '
+        'AssociatedMediaTypeDataGridViewComboBoxColumn
+        '
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.DataPropertyName = "AssociatedMediaType"
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.DataSource = Me.MediaTypesBindingSource
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.DisplayMember = "Name"
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.HeaderText = "Associated media type"
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.Name = "AssociatedMediaTypeDataGridViewComboBoxColumn"
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.ValueMember = "Name"
+        Me.AssociatedMediaTypeDataGridViewComboBoxColumn.Width = 250
+        '
+        'ForceDownloadDataGridViewCheckBoxColumn
+        '
+        Me.ForceDownloadDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.ForceDownloadDataGridViewCheckBoxColumn.DataPropertyName = "ForceDownload"
+        Me.ForceDownloadDataGridViewCheckBoxColumn.HeaderText = "Force Download ?"
+        Me.ForceDownloadDataGridViewCheckBoxColumn.Name = "ForceDownloadDataGridViewCheckBoxColumn"
+        Me.ForceDownloadDataGridViewCheckBoxColumn.Width = 97
         '
         '_10_RomsBuildScrapArtworksControl
         '
@@ -124,8 +131,8 @@ Partial Class _10_RomsBuildScrapArtworksControl
         Me.Name = "_10_RomsBuildScrapArtworksControl"
         Me.Size = New System.Drawing.Size(878, 727)
         CType(Me.ContentDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MediaTypesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RomsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MediaTypesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArtworksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -134,10 +141,11 @@ Partial Class _10_RomsBuildScrapArtworksControl
 
     Friend WithEvents DescriptionLabel As Label
     Friend WithEvents ContentDataGridView As DataGridView
-    Friend WithEvents ArtworksBindingSource As BindingSource
     Friend WithEvents RomsDataSet As RomsDataSet
-    Friend WithEvents MediaTypesBindingSource As BindingSource
-    Friend WithEvents NameDataGridViewComboBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AssociatedMediaTypeDataGridViewComboBoxColumn As DataGridViewComboBoxColumn
     Friend WithEvents ButtonReset As Button
+    Friend WithEvents MediaTypesBindingSource As BindingSource
+    Friend WithEvents ArtworksBindingSource As BindingSource
+    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AssociatedMediaTypeDataGridViewComboBoxColumn As DataGridViewComboBoxColumn
+    Friend WithEvents ForceDownloadDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
 End Class

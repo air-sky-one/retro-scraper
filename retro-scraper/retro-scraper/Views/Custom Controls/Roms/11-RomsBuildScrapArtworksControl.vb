@@ -378,7 +378,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub MainDataGridView_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles MainDataGridView.CellFormatting
-        Dim cell As DataGridViewCell = Me.MainDataGridView.Rows(e.RowIndex).Cells(0)
+        'Dim cell As DataGridViewCell = Me.MainDataGridView.Rows(e.RowIndex).Cells(0)
 
         If e.ColumnIndex > 0 Then
             If Me.MainDataGridView.Columns(e.ColumnIndex).Visible Then

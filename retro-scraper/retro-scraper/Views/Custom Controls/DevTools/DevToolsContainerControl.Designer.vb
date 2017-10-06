@@ -28,6 +28,7 @@ Partial Class DevToolsContainerControl
         Me.ActionFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.JSonToDataTableButton = New System.Windows.Forms.Button()
         Me.VisualControlsTestButton = New System.Windows.Forms.Button()
+        Me.CheckAlreadyAvailableMediaButton = New System.Windows.Forms.Button()
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.ActionFlowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -81,6 +82,7 @@ Partial Class DevToolsContainerControl
         Me.ActionFlowLayoutPanel.BackColor = System.Drawing.Color.White
         Me.ActionFlowLayoutPanel.Controls.Add(Me.JSonToDataTableButton)
         Me.ActionFlowLayoutPanel.Controls.Add(Me.VisualControlsTestButton)
+        Me.ActionFlowLayoutPanel.Controls.Add(Me.CheckAlreadyAvailableMediaButton)
         Me.ActionFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ActionFlowLayoutPanel.Location = New System.Drawing.Point(3, 33)
         Me.ActionFlowLayoutPanel.Name = "ActionFlowLayoutPanel"
@@ -109,6 +111,17 @@ Partial Class DevToolsContainerControl
         Me.VisualControlsTestButton.Text = "Visual Controls Tests"
         Me.VisualControlsTestButton.UseVisualStyleBackColor = True
         '
+        'CheckAlreadyAvailableMediaButton
+        '
+        Me.CheckAlreadyAvailableMediaButton.AutoSize = True
+        Me.CheckAlreadyAvailableMediaButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckAlreadyAvailableMediaButton.Location = New System.Drawing.Point(417, 3)
+        Me.CheckAlreadyAvailableMediaButton.Name = "CheckAlreadyAvailableMediaButton"
+        Me.CheckAlreadyAvailableMediaButton.Size = New System.Drawing.Size(201, 26)
+        Me.CheckAlreadyAvailableMediaButton.TabIndex = 2
+        Me.CheckAlreadyAvailableMediaButton.Text = "Check Already  Available Media"
+        Me.CheckAlreadyAvailableMediaButton.UseVisualStyleBackColor = True
+        '
         'DevToolsContainerControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -131,4 +144,5 @@ Partial Class DevToolsContainerControl
     Friend WithEvents ActionFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents JSonToDataTableButton As Button
     Friend WithEvents VisualControlsTestButton As Button
+    Friend WithEvents CheckAlreadyAvailableMediaButton As Button
 End Class

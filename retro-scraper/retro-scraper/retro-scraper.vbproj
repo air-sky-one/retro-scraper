@@ -155,6 +155,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Views\Custom Controls\DevTools\CheckAlreadyAvailableMediaForm.Designer.vb">
+      <DependentUpon>CheckAlreadyAvailableMediaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\DevTools\CheckAlreadyAvailableMediaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\DevTools\DevToolsContainerControl.Designer.vb">
       <DependentUpon>DevToolsContainerControl.vb</DependentUpon>
     </Compile>
@@ -294,6 +300,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\DevTools\CheckAlreadyAvailableMediaForm.resx">
+      <DependentUpon>CheckAlreadyAvailableMediaForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\DevTools\DevToolsContainerControl.resx">
       <DependentUpon>DevToolsContainerControl.vb</DependentUpon>

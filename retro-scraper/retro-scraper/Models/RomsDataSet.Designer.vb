@@ -3984,6 +3984,23 @@ Partial Public Class RomsDataSet
             MyBase.Columns.Add(Me.columnExtra)
             Me.columnButtons = New Global.System.Data.DataColumn("Buttons", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnButtons)
+            Me.columnName.DefaultValue = CType("",String)
+            Me.columnTitle.DefaultValue = CType("",String)
+            Me.columnEmulator.DefaultValue = CType("",String)
+            Me.columnCloneOf.DefaultValue = CType("",String)
+            Me.columnYear.DefaultValue = CType("",String)
+            Me.columnManufacturer.DefaultValue = CType("",String)
+            Me.columnCategory.DefaultValue = CType("",String)
+            Me.columnPlayers.DefaultValue = CType("",String)
+            Me.columnRotation.DefaultValue = CType("",String)
+            Me.columnControl.DefaultValue = CType("",String)
+            Me.columnStatus.DefaultValue = CType("",String)
+            Me.columnDisplayCount.DefaultValue = CType("",String)
+            Me.columnDisplayType.DefaultValue = CType("",String)
+            Me.columnAltRomname.DefaultValue = CType("",String)
+            Me.columnAltTitle.DefaultValue = CType("",String)
+            Me.columnExtra.DefaultValue = CType("",String)
+            Me.columnButtons.DefaultValue = CType("",String)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7452,11 +7469,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Name() As String
             Get
-                Try 
+                If Me.IsNameNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.NameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Name' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.NameColumn) = value
@@ -7467,11 +7484,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Title() As String
             Get
-                Try 
+                If Me.IsTitleNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.TitleColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Title' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.TitleColumn) = value
@@ -7482,11 +7499,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Emulator() As String
             Get
-                Try 
+                If Me.IsEmulatorNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.EmulatorColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Emulator' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.EmulatorColumn) = value
@@ -7497,11 +7514,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property CloneOf() As String
             Get
-                Try 
+                If Me.IsCloneOfNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.CloneOfColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CloneOf' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.CloneOfColumn) = value
@@ -7512,11 +7529,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Year() As String
             Get
-                Try 
+                If Me.IsYearNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.YearColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Year' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.YearColumn) = value
@@ -7527,11 +7544,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Manufacturer() As String
             Get
-                Try 
+                If Me.IsManufacturerNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.ManufacturerColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Manufacturer' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.ManufacturerColumn) = value
@@ -7542,11 +7559,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Category() As String
             Get
-                Try 
+                If Me.IsCategoryNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.CategoryColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Category' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.CategoryColumn) = value
@@ -7557,11 +7574,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Players() As String
             Get
-                Try 
+                If Me.IsPlayersNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.PlayersColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Players' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.PlayersColumn) = value
@@ -7572,11 +7589,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Rotation() As String
             Get
-                Try 
+                If Me.IsRotationNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.RotationColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Rotation' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.RotationColumn) = value
@@ -7587,11 +7604,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Control() As String
             Get
-                Try 
+                If Me.IsControlNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.ControlColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Control' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.ControlColumn) = value
@@ -7602,11 +7619,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Status() As String
             Get
-                Try 
+                If Me.IsStatusNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.StatusColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.StatusColumn) = value
@@ -7617,11 +7634,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property DisplayCount() As String
             Get
-                Try 
+                If Me.IsDisplayCountNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.DisplayCountColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DisplayCount' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.DisplayCountColumn) = value
@@ -7632,11 +7649,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property DisplayType() As String
             Get
-                Try 
+                If Me.IsDisplayTypeNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.DisplayTypeColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DisplayType' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.DisplayTypeColumn) = value
@@ -7647,11 +7664,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property AltRomname() As String
             Get
-                Try 
+                If Me.IsAltRomnameNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.AltRomnameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'AltRomname' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.AltRomnameColumn) = value
@@ -7662,11 +7679,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property AltTitle() As String
             Get
-                Try 
+                If Me.IsAltTitleNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.AltTitleColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'AltTitle' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.AltTitleColumn) = value
@@ -7677,11 +7694,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Extra() As String
             Get
-                Try 
+                If Me.IsExtraNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.ExtraColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Extra' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.ExtraColumn) = value
@@ -7692,11 +7709,11 @@ Partial Public Class RomsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Buttons() As String
             Get
-                Try 
+                If Me.IsButtonsNull Then
+                    Return String.Empty
+                Else
                     Return CType(Me(Me.tableRomlist.ButtonsColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Buttons' in table 'Romlist' is DBNull.", e)
-                End Try
+                End If
             End Get
             Set
                 Me(Me.tableRomlist.ButtonsColumn) = value

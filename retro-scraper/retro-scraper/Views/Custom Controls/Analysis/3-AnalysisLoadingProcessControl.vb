@@ -34,8 +34,9 @@ Public Class _3_AnalysisLoadingProcessControl
 
             If Me._parent Is Nothing Then Throw New Exception("Unexpected error")
 
-            Dim collection = From fi In New DirectoryInfo(Me._parent.RomsPath).GetFiles()
-                             Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
+            'Dim collection = From fi In New DirectoryInfo(Me._parent.RomsPath).GetFiles()
+            '                 Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
+            Dim collection As List(Of String) = GetFilesAssociatedToExtensions(Me._parent.RomsPath, Me._parent.RomsExtensions)
 
             If collection.Count > 0 Then
                 With Me.ActionWaitingControl
@@ -84,17 +85,17 @@ Public Class _3_AnalysisLoadingProcessControl
         Dim result As Boolean = False
         Dim cpt As Integer = 0
 
-        Dim collection = From fi In New DirectoryInfo(Me._parent.RomsPath).GetFiles()
-                         Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
+        Dim collection As List(Of String) = GetFilesAssociatedToExtensions(Me._parent.RomsPath, Me._parent.RomsExtensions)
 
         Me._mainProgressText = String.Empty
 
         If collection.Count > 0 Then
-            For Each file As FileInfo In collection
+            For Each file As String In collection
                 Dim isFind As Boolean = False
 
                 Dim r As DataRow = Me._parent.RomsData.NewRow
-                r("Filename") = file.Name.Substring(0, file.Name.Length - 4)
+                file = file.Substring(0, file.Length - 4)
+                r("Filename") = file.Substring(file.LastIndexOf("\") + 1)
 
                 Me._mainProgressText = r("Filename")
 

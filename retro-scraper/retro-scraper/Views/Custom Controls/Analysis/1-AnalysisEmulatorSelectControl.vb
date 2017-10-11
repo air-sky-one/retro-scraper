@@ -248,6 +248,7 @@ Public Class _1_AnalysisEmulatorSelectControl
 
                 If Not isErr Then
                     Me._parent.ButtonNext.Enabled = True
+                    Me._parent.AttractModeSelectedSystem = TryCast(Me.EmulatorsListComboBox.SelectedItem, RomsDataSet.EmulatorsRow).Name.ToString
                 End If
 
                 Cursor.Current = Cursors.Default

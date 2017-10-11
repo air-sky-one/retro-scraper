@@ -24,8 +24,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>retro-scraper</ProductName>
+    <PublisherName>Uruakai%27s</PublisherName>
+    <SuiteName>Uruakai%27s retro-scraper</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,10 +74,10 @@
     <ApplicationIcon>Media\64x64_retro-scraper_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>9873436EE24F68B5D0D996D5BF16B7C5732EC0C4</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F3C153A7F6680DCFF62CD4FF44CC95783D74C585</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>retro-scraper_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>retro-scraper_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -664,6 +668,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="retro-scraper_1_TemporaryKey.pfx" />
     <None Include="retro-scraper_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

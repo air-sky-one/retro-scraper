@@ -51,8 +51,7 @@ Public Class _2_AnalysisPathControl
                     searchPattern.Append("*" & ext & ",")
                 Next
 
-                Dim collection = From fi In New DirectoryInfo(path).GetFiles()
-                                 Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
+                Dim collection As List(Of String) = GetFilesAssociatedToExtensions(path, Me._parent.RomsExtensions)
 
                 If collection.Count > 0 Then
                     Me.FolderPathTextBox.Text = path

@@ -38,8 +38,7 @@ Public Class _5_RomsLoadingProcessControl
 
             Me.ActionPanel.Visible = False
 
-            Dim collection = From fi In New DirectoryInfo(Me._parent.RomsPath).GetFiles()
-                             Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
+            Dim collection As List(Of String) = GetFilesAssociatedToExtensions(Me._parent.RomsPath, Me._parent.RomsExtensions)
 
             If collection.Count > 0 Then
                 With Me.ActionWaitingControl
@@ -85,22 +84,24 @@ Public Class _5_RomsLoadingProcessControl
         Dim json As String
 
         Try
-            Dim collection = From fi In New DirectoryInfo(Me._parent.RomsPath).GetFiles()
-                             Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
+            Dim collection As List(Of String) = GetFilesAssociatedToExtensions(Me._parent.RomsPath, Me._parent.RomsExtensions)
 
             If collection.Count > 0 Then
 
-                For Each file As FileInfo In collection
+                For Each file As String In collection
                     Dim rom As RomsDataSet.SSRomsRow = Me._parent.RomsData.NewSSRomsRow
-                    Dim fileName As String = file.Name
+                    Dim fileName As String
 
-                    rom.extension = fileName.Substring(fileName.LastIndexOf("."))
-                    rom.filename = fileName.Substring(0, fileName.Length - rom.extension.Length)
+                    fileName = file.Substring(0, file.Length - 4)
+                    fileName = fileName.Substring(fileName.LastIndexOf("\") + 1)
+
+                    rom.extension = file.Substring(file.LastIndexOf("."))
+                    rom.filename = fileName
 
                     Me._mainProgressText = rom.filename
 
-                    rom.size = New FileInfo(file.FullName).Length
-                    rom.local_rommd5 = md5_hash(file.FullName)
+                    rom.size = New FileInfo(file).Length
+                    rom.local_rommd5 = md5_hash(file)
 
                     ' interrogation
                     query = BuildGenericURL("jeuInfos.php")

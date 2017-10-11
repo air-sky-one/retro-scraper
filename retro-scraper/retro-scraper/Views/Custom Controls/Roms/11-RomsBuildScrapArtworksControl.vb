@@ -378,7 +378,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub MainDataGridView_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles MainDataGridView.CellFormatting
-        'Dim cell As DataGridViewCell = Me.MainDataGridView.Rows(e.RowIndex).Cells(0)
+        Me.MainDataGridView.SuspendLayout()
 
         If e.ColumnIndex > 0 Then
             If Me.MainDataGridView.Columns(e.ColumnIndex).Visible Then
@@ -393,6 +393,8 @@
                 End If
             End If
         End If
+
+        Me.MainDataGridView.ResumeLayout()
     End Sub
 
     Private Sub ButtonReset_Click(sender As Object, e As EventArgs) Handles ButtonReset.Click

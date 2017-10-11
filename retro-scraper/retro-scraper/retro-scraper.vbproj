@@ -155,6 +155,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\0-AnalysisHomeControl.Designer.vb">
+      <DependentUpon>0-AnalysisHomeControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\0-AnalysisHomeControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\1-AnalysisEmulatorSelectControl.Designer.vb">
+      <DependentUpon>1-AnalysisEmulatorSelectControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\1-AnalysisEmulatorSelectControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\2-AnalysisPathControl.Designer.vb">
+      <DependentUpon>2-AnalysisPathControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\2-AnalysisPathControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\3-AnalysisLoadingProcessControl.Designer.vb">
+      <DependentUpon>3-AnalysisLoadingProcessControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\3-AnalysisLoadingProcessControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\4-AnalysisResultControl.Designer.vb">
+      <DependentUpon>4-AnalysisResultControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\4-AnalysisResultControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\AnalysisContainerControl.Designer.vb">
+      <DependentUpon>AnalysisContainerControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Analysis\AnalysisContainerControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\DevTools\CheckAlreadyAvailableMediaForm.Designer.vb">
       <DependentUpon>CheckAlreadyAvailableMediaForm.vb</DependentUpon>
     </Compile>
@@ -300,6 +336,24 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Analysis\0-AnalysisHomeControl.resx">
+      <DependentUpon>0-AnalysisHomeControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Analysis\1-AnalysisEmulatorSelectControl.resx">
+      <DependentUpon>1-AnalysisEmulatorSelectControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Analysis\2-AnalysisPathControl.resx">
+      <DependentUpon>2-AnalysisPathControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Analysis\3-AnalysisLoadingProcessControl.resx">
+      <DependentUpon>3-AnalysisLoadingProcessControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Analysis\4-AnalysisResultControl.resx">
+      <DependentUpon>4-AnalysisResultControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Analysis\AnalysisContainerControl.resx">
+      <DependentUpon>AnalysisContainerControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\DevTools\CheckAlreadyAvailableMediaForm.resx">
       <DependentUpon>CheckAlreadyAvailableMediaForm.vb</DependentUpon>

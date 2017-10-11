@@ -34,6 +34,7 @@ Partial Class MainForm
         Me.MainButtonSettings = New System.Windows.Forms.Button()
         Me.MainButtonDevTools = New System.Windows.Forms.Button()
         Me.MainHomeControl = New retro_scraper.HomeControl()
+        Me.MainButtonAnalysis = New System.Windows.Forms.Button()
         Me.HeaderPanel.SuspendLayout()
         CType(Me.HeaderPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainFormTableLayoutPanel.SuspendLayout()
@@ -81,6 +82,7 @@ Partial Class MainForm
         '
         Me.MainMenuFlowLayoutPanel.BackColor = System.Drawing.Color.DimGray
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonHome)
+        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonAnalysis)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonRoms)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonSystems)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonGameLists)
@@ -118,7 +120,7 @@ Partial Class MainForm
         Me.MainButtonRoms.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonRoms.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonRoms.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonRoms.Location = New System.Drawing.Point(0, 36)
+        Me.MainButtonRoms.Location = New System.Drawing.Point(0, 72)
         Me.MainButtonRoms.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonRoms.Name = "MainButtonRoms"
         Me.MainButtonRoms.Size = New System.Drawing.Size(130, 36)
@@ -135,7 +137,7 @@ Partial Class MainForm
         Me.MainButtonSystems.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonSystems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonSystems.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonSystems.Location = New System.Drawing.Point(0, 72)
+        Me.MainButtonSystems.Location = New System.Drawing.Point(0, 108)
         Me.MainButtonSystems.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonSystems.Name = "MainButtonSystems"
         Me.MainButtonSystems.Size = New System.Drawing.Size(130, 36)
@@ -152,7 +154,7 @@ Partial Class MainForm
         Me.MainButtonGameLists.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonGameLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonGameLists.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonGameLists.Location = New System.Drawing.Point(0, 108)
+        Me.MainButtonGameLists.Location = New System.Drawing.Point(0, 144)
         Me.MainButtonGameLists.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonGameLists.Name = "MainButtonGameLists"
         Me.MainButtonGameLists.Size = New System.Drawing.Size(130, 36)
@@ -169,7 +171,7 @@ Partial Class MainForm
         Me.MainButtonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonSettings.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonSettings.Location = New System.Drawing.Point(0, 144)
+        Me.MainButtonSettings.Location = New System.Drawing.Point(0, 180)
         Me.MainButtonSettings.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonSettings.Name = "MainButtonSettings"
         Me.MainButtonSettings.Size = New System.Drawing.Size(130, 36)
@@ -186,7 +188,7 @@ Partial Class MainForm
         Me.MainButtonDevTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.MainButtonDevTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MainButtonDevTools.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonDevTools.Location = New System.Drawing.Point(0, 180)
+        Me.MainButtonDevTools.Location = New System.Drawing.Point(0, 216)
         Me.MainButtonDevTools.Margin = New System.Windows.Forms.Padding(0)
         Me.MainButtonDevTools.Name = "MainButtonDevTools"
         Me.MainButtonDevTools.Size = New System.Drawing.Size(130, 36)
@@ -205,6 +207,23 @@ Partial Class MainForm
         Me.MainHomeControl.Name = "MainHomeControl"
         Me.MainHomeControl.Size = New System.Drawing.Size(878, 753)
         Me.MainHomeControl.TabIndex = 2
+        '
+        'MainButtonAnalysis
+        '
+        Me.MainButtonAnalysis.BackColor = System.Drawing.Color.DimGray
+        Me.MainButtonAnalysis.FlatAppearance.BorderSize = 0
+        Me.MainButtonAnalysis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonAnalysis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonAnalysis.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonAnalysis.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonAnalysis.Location = New System.Drawing.Point(0, 36)
+        Me.MainButtonAnalysis.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonAnalysis.Name = "MainButtonAnalysis"
+        Me.MainButtonAnalysis.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonAnalysis.TabIndex = 6
+        Me.MainButtonAnalysis.Text = "   &Local Analysis"
+        Me.MainButtonAnalysis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonAnalysis.UseVisualStyleBackColor = False
         '
         'MainForm
         '
@@ -240,4 +259,5 @@ Partial Class MainForm
     Friend WithEvents MainButtonHome As Button
     Friend WithEvents MainHomeControl As HomeControl
     Friend WithEvents MainButtonDevTools As Button
+    Friend WithEvents MainButtonAnalysis As Button
 End Class

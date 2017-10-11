@@ -120,6 +120,15 @@ Public Class MainForm
                     Me.MainHomeControl.Height = Me.MainHomeControl.Height - 75
 
                     Me._actualContent = Me.MainHomeControl
+                Case "MainButtonAnalysis"
+                    Dim c As New AnalysisContainerControl
+
+                    Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
+
+                    c.Dock = DockStyle.Fill
+                    c.Height = 787
+
+                    Me._actualContent = c
                 Case "MainButtonRoms"
                     Dim c As New RomsContainerControl
 

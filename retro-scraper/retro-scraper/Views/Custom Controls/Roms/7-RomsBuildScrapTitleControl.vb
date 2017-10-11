@@ -118,12 +118,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub ContentDataGridView_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles ContentDataGridView.CellFormatting
-        Dim cell As DataGridViewCell = Me.ContentDataGridView.Rows(e.RowIndex).Cells(0)
-        'Dim chkCell As DataGridViewCheckBoxCell = TryCast(cell, DataGridViewCheckBoxCell)
-        'chkCell.Value = False
-        'chkCell.FlatStyle = FlatStyle.Flat
-        'chkCell.Style.ForeColor = Color.DarkGray
-        'cell.[ReadOnly] = True
+        Me.ContentDataGridView.SuspendLayout()
 
         If e.ColumnIndex = 2 Or e.ColumnIndex = 4 Or e.ColumnIndex = 6 Or e.ColumnIndex = 8 Then
             If Me.ContentDataGridView.Rows(e.RowIndex).Cells(e.ColumnIndex).Value = String.Empty Then
@@ -134,6 +129,8 @@
                 Me.ContentDataGridView.Rows(e.RowIndex).Cells(e.ColumnIndex - 1).ReadOnly = False
             End If
         End If
+
+        Me.ContentDataGridView.ResumeLayout()
     End Sub
 
 End Class

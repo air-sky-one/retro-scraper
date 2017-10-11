@@ -1,4 +1,7 @@
-﻿Public Class AnalysisContainerControl
+﻿Imports System.IO
+Imports System.Text
+
+Public Class AnalysisContainerControl
 
 #Region "Main Attributes"
 
@@ -237,6 +240,10 @@
                 Me.MainTableLayoutPanel.Controls.Add(Me._resultScreen, 0, 2)
 
                 Me._resultScreen.Dock = DockStyle.Fill
+
+                Me.ButtonNext.Visible = False
+                Me.ButtonPrevious.Visible = False
+                Me.ButtonExport.Visible = True
             Case Else
         End Select
     End Sub
@@ -263,6 +270,54 @@
     End Sub
 
     Private Sub ButtonPrevious_Click(sender As Object, e As EventArgs) Handles ButtonPrevious.Click
+        ' Remove actual content 
+        If Me.MainTableLayoutPanel.Controls.Count > 3 Then
+            Me.MainTableLayoutPanel.Controls.RemoveAt(3)
+        End If
 
+        ' Upgrade actual step
+        Me._actualStep = Me._actualStep - 1
+
+        If Me._actualStep = Steps.Analysis Then Me._actualStep = Steps.RomsPath
+
+        ' Prev/Next buttons
+        Me.DisplayStepsButtons()
+
+        ' Update content
+        UpdateContent()
+    End Sub
+
+    ''' <summary>
+    ''' Export results
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ButtonExport_Click(sender As Object, e As EventArgs) Handles ButtonExport.Click
+        Dim s As New StringBuilder
+
+        Me.ExportSaveFileDialog.FileName = Me.AttractModeSelectedSystem & "_" &
+                                            Date.Now.Year.ToString & "-" &
+                                            Date.Now.Month.ToString & "-" &
+                                            Date.Now.Hour.ToString & "-" &
+                                            Date.Now.Minute.ToString & "-" &
+                                            Date.Now.Day.ToString &
+                                            "_Export.csv"
+
+        If Me.ExportSaveFileDialog.ShowDialog Then
+            For Each c As DataColumn In Me.RomsData.Columns
+                s.Append(c.ColumnName & ";")
+            Next
+
+            s.AppendLine()
+
+            For Each r As DataRow In Me.RomsData.Rows
+                For Each c As DataColumn In Me.RomsData.Columns
+                    s.Append(r(c).ToString() & ";")
+                Next
+                s.AppendLine()
+            Next
+
+            File.WriteAllText(Me.ExportSaveFileDialog.FileName, s.ToString)
+        End If
     End Sub
 End Class

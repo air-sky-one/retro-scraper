@@ -26,8 +26,10 @@ Partial Class AnalysisContainerControl
         Me.NavigationFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.ButtonNext = New System.Windows.Forms.Button()
         Me.ButtonPrevious = New System.Windows.Forms.Button()
+        Me.ButtonExport = New System.Windows.Forms.Button()
         Me.StepsProgressBar = New System.Windows.Forms.ProgressBar()
         Me.HeaderLabel = New System.Windows.Forms.Label()
+        Me.ExportSaveFileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.NavigationFlowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -55,6 +57,7 @@ Partial Class AnalysisContainerControl
         '
         Me.NavigationFlowLayoutPanel.Controls.Add(Me.ButtonNext)
         Me.NavigationFlowLayoutPanel.Controls.Add(Me.ButtonPrevious)
+        Me.NavigationFlowLayoutPanel.Controls.Add(Me.ButtonExport)
         Me.NavigationFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NavigationFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft
         Me.NavigationFlowLayoutPanel.Location = New System.Drawing.Point(0, 757)
@@ -84,6 +87,17 @@ Partial Class AnalysisContainerControl
         Me.ButtonPrevious.UseVisualStyleBackColor = True
         Me.ButtonPrevious.Visible = False
         '
+        'ButtonExport
+        '
+        Me.ButtonExport.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonExport.Location = New System.Drawing.Point(638, 3)
+        Me.ButtonExport.Name = "ButtonExport"
+        Me.ButtonExport.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonExport.TabIndex = 4
+        Me.ButtonExport.Text = "Export"
+        Me.ButtonExport.UseVisualStyleBackColor = True
+        Me.ButtonExport.Visible = False
+        '
         'StepsProgressBar
         '
         Me.StepsProgressBar.Dock = System.Windows.Forms.DockStyle.Fill
@@ -110,6 +124,10 @@ Partial Class AnalysisContainerControl
         Me.HeaderLabel.Text = "Local Analysis"
         Me.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'ExportSaveFileDialog
+        '
+        Me.ExportSaveFileDialog.DefaultExt = "csv"
+        '
         'AnalysisContainerControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -131,4 +149,6 @@ Partial Class AnalysisContainerControl
     Friend WithEvents ButtonPrevious As Button
     Friend WithEvents StepsProgressBar As ProgressBar
     Friend WithEvents HeaderLabel As Label
+    Friend WithEvents ButtonExport As Button
+    Friend WithEvents ExportSaveFileDialog As SaveFileDialog
 End Class

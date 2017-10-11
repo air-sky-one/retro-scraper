@@ -1,4 +1,6 @@
 ﻿Imports System.ComponentModel
+Imports System.IO
+Imports System.Text
 
 Public Class _4_AnalysisResultControl
 

@@ -183,7 +183,7 @@
     End Property
 
     ''' <summary>
-    ''' Roms in error during loading
+    ''' Roms in error during loading and downloading
     ''' </summary>
     Private _romsDataErrors As New RomsDataSet.ErrorsSSRomsLoadingDataTable
     Public Property RomsDataErrors() As RomsDataSet.ErrorsSSRomsLoadingDataTable
@@ -285,6 +285,15 @@
     ''' Download
     ''' </summary>
     Private _downloadScreen As New _12_RomsDownloadControl
+
+#End Region
+
+#Region "step 13 : Results"
+
+    ''' <summary>
+    ''' Results
+    ''' </summary>
+    Private _resultsScreen As New _13_RomsResultsControl
 
 #End Region
 
@@ -559,6 +568,11 @@
                 Me.HeaderLabel.Text = "Results"
 
                 Me.StepsProgressBar.Value = 13
+
+                Me._resultsScreen = New _13_RomsResultsControl
+                Me.MainTableLayoutPanel.Controls.Add(Me._resultsScreen, 0, 2)
+
+                Me._resultsScreen.Dock = DockStyle.Fill
 
             Case Else
         End Select

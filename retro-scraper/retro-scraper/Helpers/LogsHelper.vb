@@ -3,6 +3,11 @@ Imports System.Text
 
 Module LogsHelper
 
+    Public Enum LogsType
+        Loading = 1
+        Download = 2
+    End Enum
+
     Public Enum LogsLevel
         _Info_ = 1
         _Warning_ = 2

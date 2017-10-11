@@ -227,7 +227,16 @@ Public Class _5_RomsLoadingProcessControl
                                 GetData(o, rom.media_support2d_eu, "response.jeu.medias.media_supports.media_supports2d.media_support2d_eu")
                             Next
                         Catch ex As Exception
-                            ' TODO : Error
+                            Me._workerDetailsLastLine = "<<< - !!! ERROR !!! " & rom.filename & " not found on screenscraper.fr !!! - >>>" & vbCrLf
+
+                            Dim err As RomsDataSet.ErrorsSSRomsLoadingRow
+                            err = Me._parent.RomsDataErrors.NewErrorsSSRomsLoadingRow()
+                            err.type = LogsType.Loading.ToString
+                            err.filename = rom.filename
+                            err.details = ex.Message
+                            Me._parent.RomsDataErrors.AddErrorsSSRomsLoadingRow(err)
+
+                            AddLogs(New Exception("Error retrieving data from screenscraper.fr for : " & rom.filename & " with return : " & ex.Message))
                         End Try
 
                         Me._workerDetailsLastLine = "Building index for " & rom.filename & " Ok" & vbCrLf
@@ -293,7 +302,7 @@ Public Class _5_RomsLoadingProcessControl
                         'local_romcrc
                         'local_rommd5
 #End Region
-
+                        rom.isScraped = False
                         Me._parent.RomsData.AddSSRomsRow(rom)
 
                     Else
@@ -301,6 +310,7 @@ Public Class _5_RomsLoadingProcessControl
 
                         Dim err As RomsDataSet.ErrorsSSRomsLoadingRow
                         err = Me._parent.RomsDataErrors.NewErrorsSSRomsLoadingRow()
+                        err.type = LogsType.Loading.ToString
                         err.filename = rom.filename
                         err.details = json
                         Me._parent.RomsDataErrors.AddErrorsSSRomsLoadingRow(err)

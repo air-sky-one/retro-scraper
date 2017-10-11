@@ -126,151 +126,165 @@ Public Class _12_RomsDownloadControl
                 worker.ReportProgress(cpt)
 
                 For Each art As RomsDataSet.ArtworksRow In Me._parent.RomsArtworks.Select("AssociatedMediaType <> ''")
-                    Dim mediaPath As String = String.Empty
+                    Try
+                        Dim mediaPath As String = String.Empty
 
-                    Select Case art.AssociatedMediaType
-                        Case "Screenshots"
-                            Me._workerDetailsText = "Screenshots"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"screenshot",
-                                                                            "screenshottitle"}))
+                        Select Case art.AssociatedMediaType
+                            Case "Screenshots"
+                                Me._workerDetailsText = "Screenshots"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"screenshot",
+                                                                                "screenshottitle"}))
 
-                        Case "Fanarts"
-                            Me._workerDetailsText = "Fanarts"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"fanart"}))
-
-
-                        Case "Video"
-                            Me._workerDetailsText = "Video"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "mp4",
-                                          New List(Of String)(New String() {"video"}))
-
-                        Case "Wheels"
-                            Me._workerDetailsText = "Wheels"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"wheel_jp",
-                                                                            "wheel_us",
-                                                                            "wheel_wor"}))
-
-                        Case "Carbon Wheels"
-                            Me._workerDetailsText = "Carbon Wheels"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"wheelcarbon_jp",
-                                                                            "wheelcarbon_us",
-                                                                            "wheelcarbon_wor"}))
-
-                        Case "Steel Wheels"
-                            Me._workerDetailsText = "Steel Wheels"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"wheelsteel_jp",
-                                                                            "wheelsteel_us",
-                                                                            "wheelsteel_wor"}))
-
-                        Case "Box Textures (all sides of the jacket)"
-                            Me._workerDetailsText = "Box Textures"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"boxtexture_jp",
-                                                                            "boxtexture_us",
-                                                                            "boxtexture_eu"}))
-
-                        Case "Box 2D (Front side of the jacket)"
-                            Me._workerDetailsText = "Box 2D"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"box2d_jp",
-                                                                            "box2d_us",
-                                                                            "box2d_eu"}))
-
-                        Case "Box 2D Side"
-                            Me._workerDetailsText = "Box 2D Side"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"box2d_side_jp",
-                                                                            "box2d_side_us",
-                                                                            "box2d_side_eu"}))
-
-                        Case "Box 2D Back"
-                            Me._workerDetailsText = "Box 2D Back"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                          art,
-                                          "png",
-                                          New List(Of String)(New String() {"box2d_back_jp",
-                                                                            "box2d_back_us",
-                                                                            "box2d_back_eu"}))
-
-                        Case "Box 3D"
-                            Me._workerDetailsText = "Box 3D"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                         art,
-                                         "png",
-                                         New List(Of String)(New String() {"box3d_jp",
-                                                                           "box3d_us",
-                                                                           "box3d_eu"}))
-
-                        Case "Support Texture (Cartridge label)"
-                            Me._workerDetailsText = "Support Texturek"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                         art,
-                                         "png",
-                                         New List(Of String)(New String() {"supporttexture_jp",
-                                                                           "supporttexture_us",
-                                                                           "supporttexture_eu"}))
+                            Case "Fanarts"
+                                Me._workerDetailsText = "Fanarts"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"fanart"}))
 
 
-                        Case "Support 2D (Cartridge)"
-                            Me._workerDetailsText = "Support 2D"
-                            Me._detailCpt = Me._detailCpt + 1
-                            worker.ReportProgress(cpt)
-                            DownloadMedia(game,
-                                         art,
-                                         "png",
-                                         New List(Of String)(New String() {"support2d_jp",
-                                                                           "support2d_us",
-                                                                           "support2d_eu"}))
+                            Case "Video"
+                                Me._workerDetailsText = "Video"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "mp4",
+                                              New List(Of String)(New String() {"video"}))
 
-                        Case Else
-                    End Select
+                            Case "Wheels"
+                                Me._workerDetailsText = "Wheels"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"wheel_jp",
+                                                                                "wheel_us",
+                                                                                "wheel_wor"}))
+
+                            Case "Carbon Wheels"
+                                Me._workerDetailsText = "Carbon Wheels"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"wheelcarbon_jp",
+                                                                                "wheelcarbon_us",
+                                                                                "wheelcarbon_wor"}))
+
+                            Case "Steel Wheels"
+                                Me._workerDetailsText = "Steel Wheels"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"wheelsteel_jp",
+                                                                                "wheelsteel_us",
+                                                                                "wheelsteel_wor"}))
+
+                            Case "Box Textures (all sides of the jacket)"
+                                Me._workerDetailsText = "Box Textures"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"boxtexture_jp",
+                                                                                "boxtexture_us",
+                                                                                "boxtexture_eu"}))
+
+                            Case "Box 2D (Front side of the jacket)"
+                                Me._workerDetailsText = "Box 2D"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"box2d_jp",
+                                                                                "box2d_us",
+                                                                                "box2d_eu"}))
+
+                            Case "Box 2D Side"
+                                Me._workerDetailsText = "Box 2D Side"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"box2d_side_jp",
+                                                                                "box2d_side_us",
+                                                                                "box2d_side_eu"}))
+
+                            Case "Box 2D Back"
+                                Me._workerDetailsText = "Box 2D Back"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                              art,
+                                              "png",
+                                              New List(Of String)(New String() {"box2d_back_jp",
+                                                                                "box2d_back_us",
+                                                                                "box2d_back_eu"}))
+
+                            Case "Box 3D"
+                                Me._workerDetailsText = "Box 3D"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                             art,
+                                             "png",
+                                             New List(Of String)(New String() {"box3d_jp",
+                                                                               "box3d_us",
+                                                                               "box3d_eu"}))
+
+                            Case "Support Texture (Cartridge label)"
+                                Me._workerDetailsText = "Support Texturek"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                             art,
+                                             "png",
+                                             New List(Of String)(New String() {"supporttexture_jp",
+                                                                               "supporttexture_us",
+                                                                               "supporttexture_eu"}))
+
+
+                            Case "Support 2D (Cartridge)"
+                                Me._workerDetailsText = "Support 2D"
+                                Me._detailCpt = Me._detailCpt + 1
+                                worker.ReportProgress(cpt)
+                                DownloadMedia(game,
+                                             art,
+                                             "png",
+                                             New List(Of String)(New String() {"support2d_jp",
+                                                                               "support2d_us",
+                                                                               "support2d_eu"}))
+
+                            Case Else
+                        End Select
+                    Catch ex As Exception
+                        Dim err As RomsDataSet.ErrorsSSRomsLoadingRow
+                        err = Me._parent.RomsDataErrors.NewErrorsSSRomsLoadingRow()
+                        err.type = LogsType.Download.ToString
+                        err.filename = game.filename
+                        err.details = art.Name & " - Exception - " & ex.Message
+                        Me._parent.RomsDataErrors.AddErrorsSSRomsLoadingRow(err)
+
+                        AddLogs(New Exception("Error downloading data from screenscraper.fr for : " & game.filename & " with return : " & art.Name & " - Exception - " & ex.Message))
+                    End Try
+
+                    game.isScraped = True
+
                 Next
 
                 Dim r As RomsDataSet.RomlistRow

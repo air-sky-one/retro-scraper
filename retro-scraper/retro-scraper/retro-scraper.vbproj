@@ -245,6 +245,12 @@
     <Compile Include="Views\Custom Controls\Roms\12-RomsDownloadControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Custom Controls\Roms\13-RomsResultsControl.Designer.vb">
+      <DependentUpon>13-RomsResultsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\Roms\13-RomsResultsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.Designer.vb">
       <DependentUpon>2-RomsEmulatorSelectControl.vb</DependentUpon>
     </Compile>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\12-RomsDownloadControl.resx">
       <DependentUpon>12-RomsDownloadControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\Roms\13-RomsResultsControl.resx">
+      <DependentUpon>13-RomsResultsControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\Roms\2-RomsEmulatorSelectControl.resx">
       <DependentUpon>2-RomsEmulatorSelectControl.vb</DependentUpon>

@@ -1567,6 +1567,8 @@ Partial Public Class RomsDataSet
         
         Private columnlocal_rommd5 As Global.System.Data.DataColumn
         
+        Private columnisScraped As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -2451,6 +2453,14 @@ Partial Public Class RomsDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property isScrapedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnisScraped
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2593,9 +2603,10 @@ Partial Public Class RomsDataSet
                     ByVal media_support2d_eu As String,  _
                     ByVal local_romsize As String,  _
                     ByVal local_romcrc As String,  _
-                    ByVal local_rommd5 As String) As SSRomsRow
+                    ByVal local_rommd5 As String,  _
+                    ByVal isScraped As Boolean) As SSRomsRow
             Dim rowSSRomsRow As SSRomsRow = CType(Me.NewRow,SSRomsRow)
-            Dim columnValuesArray() As Object = New Object() {IsChecked, filename, extension, size, is_nom_us, nom_us, is_nom_jp, nom_jp, is_nom_wor, nom_wor, is_nom_eu, nom_eu, cloneof, is_date_us, date_us, is_date_jp, date_jp, is_date_wor, date_wor, is_date_eu, date_eu, editeur, is_genres_en, genres_en, is_genres_fr, genres_fr, is_genres_de, genres_de, is_genres_es, genres_es, is_genres_pt, genres_pt, joueurs, rotation, controles, is_media_screenshot, media_screenshot, is_media_screenshottitle, media_screenshottitle, is_media_fanart, media_fanart, is_media_video, media_video, is_media_wheel_us, media_wheel_us, is_media_wheel_jp, media_wheel_jp, is_media_wheel_wor, media_wheel_wor, is_media_wheelcarbon_us, media_wheelcarbon_us, is_media_wheelcarbon_jp, media_wheelcarbon_jp, is_media_wheelcarbon_wor, media_wheelcarbon_wor, is_media_wheelsteel_us, media_wheelsteel_us, is_media_wheelsteel_jp, media_wheelsteel_jp, is_media_wheelsteel_wor, media_wheelsteel_wor, is_media_boxtexture_us, media_boxtexture_us, is_media_boxtexture_jp, media_boxtexture_jp, is_media_boxtexture_eu, media_boxtexture_eu, is_media_box2d_us, media_box2d_us, is_media_box2d_jp, media_box2d_jp, is_media_box2d_eu, media_box2d_eu, is_media_box2d_side_us, media_box2d_side_us, is_media_box2d_side_jp, media_box2d_side_jp, is_media_box2d_side_eu, media_box2d_side_eu, is_media_box2d_back_us, media_box2d_back_us, is_media_box2d_back_jp, media_box2d_back_jp, is_media_box2d_back_eu, media_box2d_back_eu, is_media_box3d_us, media_box3d_us, is_media_box3d_jp, media_box3d_jp, is_media_box3d_eu, media_box3d_eu, is_media_supporttexture_us, media_supporttexture_us, is_media_supporttexture_jp, media_supporttexture_jp, is_media_supporttexture_eu, media_supporttexture_eu, is_media_support2d_us, media_support2d_us, is_media_support2d_jp, media_support2d_jp, is_media_support2d_eu, media_support2d_eu, local_romsize, local_romcrc, local_rommd5}
+            Dim columnValuesArray() As Object = New Object() {IsChecked, filename, extension, size, is_nom_us, nom_us, is_nom_jp, nom_jp, is_nom_wor, nom_wor, is_nom_eu, nom_eu, cloneof, is_date_us, date_us, is_date_jp, date_jp, is_date_wor, date_wor, is_date_eu, date_eu, editeur, is_genres_en, genres_en, is_genres_fr, genres_fr, is_genres_de, genres_de, is_genres_es, genres_es, is_genres_pt, genres_pt, joueurs, rotation, controles, is_media_screenshot, media_screenshot, is_media_screenshottitle, media_screenshottitle, is_media_fanart, media_fanart, is_media_video, media_video, is_media_wheel_us, media_wheel_us, is_media_wheel_jp, media_wheel_jp, is_media_wheel_wor, media_wheel_wor, is_media_wheelcarbon_us, media_wheelcarbon_us, is_media_wheelcarbon_jp, media_wheelcarbon_jp, is_media_wheelcarbon_wor, media_wheelcarbon_wor, is_media_wheelsteel_us, media_wheelsteel_us, is_media_wheelsteel_jp, media_wheelsteel_jp, is_media_wheelsteel_wor, media_wheelsteel_wor, is_media_boxtexture_us, media_boxtexture_us, is_media_boxtexture_jp, media_boxtexture_jp, is_media_boxtexture_eu, media_boxtexture_eu, is_media_box2d_us, media_box2d_us, is_media_box2d_jp, media_box2d_jp, is_media_box2d_eu, media_box2d_eu, is_media_box2d_side_us, media_box2d_side_us, is_media_box2d_side_jp, media_box2d_side_jp, is_media_box2d_side_eu, media_box2d_side_eu, is_media_box2d_back_us, media_box2d_back_us, is_media_box2d_back_jp, media_box2d_back_jp, is_media_box2d_back_eu, media_box2d_back_eu, is_media_box3d_us, media_box3d_us, is_media_box3d_jp, media_box3d_jp, is_media_box3d_eu, media_box3d_eu, is_media_supporttexture_us, media_supporttexture_us, is_media_supporttexture_jp, media_supporttexture_jp, is_media_supporttexture_eu, media_supporttexture_eu, is_media_support2d_us, media_support2d_us, is_media_support2d_jp, media_support2d_jp, is_media_support2d_eu, media_support2d_eu, local_romsize, local_romcrc, local_rommd5, isScraped}
             rowSSRomsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSSRomsRow)
             Return rowSSRomsRow
@@ -2724,6 +2735,7 @@ Partial Public Class RomsDataSet
             Me.columnlocal_romsize = MyBase.Columns("local_romsize")
             Me.columnlocal_romcrc = MyBase.Columns("local_romcrc")
             Me.columnlocal_rommd5 = MyBase.Columns("local_rommd5")
+            Me.columnisScraped = MyBase.Columns("isScraped")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2941,6 +2953,8 @@ Partial Public Class RomsDataSet
             MyBase.Columns.Add(Me.columnlocal_romcrc)
             Me.columnlocal_rommd5 = New Global.System.Data.DataColumn("local_rommd5", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnlocal_rommd5)
+            Me.columnisScraped = New Global.System.Data.DataColumn("isScraped", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnisScraped)
             Me.columnIsChecked.AllowDBNull = false
             Me.columnIsChecked.DefaultValue = CType(false,Boolean)
             Me.columnis_nom_us.DefaultValue = CType(false,Boolean)
@@ -2990,6 +3004,7 @@ Partial Public Class RomsDataSet
             Me.columnis_media_support2d_us.DefaultValue = CType(false,Boolean)
             Me.columnis_media_support2d_jp.DefaultValue = CType(false,Boolean)
             Me.columnis_media_support2d_eu.DefaultValue = CType(false,Boolean)
+            Me.columnisScraped.DefaultValue = CType(false,Boolean)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3127,6 +3142,8 @@ Partial Public Class RomsDataSet
     Partial Public Class ErrorsSSRomsLoadingDataTable
         Inherits Global.System.Data.TypedTableBase(Of ErrorsSSRomsLoadingRow)
         
+        Private columntype As Global.System.Data.DataColumn
+        
         Private columnfilename As Global.System.Data.DataColumn
         
         Private columndetails As Global.System.Data.DataColumn
@@ -3165,6 +3182,14 @@ Partial Public Class RomsDataSet
             MyBase.New(info, context)
             Me.InitVars
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property typeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntype
+            End Get
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -3219,9 +3244,9 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddErrorsSSRomsLoadingRow(ByVal filename As String, ByVal details As String) As ErrorsSSRomsLoadingRow
+        Public Overloads Function AddErrorsSSRomsLoadingRow(ByVal type As String, ByVal filename As String, ByVal details As String) As ErrorsSSRomsLoadingRow
             Dim rowErrorsSSRomsLoadingRow As ErrorsSSRomsLoadingRow = CType(Me.NewRow,ErrorsSSRomsLoadingRow)
-            Dim columnValuesArray() As Object = New Object() {filename, details}
+            Dim columnValuesArray() As Object = New Object() {type, filename, details}
             rowErrorsSSRomsLoadingRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowErrorsSSRomsLoadingRow)
             Return rowErrorsSSRomsLoadingRow
@@ -3244,6 +3269,7 @@ Partial Public Class RomsDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columntype = MyBase.Columns("type")
             Me.columnfilename = MyBase.Columns("filename")
             Me.columndetails = MyBase.Columns("details")
         End Sub
@@ -3251,6 +3277,8 @@ Partial Public Class RomsDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
+            Me.columntype = New Global.System.Data.DataColumn("type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntype)
             Me.columnfilename = New Global.System.Data.DataColumn("filename", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfilename)
             Me.columndetails = New Global.System.Data.DataColumn("details", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -6078,6 +6106,21 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property isScraped() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSSRoms.isScrapedColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'isScraped' in table 'SSRoms' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSSRoms.isScrapedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsfilenameNull() As Boolean
             Return Me.IsNull(Me.tableSSRoms.filenameColumn)
         End Function
@@ -7335,6 +7378,18 @@ Partial Public Class RomsDataSet
         Public Sub Setlocal_rommd5Null()
             Me(Me.tableSSRoms.local_rommd5Column) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsisScrapedNull() As Boolean
+            Return Me.IsNull(Me.tableSSRoms.isScrapedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetisScrapedNull()
+            Me(Me.tableSSRoms.isScrapedColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -7351,6 +7406,21 @@ Partial Public Class RomsDataSet
             MyBase.New(rb)
             Me.tableErrorsSSRomsLoading = CType(Me.Table,ErrorsSSRomsLoadingDataTable)
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property type() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableErrorsSSRomsLoading.typeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'type' in table 'ErrorsSSRomsLoading' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableErrorsSSRomsLoading.typeColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -7381,6 +7451,18 @@ Partial Public Class RomsDataSet
                 Me(Me.tableErrorsSSRomsLoading.detailsColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstypeNull() As Boolean
+            Return Me.IsNull(Me.tableErrorsSSRomsLoading.typeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettypeNull()
+            Me(Me.tableErrorsSSRomsLoading.typeColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _

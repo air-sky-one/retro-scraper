@@ -105,6 +105,7 @@ Partial Class Urukais_SplashScreen
         Me.Name = "Urukais_SplashScreen"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.TopMost = True
         Me.MainLayoutPanel.ResumeLayout(False)
         Me.DetailsLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)

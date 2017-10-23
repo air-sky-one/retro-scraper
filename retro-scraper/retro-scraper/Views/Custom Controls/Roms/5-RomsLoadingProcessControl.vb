@@ -120,203 +120,40 @@ Public Class _5_RomsLoadingProcessControl
                         And Not json.Contains("Erreur : Rom/Iso/Dossier non trouvée !") _
                         And Not json.Contains("Erreur : Jeu non trouvée !") Then
 
-                        Try
-                            Dim o As JObject = JObject.Parse(json)
+                        GetGameData(json, rom)
+                    Else
+                        'second test without md5 hash (only try to get game with its name)
 
-                            For Each s As JToken In o.SelectToken("response.jeu")
-                                'nom
-                                GetData(o, rom.nom_us, "response.jeu.noms.nom_us")
-                                GetData(o, rom.nom_jp, "response.jeu.noms.nom_jp")
-                                GetData(o, rom.nom_wor, "response.jeu.noms.nom_wor")
-                                GetData(o, rom.nom_eu, "response.jeu.noms.nom_eu")
+                        ' interrogation
+                        query = BuildGenericURL("jeuInfos.php")
+                        query = query & "&crc="
+                        query = query & "&md5="
+                        query = query & "&sha1="
+                        query = query & "&systemid=" & Me._parent.ScreenScraperSelectedSystem
+                        query = query & "&romnom=" & rom.filename
+                        query = query & "&romtaille="
 
-                                If rom.nom_us = String.Empty _
-                                   And rom.nom_jp = String.Empty _
-                                   And rom.nom_wor = String.Empty _
-                                   And rom.nom_eu = String.Empty Then
+                        ' getting result
+                        webClient.Encoding = Encoding.UTF8
+                        json = webClient.DownloadString(query)
 
-                                    GetData(o, rom.nom_us, "response.jeu.nom")
-                                    GetData(o, rom.nom_jp, "response.jeu.nom")
-                                    GetData(o, rom.nom_wor, "response.jeu.nom")
-                                    GetData(o, rom.nom_eu, "response.jeu.nom")
+                        If Not String.IsNullOrEmpty(json) _
+                            And Not json.Contains("Erreur : Rom/Iso/Dossier non trouvée !") _
+                            And Not json.Contains("Erreur : Jeu non trouvée !") Then
 
-                                    If rom.nom_us = String.Empty _
-                                       And rom.nom_jp = String.Empty _
-                                       And rom.nom_wor = String.Empty _
-                                       And rom.nom_eu = String.Empty Then
-
-                                        rom.nom_jp = rom.filename
-                                        rom.nom_wor = rom.filename
-                                        rom.nom_eu = rom.filename
-                                    End If
-                                End If
-
-                                'cloneof
-                                GetData(o, rom.cloneof, "response.jeu.cloneof")
-                                'date
-                                GetData(o, rom.date_us, "response.jeu.dates.date_us")
-                                GetData(o, rom.date_jp, "response.jeu.dates.date_jp")
-                                GetData(o, rom.date_wor, "response.jeu.dates.date_wor")
-                                GetData(o, rom.date_eu, "response.jeu.dates.date_eu")
-                                ' keep only year
-                                If Not String.IsNullOrEmpty(rom.date_us) And rom.date_us.Length >= 4 Then rom.date_us = rom.date_us.Substring(0, 4)
-                                If Not String.IsNullOrEmpty(rom.date_jp) And rom.date_jp.Length >= 4 Then rom.date_jp = rom.date_jp.Substring(0, 4)
-                                If Not String.IsNullOrEmpty(rom.date_wor) And rom.date_wor.Length >= 4 Then rom.date_wor = rom.date_wor.Substring(0, 4)
-                                If Not String.IsNullOrEmpty(rom.date_eu) And rom.date_eu.Length >= 4 Then rom.date_eu = rom.date_eu.Substring(0, 4)
-
-                                'editeur
-                                GetData(o, rom.editeur, "response.jeu.editeur")
-                                'genre
-                                GetData(o, rom.genres_en, "response.jeu.genres.genres_en")
-                                GetData(o, rom.genres_fr, "response.jeu.genres.genres_fr")
-                                GetData(o, rom.genres_de, "response.jeu.genres.genres_de")
-                                GetData(o, rom.genres_es, "response.jeu.genres.genres_es")
-                                GetData(o, rom.genres_pt, "response.jeu.genres.genres_pt")
-                                'joueurs
-                                GetData(o, rom.joueurs, "response.jeu.joueurs")
-                                'rotation
-                                GetData(o, rom.rotation, "response.jeu.rotation")
-                                'controles
-                                GetData(o, rom.controles, "response.jeu.controles")
-                                'media_screenshot
-                                GetData(o, rom.media_screenshot, "response.jeu.medias.media_screenshot")
-                                'media_screenshottitle
-                                GetData(o, rom.media_screenshottitle, "response.jeu.medias.media_screenshottitle")
-                                'media_fanart
-                                GetData(o, rom.media_fanart, "response.jeu.medias.media_fanart")
-                                'media_video
-                                GetData(o, rom.media_video, "response.jeu.medias.media_video")
-                                'media_wheel
-                                GetData(o, rom.media_wheel_us, "response.jeu.medias.media_wheels.media_wheel_us")
-                                GetData(o, rom.media_wheel_jp, "response.jeu.medias.media_wheels.media_wheel_jp")
-                                GetData(o, rom.media_wheel_wor, "response.jeu.medias.media_wheels.media_wheel_wor")
-                                'media_wheelcarbon
-                                GetData(o, rom.media_wheelcarbon_us, "response.jeu.medias.media_wheelscarbon.media_wheelcarbon_us")
-                                GetData(o, rom.media_wheelcarbon_jp, "response.jeu.medias.media_wheelscarbon.media_wheelcarbon_jp")
-                                GetData(o, rom.media_wheelcarbon_wor, "response.jeu.medias.media_wheelscarbon.media_wheelcarbon_wor")
-                                'media_wheelsteel
-                                GetData(o, rom.media_wheelsteel_us, "response.jeu.medias.media_wheelssteel.media_wheelsteel_us")
-                                GetData(o, rom.media_wheelsteel_jp, "response.jeu.medias.media_wheelssteel.media_wheelsteel_jp")
-                                GetData(o, rom.media_wheelsteel_wor, "response.jeu.medias.media_wheelssteel.media_wheelsteel_wor")
-                                'media_boxtexture
-                                GetData(o, rom.media_boxtexture_us, "response.jeu.medias.media_boxs.media_boxstexture.media_boxtexture_us")
-                                GetData(o, rom.media_boxtexture_jp, "response.jeu.medias.media_boxs.media_boxstexture.media_boxtexture_jp")
-                                GetData(o, rom.media_boxtexture_eu, "response.jeu.medias.media_boxs.media_boxstexture.media_boxtexture_eu")
-                                'media_box2d
-                                GetData(o, rom.media_box2d_us, "response.jeu.medias.media_boxs.media_boxs2d.media_box2d_us")
-                                GetData(o, rom.media_box2d_jp, "response.jeu.medias.media_boxs.media_boxs2d.media_box2d_jp")
-                                GetData(o, rom.media_box2d_eu, "response.jeu.medias.media_boxs.media_boxs2d.media_box2d_eu")
-                                'media_box2d-side
-                                GetData(o, rom.media_box2d_side_us, "response.jeu.medias.media_boxs.media_boxs2d-side.media_box2d-side_us")
-                                GetData(o, rom.media_box2d_side_jp, "response.jeu.medias.media_boxs.media_boxs2d-side.media_box2d-side_jp")
-                                GetData(o, rom.media_box2d_side_eu, "response.jeu.medias.media_boxs.media_boxs2d-side.media_box2d-side_eu")
-                                'media_box2d-back
-                                GetData(o, rom.media_box2d_back_us, "response.jeu.medias.media_boxs.media_boxs2d-back.media_box2d-back_us")
-                                GetData(o, rom.media_box2d_back_jp, "response.jeu.medias.media_boxs.media_boxs2d-back.media_box2d-back_jp")
-                                GetData(o, rom.media_box2d_back_eu, "response.jeu.medias.media_boxs.media_boxs2d-back.media_box2d-back_eu")
-                                'media_box3d
-                                GetData(o, rom.media_box3d_us, "response.jeu.medias.media_boxs.media_boxs3d.media_box3d_us")
-                                GetData(o, rom.media_box3d_jp, "response.jeu.medias.media_boxs.media_boxs3d.media_box3d_jp")
-                                GetData(o, rom.media_box3d_eu, "response.jeu.medias.media_boxs.media_boxs3d.media_box3d_eu")
-                                'media_supporttexture_us
-                                GetData(o, rom.media_box3d_eu, "response.jeu.medias.media_supports.media_supportstexture.media_supporttexture_us")
-                                GetData(o, rom.media_box3d_jp, "response.jeu.medias.media_supports.media_supportstexture.media_supporttexture_jp")
-                                GetData(o, rom.media_box3d_eu, "response.jeu.medias.media_supports.media_supportstexture.media_supporttexture_eu")
-                                'media_support2d
-                                GetData(o, rom.media_support2d_eu, "response.jeu.medias.media_supports.media_supports2d.media_support2d_us")
-                                GetData(o, rom.media_support2d_jp, "response.jeu.medias.media_supports.media_supports2d.media_support2d_jp")
-                                GetData(o, rom.media_support2d_eu, "response.jeu.medias.media_supports.media_supports2d.media_support2d_eu")
-                            Next
-                        Catch ex As Exception
+                            GetGameData(json, rom)
+                        Else
                             Me._workerDetailsLastLine = "<<< - !!! ERROR !!! " & rom.filename & " not found on screenscraper.fr !!! - >>>" & vbCrLf
 
                             Dim err As RomsDataSet.ErrorsSSRomsLoadingRow
                             err = Me._parent.RomsDataErrors.NewErrorsSSRomsLoadingRow()
                             err.type = LogsType.Loading.ToString
                             err.filename = rom.filename
-                            err.details = ex.Message
+                            err.details = json
                             Me._parent.RomsDataErrors.AddErrorsSSRomsLoadingRow(err)
 
-                            AddLogs(New Exception("Error retrieving data from screenscraper.fr for : " & rom.filename & " with return : " & ex.Message))
-                        End Try
-
-                        Me._workerDetailsLastLine = "Building index for " & rom.filename & " Ok" & vbCrLf
-
-#Region "list of ss roms columns"
-                        'filename
-                        'extension
-                        'size
-                        'nom_us
-                        'nom_jp
-                        'nom_wor
-                        'nom_eu
-                        'cloneof
-                        'date_us
-                        'date_jp
-                        'date_wor
-                        'date_eu
-                        'editeur
-                        'genres_en
-                        'genres_fr
-                        'genres_de
-                        'genres_es
-                        'genres_pt
-                        'genres_pt
-                        'joueurs
-                        'rotation
-                        'controles
-                        'media_screenshot
-                        'media_screenshottitle
-                        'media_fanart
-                        'media_video
-                        'media_wheel_us
-                        'media_wheel_jp
-                        'media_wheel_wor
-                        'media_wheelcarbon_us
-                        'media_wheelcarbon_jp
-                        'media_wheelcarbon_wor
-                        'media_wheelsteel_us
-                        'media_wheelsteel_jp
-                        'media_wheelsteel_wor
-                        'media_boxtexture_us
-                        'media_boxtexture_jp
-                        'media_boxtexture_eu
-                        'media_box2d_us
-                        'media_box2d_jp
-                        'media_box2d_eu
-                        'media_box2d_side_us
-                        'media_box2d_side_jp
-                        'media_box2d_side_eu
-                        'media_box2d_back_us
-                        'media_box2d_back_jp
-                        'media_box2d_back_eu
-                        'media_box3d_us
-                        'media_box3d_jp
-                        'media_box3d_eu
-                        'media_supporttexture_us
-                        'media_supporttexture_jp
-                        'media_supporttexture_eu
-                        'media_support2d_us
-                        'media_support2d_jp
-                        'media_support2d_eu
-                        'local_romsize
-                        'local_romcrc
-                        'local_rommd5
-#End Region
-                        rom.isScraped = False
-                        Me._parent.RomsData.AddSSRomsRow(rom)
-
-                    Else
-                        Me._workerDetailsLastLine = "<<< - !!! ERROR !!! " & rom.filename & " not found on screenscraper.fr !!! - >>>" & vbCrLf
-
-                        Dim err As RomsDataSet.ErrorsSSRomsLoadingRow
-                        err = Me._parent.RomsDataErrors.NewErrorsSSRomsLoadingRow()
-                        err.type = LogsType.Loading.ToString
-                        err.filename = rom.filename
-                        err.details = json
-                        Me._parent.RomsDataErrors.AddErrorsSSRomsLoadingRow(err)
-
-                        AddLogs(New Exception("Error retrieving data from screenscraper.fr for : " & rom.filename & " with return : " & json))
+                            AddLogs(New Exception("Error retrieving data from screenscraper.fr for : " & rom.filename & " with return : " & json))
+                        End If
                     End If
 
                     cpt = cpt + 1
@@ -335,6 +172,195 @@ Public Class _5_RomsLoadingProcessControl
 
         Return result
     End Function
+
+    Private Sub GetGameData(json As String, rom As RomsDataSet.SSRomsRow)
+        Try
+            Dim o As JObject = JObject.Parse(json)
+
+            For Each s As JToken In o.SelectToken("response.jeu")
+                'nom
+                GetData(o, rom.nom_us, "response.jeu.noms.nom_us")
+                GetData(o, rom.nom_jp, "response.jeu.noms.nom_jp")
+                GetData(o, rom.nom_wor, "response.jeu.noms.nom_wor")
+                GetData(o, rom.nom_eu, "response.jeu.noms.nom_eu")
+
+                If rom.nom_us = String.Empty _
+                   And rom.nom_jp = String.Empty _
+                   And rom.nom_wor = String.Empty _
+                   And rom.nom_eu = String.Empty Then
+
+                    GetData(o, rom.nom_us, "response.jeu.nom")
+                    GetData(o, rom.nom_jp, "response.jeu.nom")
+                    GetData(o, rom.nom_wor, "response.jeu.nom")
+                    GetData(o, rom.nom_eu, "response.jeu.nom")
+
+                    If rom.nom_us = String.Empty _
+                       And rom.nom_jp = String.Empty _
+                       And rom.nom_wor = String.Empty _
+                       And rom.nom_eu = String.Empty Then
+
+                        rom.nom_jp = rom.filename
+                        rom.nom_wor = rom.filename
+                        rom.nom_eu = rom.filename
+                    End If
+                End If
+
+                'cloneof
+                GetData(o, rom.cloneof, "response.jeu.cloneof")
+                'date
+                GetData(o, rom.date_us, "response.jeu.dates.date_us")
+                GetData(o, rom.date_jp, "response.jeu.dates.date_jp")
+                GetData(o, rom.date_wor, "response.jeu.dates.date_wor")
+                GetData(o, rom.date_eu, "response.jeu.dates.date_eu")
+                ' keep only year
+                If Not String.IsNullOrEmpty(rom.date_us) And rom.date_us.Length >= 4 Then rom.date_us = rom.date_us.Substring(0, 4)
+                If Not String.IsNullOrEmpty(rom.date_jp) And rom.date_jp.Length >= 4 Then rom.date_jp = rom.date_jp.Substring(0, 4)
+                If Not String.IsNullOrEmpty(rom.date_wor) And rom.date_wor.Length >= 4 Then rom.date_wor = rom.date_wor.Substring(0, 4)
+                If Not String.IsNullOrEmpty(rom.date_eu) And rom.date_eu.Length >= 4 Then rom.date_eu = rom.date_eu.Substring(0, 4)
+
+                'editeur
+                GetData(o, rom.editeur, "response.jeu.editeur")
+                'genre
+                GetData(o, rom.genres_en, "response.jeu.genres.genres_en")
+                GetData(o, rom.genres_fr, "response.jeu.genres.genres_fr")
+                GetData(o, rom.genres_de, "response.jeu.genres.genres_de")
+                GetData(o, rom.genres_es, "response.jeu.genres.genres_es")
+                GetData(o, rom.genres_pt, "response.jeu.genres.genres_pt")
+                'joueurs
+                GetData(o, rom.joueurs, "response.jeu.joueurs")
+                'rotation
+                GetData(o, rom.rotation, "response.jeu.rotation")
+                'controles
+                GetData(o, rom.controles, "response.jeu.controles")
+                'media_screenshot
+                GetData(o, rom.media_screenshot, "response.jeu.medias.media_screenshot")
+                'media_screenshottitle
+                GetData(o, rom.media_screenshottitle, "response.jeu.medias.media_screenshottitle")
+                'media_fanart
+                GetData(o, rom.media_fanart, "response.jeu.medias.media_fanart")
+                'media_video
+                GetData(o, rom.media_video, "response.jeu.medias.media_video")
+                'media_wheel
+                GetData(o, rom.media_wheel_us, "response.jeu.medias.media_wheels.media_wheel_us")
+                GetData(o, rom.media_wheel_jp, "response.jeu.medias.media_wheels.media_wheel_jp")
+                GetData(o, rom.media_wheel_wor, "response.jeu.medias.media_wheels.media_wheel_wor")
+                'media_wheelcarbon
+                GetData(o, rom.media_wheelcarbon_us, "response.jeu.medias.media_wheelscarbon.media_wheelcarbon_us")
+                GetData(o, rom.media_wheelcarbon_jp, "response.jeu.medias.media_wheelscarbon.media_wheelcarbon_jp")
+                GetData(o, rom.media_wheelcarbon_wor, "response.jeu.medias.media_wheelscarbon.media_wheelcarbon_wor")
+                'media_wheelsteel
+                GetData(o, rom.media_wheelsteel_us, "response.jeu.medias.media_wheelssteel.media_wheelsteel_us")
+                GetData(o, rom.media_wheelsteel_jp, "response.jeu.medias.media_wheelssteel.media_wheelsteel_jp")
+                GetData(o, rom.media_wheelsteel_wor, "response.jeu.medias.media_wheelssteel.media_wheelsteel_wor")
+                'media_boxtexture
+                GetData(o, rom.media_boxtexture_us, "response.jeu.medias.media_boxs.media_boxstexture.media_boxtexture_us")
+                GetData(o, rom.media_boxtexture_jp, "response.jeu.medias.media_boxs.media_boxstexture.media_boxtexture_jp")
+                GetData(o, rom.media_boxtexture_eu, "response.jeu.medias.media_boxs.media_boxstexture.media_boxtexture_eu")
+                'media_box2d
+                GetData(o, rom.media_box2d_us, "response.jeu.medias.media_boxs.media_boxs2d.media_box2d_us")
+                GetData(o, rom.media_box2d_jp, "response.jeu.medias.media_boxs.media_boxs2d.media_box2d_jp")
+                GetData(o, rom.media_box2d_eu, "response.jeu.medias.media_boxs.media_boxs2d.media_box2d_eu")
+                'media_box2d-side
+                GetData(o, rom.media_box2d_side_us, "response.jeu.medias.media_boxs.media_boxs2d-side.media_box2d-side_us")
+                GetData(o, rom.media_box2d_side_jp, "response.jeu.medias.media_boxs.media_boxs2d-side.media_box2d-side_jp")
+                GetData(o, rom.media_box2d_side_eu, "response.jeu.medias.media_boxs.media_boxs2d-side.media_box2d-side_eu")
+                'media_box2d-back
+                GetData(o, rom.media_box2d_back_us, "response.jeu.medias.media_boxs.media_boxs2d-back.media_box2d-back_us")
+                GetData(o, rom.media_box2d_back_jp, "response.jeu.medias.media_boxs.media_boxs2d-back.media_box2d-back_jp")
+                GetData(o, rom.media_box2d_back_eu, "response.jeu.medias.media_boxs.media_boxs2d-back.media_box2d-back_eu")
+                'media_box3d
+                GetData(o, rom.media_box3d_us, "response.jeu.medias.media_boxs.media_boxs3d.media_box3d_us")
+                GetData(o, rom.media_box3d_jp, "response.jeu.medias.media_boxs.media_boxs3d.media_box3d_jp")
+                GetData(o, rom.media_box3d_eu, "response.jeu.medias.media_boxs.media_boxs3d.media_box3d_eu")
+                'media_supporttexture_us
+                GetData(o, rom.media_box3d_eu, "response.jeu.medias.media_supports.media_supportstexture.media_supporttexture_us")
+                GetData(o, rom.media_box3d_jp, "response.jeu.medias.media_supports.media_supportstexture.media_supporttexture_jp")
+                GetData(o, rom.media_box3d_eu, "response.jeu.medias.media_supports.media_supportstexture.media_supporttexture_eu")
+                'media_support2d
+                GetData(o, rom.media_support2d_eu, "response.jeu.medias.media_supports.media_supports2d.media_support2d_us")
+                GetData(o, rom.media_support2d_jp, "response.jeu.medias.media_supports.media_supports2d.media_support2d_jp")
+                GetData(o, rom.media_support2d_eu, "response.jeu.medias.media_supports.media_supports2d.media_support2d_eu")
+            Next
+        Catch ex As Exception
+            Me._workerDetailsLastLine = "<<< - !!! ERROR !!! " & rom.filename & " not found on screenscraper.fr !!! - >>>" & vbCrLf
+
+            Dim err As RomsDataSet.ErrorsSSRomsLoadingRow
+            err = Me._parent.RomsDataErrors.NewErrorsSSRomsLoadingRow()
+            err.type = LogsType.Loading.ToString
+            err.filename = rom.filename
+            err.details = ex.Message
+            Me._parent.RomsDataErrors.AddErrorsSSRomsLoadingRow(err)
+
+            AddLogs(New Exception("Error retrieving data from screenscraper.fr for : " & rom.filename & " with return : " & ex.Message))
+        End Try
+
+        Me._workerDetailsLastLine = "Building index for " & rom.filename & " Ok" & vbCrLf
+
+#Region "list of ss roms columns"
+        'filename
+        'extension
+        'size
+        'nom_us
+        'nom_jp
+        'nom_wor
+        'nom_eu
+        'cloneof
+        'date_us
+        'date_jp
+        'date_wor
+        'date_eu
+        'editeur
+        'genres_en
+        'genres_fr
+        'genres_de
+        'genres_es
+        'genres_pt
+        'genres_pt
+        'joueurs
+        'rotation
+        'controles
+        'media_screenshot
+        'media_screenshottitle
+        'media_fanart
+        'media_video
+        'media_wheel_us
+        'media_wheel_jp
+        'media_wheel_wor
+        'media_wheelcarbon_us
+        'media_wheelcarbon_jp
+        'media_wheelcarbon_wor
+        'media_wheelsteel_us
+        'media_wheelsteel_jp
+        'media_wheelsteel_wor
+        'media_boxtexture_us
+        'media_boxtexture_jp
+        'media_boxtexture_eu
+        'media_box2d_us
+        'media_box2d_jp
+        'media_box2d_eu
+        'media_box2d_side_us
+        'media_box2d_side_jp
+        'media_box2d_side_eu
+        'media_box2d_back_us
+        'media_box2d_back_jp
+        'media_box2d_back_eu
+        'media_box3d_us
+        'media_box3d_jp
+        'media_box3d_eu
+        'media_supporttexture_us
+        'media_supporttexture_jp
+        'media_supporttexture_eu
+        'media_support2d_us
+        'media_support2d_jp
+        'media_support2d_eu
+        'local_romsize
+        'local_romcrc
+        'local_rommd5
+#End Region
+        rom.isScraped = False
+        Me._parent.RomsData.AddSSRomsRow(rom)
+    End Sub
+
 
     ''' <summary>
     ''' Get the given JSon node 

@@ -28,13 +28,13 @@ Partial Class MainForm
         Me.MainFormTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.MainMenuFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.MainButtonHome = New System.Windows.Forms.Button()
+        Me.MainButtonAnalysis = New System.Windows.Forms.Button()
         Me.MainButtonRoms = New System.Windows.Forms.Button()
         Me.MainButtonSystems = New System.Windows.Forms.Button()
         Me.MainButtonGameLists = New System.Windows.Forms.Button()
         Me.MainButtonSettings = New System.Windows.Forms.Button()
         Me.MainButtonDevTools = New System.Windows.Forms.Button()
         Me.MainHomeControl = New retro_scraper.HomeControl()
-        Me.MainButtonAnalysis = New System.Windows.Forms.Button()
         Me.HeaderPanel.SuspendLayout()
         CType(Me.HeaderPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainFormTableLayoutPanel.SuspendLayout()
@@ -112,6 +112,23 @@ Partial Class MainForm
         Me.MainButtonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonHome.UseVisualStyleBackColor = False
         '
+        'MainButtonAnalysis
+        '
+        Me.MainButtonAnalysis.BackColor = System.Drawing.Color.DimGray
+        Me.MainButtonAnalysis.FlatAppearance.BorderSize = 0
+        Me.MainButtonAnalysis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonAnalysis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonAnalysis.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonAnalysis.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonAnalysis.Location = New System.Drawing.Point(0, 36)
+        Me.MainButtonAnalysis.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonAnalysis.Name = "MainButtonAnalysis"
+        Me.MainButtonAnalysis.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonAnalysis.TabIndex = 6
+        Me.MainButtonAnalysis.Text = "   &Local Analysis"
+        Me.MainButtonAnalysis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonAnalysis.UseVisualStyleBackColor = False
+        '
         'MainButtonRoms
         '
         Me.MainButtonRoms.BackColor = System.Drawing.Color.DimGray
@@ -145,6 +162,7 @@ Partial Class MainForm
         Me.MainButtonSystems.Text = "   &Systems"
         Me.MainButtonSystems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonSystems.UseVisualStyleBackColor = False
+        Me.MainButtonSystems.Visible = False
         '
         'MainButtonGameLists
         '
@@ -162,6 +180,7 @@ Partial Class MainForm
         Me.MainButtonGameLists.Text = "   &GameLists"
         Me.MainButtonGameLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonGameLists.UseVisualStyleBackColor = False
+        Me.MainButtonGameLists.Visible = False
         '
         'MainButtonSettings
         '
@@ -179,6 +198,7 @@ Partial Class MainForm
         Me.MainButtonSettings.Text = "   &Settings"
         Me.MainButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MainButtonSettings.UseVisualStyleBackColor = False
+        Me.MainButtonSettings.Visible = False
         '
         'MainButtonDevTools
         '
@@ -207,23 +227,6 @@ Partial Class MainForm
         Me.MainHomeControl.Name = "MainHomeControl"
         Me.MainHomeControl.Size = New System.Drawing.Size(878, 753)
         Me.MainHomeControl.TabIndex = 2
-        '
-        'MainButtonAnalysis
-        '
-        Me.MainButtonAnalysis.BackColor = System.Drawing.Color.DimGray
-        Me.MainButtonAnalysis.FlatAppearance.BorderSize = 0
-        Me.MainButtonAnalysis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
-        Me.MainButtonAnalysis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.MainButtonAnalysis.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.MainButtonAnalysis.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonAnalysis.Location = New System.Drawing.Point(0, 36)
-        Me.MainButtonAnalysis.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainButtonAnalysis.Name = "MainButtonAnalysis"
-        Me.MainButtonAnalysis.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonAnalysis.TabIndex = 6
-        Me.MainButtonAnalysis.Text = "   &Local Analysis"
-        Me.MainButtonAnalysis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MainButtonAnalysis.UseVisualStyleBackColor = False
         '
         'MainForm
         '

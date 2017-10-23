@@ -37,6 +37,10 @@ Public Class MainForm
 
             'ScreenScraper User Check
             If Not isScreenScraperUserFileOK() Then
+
+                Threading.Thread.Sleep(3000)
+                My.Application.SplashScreen.Close()
+
                 Dim authForm As New ScreenScraperLoginForm : authForm.ShowDialog()
                 If Not AppGlobals.isScreenScraperAuthOK Then Me.Close()
             End If
@@ -67,6 +71,9 @@ Public Class MainForm
 
 #If DEBUG Then
             Me.MainButtonDevTools.Visible = True
+            Me.MainButtonSystems.Visible = True
+            Me.MainButtonSettings.Visible = True
+            Me.MainButtonGameLists.Visible = True
 #End If
 
             Me._actualContent = Me.MainHomeControl
@@ -193,4 +200,5 @@ Public Class MainForm
             If Me._actualContent.Name = "MainHomeControl" Then Me._actualContent.Height = Me._actualContent.Height - 110
         End If
     End Sub
+
 End Class

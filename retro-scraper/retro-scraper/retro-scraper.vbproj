@@ -29,7 +29,7 @@
     <PublisherName>Urukai%27s</PublisherName>
     <SuiteName>Uruakai%27s retro-scraper</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -130,6 +130,13 @@
     <Compile Include="Helpers\LogsHelper.vb" />
     <Compile Include="Helpers\LicenceHelper.vb" />
     <Compile Include="Helpers\Md5Helper.vb" />
+    <Compile Include="Helpers\ScrapEmulatorHelper.vb" />
+    <Compile Include="Helpers\ScrapSystemsHelper.vb" />
+    <Compile Include="Models\Configs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Configs.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Logs.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -635,6 +642,17 @@
     <None Include="Fonts\ubuntu-font-family-0.83.zip" />
     <None Include="Media\Flat-Remix-master.zip" />
     <None Include="Media\ScreenScraper Logo.pdn" />
+    <None Include="Models\Configs.xsc">
+      <DependentUpon>Configs.xsd</DependentUpon>
+    </None>
+    <None Include="Models\Configs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Configs.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Models\Configs.xss">
+      <DependentUpon>Configs.xsd</DependentUpon>
+    </None>
     <None Include="Models\Logs.xsc">
       <DependentUpon>Logs.xsd</DependentUpon>
     </None>

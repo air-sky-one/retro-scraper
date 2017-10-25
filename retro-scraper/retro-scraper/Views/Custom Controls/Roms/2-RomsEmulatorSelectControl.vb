@@ -56,33 +56,9 @@ Public Class _2_EmulatorSelectControl
     ''' <returns></returns>
     Private Function GetEmulatorsList(ByVal worker As BackgroundWorker, ByVal e As DoWorkEventArgs) As Boolean
         Dim result As Boolean = False
-        Dim cpt As Integer = 0
 
         Try
-            For Each path As String In Directory.EnumerateFiles(Application.StartupPath() & "\emulators")
-                Dim extension As String = path.Substring(path.LastIndexOf("\") + 1) : extension = extension.Substring(extension.IndexOf(".") + 1, 3)
-
-                cpt = cpt + 1
-
-                If extension = "cfg" Then
-                    Dim emul As RomsDataSet.EmulatorsRow = Me._parent.AttractModeEmulatorsList.NewEmulatorsRow
-                    Dim name As String
-
-                    name = path.Substring(path.LastIndexOf("\") + 1) : name = name.Substring(0, name.IndexOf("."))
-
-                    emul.Name = name
-                    emul.Path = path
-
-                    Me._parent.AttractModeEmulatorsList.AddEmulatorsRow(emul)
-                    Me._workerDetailsLastLine = cpt.ToString & " : " & emul.Name & vbCrLf
-                Else
-                    Me._workerDetailsLastLine = cpt.ToString & " : a file config with a wrong extension was found (" & path.Substring(path.LastIndexOf("\") + 1) & ". Not added to list." & vbCrLf
-                End If
-
-                ' worker.ReportProgress(cpt)
-            Next
-
-            result = True
+            result = ScrapEmulatorHelper.GetEmulatorsList(Me._parent.AttractModeEmulatorsList, Me._workerDetailsLastLine)
         Catch ex As Exception
             Throw ex
         End Try
@@ -138,7 +114,6 @@ Public Class _2_EmulatorSelectControl
     ''' <param name="e"></param>
     Private Sub EmulatorsListComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EmulatorsListComboBox.SelectedIndexChanged
         Dim path As String = String.Empty
-        Dim sr As StreamReader
         Dim content As String = String.Empty
         Dim cpt As Integer = 0
         Dim isErr As Boolean = False
@@ -151,66 +126,11 @@ Public Class _2_EmulatorSelectControl
 
                 path = Me.EmulatorsListComboBox.SelectedValue.ToString
 
-                ' **********************************
                 ' Get accepted roms files extension
-                sr = New StreamReader(path)
-                Do While sr.Peek() >= 0
-                    Dim line As String = sr.ReadLine
-                    If line.Contains("romext") Then
-                        line = line.Substring(6, line.Length - 6)
-                        line = line.Trim()
+                ScrapEmulatorHelper.SetRomFilesExtensions(path, Me._parent.RomsExtensions, cpt)
 
-                        Erase Me._parent.RomsExtensions
-                        Me._parent.RomsExtensions = line.Split(";")
-
-                        cpt = 1
-
-                        Exit Do
-                    End If
-                Loop
-                sr.Close()
-                ' **********************************
-
-                ' ******************************************************
                 ' Get type of artworks and their associated folder path
-                sr = New StreamReader(path)
-
-                Me._parent.RomsArtworks.Clear()
-
-                Do While sr.Peek() >= 0
-                    Dim line As String = sr.ReadLine
-                    If line.Contains("artwork") Then
-                        Dim artName As String = String.Empty
-                        Dim artPath As String = String.Empty
-
-                        Try
-                            If line.IndexOf("/") > 0 Then
-                                artName = line.Substring(7, line.IndexOf("/") - 7).Trim
-                                artPath = line.Substring(line.LastIndexOf("/") + 1)
-                            Else
-                                artName = line.Substring(7, line.Length - 7).Trim
-                                artPath = String.Empty
-                            End If
-
-                        Catch ex As Exception
-                            Throw New Exception("Oups !, It seems that the emulator file content is incorrect." & vbCrLf & ex.Message, ex)
-                        End Try
-
-                        Dim a As RomsDataSet.ArtworksRow = Me._parent.RomsArtworks.NewArtworksRow()
-                        a.Name = artName
-                        a.Path = artPath
-
-                        If Not a.Path = String.Empty Then
-                            Me._parent.RomsArtworks.AddArtworksRow(a)
-                        End If
-                    End If
-                Loop
-                sr.Close()
-
-                If Me._parent.RomsArtworks.Count = 0 Then
-                    Throw New Exception("Oups !, It seems that the emulator file content is incorrect." & vbCrLf & "No artwork types and folder defined.")
-                End If
-                ' ******************************************************
+                ScrapEmulatorHelper.SetArtworksTypesAndFolders(path, Me._parent.RomsArtworks)
 
                 If cpt = 0 Then
                     Dim err As New Exception("The selected emulator file doesn't contain roms extensions definition. Please choose a valid emulator config file.")

@@ -39,7 +39,6 @@ Public NotInheritable Class Urukais_SplashScreen
 
         'Copyright info
         Copyright.Text = My.Application.Info.Copyright
-
     End Sub
 
 End Class

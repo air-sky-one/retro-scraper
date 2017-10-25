@@ -34,8 +34,6 @@ Public Class _3_AnalysisLoadingProcessControl
 
             If Me._parent Is Nothing Then Throw New Exception("Unexpected error")
 
-            'Dim collection = From fi In New DirectoryInfo(Me._parent.RomsPath).GetFiles()
-            '                 Where Me._parent.RomsExtensions.Contains(fi.Extension.ToUpper())
             Dim collection As List(Of String) = GetFilesAssociatedToExtensions(Me._parent.RomsPath, Me._parent.RomsExtensions)
 
             If collection.Count > 0 Then

@@ -52,52 +52,9 @@ Public Class _1_RomsScreenScraperSystemSelectControl
     ''' </summary>
     Private Function GetScreenScraperSystems(ByVal worker As BackgroundWorker, ByVal e As DoWorkEventArgs) As Boolean
         Dim result = False
-        Dim webClient As New System.Net.WebClient()
-        Dim query As String = String.Empty
-        Dim json As String = String.Empty
 
         Try
-            Me._parent.ScreenScraperSystemsList.Clear()
-
-            query = BuildGenericURL("systemesListe.php")
-            Me._workerDetailsLastLine = "fecthing screeenscraper.fr" & vbCrLf
-            json = webClient.DownloadString(query)
-
-            If Not String.IsNullOrEmpty(json) Then
-                Dim o As JObject = JObject.Parse(json)
-                Dim cpt As Integer = 0
-
-                For Each s As JToken In o.SelectToken("response.systemes")
-                    Dim r As RomsDataSet.ScreenScraperSystemsRow
-
-                    cpt = cpt + 1
-
-                    r = Me._parent.ScreenScraperSystemsList.NewRow
-
-                    If s.SelectToken("id", False) IsNot Nothing Then r.Id = s.SelectToken("id", False) Else r.Id = String.Empty
-
-                    If Not String.IsNullOrEmpty(r.Id) Then
-                        If s.SelectToken("noms.nom_eu", False) IsNot Nothing Then r.Name_EU = s.SelectToken("noms.nom_eu", False) Else r.Name_EU = String.Empty
-                        If s.SelectToken("noms.nom_us", False) IsNot Nothing Then r.Name_US = s.SelectToken("noms.nom_us", False) Else r.Name_US = String.Empty
-                        If s.SelectToken("noms.nom_jp", False) IsNot Nothing Then r.Name_JP = s.SelectToken("noms.nom_jp", False) Else r.Name_JP = String.Empty
-
-                        ' TODO : preferred language
-                        Select Case AppGlobals.user(0).favregion
-                            Case Else
-                                r.Name = r.Name_EU
-                        End Select
-
-                        Me._parent.ScreenScraperSystemsList.AddScreenScraperSystemsRow(r)
-                        Me._workerDetailsLastLine = cpt.ToString & " : " & r.Name & vbCrLf
-                    Else
-                        Me._workerDetailsLastLine = cpt.ToString & " : screenscraper.fr returned a system with no identifier. Not added to list." & vbCrLf
-                    End If
-
-                    ' worker.ReportProgress(cpt)
-                Next
-
-                result = True
-            End If
+            result = ScrapSystemsHelper.GetScreenScraperSystems(Me._parent.ScreenScraperSystemsList, Me._workerDetailsLastLine)
         Catch ex As Exception
             Throw ex
         End Try

@@ -173,7 +173,12 @@ Public Class _5_RomsLoadingProcessControl
         Return result
     End Function
 
-    Private Sub GetGameData(json As String, rom As RomsDataSet.SSRomsRow)
+    ''' <summary>
+    ''' Retrieve the data for a specific game
+    ''' </summary>
+    ''' <param name="json"></param>
+    ''' <param name="rom"></param>
+    Private Sub GetGameData(ByRef json As String, ByRef rom As RomsDataSet.SSRomsRow)
         Try
             Dim o As JObject = JObject.Parse(json)
 
@@ -360,7 +365,6 @@ Public Class _5_RomsLoadingProcessControl
         rom.isScraped = False
         Me._parent.RomsData.AddSSRomsRow(rom)
     End Sub
-
 
     ''' <summary>
     ''' Get the given JSon node 

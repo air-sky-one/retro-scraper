@@ -39,9 +39,11 @@ Public Class MainForm
             If Not isScreenScraperUserFileOK() Then
 
                 Threading.Thread.Sleep(3000)
-                My.Application.SplashScreen.Close()
+                ' My.Application.SplashScreen.Close()
 
-                Dim authForm As New ScreenScraperLoginForm : authForm.ShowDialog()
+                Dim authForm As New ScreenScraperLoginForm
+                authForm.TopMost = True
+                authForm.ShowDialog()
                 If Not AppGlobals.isScreenScraperAuthOK Then Me.Close()
             End If
 

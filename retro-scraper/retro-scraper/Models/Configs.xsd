@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Configs" targetNamespace="http://tempuri.org/Configs.xsd" xmlns:mstns="http://tempuri.org/Configs.xsd" xmlns="http://tempuri.org/Configs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Configs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Configs" msprop:Generator_UserDSName="Configs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ScraperAPI" msprop:Generator_TableClassName="ScraperAPIDataTable" msprop:Generator_TableVarName="tableScraperAPI" msprop:Generator_TablePropName="ScraperAPI" msprop:Generator_RowDeletingName="ScraperAPIRowDeleting" msprop:Generator_RowChangingName="ScraperAPIRowChanging" msprop:Generator_RowEvHandlerName="ScraperAPIRowChangeEventHandler" msprop:Generator_RowDeletedName="ScraperAPIRowDeleted" msprop:Generator_UserTableName="ScraperAPI" msprop:Generator_RowChangedName="ScraperAPIRowChanged" msprop:Generator_RowEvArgName="ScraperAPIRowChangeEvent" msprop:Generator_RowClassName="ScraperAPIRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScraperName" msprop:Generator_ColumnVarNameInTable="columnScraperName" msprop:Generator_ColumnPropNameInRow="ScraperName" msprop:Generator_ColumnPropNameInTable="ScraperNameColumn" msprop:Generator_UserColumnName="ScraperName" type="xs:string" minOccurs="0" />
+              <xs:element name="Url" msprop:Generator_ColumnVarNameInTable="columnUrl" msprop:Generator_ColumnPropNameInRow="Url" msprop:Generator_ColumnPropNameInTable="UrlColumn" msprop:Generator_UserColumnName="Url" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="APIMethods" msprop:Generator_TableClassName="APIMethodsDataTable" msprop:Generator_TableVarName="tableAPIMethods" msprop:Generator_TablePropName="APIMethods" msprop:Generator_RowDeletingName="APIMethodsRowDeleting" msprop:Generator_RowChangingName="APIMethodsRowChanging" msprop:Generator_RowEvHandlerName="APIMethodsRowChangeEventHandler" msprop:Generator_RowDeletedName="APIMethodsRowDeleted" msprop:Generator_UserTableName="APIMethods" msprop:Generator_RowChangedName="APIMethodsRowChanged" msprop:Generator_RowEvArgName="APIMethodsRowChangeEvent" msprop:Generator_RowClassName="APIMethodsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScraperName" msprop:Generator_ColumnVarNameInTable="columnScraperName" msprop:Generator_ColumnPropNameInRow="ScraperName" msprop:Generator_ColumnPropNameInTable="ScraperNameColumn" msprop:Generator_UserColumnName="ScraperName" type="xs:string" minOccurs="0" />
+              <xs:element name="Method" msprop:Generator_ColumnVarNameInTable="columnMethod" msprop:Generator_ColumnPropNameInRow="Method" msprop:Generator_ColumnPropNameInTable="MethodColumn" msprop:Generator_UserColumnName="Method" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MethodParams" msprop:Generator_TableClassName="MethodParamsDataTable" msprop:Generator_TableVarName="tableMethodParams" msprop:Generator_TablePropName="MethodParams" msprop:Generator_RowDeletingName="MethodParamsRowDeleting" msprop:Generator_RowChangingName="MethodParamsRowChanging" msprop:Generator_RowEvHandlerName="MethodParamsRowChangeEventHandler" msprop:Generator_RowDeletedName="MethodParamsRowDeleted" msprop:Generator_UserTableName="MethodParams" msprop:Generator_RowChangedName="MethodParamsRowChanged" msprop:Generator_RowEvArgName="MethodParamsRowChangeEvent" msprop:Generator_RowClassName="MethodParamsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScraperName" msprop:Generator_ColumnVarNameInTable="columnScraperName" msprop:Generator_ColumnPropNameInRow="ScraperName" msprop:Generator_ColumnPropNameInTable="ScraperNameColumn" msprop:Generator_UserColumnName="ScraperName" type="xs:string" minOccurs="0" />
+              <xs:element name="Method" msprop:Generator_ColumnVarNameInTable="columnMethod" msprop:Generator_ColumnPropNameInRow="Method" msprop:Generator_ColumnPropNameInTable="MethodColumn" msprop:Generator_UserColumnName="Method" type="xs:string" minOccurs="0" />
+              <xs:element name="Param" msprop:Generator_ColumnVarNameInTable="columnParam" msprop:Generator_ColumnPropNameInRow="Param" msprop:Generator_ColumnPropNameInTable="ParamColumn" msprop:Generator_UserColumnName="Param" type="xs:string" minOccurs="0" />
+              <xs:element name="ParamOrder" msprop:Generator_ColumnVarNameInTable="columnParamOrder" msprop:Generator_ColumnPropNameInRow="ParamOrder" msprop:Generator_ColumnPropNameInTable="ParamOrderColumn" msprop:Generator_UserColumnName="ParamOrder" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MainConfig" msprop:Generator_TableClassName="MainConfigDataTable" msprop:Generator_TableVarName="tableMainConfig" msprop:Generator_TablePropName="MainConfig" msprop:Generator_RowDeletingName="MainConfigRowDeleting" msprop:Generator_RowChangingName="MainConfigRowChanging" msprop:Generator_RowEvHandlerName="MainConfigRowChangeEventHandler" msprop:Generator_RowDeletedName="MainConfigRowDeleted" msprop:Generator_UserTableName="MainConfig" msprop:Generator_RowChangedName="MainConfigRowChanged" msprop:Generator_RowEvArgName="MainConfigRowChangeEvent" msprop:Generator_RowClassName="MainConfigRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Scraper" msprop:Generator_ColumnVarNameInTable="columnScraper" msprop:Generator_ColumnPropNameInRow="Scraper" msprop:Generator_ColumnPropNameInTable="ScraperColumn" msprop:Generator_UserColumnName="Scraper" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="ScraperAPI_APIMethods" msdata:parent="ScraperAPI" msdata:child="APIMethods" msdata:parentkey="ScraperName" msdata:childkey="ScraperName" msprop:Generator_UserChildTable="APIMethods" msprop:Generator_ChildPropName="GetAPIMethodsRows" msprop:Generator_UserRelationName="ScraperAPI_APIMethods" msprop:Generator_ParentPropName="ScraperAPIRow" msprop:Generator_RelationVarName="relationScraperAPI_APIMethods" msprop:Generator_UserParentTable="ScraperAPI" />
+      <msdata:Relationship name="APIMethods_MethodParams" msdata:parent="APIMethods" msdata:child="MethodParams" msdata:parentkey="ScraperName Method" msdata:childkey="ScraperName Method" msprop:Generator_UserChildTable="MethodParams" msprop:Generator_ChildPropName="GetMethodParamsRows" msprop:Generator_UserRelationName="APIMethods_MethodParams" msprop:Generator_ParentPropName="APIMethodsRowParent" msprop:Generator_RelationVarName="relationAPIMethods_MethodParams" msprop:Generator_UserParentTable="APIMethods" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

@@ -500,6 +500,12 @@ Partial Public Class Configs
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByScraperName(ByVal ScraperName As String) As ScraperAPIRow
+            Return CType(Me.Rows.Find(New Object() {ScraperName}),ScraperAPIRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As ScraperAPIDataTable = CType(MyBase.Clone,ScraperAPIDataTable)
             cln.InitVars
@@ -526,6 +532,9 @@ Partial Public Class Configs
             MyBase.Columns.Add(Me.columnScraperName)
             Me.columnUrl = New Global.System.Data.DataColumn("Url", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUrl)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnScraperName}, true))
+            Me.columnScraperName.AllowDBNull = false
+            Me.columnScraperName.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -768,6 +777,12 @@ Partial Public Class Configs
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByScraperNameMethod(ByVal ScraperName As String, ByVal Method As String) As APIMethodsRow
+            Return CType(Me.Rows.Find(New Object() {ScraperName, Method}),APIMethodsRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As APIMethodsDataTable = CType(MyBase.Clone,APIMethodsDataTable)
             cln.InitVars
@@ -794,6 +809,9 @@ Partial Public Class Configs
             MyBase.Columns.Add(Me.columnScraperName)
             Me.columnMethod = New Global.System.Data.DataColumn("Method", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMethod)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnScraperName, Me.columnMethod}, true))
+            Me.columnScraperName.AllowDBNull = false
+            Me.columnMethod.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1053,6 +1071,12 @@ Partial Public Class Configs
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByScraperNameMethodParam(ByVal ScraperName As String, ByVal Method As String, ByVal Param As String) As MethodParamsRow
+            Return CType(Me.Rows.Find(New Object() {ScraperName, Method, Param}),MethodParamsRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As MethodParamsDataTable = CType(MyBase.Clone,MethodParamsDataTable)
             cln.InitVars
@@ -1085,6 +1109,10 @@ Partial Public Class Configs
             MyBase.Columns.Add(Me.columnParam)
             Me.columnParamOrder = New Global.System.Data.DataColumn("ParamOrder", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnParamOrder)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnScraperName, Me.columnMethod, Me.columnParam}, true))
+            Me.columnScraperName.AllowDBNull = false
+            Me.columnMethod.AllowDBNull = false
+            Me.columnParam.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1485,11 +1513,7 @@ Partial Public Class Configs
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ScraperName() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableScraperAPI.ScraperNameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ScraperName' in table 'ScraperAPI' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableScraperAPI.ScraperNameColumn),String)
             End Get
             Set
                 Me(Me.tableScraperAPI.ScraperNameColumn) = value
@@ -1510,18 +1534,6 @@ Partial Public Class Configs
                 Me(Me.tableScraperAPI.UrlColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsScraperNameNull() As Boolean
-            Return Me.IsNull(Me.tableScraperAPI.ScraperNameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetScraperNameNull()
-            Me(Me.tableScraperAPI.ScraperNameColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1565,11 +1577,7 @@ Partial Public Class Configs
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ScraperName() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableAPIMethods.ScraperNameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ScraperName' in table 'APIMethods' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAPIMethods.ScraperNameColumn),String)
             End Get
             Set
                 Me(Me.tableAPIMethods.ScraperNameColumn) = value
@@ -1580,11 +1588,7 @@ Partial Public Class Configs
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Method() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableAPIMethods.MethodColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Method' in table 'APIMethods' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAPIMethods.MethodColumn),String)
             End Get
             Set
                 Me(Me.tableAPIMethods.MethodColumn) = value
@@ -1601,30 +1605,6 @@ Partial Public Class Configs
                 Me.SetParentRow(value, Me.Table.ParentRelations("ScraperAPI_APIMethods"))
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsScraperNameNull() As Boolean
-            Return Me.IsNull(Me.tableAPIMethods.ScraperNameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetScraperNameNull()
-            Me(Me.tableAPIMethods.ScraperNameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsMethodNull() As Boolean
-            Return Me.IsNull(Me.tableAPIMethods.MethodColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetMethodNull()
-            Me(Me.tableAPIMethods.MethodColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1656,11 +1636,7 @@ Partial Public Class Configs
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ScraperName() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableMethodParams.ScraperNameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ScraperName' in table 'MethodParams' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableMethodParams.ScraperNameColumn),String)
             End Get
             Set
                 Me(Me.tableMethodParams.ScraperNameColumn) = value
@@ -1671,11 +1647,7 @@ Partial Public Class Configs
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Method() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableMethodParams.MethodColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Method' in table 'MethodParams' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableMethodParams.MethodColumn),String)
             End Get
             Set
                 Me(Me.tableMethodParams.MethodColumn) = value
@@ -1686,11 +1658,7 @@ Partial Public Class Configs
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Param() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableMethodParams.ParamColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Param' in table 'MethodParams' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableMethodParams.ParamColumn),String)
             End Get
             Set
                 Me(Me.tableMethodParams.ParamColumn) = value
@@ -1722,42 +1690,6 @@ Partial Public Class Configs
                 Me.SetParentRow(value, Me.Table.ParentRelations("APIMethods_MethodParams"))
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsScraperNameNull() As Boolean
-            Return Me.IsNull(Me.tableMethodParams.ScraperNameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetScraperNameNull()
-            Me(Me.tableMethodParams.ScraperNameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsMethodNull() As Boolean
-            Return Me.IsNull(Me.tableMethodParams.MethodColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetMethodNull()
-            Me(Me.tableMethodParams.MethodColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsParamNull() As Boolean
-            Return Me.IsNull(Me.tableMethodParams.ParamColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetParamNull()
-            Me(Me.tableMethodParams.ParamColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _

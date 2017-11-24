@@ -26,9 +26,7 @@ Partial Class DevToolsContainerControl
         Me.StepsProgressBar = New System.Windows.Forms.ProgressBar()
         Me.HeaderLabel = New System.Windows.Forms.Label()
         Me.ActionFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.JSonToDataTableButton = New System.Windows.Forms.Button()
-        Me.VisualControlsTestButton = New System.Windows.Forms.Button()
-        Me.CheckAlreadyAvailableMediaButton = New System.Windows.Forms.Button()
+        Me.MainConfigButton = New System.Windows.Forms.Button()
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.ActionFlowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -80,47 +78,23 @@ Partial Class DevToolsContainerControl
         'ActionFlowLayoutPanel
         '
         Me.ActionFlowLayoutPanel.BackColor = System.Drawing.Color.White
-        Me.ActionFlowLayoutPanel.Controls.Add(Me.JSonToDataTableButton)
-        Me.ActionFlowLayoutPanel.Controls.Add(Me.VisualControlsTestButton)
-        Me.ActionFlowLayoutPanel.Controls.Add(Me.CheckAlreadyAvailableMediaButton)
+        Me.ActionFlowLayoutPanel.Controls.Add(Me.MainConfigButton)
         Me.ActionFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ActionFlowLayoutPanel.Location = New System.Drawing.Point(3, 33)
         Me.ActionFlowLayoutPanel.Name = "ActionFlowLayoutPanel"
         Me.ActionFlowLayoutPanel.Size = New System.Drawing.Size(872, 751)
         Me.ActionFlowLayoutPanel.TabIndex = 2
         '
-        'JSonToDataTableButton
+        'MainConfigButton
         '
-        Me.JSonToDataTableButton.AutoSize = True
-        Me.JSonToDataTableButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.JSonToDataTableButton.Location = New System.Drawing.Point(3, 3)
-        Me.JSonToDataTableButton.Name = "JSonToDataTableButton"
-        Me.JSonToDataTableButton.Size = New System.Drawing.Size(201, 26)
-        Me.JSonToDataTableButton.TabIndex = 0
-        Me.JSonToDataTableButton.Text = "Create DataTable from JSon Result "
-        Me.JSonToDataTableButton.UseVisualStyleBackColor = True
-        '
-        'VisualControlsTestButton
-        '
-        Me.VisualControlsTestButton.AutoSize = True
-        Me.VisualControlsTestButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VisualControlsTestButton.Location = New System.Drawing.Point(210, 3)
-        Me.VisualControlsTestButton.Name = "VisualControlsTestButton"
-        Me.VisualControlsTestButton.Size = New System.Drawing.Size(201, 26)
-        Me.VisualControlsTestButton.TabIndex = 1
-        Me.VisualControlsTestButton.Text = "Visual Controls Tests"
-        Me.VisualControlsTestButton.UseVisualStyleBackColor = True
-        '
-        'CheckAlreadyAvailableMediaButton
-        '
-        Me.CheckAlreadyAvailableMediaButton.AutoSize = True
-        Me.CheckAlreadyAvailableMediaButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckAlreadyAvailableMediaButton.Location = New System.Drawing.Point(417, 3)
-        Me.CheckAlreadyAvailableMediaButton.Name = "CheckAlreadyAvailableMediaButton"
-        Me.CheckAlreadyAvailableMediaButton.Size = New System.Drawing.Size(201, 26)
-        Me.CheckAlreadyAvailableMediaButton.TabIndex = 2
-        Me.CheckAlreadyAvailableMediaButton.Text = "Check Already  Available Media"
-        Me.CheckAlreadyAvailableMediaButton.UseVisualStyleBackColor = True
+        Me.MainConfigButton.AutoSize = True
+        Me.MainConfigButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainConfigButton.Location = New System.Drawing.Point(3, 3)
+        Me.MainConfigButton.Name = "MainConfigButton"
+        Me.MainConfigButton.Size = New System.Drawing.Size(201, 26)
+        Me.MainConfigButton.TabIndex = 3
+        Me.MainConfigButton.Text = "Main Config"
+        Me.MainConfigButton.UseVisualStyleBackColor = True
         '
         'DevToolsContainerControl
         '
@@ -142,7 +116,5 @@ Partial Class DevToolsContainerControl
     Friend WithEvents StepsProgressBar As ProgressBar
     Friend WithEvents HeaderLabel As Label
     Friend WithEvents ActionFlowLayoutPanel As FlowLayoutPanel
-    Friend WithEvents JSonToDataTableButton As Button
-    Friend WithEvents VisualControlsTestButton As Button
-    Friend WithEvents CheckAlreadyAvailableMediaButton As Button
+    Friend WithEvents MainConfigButton As Button
 End Class

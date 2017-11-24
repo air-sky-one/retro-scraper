@@ -43,6 +43,20 @@ Public Class AppGlobals
 
 #End Region
 
+#Region "Main Application Config"
+
+    ''' <summary>
+    ''' Main config File for application
+    ''' </summary>
+    Public Shared mainConfigFile As String = Application.StartupPath & "\Config\config.xml"
+
+    ''' <summary>
+    ''' MainConfig Container Object
+    ''' </summary>
+    Public Shared MainConfig As New Configs
+
+#End Region
+
 #Region "Logs"
 
     ''' <summary>

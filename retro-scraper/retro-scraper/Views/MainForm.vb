@@ -32,6 +32,8 @@ Public Class MainForm
         Try
             MainInit()
 
+            ApplicationHelper.LoadApplicationConfig()
+
             'Licence Check
             If Not IsLicenceFileOK() Then Throw New Exception("Licence file is missing or invalid.")
 

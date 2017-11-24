@@ -202,28 +202,16 @@
     <Compile Include="Views\Custom Controls\Analysis\AnalysisContainerControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\DevTools\CheckAlreadyAvailableMediaForm.Designer.vb">
-      <DependentUpon>CheckAlreadyAvailableMediaForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Custom Controls\DevTools\CheckAlreadyAvailableMediaForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Views\Custom Controls\DevTools\DevToolsContainerControl.Designer.vb">
       <DependentUpon>DevToolsContainerControl.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Custom Controls\DevTools\DevToolsContainerControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Custom Controls\DevTools\JSonToDataTableForm.Designer.vb">
-      <DependentUpon>JSonToDataTableForm.vb</DependentUpon>
+    <Compile Include="Views\Custom Controls\DevTools\MainConfigForm.Designer.vb">
+      <DependentUpon>MainConfigForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Custom Controls\DevTools\JSonToDataTableForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Custom Controls\DevTools\VisualControlsTestsForm.Designer.vb">
-      <DependentUpon>VisualControlsTestsForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Custom Controls\DevTools\VisualControlsTestsForm.vb">
+    <Compile Include="Views\Custom Controls\DevTools\MainConfigForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Custom Controls\HomeControl.Designer.vb">
@@ -372,17 +360,11 @@
     <EmbeddedResource Include="Views\Custom Controls\Analysis\AnalysisContainerControl.resx">
       <DependentUpon>AnalysisContainerControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\DevTools\CheckAlreadyAvailableMediaForm.resx">
-      <DependentUpon>CheckAlreadyAvailableMediaForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\DevTools\DevToolsContainerControl.resx">
       <DependentUpon>DevToolsContainerControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\DevTools\JSonToDataTableForm.resx">
-      <DependentUpon>JSonToDataTableForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Custom Controls\DevTools\VisualControlsTestsForm.resx">
-      <DependentUpon>VisualControlsTestsForm.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Custom Controls\DevTools\MainConfigForm.resx">
+      <DependentUpon>MainConfigForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
       <DependentUpon>HomeControl.vb</DependentUpon>

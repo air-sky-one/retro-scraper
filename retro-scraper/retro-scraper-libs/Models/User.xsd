@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="User" targetNamespace="http://tempuri.org/User.xsd" xmlns:mstns="http://tempuri.org/User.xsd" xmlns="http://tempuri.org/User.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="User" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="User" msprop:Generator_UserDSName="User">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SSUser" msprop:Generator_TableClassName="SSUSerDataTable" msprop:Generator_TableVarName="tableSSUSer" msprop:Generator_TablePropName="SSUSer" msprop:Generator_RowDeletingName="SSUSerRowDeleting" msprop:Generator_RowChangingName="SSUSerRowChanging" msprop:Generator_RowEvHandlerName="SSUSerRowChangeEventHandler" msprop:Generator_RowDeletedName="SSUSerRowDeleted" msprop:Generator_UserTableName="SSUser" msprop:Generator_RowChangedName="SSUSerRowChanged" msprop:Generator_RowEvArgName="SSUSerRowChangeEvent" msprop:Generator_RowClassName="SSUSerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="login" msprop:Generator_ColumnVarNameInTable="columnlogin" msprop:Generator_ColumnPropNameInRow="login" msprop:Generator_ColumnPropNameInTable="loginColumn" msprop:Generator_UserColumnName="login" type="xs:string" minOccurs="0" />
+              <xs:element name="password" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_UserColumnName="password" type="xs:string" minOccurs="0" />
+              <xs:element name="niveau" msprop:Generator_ColumnVarNameInTable="columnniveau" msprop:Generator_ColumnPropNameInRow="niveau" msprop:Generator_ColumnPropNameInTable="niveauColumn" msprop:Generator_UserColumnName="niveau" type="xs:int" minOccurs="0" />
+              <xs:element name="ApplicationMode" msprop:Generator_ColumnVarNameInTable="columnApplicationMode" msprop:Generator_ColumnPropNameInRow="ApplicationMode" msprop:Generator_ColumnPropNameInTable="ApplicationModeColumn" msprop:Generator_UserColumnName="ApplicationMode" type="xs:string" default="AttractMode" minOccurs="0" />
+              <xs:element name="contribution" msprop:Generator_ColumnVarNameInTable="columncontribution" msprop:Generator_ColumnPropNameInRow="contribution" msprop:Generator_ColumnPropNameInTable="contributionColumn" msprop:Generator_UserColumnName="contribution" type="xs:int" minOccurs="0" />
+              <xs:element name="uploadsysteme" msprop:Generator_ColumnVarNameInTable="columnuploadsysteme" msprop:Generator_ColumnPropNameInRow="uploadsysteme" msprop:Generator_ColumnPropNameInTable="uploadsystemeColumn" msprop:Generator_UserColumnName="uploadsysteme" type="xs:int" minOccurs="0" />
+              <xs:element name="uploadinfos" msprop:Generator_ColumnVarNameInTable="columnuploadinfos" msprop:Generator_ColumnPropNameInRow="uploadinfos" msprop:Generator_ColumnPropNameInTable="uploadinfosColumn" msprop:Generator_UserColumnName="uploadinfos" type="xs:int" minOccurs="0" />
+              <xs:element name="romasso" msprop:Generator_ColumnVarNameInTable="columnromasso" msprop:Generator_ColumnPropNameInRow="romasso" msprop:Generator_ColumnPropNameInTable="romassoColumn" msprop:Generator_UserColumnName="romasso" type="xs:int" minOccurs="0" />
+              <xs:element name="uploadmedia" msprop:Generator_ColumnVarNameInTable="columnuploadmedia" msprop:Generator_ColumnPropNameInRow="uploadmedia" msprop:Generator_ColumnPropNameInTable="uploadmediaColumn" msprop:Generator_UserColumnName="uploadmedia" type="xs:int" minOccurs="0" />
+              <xs:element name="maxthreads" msprop:Generator_ColumnVarNameInTable="columnmaxthreads" msprop:Generator_ColumnPropNameInRow="maxthreads" msprop:Generator_ColumnPropNameInTable="maxthreadsColumn" msprop:Generator_UserColumnName="maxthreads" type="xs:int" minOccurs="0" />
+              <xs:element name="maxdownloadspeed" msprop:Generator_ColumnVarNameInTable="columnmaxdownloadspeed" msprop:Generator_ColumnPropNameInRow="maxdownloadspeed" msprop:Generator_ColumnPropNameInTable="maxdownloadspeedColumn" msprop:Generator_UserColumnName="maxdownloadspeed" type="xs:int" minOccurs="0" />
+              <xs:element name="visites" msprop:Generator_ColumnVarNameInTable="columnvisites" msprop:Generator_ColumnPropNameInRow="visites" msprop:Generator_ColumnPropNameInTable="visitesColumn" msprop:Generator_UserColumnName="visites" type="xs:int" minOccurs="0" />
+              <xs:element name="datedernierevisite" msprop:Generator_ColumnVarNameInTable="columndatedernierevisite" msprop:Generator_ColumnPropNameInRow="datedernierevisite" msprop:Generator_ColumnPropNameInTable="datedernierevisiteColumn" msprop:Generator_UserColumnName="datedernierevisite" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="favregion" msprop:Generator_ColumnVarNameInTable="columnfavregion" msprop:Generator_ColumnPropNameInRow="favregion" msprop:Generator_ColumnPropNameInTable="favregionColumn" msprop:Generator_UserColumnName="favregion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

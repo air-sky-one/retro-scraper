@@ -156,7 +156,7 @@ Public Class _5_RomsLoadingProcessControl
 
                             ' TODO make an option to add to romlist games not found on the romlist
                             ' add games to list even they are in error to get them in the romlist
-                            If Me._parent.IsRomListNewFile Then
+                            If Me._parent.IsIncludeNotFoundGames Then
                                 rom.nom_us = rom.filename
                                 rom.nom_jp = rom.filename
                                 rom.nom_wor = rom.filename

@@ -36,6 +36,21 @@
     End Sub
 
     ''' <summary>
+    ''' Indicate if the rom/iso's files whiche were not found on screenscraper have to be included in the romlist
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub IncludeGamesNotFoundCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles IncludeGamesNotFoundCheckBox.CheckedChanged
+        If Me._parent IsNot Nothing Then
+            If Me.IncludeGamesNotFoundCheckBox.Checked = True Then
+                Me._parent.IsIncludeNotFoundGames = True
+            Else
+                Me._parent.IsIncludeNotFoundGames = False
+            End If
+        End If
+    End Sub
+
+    ''' <summary>
     ''' Choice made by radio button : (un)display the folder path selector
     ''' </summary>
     ''' <param name="sender"></param>

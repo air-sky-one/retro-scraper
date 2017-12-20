@@ -153,6 +153,19 @@
     End Property
 
     ''' <summary>
+    ''' Indicate if the rom/iso's files whiche were not found on screenscraper have to be included in the romlist
+    ''' </summary>
+    Private _isIncludeNotFoundGames As Boolean = True
+    Public Property IsIncludeNotFoundGames() As Boolean
+        Get
+            Return _isIncludeNotFoundGames
+        End Get
+        Set(ByVal value As Boolean)
+            _isIncludeNotFoundGames = value
+        End Set
+    End Property
+
+    ''' <summary>
     ''' Indicates if the romlist file has to be a new one or if the user wants to update an already existing one
     ''' </summary>
     Private _isRomlistNewfile As Boolean = True

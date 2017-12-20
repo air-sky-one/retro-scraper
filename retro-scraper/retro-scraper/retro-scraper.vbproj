@@ -123,6 +123,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Globals\AppGlobals.vb" />
     <Compile Include="Helpers\ApplicationHelper.vb" />
     <Compile Include="Helpers\FileHelper.vb" />
@@ -212,6 +213,12 @@
       <DependentUpon>MainConfigForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Custom Controls\DevTools\MainConfigForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Custom Controls\DevTools\RescrapRomlistFileForm.Designer.vb">
+      <DependentUpon>RescrapRomlistFileForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom Controls\DevTools\RescrapRomlistFileForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Custom Controls\HomeControl.Designer.vb">
@@ -365,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\DevTools\MainConfigForm.resx">
       <DependentUpon>MainConfigForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom Controls\DevTools\RescrapRomlistFileForm.resx">
+      <DependentUpon>RescrapRomlistFileForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Custom Controls\HomeControl.resx">
       <DependentUpon>HomeControl.vb</DependentUpon>

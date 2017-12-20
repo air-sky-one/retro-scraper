@@ -140,6 +140,19 @@
     Private _romListChoice As New _4_RomListChoiceControl
 
     ''' <summary>
+    ''' Indicates if the game's title should use the associated rom/iso's filename
+    ''' </summary>
+    Private _isUseFileNameForGameTitle As Boolean = True
+    Public Property IsUseFileNameForGameTitle() As Boolean
+        Get
+            Return _isUseFileNameForGameTitle
+        End Get
+        Set(ByVal value As Boolean)
+            _isUseFileNameForGameTitle = value
+        End Set
+    End Property
+
+    ''' <summary>
     ''' Indicates if the romlist file has to be a new one or if the user wants to update an already existing one
     ''' </summary>
     Private _isRomlistNewfile As Boolean = True
@@ -590,7 +603,11 @@
         End If
 
         ' Upgrade actual step
-        Me._actualStep = Me._actualStep + 1
+        If Me._actualStep = Steps.BuildScrapingGamesSelection And Me.IsUseFileNameForGameTitle = True Then
+            Me._actualStep = Me._actualStep + 2
+        Else
+            Me._actualStep = Me._actualStep + 1
+        End If
 
         ' Prev/Next buttons
         Me.DisplayStepsButtons()
@@ -611,7 +628,11 @@
         End If
 
         ' Upgrade actual step
-        Me._actualStep = Me._actualStep - 1
+        If Me._actualStep = Steps.BuildScrapingDate And Me.IsUseFileNameForGameTitle = True Then
+            Me._actualStep = Me._actualStep - 2
+        Else
+            Me._actualStep = Me._actualStep - 1
+        End If
 
         If Me._actualStep = Steps.LoadingProcess Or Me._actualStep >= Steps.Download Then Me._actualStep = Steps.RomListFile
 

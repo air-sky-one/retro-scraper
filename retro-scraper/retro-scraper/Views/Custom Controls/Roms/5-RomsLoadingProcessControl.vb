@@ -153,6 +153,18 @@ Public Class _5_RomsLoadingProcessControl
                             Me._parent.RomsDataErrors.AddErrorsSSRomsLoadingRow(err)
 
                             AddLogs(New Exception("Error retrieving data from screenscraper.fr for : " & rom.filename & " with return : " & json))
+
+                            ' TODO make an option to add to romlist games not found on the romlist
+                            ' add games to list even they are in error to get them in the romlist
+                            If Me._parent.IsRomListNewFile Then
+                                rom.nom_us = rom.filename
+                                rom.nom_jp = rom.filename
+                                rom.nom_wor = rom.filename
+                                rom.nom_eu = rom.filename
+
+                                Me._parent.RomsData.AddSSRomsRow(rom)
+                            End If
+
                         End If
                     End If
 
@@ -184,29 +196,36 @@ Public Class _5_RomsLoadingProcessControl
 
             For Each s As JToken In o.SelectToken("response.jeu")
                 'nom
-                GetData(o, rom.nom_us, "response.jeu.noms.nom_us")
-                GetData(o, rom.nom_jp, "response.jeu.noms.nom_jp")
-                GetData(o, rom.nom_wor, "response.jeu.noms.nom_wor")
-                GetData(o, rom.nom_eu, "response.jeu.noms.nom_eu")
-
-                If rom.nom_us = String.Empty _
-                   And rom.nom_jp = String.Empty _
-                   And rom.nom_wor = String.Empty _
-                   And rom.nom_eu = String.Empty Then
-
-                    GetData(o, rom.nom_us, "response.jeu.nom")
-                    GetData(o, rom.nom_jp, "response.jeu.nom")
-                    GetData(o, rom.nom_wor, "response.jeu.nom")
-                    GetData(o, rom.nom_eu, "response.jeu.nom")
+                If Me._parent.IsUseFileNameForGameTitle = True Then
+                    rom.nom_us = rom.filename
+                    rom.nom_jp = rom.filename
+                    rom.nom_wor = rom.filename
+                    rom.nom_eu = rom.filename
+                Else
+                    GetData(o, rom.nom_us, "response.jeu.noms.nom_us")
+                    GetData(o, rom.nom_jp, "response.jeu.noms.nom_jp")
+                    GetData(o, rom.nom_wor, "response.jeu.noms.nom_wor")
+                    GetData(o, rom.nom_eu, "response.jeu.noms.nom_eu")
 
                     If rom.nom_us = String.Empty _
                        And rom.nom_jp = String.Empty _
                        And rom.nom_wor = String.Empty _
                        And rom.nom_eu = String.Empty Then
 
-                        rom.nom_jp = rom.filename
-                        rom.nom_wor = rom.filename
-                        rom.nom_eu = rom.filename
+                        GetData(o, rom.nom_us, "response.jeu.nom")
+                        GetData(o, rom.nom_jp, "response.jeu.nom")
+                        GetData(o, rom.nom_wor, "response.jeu.nom")
+                        GetData(o, rom.nom_eu, "response.jeu.nom")
+
+                        If rom.nom_us = String.Empty _
+                           And rom.nom_jp = String.Empty _
+                           And rom.nom_wor = String.Empty _
+                           And rom.nom_eu = String.Empty Then
+
+                            rom.nom_jp = rom.filename
+                            rom.nom_wor = rom.filename
+                            rom.nom_eu = rom.filename
+                        End If
                     End If
                 End If
 

@@ -27,6 +27,7 @@ Partial Class DevToolsContainerControl
         Me.HeaderLabel = New System.Windows.Forms.Label()
         Me.ActionFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.MainConfigButton = New System.Windows.Forms.Button()
+        Me.RescrapRomlistFileButton = New System.Windows.Forms.Button()
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.ActionFlowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -79,6 +80,7 @@ Partial Class DevToolsContainerControl
         '
         Me.ActionFlowLayoutPanel.BackColor = System.Drawing.Color.White
         Me.ActionFlowLayoutPanel.Controls.Add(Me.MainConfigButton)
+        Me.ActionFlowLayoutPanel.Controls.Add(Me.RescrapRomlistFileButton)
         Me.ActionFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ActionFlowLayoutPanel.Location = New System.Drawing.Point(3, 33)
         Me.ActionFlowLayoutPanel.Name = "ActionFlowLayoutPanel"
@@ -95,6 +97,17 @@ Partial Class DevToolsContainerControl
         Me.MainConfigButton.TabIndex = 3
         Me.MainConfigButton.Text = "Main Config"
         Me.MainConfigButton.UseVisualStyleBackColor = True
+        '
+        'RescrapRomlistFileButton
+        '
+        Me.RescrapRomlistFileButton.AutoSize = True
+        Me.RescrapRomlistFileButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RescrapRomlistFileButton.Location = New System.Drawing.Point(210, 3)
+        Me.RescrapRomlistFileButton.Name = "RescrapRomlistFileButton"
+        Me.RescrapRomlistFileButton.Size = New System.Drawing.Size(201, 26)
+        Me.RescrapRomlistFileButton.TabIndex = 4
+        Me.RescrapRomlistFileButton.Text = "Rescrap Romlist file"
+        Me.RescrapRomlistFileButton.UseVisualStyleBackColor = True
         '
         'DevToolsContainerControl
         '
@@ -117,4 +130,5 @@ Partial Class DevToolsContainerControl
     Friend WithEvents HeaderLabel As Label
     Friend WithEvents ActionFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents MainConfigButton As Button
+    Friend WithEvents RescrapRomlistFileButton As Button
 End Class

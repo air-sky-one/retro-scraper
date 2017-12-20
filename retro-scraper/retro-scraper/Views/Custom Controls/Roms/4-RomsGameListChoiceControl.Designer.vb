@@ -31,6 +31,7 @@ Partial Class _4_RomListChoiceControl
         Me.FolderPathTextBox = New System.Windows.Forms.TextBox()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.RomlistFileBrowserDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.UseFilenameForTitleCheckBox = New System.Windows.Forms.CheckBox()
         Me.ActionPanel.SuspendLayout()
         Me.ChoiceFlowLayoutPanel.SuspendLayout()
         Me.FolderPathPanel.SuspendLayout()
@@ -44,19 +45,20 @@ Partial Class _4_RomListChoiceControl
         Me.ActionPanel.Location = New System.Drawing.Point(0, 0)
         Me.ActionPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.ActionPanel.Name = "ActionPanel"
-        Me.ActionPanel.Size = New System.Drawing.Size(878, 128)
+        Me.ActionPanel.Size = New System.Drawing.Size(878, 155)
         Me.ActionPanel.TabIndex = 8
         '
         'ChoiceFlowLayoutPanel
         '
         Me.ChoiceFlowLayoutPanel.AutoSize = True
+        Me.ChoiceFlowLayoutPanel.Controls.Add(Me.UseFilenameForTitleCheckBox)
         Me.ChoiceFlowLayoutPanel.Controls.Add(Me.NewFileRadioButton)
         Me.ChoiceFlowLayoutPanel.Controls.Add(Me.UpdateFileRadioButton)
         Me.ChoiceFlowLayoutPanel.Controls.Add(Me.FolderPathPanel)
         Me.ChoiceFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.ChoiceFlowLayoutPanel.Location = New System.Drawing.Point(20, 38)
         Me.ChoiceFlowLayoutPanel.Name = "ChoiceFlowLayoutPanel"
-        Me.ChoiceFlowLayoutPanel.Size = New System.Drawing.Size(861, 85)
+        Me.ChoiceFlowLayoutPanel.Size = New System.Drawing.Size(861, 110)
         Me.ChoiceFlowLayoutPanel.TabIndex = 5
         '
         'NewFileRadioButton
@@ -64,7 +66,7 @@ Partial Class _4_RomListChoiceControl
         Me.NewFileRadioButton.AutoSize = True
         Me.NewFileRadioButton.Checked = True
         Me.NewFileRadioButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NewFileRadioButton.Location = New System.Drawing.Point(3, 3)
+        Me.NewFileRadioButton.Location = New System.Drawing.Point(3, 29)
         Me.NewFileRadioButton.Name = "NewFileRadioButton"
         Me.NewFileRadioButton.Size = New System.Drawing.Size(173, 20)
         Me.NewFileRadioButton.TabIndex = 3
@@ -76,7 +78,7 @@ Partial Class _4_RomListChoiceControl
         '
         Me.UpdateFileRadioButton.AutoSize = True
         Me.UpdateFileRadioButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UpdateFileRadioButton.Location = New System.Drawing.Point(3, 29)
+        Me.UpdateFileRadioButton.Location = New System.Drawing.Point(3, 55)
         Me.UpdateFileRadioButton.Name = "UpdateFileRadioButton"
         Me.UpdateFileRadioButton.Size = New System.Drawing.Size(188, 20)
         Me.UpdateFileRadioButton.TabIndex = 4
@@ -87,7 +89,7 @@ Partial Class _4_RomListChoiceControl
         '
         Me.FolderPathPanel.Controls.Add(Me.FolderPathButton)
         Me.FolderPathPanel.Controls.Add(Me.FolderPathTextBox)
-        Me.FolderPathPanel.Location = New System.Drawing.Point(3, 55)
+        Me.FolderPathPanel.Location = New System.Drawing.Point(3, 81)
         Me.FolderPathPanel.Name = "FolderPathPanel"
         Me.FolderPathPanel.Size = New System.Drawing.Size(855, 26)
         Me.FolderPathPanel.TabIndex = 5
@@ -127,6 +129,20 @@ Partial Class _4_RomListChoiceControl
         Me.RomlistFileBrowserDialog.FileName = "romlist.txt"
         Me.RomlistFileBrowserDialog.Title = "Please select the desired romlist file you want to update"
         '
+        'UseFilenameForTitleCheckBox
+        '
+        Me.UseFilenameForTitleCheckBox.AutoSize = True
+        Me.UseFilenameForTitleCheckBox.Checked = True
+        Me.UseFilenameForTitleCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.UseFilenameForTitleCheckBox.Font = New System.Drawing.Font("Ubuntu Light", 8.25!)
+        Me.UseFilenameForTitleCheckBox.Location = New System.Drawing.Point(3, 3)
+        Me.UseFilenameForTitleCheckBox.Name = "UseFilenameForTitleCheckBox"
+        Me.UseFilenameForTitleCheckBox.Size = New System.Drawing.Size(495, 20)
+        Me.UseFilenameForTitleCheckBox.TabIndex = 7
+        Me.UseFilenameForTitleCheckBox.Text = "Use filename for game's title (HyperSpin naming convention is recommended for fil" &
+    "enames) "
+        Me.UseFilenameForTitleCheckBox.UseVisualStyleBackColor = True
+        '
         '_4_RomListChoiceControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -154,4 +170,5 @@ Partial Class _4_RomListChoiceControl
     Friend WithEvents FolderPathButton As Button
     Friend WithEvents FolderPathTextBox As TextBox
     Friend WithEvents RomlistFileBrowserDialog As OpenFileDialog
+    Friend WithEvents UseFilenameForTitleCheckBox As CheckBox
 End Class

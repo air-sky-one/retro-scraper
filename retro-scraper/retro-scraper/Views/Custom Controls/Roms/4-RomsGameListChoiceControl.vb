@@ -21,6 +21,21 @@
     End Sub
 
     ''' <summary>
+    ''' Indicate if the game's title will be the same as the associated rom/iso file
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub UseFilenameForTitleCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles UseFilenameForTitleCheckBox.CheckedChanged
+        If Me._parent IsNot Nothing Then
+            If Me.UseFilenameForTitleCheckBox.Checked = True Then
+                Me._parent.IsUseFileNameForGameTitle = True
+            Else
+                Me._parent.IsUseFileNameForGameTitle = False
+            End If
+        End If
+    End Sub
+
+    ''' <summary>
     ''' Choice made by radio button : (un)display the folder path selector
     ''' </summary>
     ''' <param name="sender"></param>

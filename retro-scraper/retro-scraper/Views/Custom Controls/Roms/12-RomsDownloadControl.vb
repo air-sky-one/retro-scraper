@@ -404,6 +404,7 @@ Public Class _12_RomsDownloadControl
                 If File.Exists(Me._parent.RomsPath & "\romlist.txt") Then File.Delete(Me._parent.RomsPath & "\romlist.txt")
                 File.WriteAllText(Me._parent.RomsPath & "\romlist.txt", romlistFileContent.ToString)
             Else
+                ' TODO : To improve to check doublons + to sort Title ASC
                 File.AppendAllText(Me._parent.RomsPath & "\romlist.txt", romlistFileContent.ToString)
             End If
 

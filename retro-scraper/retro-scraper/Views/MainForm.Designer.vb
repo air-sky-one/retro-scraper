@@ -31,7 +31,7 @@ Partial Class MainForm
         Me.MainButtonAnalysis = New System.Windows.Forms.Button()
         Me.MainButtonRoms = New System.Windows.Forms.Button()
         Me.MainButtonSystems = New System.Windows.Forms.Button()
-        Me.MainButtonGameLists = New System.Windows.Forms.Button()
+        Me.MainButtonRomlists = New System.Windows.Forms.Button()
         Me.MainButtonSettings = New System.Windows.Forms.Button()
         Me.MainButtonDevTools = New System.Windows.Forms.Button()
         Me.MainHomeControl = New retro_scraper.HomeControl()
@@ -85,7 +85,7 @@ Partial Class MainForm
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonAnalysis)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonRoms)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonSystems)
-        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonGameLists)
+        Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonRomlists)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonSettings)
         Me.MainMenuFlowLayoutPanel.Controls.Add(Me.MainButtonDevTools)
         Me.MainMenuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -164,23 +164,23 @@ Partial Class MainForm
         Me.MainButtonSystems.UseVisualStyleBackColor = False
         Me.MainButtonSystems.Visible = False
         '
-        'MainButtonGameLists
+        'MainButtonRomlists
         '
-        Me.MainButtonGameLists.BackColor = System.Drawing.Color.DimGray
-        Me.MainButtonGameLists.FlatAppearance.BorderSize = 0
-        Me.MainButtonGameLists.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
-        Me.MainButtonGameLists.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.MainButtonGameLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.MainButtonGameLists.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainButtonGameLists.Location = New System.Drawing.Point(0, 144)
-        Me.MainButtonGameLists.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainButtonGameLists.Name = "MainButtonGameLists"
-        Me.MainButtonGameLists.Size = New System.Drawing.Size(130, 36)
-        Me.MainButtonGameLists.TabIndex = 3
-        Me.MainButtonGameLists.Text = "   &GameLists"
-        Me.MainButtonGameLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MainButtonGameLists.UseVisualStyleBackColor = False
-        Me.MainButtonGameLists.Visible = False
+        Me.MainButtonRomlists.BackColor = System.Drawing.Color.DimGray
+        Me.MainButtonRomlists.FlatAppearance.BorderSize = 0
+        Me.MainButtonRomlists.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro
+        Me.MainButtonRomlists.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.MainButtonRomlists.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MainButtonRomlists.Font = New System.Drawing.Font("Ubuntu", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainButtonRomlists.Location = New System.Drawing.Point(0, 144)
+        Me.MainButtonRomlists.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainButtonRomlists.Name = "MainButtonRomlists"
+        Me.MainButtonRomlists.Size = New System.Drawing.Size(130, 36)
+        Me.MainButtonRomlists.TabIndex = 3
+        Me.MainButtonRomlists.Text = "   &Romlists"
+        Me.MainButtonRomlists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainButtonRomlists.UseVisualStyleBackColor = False
+        Me.MainButtonRomlists.Visible = False
         '
         'MainButtonSettings
         '
@@ -257,7 +257,7 @@ Partial Class MainForm
     Friend WithEvents MainMenuFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents MainButtonRoms As Button
     Friend WithEvents MainButtonSystems As Button
-    Friend WithEvents MainButtonGameLists As Button
+    Friend WithEvents MainButtonRomlists As Button
     Friend WithEvents MainButtonSettings As Button
     Friend WithEvents MainButtonHome As Button
     Friend WithEvents MainHomeControl As HomeControl

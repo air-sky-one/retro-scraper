@@ -76,8 +76,8 @@ Public Class MainForm
 #If DEBUG Then
             Me.MainButtonDevTools.Visible = True
             Me.MainButtonSystems.Visible = True
+            Me.MainButtonRomlists.Visible = True
             Me.MainButtonSettings.Visible = True
-            Me.MainButtonGameLists.Visible = True
 #End If
 
             Me._actualContent = Me.MainHomeControl
@@ -158,7 +158,7 @@ Public Class MainForm
                     c.Height = 787
 
                     Me._actualContent = c
-                Case "MainButtonGameLists"
+                Case "MainButtonRomlists"
                     Dim c As New RomsContainerControl
 
                     Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)

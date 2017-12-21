@@ -282,9 +282,6 @@ Public Class _12_RomsDownloadControl
 
                         AddLogs(New Exception("Error downloading data from screenscraper.fr for : " & game.filename & " with return : " & art.Name & " - Exception - " & ex.Message))
                     End Try
-
-                    game.isScraped = True
-
                 Next
 
                 Dim r As RomsDataSet.RomlistRow
@@ -292,10 +289,14 @@ Public Class _12_RomsDownloadControl
 
                 r.Name = game.filename
 
-                If game.is_nom_jp Then r.Title = game.nom_jp
-                If game.is_nom_us Then r.Title = game.nom_us
-                If game.is_nom_wor Then r.Title = game.nom_wor
-                If game.is_nom_eu Then r.Title = game.nom_eu
+                If Me._parent.IsUseFileNameForGameTitle Then
+                    r.Title = game.filename
+                Else
+                    If game.is_nom_jp Then r.Title = game.nom_jp
+                    If game.is_nom_us Then r.Title = game.nom_us
+                    If game.is_nom_wor Then r.Title = game.nom_wor
+                    If game.is_nom_eu Then r.Title = game.nom_eu
+                End If
 
                 r.Emulator = Me._parent.AttractModeSelectedSystem
 
@@ -328,8 +329,10 @@ Public Class _12_RomsDownloadControl
                 r.Extra = String.Empty
                 r.Buttons = String.Empty
 
+                game.isScraped = True
 
                 Me._parent.RomList.AddRomlistRow(r)
+
 
 
                 'media_screenshot
@@ -368,46 +371,56 @@ Public Class _12_RomsDownloadControl
                 'media_support2d_eu
             Next
 
-            Dim romlistFileContent As New StringBuilder
 
-            'header
-            If Me._parent.IsRomListNewFile Then
-                For Each c As DataColumn In Me._parent.RomList.Columns
-                    romlistFileContent.Append(c.ColumnName & ";")
-                Next
-                romlistFileContent.AppendLine()
+
+            ' Dim romlistFileContent As New StringBuilder
+
+            ''header
+            'If Me._parent.IsRomListNewFile Then
+            '    For Each c As DataColumn In Me._parent.RomList.Columns
+            '        romlistFileContent.Append(c.ColumnName & ";")
+            '    Next
+            '    romlistFileContent.AppendLine()
+            'End If
+
+            ''content
+            'For Each c As RomsDataSet.RomlistRow In Me._parent.RomList
+            '    romlistFileContent.Append(c.Name.ToString & ";")
+            '    romlistFileContent.Append(c.Title.ToString & ";")
+            '    romlistFileContent.Append(c.Emulator.ToString & ";")
+            '    romlistFileContent.Append(c.CloneOf.ToString & ";")
+            '    romlistFileContent.Append(c.Year.ToString & ";")
+            '    romlistFileContent.Append(c.Manufacturer.ToString & ";")
+            '    romlistFileContent.Append(c.Category.ToString & ";")
+            '    romlistFileContent.Append(c.Players.ToString & ";")
+            '    romlistFileContent.Append(c.Rotation.ToString & ";")
+            '    romlistFileContent.Append(c.Control.ToString & ";")
+            '    romlistFileContent.Append(c.Status.ToString & ";")
+            '    romlistFileContent.Append(c.DisplayCount.ToString & ";")
+            '    romlistFileContent.Append(c.DisplayType.ToString & ";")
+            '    romlistFileContent.Append(c.AltRomname.ToString & ";")
+            '    romlistFileContent.Append(c.AltTitle.ToString & ";")
+            '    romlistFileContent.Append(c.Extra.ToString & ";")
+            '    romlistFileContent.Append(c.Buttons.ToString & ";")
+            '    romlistFileContent.AppendLine()
+            'Next
+
+            Dim content As String = String.Empty
+
+            If Not Me._parent.IsRomListNewFile Then
+                ' TODO : To improve to check doublons
+                Dim existingRomlist As RomsDataSet.RomlistDataTable = ImportRomlistFile(Me._parent.RomlistFilePath)
+                Dim mergedRomlist As New List(Of RomsDataSet.RomlistDataTable)
+                mergedRomlist.Add(existingRomlist)
+                mergedRomlist.Add(Me._parent.RomList)
+
+                Me._parent.RomList = MergeRomlists(mergedRomlist, False)
             End If
 
-            'content
-            For Each c As RomsDataSet.RomlistRow In Me._parent.RomList
-                romlistFileContent.Append(c.Name.ToString & ";")
-                romlistFileContent.Append(c.Title.ToString & ";")
-                romlistFileContent.Append(c.Emulator.ToString & ";")
-                romlistFileContent.Append(c.CloneOf.ToString & ";")
-                romlistFileContent.Append(c.Year.ToString & ";")
-                romlistFileContent.Append(c.Manufacturer.ToString & ";")
-                romlistFileContent.Append(c.Category.ToString & ";")
-                romlistFileContent.Append(c.Players.ToString & ";")
-                romlistFileContent.Append(c.Rotation.ToString & ";")
-                romlistFileContent.Append(c.Control.ToString & ";")
-                romlistFileContent.Append(c.Status.ToString & ";")
-                romlistFileContent.Append(c.DisplayCount.ToString & ";")
-                romlistFileContent.Append(c.DisplayType.ToString & ";")
-                romlistFileContent.Append(c.AltRomname.ToString & ";")
-                romlistFileContent.Append(c.AltTitle.ToString & ";")
-                romlistFileContent.Append(c.Extra.ToString & ";")
-                romlistFileContent.Append(c.Buttons.ToString & ";")
-                romlistFileContent.AppendLine()
-            Next
+            content = ExportRomlistDataTableToString(Me._parent.RomList)
 
-            If Me._parent.IsRomListNewFile Then
-                If File.Exists(Me._parent.RomsPath & "\romlist.txt") Then File.Delete(Me._parent.RomsPath & "\romlist.txt")
-                File.WriteAllText(Me._parent.RomsPath & "\romlist.txt", romlistFileContent.ToString)
-            Else
-                ' TODO : To improve to check doublons + to sort Title ASC
-                File.AppendAllText(Me._parent.RomsPath & "\romlist.txt", romlistFileContent.ToString)
-            End If
-
+            If File.Exists(Me._parent.RomlistFilePath) Then File.Delete(Me._parent.RomlistFilePath)
+            File.WriteAllText(Me._parent.RomlistFilePath, content)
 
 
             'filename

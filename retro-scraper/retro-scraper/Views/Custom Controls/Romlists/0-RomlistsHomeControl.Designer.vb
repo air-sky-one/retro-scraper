@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class _0_RomlistsHomeControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class _0_RomlistsHomeControl
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
@@ -50,8 +50,13 @@ Partial Class _0_RomlistsHomeControl
         Me.MergeExistingFileTextBox = New System.Windows.Forms.TextBox()
         Me.MergeExistingFileButton = New System.Windows.Forms.Button()
         Me.MergeExecuteButton = New System.Windows.Forms.Button()
+        Me.RemovePanel = New System.Windows.Forms.Panel()
+        Me.RemoveExecuteButton = New System.Windows.Forms.Button()
+        Me.RemoveRomlistPathTextBox = New System.Windows.Forms.TextBox()
+        Me.RemoveRomlistPathButton = New System.Windows.Forms.Button()
+        Me.RemoveLabel = New System.Windows.Forms.Label()
         Me.MergeFolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
-        Me.MergeExistingFileOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.GeneralOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.MergeErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ChoiceFlowLayoutPanel.SuspendLayout()
         Me.ConfigFlowLayoutPanel.SuspendLayout()
@@ -61,6 +66,7 @@ Partial Class _0_RomlistsHomeControl
         Me.MergeChoiceResultFileFlowLayoutPanel.SuspendLayout()
         Me.MergeNewFilePanel.SuspendLayout()
         Me.MergeExistingFilePanel.SuspendLayout()
+        Me.RemovePanel.SuspendLayout()
         CType(Me.MergeErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -146,6 +152,7 @@ Partial Class _0_RomlistsHomeControl
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ConfigFlowLayoutPanel.Controls.Add(Me.MergePanel)
+        Me.ConfigFlowLayoutPanel.Controls.Add(Me.RemovePanel)
         Me.ConfigFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.ConfigFlowLayoutPanel.Location = New System.Drawing.Point(23, 132)
         Me.ConfigFlowLayoutPanel.Name = "ConfigFlowLayoutPanel"
@@ -381,9 +388,65 @@ Partial Class _0_RomlistsHomeControl
         Me.MergeExecuteButton.UseVisualStyleBackColor = True
         Me.MergeExecuteButton.Visible = False
         '
-        'MergeExistingFileOpenFileDialog
+        'RemovePanel
         '
-        Me.MergeExistingFileOpenFileDialog.FileName = "romlist.txt"
+        Me.RemovePanel.Controls.Add(Me.RemoveExecuteButton)
+        Me.RemovePanel.Controls.Add(Me.RemoveRomlistPathTextBox)
+        Me.RemovePanel.Controls.Add(Me.RemoveRomlistPathButton)
+        Me.RemovePanel.Controls.Add(Me.RemoveLabel)
+        Me.RemovePanel.Location = New System.Drawing.Point(3, 199)
+        Me.RemovePanel.Name = "RemovePanel"
+        Me.RemovePanel.Size = New System.Drawing.Size(846, 279)
+        Me.RemovePanel.TabIndex = 1
+        Me.RemovePanel.Visible = False
+        '
+        'RemoveExecuteButton
+        '
+        Me.RemoveExecuteButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RemoveExecuteButton.Location = New System.Drawing.Point(0, 46)
+        Me.RemoveExecuteButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.RemoveExecuteButton.Name = "RemoveExecuteButton"
+        Me.RemoveExecuteButton.Size = New System.Drawing.Size(114, 21)
+        Me.RemoveExecuteButton.TabIndex = 18
+        Me.RemoveExecuteButton.Text = "Execute"
+        Me.RemoveExecuteButton.UseVisualStyleBackColor = True
+        Me.RemoveExecuteButton.Visible = False
+        '
+        'RemoveRomlistPathTextBox
+        '
+        Me.RemoveRomlistPathTextBox.Location = New System.Drawing.Point(3, 16)
+        Me.RemoveRomlistPathTextBox.Margin = New System.Windows.Forms.Padding(0)
+        Me.RemoveRomlistPathTextBox.Name = "RemoveRomlistPathTextBox"
+        Me.RemoveRomlistPathTextBox.ReadOnly = True
+        Me.RemoveRomlistPathTextBox.Size = New System.Drawing.Size(393, 20)
+        Me.RemoveRomlistPathTextBox.TabIndex = 16
+        '
+        'RemoveRomlistPathButton
+        '
+        Me.RemoveRomlistPathButton.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RemoveRomlistPathButton.Location = New System.Drawing.Point(399, 15)
+        Me.RemoveRomlistPathButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.RemoveRomlistPathButton.Name = "RemoveRomlistPathButton"
+        Me.RemoveRomlistPathButton.Size = New System.Drawing.Size(25, 20)
+        Me.RemoveRomlistPathButton.TabIndex = 17
+        Me.RemoveRomlistPathButton.Text = "..."
+        Me.RemoveRomlistPathButton.UseVisualStyleBackColor = True
+        '
+        'RemoveLabel
+        '
+        Me.RemoveLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RemoveLabel.AutoSize = True
+        Me.RemoveLabel.Font = New System.Drawing.Font("Ubuntu Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RemoveLabel.Location = New System.Drawing.Point(3, 0)
+        Me.RemoveLabel.Name = "RemoveLabel"
+        Me.RemoveLabel.Size = New System.Drawing.Size(343, 16)
+        Me.RemoveLabel.TabIndex = 6
+        Me.RemoveLabel.Text = "Select the romlist file were duplicated entries has to be removed"
+        '
+        'GeneralOpenFileDialog
+        '
+        Me.GeneralOpenFileDialog.FileName = "romlist.txt"
         '
         'MergeErrorProvider
         '
@@ -413,6 +476,8 @@ Partial Class _0_RomlistsHomeControl
         Me.MergeNewFilePanel.PerformLayout()
         Me.MergeExistingFilePanel.ResumeLayout(False)
         Me.MergeExistingFilePanel.PerformLayout()
+        Me.RemovePanel.ResumeLayout(False)
+        Me.RemovePanel.PerformLayout()
         CType(Me.MergeErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -437,7 +502,7 @@ Partial Class _0_RomlistsHomeControl
     Friend WithEvents MergeExistingFileTextBox As TextBox
     Friend WithEvents MergeExistingFileRadioButton As RadioButton
     Friend WithEvents MergeNewFileRadioButton As RadioButton
-    Friend WithEvents MergeExistingFileOpenFileDialog As OpenFileDialog
+    Friend WithEvents GeneralOpenFileDialog As OpenFileDialog
     Friend WithEvents MergeErrorProvider As ErrorProvider
     Friend WithEvents MergeFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents MergeFolderPathPanel As Panel
@@ -449,4 +514,9 @@ Partial Class _0_RomlistsHomeControl
     Friend WithEvents MergeNewFileDestinationFolderButton As Button
     Friend WithEvents MergeNewFileNameTextBox As TextBox
     Friend WithEvents MergeNewFileNameLabel As Label
+    Friend WithEvents RemovePanel As Panel
+    Friend WithEvents RemoveLabel As Label
+    Friend WithEvents RemoveExecuteButton As Button
+    Friend WithEvents RemoveRomlistPathTextBox As TextBox
+    Friend WithEvents RemoveRomlistPathButton As Button
 End Class

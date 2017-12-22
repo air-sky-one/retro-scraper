@@ -2,12 +2,6 @@
 
 Public Class _0_RomlistsHomeControl
 
-#Region "Merge"
-
-
-
-#End Region
-
 #Region "Main selection"
 
     ''' <summary>
@@ -21,6 +15,34 @@ Public Class _0_RomlistsHomeControl
         Else
             Me.MergePanel.Visible = False
         End If
+    End Sub
+
+    ''' <summary>
+    ''' (Un)Select the Remove duplicate entries action
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub RemoveRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles RemoveRadioButton.CheckedChanged
+        If Me.RemoveRadioButton.Checked = True Then
+            Me.RemovePanel.Visible = True
+        Else
+            Me.RemovePanel.Visible = False
+        End If
+    End Sub
+
+#End Region
+
+#Region "General"
+
+    ''' <summary>
+    ''' Write the desired content to the specific file
+    ''' </summary>
+    ''' <param name="path"></param>
+    Private Sub WriteContentToFile(path As String, content As String)
+        If File.Exists(path) Then
+            File.Delete(path)
+        End If
+        File.WriteAllText(path, content)
     End Sub
 
 #End Region
@@ -143,13 +165,13 @@ Public Class _0_RomlistsHomeControl
     ''' <param name="e"></param>
     Private Sub MergeExistingFileButton_Click(sender As Object, e As EventArgs) Handles MergeExistingFileButton.Click
         ' Show Folder Browser Dialog Form
-        Me.MergeExistingFileOpenFileDialog.Filter = "Text Files (*.txt)|*.txt"
-        Me.MergeExistingFileOpenFileDialog.ShowDialog()
+        Me.GeneralOpenFileDialog.Filter = "Text Files (*.txt)|*.txt"
+        Me.GeneralOpenFileDialog.ShowDialog()
 
-        If Me.MergeExistingFileOpenFileDialog.FileName = "romlist.txt" Then Me.MergeExistingFileTextBox.Text = String.Empty
+        If Me.GeneralOpenFileDialog.FileName = "romlist.txt" Then Me.MergeExistingFileTextBox.Text = String.Empty
 
-        If Not String.IsNullOrEmpty(Me.MergeExistingFileOpenFileDialog.FileName) And File.Exists(Me.MergeExistingFileOpenFileDialog.FileName) Then
-            Me.MergeExistingFileTextBox.Text = Me.MergeExistingFileOpenFileDialog.FileName
+        If Not String.IsNullOrEmpty(Me.GeneralOpenFileDialog.FileName) And File.Exists(Me.GeneralOpenFileDialog.FileName) Then
+            Me.MergeExistingFileTextBox.Text = Me.GeneralOpenFileDialog.FileName
         Else
             Me.MergeExistingFileTextBox.Text = String.Empty
             Me.MergeErrorProvider.SetError(Me.MergeExistingFileTextBox, "Please select a correct destination romlist file.")
@@ -168,10 +190,9 @@ Public Class _0_RomlistsHomeControl
                 Me._mergeRomlistFiles.Clear()
                 Me._mergeRomlistFiles = GetFilesAssociatedToExtensions(Me._mergeRomlistFolderPath, {".txt"})
                 Dim content As String = ExportRomlistDataTableToString(MergeRomlistFiles(Me._mergeRomlistFiles), True)
-                If File.Exists(Me.MergeNewFileDestinationFolderTextBox.Text & "\" & Me.MergeNewFileNameTextBox.Text & ".txt") Then
-                    File.Delete(Me.MergeNewFileDestinationFolderTextBox.Text & "\" & Me.MergeNewFileNameTextBox.Text & ".txt")
-                End If
-                File.WriteAllText(Me.MergeNewFileDestinationFolderTextBox.Text & "\" & Me.MergeNewFileNameTextBox.Text & ".txt", content)
+                WriteContentToFile(Me.MergeNewFileDestinationFolderTextBox.Text & "\" & Me.MergeNewFileNameTextBox.Text & ".txt", content)
+
+                Me.MergeExecuteButton.Text = "Operation Done"
             Else
                 ' operation for saving the result in an extisting file
                 If Me.MergeNewFileNameTextBox.Text.Length = 0 Then Me.MergeErrorProvider.SetError(Me.MergeNewFileNameTextBox, "Please enter a correct file name.")
@@ -184,16 +205,61 @@ Public Class _0_RomlistsHomeControl
                 Me._mergeRomlistFiles.Add(Me.MergeExistingFileTextBox.Text)
 
                 Dim content As String = ExportRomlistDataTableToString(MergeRomlistFiles(Me._mergeRomlistFiles), True)
-                If File.Exists(Me.MergeExistingFileTextBox.Text) Then
-                    File.Delete(Me.MergeExistingFileTextBox.Text)
-                End If
-                File.WriteAllText(Me.MergeExistingFileTextBox.Text, content)
+                WriteContentToFile(Me.MergeNewFileDestinationFolderTextBox.Text & "\" & Me.MergeNewFileNameTextBox.Text & ".txt", content)
+
+                Me.MergeExecuteButton.Text = "Operation Done"
             Else
                 If Me.MergeExistingFileTextBox.Text.Length = 0 Then Me.MergeErrorProvider.SetError(Me.MergeExistingFileTextBox, "Please enter a romlist file.")
             End If
         End If
     End Sub
 
+#End Region
+
+#Region "Remove Duplicate"
+
+    ''' <summary>
+    ''' Select the romlist where duplicates has to be removed
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub RemoveRomlistPathButton_Click(sender As Object, e As EventArgs) Handles RemoveRomlistPathButton.Click
+        ' Show Folder Browser Dialog Form
+        Me.GeneralOpenFileDialog.Filter = "Text Files (*.txt)|*.txt"
+        Me.GeneralOpenFileDialog.ShowDialog()
+
+        If Me.GeneralOpenFileDialog.FileName = "romlist.txt" Then Me.MergeExistingFileTextBox.Text = String.Empty
+
+        If Not String.IsNullOrEmpty(Me.GeneralOpenFileDialog.FileName) And File.Exists(Me.GeneralOpenFileDialog.FileName) Then
+            Me.RemoveExecuteButton.Visible = True
+            Me.RemoveRomlistPathTextBox.Text = Me.GeneralOpenFileDialog.FileName
+        Else
+            Me.RemoveRomlistPathTextBox.Text = String.Empty
+            Me.MergeErrorProvider.SetError(Me.RemoveRomlistPathTextBox, "Please select a correct destination romlist file.")
+            Me.RemoveExecuteButton.Visible = False
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Overwrite the existing romlist file without duplicate
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub RemoveExecuteButton_Click(sender As Object, e As EventArgs) Handles RemoveExecuteButton.Click
+        Try
+            If Not String.IsNullOrEmpty(Me.GeneralOpenFileDialog.FileName) And File.Exists(Me.GeneralOpenFileDialog.FileName) Then
+                Dim content As String = ExportRomlistDataTableToString(RemoveDuplicates(Me.GeneralOpenFileDialog.FileName))
+                WriteContentToFile(Me.GeneralOpenFileDialog.FileName, content)
+                Me.RemoveExecuteButton.Text = "Operation Done"
+            Else
+                Me.RemoveRomlistPathTextBox.Text = String.Empty
+                Me.MergeErrorProvider.SetError(Me.RemoveRomlistPathTextBox, "Please select a correct destination romlist file.")
+                Me.RemoveExecuteButton.Visible = False
+            End If
+        Catch ex As Exception
+            ShowErrorMessage(ex)
+        End Try
+    End Sub
 #End Region
 
 End Class

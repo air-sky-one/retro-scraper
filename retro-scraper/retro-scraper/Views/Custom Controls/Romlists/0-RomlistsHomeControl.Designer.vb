@@ -396,7 +396,7 @@ Partial Class _0_RomlistsHomeControl
         Me.RemovePanel.Controls.Add(Me.RemoveLabel)
         Me.RemovePanel.Location = New System.Drawing.Point(3, 199)
         Me.RemovePanel.Name = "RemovePanel"
-        Me.RemovePanel.Size = New System.Drawing.Size(846, 279)
+        Me.RemovePanel.Size = New System.Drawing.Size(846, 69)
         Me.RemovePanel.TabIndex = 1
         Me.RemovePanel.Visible = False
         '

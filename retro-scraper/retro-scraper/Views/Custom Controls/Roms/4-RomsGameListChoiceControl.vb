@@ -18,7 +18,7 @@ Public Class _4_RomListChoiceControl
 
             If Me._parent Is Nothing Then Throw New Exception("Unexpected error")
 
-            If String.IsNullOrEmpty(Me._parent.RomlistFilePath) Then Me._parent.RomlistFilePath = Me._parent.RomsPath & "\" & Me._parent.AttractModeSelectedSystem & ".cfg"
+            If String.IsNullOrEmpty(Me._parent.RomlistFilePath) Then Me._parent.RomlistFilePath = Me._parent.RomsPath & "\" & Me._parent.AttractModeSelectedSystem & ".txt"
 
             Me.NewRomlistFilePathTextBox.Text = Me._parent.RomlistFilePath
 

@@ -159,7 +159,7 @@ Public Class MainForm
 
                     Me._actualContent = c
                 Case "MainButtonRomlists"
-                    Dim c As New RomsContainerControl
+                    Dim c As New RomlistsContainerControl
 
                     Me.MainFormTableLayoutPanel.Controls().Add(c, 1, 0)
 

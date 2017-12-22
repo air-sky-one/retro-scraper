@@ -504,6 +504,7 @@
                 Me._gamesDateScreen.Datagrid.DataSource = Nothing
                 Me._artworksMediaTypesScreen.Datagrid.DataSource = Nothing
                 Me._gamesArtworksScreen.Datagrid.DataSource = Nothing
+                Me._romList.Clear()
 
                 Me.MainTableLayoutPanel.Controls.Add(Me._romListChoice, 0, 2)
 

@@ -29,7 +29,8 @@ Module RomlistHelper
                     Dim elements As String() = line.Split(";")
 
                     If elements.Count <= 1 Then
-                        Throw New Exception("The romlist file structure doesn't match th standard file structure : " & path)
+                        ' Throw New Exception("The romlist file structure doesn't match th standard file structure : " & path)
+                        Exit Do
                     Else
                         ' First line
                         If line.First().ToString.Equals("#") And cpt = 0 Then
@@ -66,7 +67,8 @@ Module RomlistHelper
                             romlist.Rows.Add(row)
                         Else
                             ' [ERROR] if the first line of the file doesn't start with a '#' character
-                            Throw New Exception("The romlist file structure doesn't match th standard file structure")
+                            ' Throw New Exception("The romlist file structure doesn't match th standard file structure")
+                            Exit Do
                         End If
                     End If
                     cpt = cpt + 1
@@ -95,6 +97,7 @@ Module RomlistHelper
                                       Optional addRomlistName As Boolean = True) As RomsDataSet.RomlistDataTable
 
         Dim result As New RomsDataSet.RomlistDataTable
+        Dim fileName As String = String.Empty
         Dim romlistDataTables As New List(Of RomsDataSet.RomlistDataTable)
 
         Try
@@ -103,7 +106,9 @@ Module RomlistHelper
                 Dim romlist As New RomsDataSet.RomlistDataTable
 
                 ' Set the name with the actual romlist file
-                romlist.TableName = romlistFile.Substring(romlistFile.LastIndexOf("\") + 1, romlistFile.LastIndexOf("."))
+                fileName = romlistFile.Substring(romlistFile.LastIndexOf("\") + 1)
+                fileName = fileName.Substring(0, fileName.Length - 4)
+                romlist.TableName = fileName
                 ' get the romlist file into a DataTable
                 romlist = ImportRomlistFile(romlistFile)
 
@@ -151,22 +156,23 @@ Module RomlistHelper
         Dim result As New RomsDataSet.RomlistDataTable
         Try
             For Each romlistDataTable In romlist
+
+                If addRomlistName Then
+                    ' create a line of comment in the result to indicate the romlist file
+                    Dim headerRow As RomsDataSet.RomlistRow = result.NewRomlistRow()
+
+                    For Each column As DataColumn In romlistDataTable.Columns
+                        If column.ColumnName = "Name" Then
+                            headerRow.Name = "#" & romlistDataTable.TableName
+                        Else
+                            headerRow(column.ColumnName) = String.Empty
+                        End If
+                    Next
+
+                    result.Rows.Add(headerRow)
+                End If
+
                 For Each line As RomsDataSet.RomlistRow In romlistDataTable.Select("", "Title ASC")
-                    If addRomlistName Then
-                        ' create a line of comment in the result to indicate the romlist file
-                        Dim headerRow As RomsDataSet.RomlistRow = result.NewRomlistRow()
-
-                        For Each column As DataColumn In romlistDataTable.Columns
-                            If column.ColumnName = "Name" Then
-                                headerRow.Name = "#" & romlistDataTable.TableName
-                            Else
-                                headerRow(column.ColumnName) = String.Empty
-                            End If
-                        Next
-
-                        result.Rows.Add(headerRow)
-                    End If
-
                     ' add all lines of the imported romlist file into the merged result one
                     Dim newRow As RomsDataSet.RomlistRow
                     newRow = result.NewRomlistRow

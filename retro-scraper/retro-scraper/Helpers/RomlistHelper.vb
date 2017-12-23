@@ -47,7 +47,7 @@ Module RomlistHelper
                                         Exit For
                                     End If
                                 Next
-                                If Not isOk Then Throw New Exception("The romlist file structure doesn't match th standard file structure")
+                                If Not isOk Then Exit Do : Throw New Exception("The romlist file structure doesn't match th standard file structure")
                             Next
                         ElseIf cpt > 0 Then
                             ' all lines after the header line
@@ -77,7 +77,7 @@ Module RomlistHelper
                 sr.Close()
             Else
                 ' [ERROR] 
-                Throw New Exception("The file : " & path & " doesnt exist")
+                ' Throw New Exception("The file : " & path & " doesnt exist")
             End If
         Catch ex As Exception
             Throw ex

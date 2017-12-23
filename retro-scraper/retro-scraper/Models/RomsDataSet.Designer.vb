@@ -2501,7 +2501,7 @@ Partial Public Class RomsDataSet
                     ByVal IsChecked As Boolean,  _
                     ByVal filename As String,  _
                     ByVal extension As String,  _
-                    ByVal size As Integer,  _
+                    ByVal size As String,  _
                     ByVal is_nom_us As Boolean,  _
                     ByVal nom_us As String,  _
                     ByVal is_nom_jp As Boolean,  _
@@ -2747,7 +2747,7 @@ Partial Public Class RomsDataSet
             MyBase.Columns.Add(Me.columnfilename)
             Me.columnextension = New Global.System.Data.DataColumn("extension", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnextension)
-            Me.columnsize = New Global.System.Data.DataColumn("size", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnsize = New Global.System.Data.DataColumn("size", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsize)
             Me.columnis_nom_us = New Global.System.Data.DataColumn("is_nom_us", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnis_nom_us)
@@ -2957,6 +2957,7 @@ Partial Public Class RomsDataSet
             MyBase.Columns.Add(Me.columnisScraped)
             Me.columnIsChecked.AllowDBNull = false
             Me.columnIsChecked.DefaultValue = CType(false,Boolean)
+            Me.columnsize.DefaultValue = CType("0",String)
             Me.columnis_nom_us.DefaultValue = CType(false,Boolean)
             Me.columnis_nom_jp.DefaultValue = CType(false,Boolean)
             Me.columnis_nom_wor.DefaultValue = CType(false,Boolean)
@@ -3004,6 +3005,9 @@ Partial Public Class RomsDataSet
             Me.columnis_media_support2d_us.DefaultValue = CType(false,Boolean)
             Me.columnis_media_support2d_jp.DefaultValue = CType(false,Boolean)
             Me.columnis_media_support2d_eu.DefaultValue = CType(false,Boolean)
+            Me.columnlocal_romsize.DefaultValue = CType("0",String)
+            Me.columnlocal_romcrc.DefaultValue = CType("",String)
+            Me.columnlocal_rommd5.DefaultValue = CType("",String)
             Me.columnisScraped.DefaultValue = CType(false,Boolean)
         End Sub
         
@@ -4561,10 +4565,10 @@ Partial Public Class RomsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property size() As Integer
+        Public Property size() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableSSRoms.sizeColumn),Integer)
+                    Return CType(Me(Me.tableSSRoms.sizeColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'size' in table 'SSRoms' is DBNull.", e)
                 End Try

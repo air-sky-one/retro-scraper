@@ -101,7 +101,9 @@ Public Class _5_RomsLoadingProcessControl
                     Me._mainProgressText = rom.filename
 
                     rom.size = New FileInfo(file).Length
-                    rom.local_rommd5 = md5_hash(file)
+                    If rom.size <= 15000000 Then
+                        rom.local_rommd5 = md5_hash(file)
+                    End If
 
                     ' interrogation
                     query = BuildGenericURL("jeuInfos.php")

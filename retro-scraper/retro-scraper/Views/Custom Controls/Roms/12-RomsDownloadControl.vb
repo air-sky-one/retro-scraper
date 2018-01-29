@@ -89,7 +89,7 @@ Public Class _12_RomsDownloadControl
 
             If go Then
                 For Each col As String In associatedColumns
-                    If File.Exists(mediaPath) Then File.Delete(mediaPath)
+                    ' If File.Exists(mediaPath) Then File.Delete(mediaPath)
                     If CBool(game("is_media_" & col)) Then My.Computer.Network.DownloadFile(game("media_" & col), mediaPath)
                 Next
             End If
@@ -207,6 +207,10 @@ Public Class _12_RomsDownloadControl
                                 Me._workerDetailsText = "Box 2D"
                                 Me._detailCpt = Me._detailCpt + 1
                                 worker.ReportProgress(cpt)
+
+                                If game.filename.Contains("secret of mana") Then Stop
+                                If game.filename.Contains("90 minutes") Then Stop
+
                                 DownloadMedia(game,
                                               art,
                                               "png",
